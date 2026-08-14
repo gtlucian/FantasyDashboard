@@ -157,10 +157,16 @@ def fetch_official_fantasypros_ecr():
     raise RuntimeError("Failed to fetch official FantasyPros ECR table.")
 
 def build_pipeline():
-    """Builds and refreshes DuckDB database with official FantasyPros ECR."""
+    """Builds and refreshes DuckDB database with official FantasyPros ECR in Eastern Time."""
     logger.info("Starting FantasyPros ECR Data Pipeline...")
-    now_utc = datetime.now(timezone.utc)
-    snapshot_time = now_utc.strftime("%Y-%m-%d %H:%M:%S UTC")
+    try:
+        from zoneinfo import ZoneInfo
+        now_eastern = datetime.now(ZoneInfo("America/New_York"))
+    except Exception:
+        import pytz
+        now_eastern = datetime.now(pytz.timezone("US/Eastern"))
+    
+    snapshot_time = now_eastern.strftime("%b %d, %Y, %I:%M %p EDT")
 
     players_data = fetch_official_fantasypros_ecr()
     df = pd.DataFrame(players_data)
