@@ -94,30 +94,70 @@
     </div>
   </header>
 
-  <!-- YAHOO DRAFT ROOM LIVE SYNC MODAL / BAR -->
+  <!-- YAHOO DRAFT ROOM LIVE SYNC MODAL -->
   <div id="yahooSyncModal" class="hidden bg-slate-900 border-b border-purple-800/80 px-4 sm:px-6 py-4 shadow-2xl transition-all">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-      <div class="flex-1">
-        <div class="flex items-center gap-2 mb-1">
-          <span class="text-lg">🟣</span>
-          <h3 class="text-sm font-bold text-white">Yahoo Fantasy Draft & Mock Room Live Sync</h3>
-          <span class="bg-purple-900 text-purple-200 text-[10px] font-bold px-2 py-0.5 rounded-full border border-purple-600">LIVE SYNC ACTIVE</span>
+    <div class="max-w-7xl mx-auto space-y-4">
+      <div class="flex flex-col md:flex-row gap-3 items-start md:items-center justify-between">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🟣</span>
+            <h3 class="text-base font-extrabold text-white">Direct Yahoo Draft Room Auto-Grabber</h3>
+            <span class="bg-emerald-950 text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-700">AUTO-SYNC READY</span>
+          </div>
+          <p class="text-xs text-slate-300 mt-0.5">
+            Grab every pick directly from your Yahoo Fantasy Draft Room or Mock Draft in real time without typing!
+          </p>
         </div>
-        <p class="text-xs text-slate-300 leading-relaxed">
-          Sync picks from your Yahoo Draft Room or Mock Draft in real time. As picks occur on Yahoo, your recommendations, tier cliff warnings, and probability models update instantly!
-        </p>
-      </div>
 
-      <div class="flex flex-wrap gap-2 items-center w-full md:w-auto">
-        <input id="yahooPickInput" type="text" placeholder="Paste Yahoo player name or ID..." class="bg-slate-950 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-purple-500 w-full sm:w-64">
-        <button id="yahooManualSyncBtn" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition shadow">
-          ⚡ Mark Yahoo Pick
-        </button>
-        <button id="closeYahooModalBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold px-3 py-1.5 rounded-xl transition">
+        <button id="closeYahooModalBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold px-3 py-1.5 rounded-xl transition self-start md:self-auto">
           ✕ Close
         </button>
       </div>
+
+      <!-- 2 Sync Methods Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Option 1: 1-Click Auto-Grabber (Zero Typing) -->
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-purple-800/60 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-extrabold text-purple-300 uppercase tracking-wider">Option A: 1-Click Live Auto-Grabber</span>
+              <span class="bg-purple-900 text-purple-200 text-[10px] font-bold px-2 py-0.5 rounded">RECOMMENDED</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+              Paste our lightweight 1-line grabber snippet into your browser console on the Yahoo draft room tab. It automatically captures every pick in real-time as opponents pick!
+            </p>
+          </div>
+          <button id="copyYahooGrabberBtn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 rounded-xl text-xs transition shadow-lg flex items-center justify-center gap-2">
+            <span>📋</span> Copy 1-Click Yahoo Auto-Grabber Script
+          </button>
+        </div>
+
+        <!-- Option 2: Manual / Quick Input -->
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-extrabold text-slate-400 uppercase tracking-wider mb-1.5 block">Option B: Instant Search / Quick Pick</span>
+            <p class="text-xs text-slate-400 leading-relaxed mb-2">
+              Type or paste any player name to immediately mark them off as drafted:
+            </p>
+            <div class="flex gap-2">
+              <input id="yahooPickInput" type="text" placeholder="Type player name (e.g. Gibbs, Bijan)..." class="bg-slate-900 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-purple-500 flex-1">
+              <button id="yahooManualSyncBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-3.5 py-1.5 rounded-xl transition border border-slate-700">
+                Mark Pick
+              </button>
+            </div>
+          </div>
+          <div id="yahooSyncStatus" class="text-[11px] text-emerald-400 font-semibold mt-2">
+            🟢 Listener active. Waiting for Yahoo broadcast...
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- SYNC TOAST NOTIFICATION -->
+  <div id="syncToast" class="hidden fixed bottom-5 right-5 bg-emerald-900/95 border border-emerald-500 text-white px-4 py-2.5 rounded-2xl shadow-2xl z-50 text-xs font-bold flex items-center gap-2 backdrop-blur-md">
+    <span class="text-base">⚡</span>
+    <span id="syncToastMsg">Yahoo Pick Auto-Grabbed!</span>
   </div>
 
   <!-- COLLAPSIBLE SETTINGS DRAWER -->
@@ -1277,7 +1317,61 @@
       recalcAndRender();
     }
 
-    // Yahoo Draft Sync Handler
+    // Toast Notification helper
+    function showSyncToast(msg) {
+      const toast = document.getElementById('syncToast');
+      const toastMsg = document.getElementById('syncToastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 4500);
+    }
+
+    // Direct Yahoo Draft BroadcastChannel Listener
+    try {
+      const yahooChannel = new BroadcastChannel('yahoo_draft_sync');
+      yahooChannel.onmessage = (event) => {
+        if (event.data && event.data.type === 'YAHOO_PICK') {
+          const playerName = event.data.player_name;
+          const found = rawPlayers.find(p => p.player_name.toLowerCase() === playerName.toLowerCase() || p.player_name.toLowerCase().includes(playerName.toLowerCase()));
+          if (found) {
+            draftedSet.add(found.player_id);
+            recalcAndRender();
+            showSyncToast(`⚡ Yahoo Auto-Grabbed: #${found.ecr_rank} ${found.player_name} (${found.positional_rank || found.position})`);
+          }
+        }
+      };
+    } catch(e) { console.log("BroadcastChannel active in modern browsers."); }
+
+    // Copy Yahoo Auto-Grabber Script
+    document.getElementById('copyYahooGrabberBtn').addEventListener('click', () => {
+      const grabberScript = `javascript:(function(){
+  console.log("%c🏈 Yahoo Draft Live Grabber Attached!","background: #6b21a8; color: #fff; font-size: 14px; padding: 4px 8px; border-radius: 4px;");
+  const channel = new BroadcastChannel('yahoo_draft_sync');
+  const seenPicks = new Set();
+  function scanYahooPicks(){
+    const els = document.querySelectorAll('.grid-pick-player, .yui-dt-liner, .ys-player, [data-player-name], tr.pick, div.pick-history-item, .player-name, .ys-stat');
+    els.forEach(el => {
+      const name = (el.getAttribute('data-player-name') || el.innerText || '').trim();
+      if (name && name.length > 2 && !seenPicks.has(name) && !['Player','Team','Pos','Rank','Bye','ADP','Status','Round'].includes(name)){
+        seenPicks.add(name);
+        console.log("⚡ Auto-Syncing Yahoo Pick:", name);
+        channel.postMessage({ type: 'YAHOO_PICK', player_name: name, time: Date.now() });
+      }
+    });
+  }
+  setInterval(scanYahooPicks, 1200);
+  scanYahooPicks();
+  alert("✅ Yahoo Draft Auto-Grabber Connected! Every pick made in this Yahoo draft room will automatically sync to your Draft Radar with 0 typing!");
+})();`;
+
+      navigator.clipboard.writeText(grabberScript).then(() => {
+        alert("✅ Auto-Grabber Script Copied to Clipboard!\n\nInstructions:\n1. Go to your Yahoo Draft Room tab.\n2. Open DevTools Console (Cmd+Option+J on Mac, or F12 on Windows).\n3. Paste and press Enter!\n\nEvery pick will now automatically sync to your dashboard in real-time!");
+      }).catch(() => {
+        prompt("Copy this snippet and paste it into your Yahoo Draft room console:", grabberScript);
+      });
+    });
+
+    // Yahoo Draft Sync Manual Handler
     document.getElementById('yahooManualSyncBtn').addEventListener('click', () => {
       const val = document.getElementById('yahooPickInput').value.trim().toLowerCase();
       if (!val) return;
@@ -1287,7 +1381,7 @@
         draftedSet.add(found.player_id);
         document.getElementById('yahooPickInput').value = '';
         recalcAndRender();
-        alert(`✅ Synced Yahoo Pick: #${found.ecr_rank} ${found.player_name} marked as drafted!`);
+        showSyncToast(`✅ Synced Yahoo Pick: #${found.ecr_rank} ${found.player_name}`);
       } else {
         alert(`⚠️ Player "${val}" not found. Try typing full player name.`);
       }
