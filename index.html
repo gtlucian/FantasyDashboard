@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,9 +8,9 @@
   <!-- Mobile Web App / PWA Meta Tags -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="DraftRadar">
-  <meta name="theme-color" content="#1e3a8a">
+  <meta name="theme-color" content="#020617">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,109 +22,100 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #0f172a; }
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      background-color: #020617; 
+      color: #f1f5f9; 
+      -webkit-tap-highlight-color: transparent;
+    }
     .mono { font-family: 'JetBrains Mono', monospace; }
-    .drafted-row { text-decoration: line-through; opacity: 0.35; background-color: #f1f5f9 !important; }
+    
+    /* Drafted row animation & style */
+    .drafted-row { 
+      text-decoration: line-through; 
+      opacity: 0.35; 
+      background-color: #090d16 !important; 
+    }
     
     /* Scrollbars */
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; }
-    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* Streamlit-Matched News Cards */
-    .news-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 18px 22px;
-      margin-bottom: 14px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-      transition: all 0.2s ease-in-out;
+    /* Dark Glow Cards */
+    .card-critical { 
+      background: linear-gradient(135deg, #2b0b0e 0%, #0f172a 100%); 
+      border-left: 5px solid #ef4444; 
     }
-    .news-card:hover {
-      box-shadow: 0 8px 16px -4px rgba(0,0,0,0.08);
-      transform: translateY(-1px);
+    .card-warning { 
+      background: linear-gradient(135deg, #2c1a07 0%, #0f172a 100%); 
+      border-left: 5px solid #f59e0b; 
     }
-    .news-critical {
-      border-left: 6px solid #ef4444;
-      background: linear-gradient(to right, #fff5f5 0%, #ffffff 15%);
+    .card-positive { 
+      background: linear-gradient(135deg, #062e22 0%, #0f172a 100%); 
+      border-left: 5px solid #10b981; 
     }
-    .news-warning {
-      border-left: 6px solid #f59e0b;
-      background: linear-gradient(to right, #fffbeb 0%, #ffffff 15%);
-    }
-    .news-positive {
-      border-left: 6px solid #10b981;
-      background: linear-gradient(to right, #f0fdf4 0%, #ffffff 15%);
-    }
-    .news-info {
-      border-left: 6px solid #3b82f6;
-      background: linear-gradient(to right, #f0f9ff 0%, #ffffff 15%);
+    .card-info { 
+      background: linear-gradient(135deg, #0b223d 0%, #0f172a 100%); 
+      border-left: 5px solid #3b82f6; 
     }
 
-    /* Badges */
-    .badge {
-      display: inline-block;
-      padding: 3px 10px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      border-radius: 9999px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-    .badge-critical { background-color: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
-    .badge-warning { background-color: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
-    .badge-positive { background-color: #dcfce7; color: #166534; border: 1px solid #86efac; }
-    .badge-info { background-color: #e0f2fe; color: #075985; border: 1px solid #7dd3fc; }
-
-    /* Strategy Box */
-    .strategy-box {
-      background-color: #f8fafc;
-      border: 1px dashed #cbd5e1;
-      border-radius: 8px;
-      padding: 10px 14px;
-      margin-top: 10px;
-      margin-bottom: 8px;
-      font-size: 0.88rem;
-      color: #0f172a;
-      line-height: 1.45;
-    }
-
-    /* KPI Cards */
-    .kpi-container {
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 16px 20px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* KPI Glass Containers */
+    .kpi-box {
+      background: linear-gradient(145deg, #0f172a 0%, #090d16 100%);
+      border: 1px solid #1e293b;
+      border-radius: 16px;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .kpi-container:hover {
+    .kpi-box:hover {
       transform: translateY(-2px);
       border-color: #3b82f6;
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased">
+<body class="min-h-screen flex flex-col antialiased selection:bg-rose-500 selection:text-white">
 
-  <!-- Main Container with Sidebar Layout -->
-  <div class="flex flex-col lg:flex-row flex-1">
-    
-    <!-- SIDEBAR: LEAGUE CONTROLS -->
-    <aside class="w-full lg:w-72 bg-slate-900 text-slate-100 p-5 border-b lg:border-b-0 lg:border-r border-slate-800 flex-shrink-0">
-      <div class="flex items-center space-x-2.5 mb-6">
-        <span class="text-2xl">🏈</span>
-        <div>
-          <h2 class="text-base font-extrabold text-white tracking-tight">Draft Intelligence</h2>
-          <p class="text-[11px] text-slate-400">FantasyPros MCP Engine</p>
-        </div>
+  <!-- TOP STICKY HEADER -->
+  <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 py-3 sticky top-0 z-40 flex items-center justify-between gap-2">
+    <div class="flex items-center space-x-3">
+      <div class="bg-gradient-to-tr from-rose-600 to-amber-500 p-2 sm:p-2.5 rounded-xl text-white font-black text-lg sm:text-xl shadow-lg shadow-rose-950/50">
+        🚨
       </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-sm sm:text-base font-extrabold tracking-tight text-white">48H NFL Beat & Draft Radar</h1>
+          <span class="hidden sm:inline-block bg-blue-950 text-blue-400 border border-blue-800 text-[10px] font-bold px-2 py-0.5 rounded-full">2026 EDITION</span>
+        </div>
+        <!-- Live Timestamp in Header -->
+        <p class="text-[11px] text-slate-400 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Last Data Refresh: <b id="headerTimestamp" class="text-sky-300 mono">Loading...</b></span>
+        </p>
+      </div>
+    </div>
 
-      <div class="space-y-4">
+    <!-- Quick Actions on Header -->
+    <div class="flex items-center space-x-2 text-xs">
+      <button id="toggleSettingsBtn" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition shadow-sm">
+        <span>⚙️</span> <span class="hidden sm:inline">Settings</span>
+      </button>
+      <button id="resetDraftBtn" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition shadow-sm">
+        <span>🔄</span> <span class="hidden sm:inline">Reset Drafted</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- COLLAPSIBLE SETTINGS DRAWER / BAR -->
+  <div id="settingsDrawer" class="hidden bg-slate-900 border-b border-slate-800 px-4 sm:px-6 py-4 shadow-2xl transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex flex-wrap gap-4 items-end justify-between">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 flex-1">
         <div>
-          <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">League Size</label>
-          <select id="leagueTeamsSelect" class="w-full mt-1.5 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+          <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">League Size</label>
+          <select id="leagueTeamsSelect" class="w-full mt-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-rose-500 font-semibold">
             <option value="8">8 Teams</option>
             <option value="10">10 Teams</option>
             <option value="12" selected>12 Teams (Standard)</option>
@@ -134,235 +125,208 @@
         </div>
 
         <div>
-          <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">QB Format</label>
-          <select id="rosterFormatSelect" class="w-full mt-1.5 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+          <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">QB Format</label>
+          <select id="rosterFormatSelect" class="w-full mt-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-rose-500 font-semibold">
             <option value="1QB" selected>1-QB Standard</option>
             <option value="2QB">Superflex / 2-QB</option>
           </select>
         </div>
 
         <div>
-          <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Scoring Format</label>
-          <select id="scoringFormatSelect" class="w-full mt-1.5 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+          <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Scoring Format</label>
+          <select id="scoringFormatSelect" class="w-full mt-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-rose-500 font-semibold">
             <option value="HALF" selected>0.5 PPR (Half)</option>
             <option value="PPR">1.0 PPR (Full)</option>
             <option value="STD">Standard (0 PPR)</option>
           </select>
         </div>
-
-        <div class="pt-4 border-t border-slate-800">
-          <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">🎯 Live Draft Mode</h3>
-          <p class="text-[11px] text-slate-400 mb-3">Mark off players as your league drafts.</p>
-          <button id="resetDraftBtn" class="w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-2 rounded-lg text-xs font-bold text-slate-200 transition shadow-sm">
-            🔄 Reset Draft Board
-          </button>
-          <div class="text-[11px] text-slate-400 mt-2">
-            Drafted count: <span id="draftedCountBadge" class="font-bold text-white mono">0</span>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-slate-800">
-          <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">📱 App Installation</h3>
-          <p class="text-[11px] text-slate-400 leading-relaxed">
-            Tap <b>Share</b> $\rightarrow$ <b>Add to Home Screen</b> to use as a full-screen mobile app.
-          </p>
-        </div>
-      </div>
-    </aside>
-
-    <!-- MAIN CONTENT AREA -->
-    <main class="flex-1 p-4 lg:p-7 max-w-7xl mx-auto w-full flex flex-col">
-      
-      <!-- Top Title Header -->
-      <div class="mb-4">
-        <h1 class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
-          <span>🚨</span> 24H-48H NFL Injury & Draft Intelligence Platform
-        </h1>
       </div>
 
-      <!-- Freshness Banner -->
-      <div class="bg-gradient-to-r from-blue-900 to-slate-900 border border-blue-600 px-4 py-2.5 rounded-xl mb-5 flex flex-wrap justify-between items-center text-xs text-slate-200 shadow-sm gap-2">
-        <div>
-          🕒 <b>Live Data Freshness:</b> Synchronized with FantasyPros • <b>Last 3-Hour Cycle:</b> <code id="snapshotTimeLabel" class="bg-slate-800 px-2 py-0.5 rounded text-sky-300 mono">Loading...</code>
-        </div>
-        <div>
-          <span class="bg-emerald-400 text-emerald-950 px-2.5 py-0.5 rounded-full font-extrabold text-[11px] tracking-wide">
-            🟢 48H VERIFIED BEAT WIRE ACTIVE
-          </span>
-        </div>
-      </div>
-
-      <!-- Spiffy KPI Cards (Matched with Streamlit) -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-        <div class="kpi-container">
-          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">👑 Top Pick (VORP)</div>
-          <div id="topVorpPlayer" class="text-lg font-black text-white mt-1">Jahmyr Gibbs</div>
-          <div id="topVorpStat" class="text-[11px] text-sky-400 font-semibold mt-0.5">+153.5 pts over replacement (RB1)</div>
-        </div>
-
-        <div class="kpi-container">
-          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">💎 Top Arbitrage Target</div>
-          <div id="topSleeperPlayer" class="text-lg font-black text-white mt-1">Travis Hunter</div>
-          <div id="topSleeperStat" class="text-[11px] text-sky-400 font-semibold mt-0.5">+17.0 spots vs ADP value</div>
-        </div>
-
-        <div class="kpi-container">
-          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">📋 48H Beat Wire Reports</div>
-          <div class="text-lg font-black text-white mt-1">20 Verified Updates</div>
-          <div class="text-[11px] text-sky-400 font-semibold mt-0.5">With direct clickable source links</div>
-        </div>
-
-        <div class="kpi-container">
-          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">🏆 Draft Pool Status</div>
-          <div id="draftPoolStatus" class="text-lg font-black text-white mt-1">0 / 497 Drafted</div>
-          <div id="baselineLabel" class="text-[11px] text-sky-400 font-semibold mt-0.5">Baseline: RB24 / WR36 / QB12</div>
-        </div>
-      </div>
-
-      <!-- MAIN NAVIGATION TABS (MATCHED WITH STREAMLIT) -->
-      <div class="border-b border-slate-200 mb-5">
-        <div class="flex space-x-6 text-sm font-bold overflow-x-auto">
-          <button id="tabBtnNews" class="tab-btn pb-3 text-rose-600 border-b-2 border-rose-600 font-extrabold flex items-center gap-1.5 whitespace-nowrap">
-            <span>🚨</span> Major Injury & Practice Status Updates (Last 2 Days)
-          </button>
-          <button id="tabBtnDraft" class="tab-btn pb-3 text-slate-500 hover:text-slate-800 transition flex items-center gap-1.5 whitespace-nowrap">
-            <span>📋</span> Interactive Live Draft Board (Official ECR)
-          </button>
-          <button id="tabBtnMarket" class="tab-btn pb-3 text-slate-500 hover:text-slate-800 transition flex items-center gap-1.5 whitespace-nowrap">
-            <span>📊</span> Market Arbitrage Matrix (ECR vs. ADP)
-          </button>
-          <button id="tabBtnVorp" class="tab-btn pb-3 text-slate-500 hover:text-slate-800 transition flex items-center gap-1.5 whitespace-nowrap">
-            <span>🔥</span> Positional Scarcity & Tiers (VORP)
-          </button>
-        </div>
-      </div>
-
-      <!-- TAB 1: 48H INJURY & BEAT RADAR (DEFAULT LANDING VIEW) -->
-      <div id="viewNews" class="flex-1">
-        <div class="mb-4">
-          <h2 class="text-lg font-extrabold text-slate-900">🚨 Verified 48-Hour Training Camp & Injury Wire (20 Reports with Links)</h2>
-          <p class="text-xs text-slate-500">Live beat reporter dispatch, practice status changes, injury designations, and actionable draft strategies.</p>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm mb-4 flex flex-wrap justify-between items-center gap-3">
-          <div class="w-full sm:w-64">
-            <select id="newsCatSelect" class="w-full bg-slate-50 border border-slate-200 text-xs text-slate-800 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500 font-semibold">
-              <option value="ALL">All Categories (20)</option>
-              <option value="RB">Running Backs</option>
-              <option value="WR">Wide Receivers</option>
-              <option value="QB">Quarterbacks</option>
-              <option value="TE">Tight Ends</option>
-              <option value="OL">Offensive Line & Defense</option>
-            </select>
-          </div>
-          <div class="w-full sm:w-72">
-            <input id="newsSearchInput" type="text" placeholder="🔍 Search News (Player, Team, Source)..." class="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-blue-500">
-          </div>
-        </div>
-
-        <!-- News Cards Container -->
-        <div id="newsCardsContainer" class="space-y-3.5">
-          <!-- Injected dynamically via JS -->
-        </div>
-      </div>
-
-      <!-- TAB 2: OFFICIAL DRAFT BOARD (HIDDEN INITIALLY) -->
-      <div id="viewDraft" class="flex-1 hidden">
-        <div class="mb-4">
-          <h2 class="text-lg font-extrabold text-slate-900">📋 Official FantasyPros Consensus Draft Board (497 Players)</h2>
-          <p class="text-xs text-slate-500">Synchronized with 100+ Fantasy Football expert consensus draft rankings.</p>
-        </div>
-
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden mb-4">
-          <div class="p-3.5 border-b border-slate-200 flex flex-wrap gap-3 items-center justify-between bg-slate-50">
-            <div class="flex flex-wrap items-center gap-3">
-              <input id="searchInput" type="text" placeholder="🔍 Search Player or Team..." class="bg-white border border-slate-200 px-3.5 py-1.5 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-blue-500 w-60">
-              
-              <div class="flex flex-wrap gap-1" id="posFilterBtns">
-                <button data-pos="ALL" class="pos-btn bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-bold shadow-sm">ALL</button>
-                <button data-pos="QB" class="pos-btn bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">QB</button>
-                <button data-pos="RB" class="pos-btn bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">RB</button>
-                <button data-pos="WR" class="pos-btn bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">WR</button>
-                <button data-pos="TE" class="pos-btn bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">TE</button>
-                <button data-pos="DST" class="pos-btn bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">DST</button>
-                <button data-pos="K" class="pos-btn bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1 rounded-md text-xs font-semibold">K</button>
-              </div>
-            </div>
-
-            <div class="text-xs text-slate-500 font-semibold">
-              Showing <span id="visibleCount" class="font-bold text-slate-900">0</span> players
-            </div>
-          </div>
-
-          <!-- Table Container -->
-          <div class="overflow-x-auto max-h-[600px]">
-            <table class="w-full text-left text-xs">
-              <thead class="bg-slate-100 text-slate-700 font-bold sticky top-0 uppercase tracking-wider border-b border-slate-200">
-                <tr>
-                  <th class="py-3 px-4">Action</th>
-                  <th class="py-3 px-4">Overall ECR</th>
-                  <th class="py-3 px-4">Player</th>
-                  <th class="py-3 px-4">Pos Rank</th>
-                  <th class="py-3 px-4">Team</th>
-                  <th class="py-3 px-4">Tier</th>
-                  <th class="py-3 px-4">Consensus ADP</th>
-                  <th class="py-3 px-4">Value (+Sleeper/-Trap)</th>
-                  <th class="py-3 px-4">VORP</th>
-                  <th class="py-3 px-4">Proj Pts</th>
-                  <th class="py-3 px-4">Injury</th>
-                </tr>
-              </thead>
-              <tbody id="playerTableBody" class="divide-y divide-slate-100 text-slate-800 bg-white">
-                <!-- Populated dynamically via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- TAB 3: MARKET ARBITRAGE MATRIX (HIDDEN INITIALLY) -->
-      <div id="viewMarket" class="flex-1 hidden">
-        <div class="mb-4">
-          <h2 class="text-lg font-extrabold text-slate-900">📊 Market Arbitrage Matrix (ECR vs. ADP)</h2>
-          <p class="text-xs text-slate-500">🟢 Green Quadrant = Draft Steals (Experts high, Public sleeping) | 🔴 Red Quadrant = Overdrafted Traps</p>
-        </div>
-
-        <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-          <div id="scatterChart" class="w-full h-[520px]"></div>
-        </div>
-      </div>
-
-      <!-- TAB 4: POSITIONAL SCARCITY & TIERS (HIDDEN INITIALLY) -->
-      <div id="viewVorp" class="flex-1 hidden">
-        <div class="mb-4">
-          <h2 class="text-lg font-extrabold text-slate-900">🔥 Positional Scarcity & Tier Drop-off Cliffs</h2>
-          <p class="text-xs text-slate-500">Visualizes point drop-offs before your next pick to avoid missing positional tier runs.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          <div class="lg:col-span-7 bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-            <div id="vorpBoxChart" class="w-full h-[450px]"></div>
-          </div>
-          <div class="lg:col-span-5 bg-white border border-slate-200 p-5 rounded-xl shadow-sm flex flex-col justify-between">
-            <div>
-              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">Top Available per Position</h3>
-              <div id="topAvailablePosList" class="space-y-4 text-xs">
-                <!-- Injected via JS -->
-              </div>
-            </div>
-            <div class="bg-blue-50 border border-blue-200 p-3 rounded-lg text-xs text-blue-900 mt-4">
-              💡 <b>Draft Tip:</b> When a steep VORP drop is imminent at RB or WR, prioritize drafting that position before your tier cliff.
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </main>
+      <button id="closeSettingsBtn" class="bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition self-center sm:self-end">
+        ✓ Apply & Close
+      </button>
+    </div>
   </div>
 
-  <footer class="bg-white border-t border-slate-200 text-slate-500 text-center py-3.5 text-xs">
-    24H-48H NFL Injury & Draft Intelligence • Powered by DuckDB & FantasyPros MCP • 100% Free & Open-Source
+  <!-- TOP RESPONSIVE KPI METRICS BAR -->
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 px-4 sm:px-6 py-4 max-w-7xl mx-auto w-full">
+    
+    <!-- KPI 1: Top Pick -->
+    <div class="kpi-box p-3.5 sm:p-4">
+      <div class="flex justify-between items-center text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+        <span>👑 Top Pick (VORP)</span>
+        <span class="text-blue-400">RB1</span>
+      </div>
+      <div id="topVorpPlayer" class="text-base sm:text-lg font-black text-white mt-1 truncate">Jahmyr Gibbs</div>
+      <div id="topVorpStat" class="text-[11px] text-sky-400 font-semibold truncate">+153.5 VORP</div>
+    </div>
+
+    <!-- KPI 2: Top Sleeper -->
+    <div class="kpi-box p-3.5 sm:p-4">
+      <div class="flex justify-between items-center text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+        <span>💎 Top Arbitrage</span>
+        <span class="text-emerald-400">WR</span>
+      </div>
+      <div id="topSleeperPlayer" class="text-base sm:text-lg font-black text-white mt-1 truncate">Travis Hunter</div>
+      <div id="topSleeperStat" class="text-[11px] text-emerald-400 font-semibold truncate">+17.0 spots vs ADP</div>
+    </div>
+
+    <!-- KPI 3: Verified 48H Reports -->
+    <div class="kpi-box p-3.5 sm:p-4">
+      <div class="flex justify-between items-center text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+        <span>📋 Verified Wire</span>
+        <span class="text-rose-400">LIVE</span>
+      </div>
+      <div class="text-base sm:text-lg font-black text-rose-400 mt-1">20 Reports</div>
+      <div class="text-[11px] text-slate-400 truncate">Last 48 hours with URLs</div>
+    </div>
+
+    <!-- KPI 4: Exact Live Refresh Timestamp Card -->
+    <div class="kpi-box p-3.5 sm:p-4">
+      <div class="flex justify-between items-center text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+        <span>⏱️ Last Synced</span>
+        <span class="text-purple-400 font-bold">3H CRON</span>
+      </div>
+      <div id="cardTimestamp" class="text-xs sm:text-sm font-bold text-purple-300 mt-1 truncate mono">Syncing...</div>
+      <div id="draftPoolStatus" class="text-[11px] text-slate-400 font-medium truncate">0 / 497 Drafted</div>
+    </div>
+
+  </div>
+
+  <!-- NAVIGATION TABS (SMOOTH HORIZONTAL SCROLL ON MOBILE) -->
+  <div class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-1 border-b border-slate-800">
+    <div class="flex space-x-6 text-xs sm:text-sm font-bold overflow-x-auto no-scrollbar">
+      <button id="tabBtnNews" class="tab-btn pb-3 text-rose-400 border-b-2 border-rose-500 font-extrabold flex items-center gap-1.5 whitespace-nowrap">
+        <span>🚨</span> Major Injury & Practice Status (Last 2 Days)
+      </button>
+      <button id="tabBtnDraft" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>📋</span> Official ECR Draft Board (497 Players)
+      </button>
+      <button id="tabBtnMarket" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>📊</span> Market Arbitrage Matrix (ECR vs. ADP)
+      </button>
+      <button id="tabBtnVorp" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>🔥</span> Positional Scarcity & Tiers
+      </button>
+    </div>
+  </div>
+
+  <!-- TAB 1: 48H INJURY & BEAT INTELLIGENCE (DEFAULT LANDING VIEW) -->
+  <div id="viewNews" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1">
+    
+    <!-- Filter & Search Bar -->
+    <div class="flex flex-wrap justify-between items-center gap-3 mb-4 bg-slate-900/60 p-3 sm:p-3.5 rounded-2xl border border-slate-800 shadow-sm">
+      <div class="w-full sm:w-auto">
+        <h2 class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+          <span>⚡</span> Verified 48-Hour Training Camp Wire & Source Links
+        </h2>
+        <p class="text-[11px] text-slate-400">Strictly last 2 days' practice changes, injury news, and draft advice.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 items-center w-full sm:w-auto">
+        <input id="newsSearchInput" type="text" placeholder="🔍 Search News (Player, Team, Source)..." class="bg-slate-950 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500 w-full sm:w-56 shadow-inner">
+        <select id="newsCatSelect" class="bg-slate-950 border border-slate-700 text-xs text-slate-200 rounded-xl px-3 py-1.5 focus:outline-none focus:border-rose-500 w-full sm:w-auto font-semibold">
+          <option value="ALL">All Categories (20)</option>
+          <option value="RB">Running Backs</option>
+          <option value="WR">Wide Receivers</option>
+          <option value="QB">Quarterbacks</option>
+          <option value="TE">Tight Ends</option>
+          <option value="OL">Offensive Line & Defense</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- News Cards Container -->
+    <div id="newsCardsContainer" class="space-y-3.5">
+      <!-- Injected dynamically via JS -->
+    </div>
+  </div>
+
+  <!-- TAB 2: OFFICIAL DRAFT BOARD (HIDDEN INITIALLY) -->
+  <div id="viewDraft" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1 hidden">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="p-3.5 border-b border-slate-800 flex flex-wrap gap-3 items-center justify-between bg-slate-900/90">
+        <div class="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+          <input id="searchInput" type="text" placeholder="🔍 Search Player or Team..." class="bg-slate-950 border border-slate-700 px-3.5 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-blue-500 w-full sm:w-60 shadow-inner">
+          
+          <div class="flex flex-wrap gap-1" id="posFilterBtns">
+            <button data-pos="ALL" class="pos-btn bg-blue-600 text-white px-2.5 sm:px-3 py-1 rounded-lg text-xs font-bold shadow-sm">ALL</button>
+            <button data-pos="QB" class="pos-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-semibold">QB</button>
+            <button data-pos="RB" class="pos-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-semibold">RB</button>
+            <button data-pos="WR" class="pos-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-semibold">WR</button>
+            <button data-pos="TE" class="pos-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-semibold">TE</button>
+            <button data-pos="DST" class="pos-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-semibold">DST</button>
+            <button data-pos="K" class="pos-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-semibold">K</button>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-400 font-semibold">
+          Showing <span id="visibleCount" class="font-bold text-white">0</span> players
+        </div>
+      </div>
+
+      <!-- Fluid Table Container -->
+      <div class="overflow-x-auto max-h-[600px]">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-950 text-slate-400 font-bold sticky top-0 uppercase tracking-wider border-b border-slate-800 z-10">
+            <tr>
+              <th class="py-3 px-3 sm:px-4">Action</th>
+              <th class="py-3 px-3 sm:px-4">Overall ECR</th>
+              <th class="py-3 px-3 sm:px-4">Player</th>
+              <th class="py-3 px-3 sm:px-4">Pos Rank</th>
+              <th class="py-3 px-3 sm:px-4">Team</th>
+              <th class="py-3 px-3 sm:px-4">Tier</th>
+              <th class="py-3 px-3 sm:px-4">ADP</th>
+              <th class="py-3 px-3 sm:px-4">Value (+Sleeper/-Trap)</th>
+              <th class="py-3 px-3 sm:px-4">VORP</th>
+              <th class="py-3 px-3 sm:px-4">Proj Pts</th>
+              <th class="py-3 px-3 sm:px-4">Status</th>
+            </tr>
+          </thead>
+          <tbody id="playerTableBody" class="divide-y divide-slate-800/80 text-slate-200">
+            <!-- Populated dynamically via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: MARKET ARBITRAGE MATRIX (HIDDEN INITIALLY) -->
+  <div id="viewMarket" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1 hidden">
+    <div class="bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-2xl">
+      <div class="flex justify-between items-center mb-3">
+        <div>
+          <h2 class="text-sm sm:text-base font-bold text-white">📊 Market Arbitrage Matrix (ECR vs. ADP)</h2>
+          <p class="text-xs text-slate-400">Green Zone = Draft Steals (High ECR / Low ADP) | Red Zone = Overdrafted Traps</p>
+        </div>
+      </div>
+      <div id="scatterChart" class="w-full h-[450px] sm:h-[540px]"></div>
+    </div>
+  </div>
+
+  <!-- TAB 4: POSITIONAL SCARCITY & TIERS (HIDDEN INITIALLY) -->
+  <div id="viewVorp" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1 hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
+      <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-2xl">
+        <h3 class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-2">🔥 Point Drop-off Cliffs (VORP)</h3>
+        <div id="vorpBoxChart" class="w-full h-[380px] sm:h-[450px]"></div>
+      </div>
+      <div class="lg:col-span-5 bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-2xl flex flex-col justify-between">
+        <div>
+          <h3 class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-3">Top Available per Position</h3>
+          <div id="topAvailablePosList" class="space-y-3 text-xs">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+        <div class="bg-blue-950/80 border border-blue-800 p-3 rounded-xl text-xs text-blue-300 mt-4">
+          💡 <b>Draft Tip:</b> When a steep VORP drop is imminent at RB or WR, prioritize drafting that position before your tier cliff.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-500 text-center py-4 text-xs mt-auto">
+    48H NFL Injury & Draft Intelligence • Powered by DuckDB & FantasyPros MCP • 100% Free & Open-Source
   </footer>
 
   <!-- App Script -->
@@ -522,7 +486,11 @@
         const resp = await fetch('draft_data.json');
         const data = await resp.json();
         rawPlayers = data.players || [];
-        document.getElementById('snapshotTimeLabel').textContent = data.metadata.snapshot_time || '3-Hour Sync';
+        
+        // Format and render timestamps
+        const rawTime = data.metadata.snapshot_time || 'Recent';
+        document.getElementById('headerTimestamp').textContent = rawTime;
+        document.getElementById('cardTimestamp').textContent = rawTime;
       } catch (err) {
         console.warn('Loading fallback data...', err);
       }
@@ -537,8 +505,6 @@
       const rbBaselineRank = leagueTeams * 2;
       const wrBaselineRank = leagueTeams * 3;
       const teBaselineRank = leagueTeams;
-
-      document.getElementById('baselineLabel').textContent = `Baseline: RB${rbBaselineRank} / WR${wrBaselineRank} / QB${qbBaselineRank}`;
 
       // Calculate dynamic baselines
       const baselines = {
@@ -574,14 +540,13 @@
       if (available.length > 0) {
         const topVorp = [...available].sort((a,b) => b.dynamic_vorp - a.dynamic_vorp)[0];
         document.getElementById('topVorpPlayer').textContent = topVorp.player_name;
-        document.getElementById('topVorpStat').textContent = `+${topVorp.dynamic_vorp} pts over replacement (${topVorp.positional_rank || topVorp.position})`;
+        document.getElementById('topVorpStat').textContent = `+${topVorp.dynamic_vorp} VORP (${topVorp.positional_rank || topVorp.position})`;
 
         const topSleeper = [...available].sort((a,b) => b.arbitrage_delta - a.arbitrage_delta)[0];
         document.getElementById('topSleeperPlayer').textContent = topSleeper.player_name;
-        document.getElementById('topSleeperStat').textContent = `+${topSleeper.arbitrage_delta} spots vs ADP value`;
+        document.getElementById('topSleeperStat').textContent = `+${topSleeper.arbitrage_delta} spots vs ADP`;
       }
       document.getElementById('draftPoolStatus').textContent = `${draftedSet.size} / ${rawPlayers.length} Drafted`;
-      document.getElementById('draftedCountBadge').textContent = draftedSet.size;
     }
 
     function renderNews() {
@@ -601,39 +566,39 @@
       });
 
       container.innerHTML = filtered.map(item => {
-        let cardClass = "news-info";
-        let badgeClass = "badge-info";
+        let cardClass = "card-info";
+        let badgeClass = "bg-blue-950 text-blue-300 border border-blue-700";
         if (item.type === 'critical') {
-          cardClass = "news-critical";
-          badgeClass = "badge-critical";
+          cardClass = "card-critical";
+          badgeClass = "bg-rose-950 text-rose-200 border border-rose-700";
         } else if (item.type === 'warning') {
-          cardClass = "news-warning";
-          badgeClass = "badge-warning";
+          cardClass = "card-warning";
+          badgeClass = "bg-amber-950 text-amber-200 border border-amber-700";
         } else if (item.type === 'positive') {
-          cardClass = "news-positive";
-          badgeClass = "badge-positive";
+          cardClass = "card-positive";
+          badgeClass = "bg-emerald-950 text-emerald-200 border border-emerald-700";
         }
 
         return `
-          <div class="news-card ${cardClass}">
-            <div class="flex justify-between items-center mb-1.5">
+          <div class="${cardClass} p-4 sm:p-5 rounded-2xl shadow-xl transition duration-150 hover:-translate-y-0.5 border border-slate-800">
+            <div class="flex justify-between items-center mb-2">
               <div>
-                <span class="text-base font-extrabold text-slate-900">#${item.id} ${item.player}</span>
-                <span class="text-xs text-slate-500 ml-2 font-bold mono">(${item.pos} - ${item.team})</span>
+                <span class="text-sm sm:text-base font-extrabold text-white">#${item.id} ${item.player}</span>
+                <span class="text-xs text-slate-400 ml-2 font-bold mono">(${item.pos} - ${item.team})</span>
               </div>
-              <span class="badge ${badgeClass}">${item.badge}</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-extrabold tracking-wider ${badgeClass}">${item.badge}</span>
             </div>
-            <div class="text-sm font-bold text-slate-800 mb-1.5">
+            <div class="text-xs sm:text-sm font-bold text-slate-100 mb-1.5 leading-snug">
               ${item.headline}
             </div>
-            <p class="text-xs text-slate-600 leading-relaxed mb-2.5">
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">
               ${item.details}
             </p>
-            <div class="strategy-box">
-              <b>${item.impact}</b>
+            <div class="bg-slate-950/80 p-2.5 sm:p-3 rounded-xl border border-slate-800 text-xs mb-2">
+              <span class="text-amber-300 font-bold">${item.impact}</span>
             </div>
-            <div class="text-[12px] text-slate-500 text-right mt-1.5">
-              📡 Source: <a href="${item.source_url}" target="_blank" class="text-blue-600 font-bold hover:underline">🔗 ${item.source_name}</a>
+            <div class="text-[11px] sm:text-xs text-slate-400 text-right">
+              📡 Source: <a href="${item.source_url}" target="_blank" class="text-blue-400 font-bold hover:underline">🔗 ${item.source_name}</a>
             </div>
           </div>
         `;
@@ -654,30 +619,30 @@
 
       tbody.innerHTML = available.map(p => {
         const isDrafted = draftedSet.has(p.player_id);
-        const deltaColor = p.arbitrage_delta > 5 ? 'text-emerald-600 font-extrabold' : (p.arbitrage_delta < -5 ? 'text-rose-600 font-bold' : 'text-slate-600');
+        const deltaColor = p.arbitrage_delta > 5 ? 'text-emerald-400 font-extrabold' : (p.arbitrage_delta < -5 ? 'text-rose-400' : 'text-slate-400');
         const injuryTag = p.current_injury_status !== 'Healthy' 
-          ? `<span class="bg-rose-100 text-rose-800 px-2 py-0.5 rounded font-bold border border-rose-300">${p.current_injury_status}</span>` 
-          : `<span class="text-slate-400 font-medium">OK</span>`;
+          ? `<span class="bg-rose-950 text-rose-300 px-2 py-0.5 rounded font-bold border border-rose-800">${p.current_injury_status}</span>` 
+          : `<span class="text-slate-500 font-medium">OK</span>`;
         
-        const vorpColor = p.dynamic_vorp > 80 ? 'text-blue-700 font-black' : (p.dynamic_vorp > 0 ? 'text-blue-600 font-bold' : 'text-slate-500');
+        const vorpColor = p.dynamic_vorp > 80 ? 'text-blue-400 font-black' : (p.dynamic_vorp > 0 ? 'text-blue-400 font-bold' : 'text-slate-500');
 
         return `
-          <tr class="hover:bg-slate-50 cursor-pointer transition ${isDrafted ? 'drafted-row' : ''}" onclick="toggleDraft('${p.player_id}')">
-            <td class="py-2.5 px-4">
-              <button class="px-2.5 py-0.5 rounded text-[11px] font-bold ${isDrafted ? 'bg-slate-300 text-slate-600' : 'bg-blue-600 hover:bg-blue-700 text-white shadow-sm'}">
+          <tr class="hover:bg-slate-800/60 cursor-pointer transition ${isDrafted ? 'drafted-row' : ''}" onclick="toggleDraft('${p.player_id}')">
+            <td class="py-2.5 px-3 sm:px-4">
+              <button class="px-2.5 py-0.5 rounded text-[11px] font-bold ${isDrafted ? 'bg-slate-700 text-slate-400' : 'bg-blue-600 hover:bg-blue-500 text-white shadow-sm'}">
                 ${isDrafted ? 'Drafted' : 'Draft'}
               </button>
             </td>
-            <td class="py-2.5 px-4 font-extrabold text-blue-600 mono">#${p.ecr_rank}</td>
-            <td class="py-2.5 px-4 font-bold text-slate-900 text-sm">${p.player_name}</td>
-            <td class="py-2.5 px-4 mono font-bold text-slate-700">${p.positional_rank || p.position}</td>
-            <td class="py-2.5 px-4 text-slate-600 font-semibold">${p.team}</td>
-            <td class="py-2.5 px-4 text-slate-600 font-medium">Tier ${p.tier}</td>
-            <td class="py-2.5 px-4 text-slate-500 mono">${p.adp_rank}</td>
-            <td class="py-2.5 px-4 mono ${deltaColor}">${p.arbitrage_delta > 0 ? '+' : ''}${p.arbitrage_delta}</td>
-            <td class="py-2.5 px-4 mono ${vorpColor}">+${p.dynamic_vorp}</td>
-            <td class="py-2.5 px-4 text-slate-700 mono">${p.projected_fantasy_points}</td>
-            <td class="py-2.5 px-4">${injuryTag}</td>
+            <td class="py-2.5 px-3 sm:px-4 font-extrabold text-blue-400 mono">#${p.ecr_rank}</td>
+            <td class="py-2.5 px-3 sm:px-4 font-bold text-white text-xs sm:text-sm">${p.player_name}</td>
+            <td class="py-2.5 px-3 sm:px-4 mono font-bold text-slate-300">${p.positional_rank || p.position}</td>
+            <td class="py-2.5 px-3 sm:px-4 text-slate-400 font-semibold">${p.team}</td>
+            <td class="py-2.5 px-3 sm:px-4 text-slate-300 font-medium">Tier ${p.tier}</td>
+            <td class="py-2.5 px-3 sm:px-4 text-slate-400 mono">${p.adp_rank}</td>
+            <td class="py-2.5 px-3 sm:px-4 mono ${deltaColor}">${p.arbitrage_delta > 0 ? '+' : ''}${p.arbitrage_delta}</td>
+            <td class="py-2.5 px-3 sm:px-4 mono ${vorpColor}">+${p.dynamic_vorp}</td>
+            <td class="py-2.5 px-3 sm:px-4 text-slate-300 mono">${p.projected_fantasy_points}</td>
+            <td class="py-2.5 px-3 sm:px-4">${injuryTag}</td>
           </tr>
         `;
       }).join('');
@@ -691,16 +656,16 @@
       container.innerHTML = posList.map(pos => {
         const top3 = available.filter(p => p.position === pos).slice(0, 3);
         const itemsHtml = top3.map(r => `
-          <li class="flex justify-between py-1 border-b border-slate-100 last:border-0">
-            <span class="font-semibold text-slate-800">${r.player_name} <span class="text-slate-400 font-normal">(${r.team})</span></span>
-            <span class="mono text-blue-600 font-bold">+${r.dynamic_vorp} VORP <span class="text-slate-400 font-normal text-[10px]">#${r.ecr_rank}</span></span>
+          <li class="flex justify-between py-1.5 border-b border-slate-800 last:border-0">
+            <span class="font-semibold text-slate-200">${r.player_name} <span class="text-slate-400 font-normal">(${r.team})</span></span>
+            <span class="mono text-blue-400 font-bold">+${r.dynamic_vorp} VORP <span class="text-slate-500 font-normal text-[10px]">#${r.ecr_rank}</span></span>
           </li>
         `).join('');
 
         return `
-          <div>
-            <div class="font-bold text-slate-900 text-xs mb-1">${pos} Rankings:</div>
-            <ul class="pl-2 space-y-0.5">${itemsHtml}</ul>
+          <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+            <div class="font-bold text-slate-200 text-xs mb-1">${pos} Leaders:</div>
+            <ul class="space-y-0.5">${itemsHtml}</ul>
           </div>
         `;
       }).join('');
@@ -730,7 +695,7 @@
       ]);
 
       const option = {
-        backgroundColor: '#ffffff',
+        backgroundColor: 'transparent',
         tooltip: {
           formatter: function (param) {
             const val = param.value;
@@ -741,18 +706,18 @@
                     VORP: +${val[5]} pts`;
           }
         },
-        grid: { left: '5%', right: '5%', top: '8%', bottom: '10%' },
+        grid: { left: '6%', right: '6%', top: '8%', bottom: '10%' },
         xAxis: {
           name: 'Market ADP (Lower is earlier)',
           inverse: true,
-          splitLine: { lineStyle: { color: '#f1f5f9' } },
-          axisLabel: { color: '#64748b' }
+          splitLine: { lineStyle: { color: '#1e293b' } },
+          axisLabel: { color: '#94a3b8' }
         },
         yAxis: {
           name: 'Expert Rank (ECR)',
           inverse: true,
-          splitLine: { lineStyle: { color: '#f1f5f9' } },
-          axisLabel: { color: '#64748b' }
+          splitLine: { lineStyle: { color: '#1e293b' } },
+          axisLabel: { color: '#94a3b8' }
         },
         visualMap: {
           min: -15,
@@ -782,19 +747,19 @@
       }).flat();
 
       const option = {
-        title: { text: 'Value Over Replacement (VORP) by Position', textStyle: { fontSize: 13, fontWeight: 'bold' } },
+        backgroundColor: 'transparent',
         tooltip: {
           formatter: function (p) {
             return `<b>${p.value[2]}</b><br/>Pos: ${p.value[0]}<br/>VORP: +${p.value[1]} pts`;
           }
         },
-        grid: { left: '8%', right: '5%', top: '15%', bottom: '10%' },
-        xAxis: { type: 'category', data: positions, axisLabel: { fontWeight: 'bold' } },
-        yAxis: { name: 'VORP Points', splitLine: { lineStyle: { color: '#f1f5f9' } } },
+        grid: { left: '8%', right: '5%', top: '10%', bottom: '10%' },
+        xAxis: { type: 'category', data: positions, axisLabel: { color: '#94a3b8', fontWeight: 'bold' } },
+        yAxis: { name: 'VORP Points', splitLine: { lineStyle: { color: '#1e293b' } }, axisLabel: { color: '#94a3b8' } },
         series: [{
           type: 'scatter',
           symbolSize: 8,
-          itemStyle: { color: '#3b82f6' },
+          itemStyle: { color: '#38bdf8' },
           data: seriesData
         }]
       };
@@ -818,12 +783,21 @@
       document.getElementById(viewId).classList.remove('hidden');
 
       document.querySelectorAll('.tab-btn').forEach(b => {
-        b.classList.remove('text-rose-600', 'border-b-2', 'border-rose-600', 'font-extrabold');
-        b.classList.add('text-slate-500');
+        b.classList.remove('text-rose-400', 'border-b-2', 'border-rose-500', 'font-extrabold');
+        b.classList.add('text-slate-400');
       });
-      document.getElementById(btnId).classList.add('text-rose-600', 'border-b-2', 'border-rose-600', 'font-extrabold');
-      document.getElementById(btnId).classList.remove('text-slate-500');
+      document.getElementById(btnId).classList.add('text-rose-400', 'border-b-2', 'border-rose-500', 'font-extrabold');
+      document.getElementById(btnId).classList.remove('text-slate-400');
     }
+
+    // Settings Toggle
+    document.getElementById('toggleSettingsBtn').addEventListener('click', () => {
+      document.getElementById('settingsDrawer').classList.toggle('hidden');
+    });
+    document.getElementById('closeSettingsBtn').addEventListener('click', () => {
+      document.getElementById('settingsDrawer').classList.add('hidden');
+      recalcAndRender();
+    });
 
     // Event Listeners
     document.getElementById('leagueTeamsSelect').addEventListener('change', recalcAndRender);
@@ -842,10 +816,10 @@
       btn.addEventListener('click', (e) => {
         document.querySelectorAll('.pos-btn').forEach(b => {
           b.classList.remove('bg-blue-600', 'text-white');
-          b.classList.add('bg-slate-200', 'text-slate-700');
+          b.classList.add('bg-slate-800', 'text-slate-300');
         });
         e.target.classList.add('bg-blue-600', 'text-white');
-        e.target.classList.remove('bg-slate-200', 'text-slate-700');
+        e.target.classList.remove('bg-slate-800', 'text-slate-300');
         selectedPos = e.target.getAttribute('data-pos');
         renderTable();
       });
