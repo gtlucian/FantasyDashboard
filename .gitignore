@@ -1,0 +1,14 @@
+# Secrets & Env
+.env
+*.env
+__pycache__/
+*.pyc
+
+# Temporary staging DB
+draft_vault_staging.duckdb
+draft_vault_staging.duckdb.wal
+
+# OS files
+.DS_Store
+.vscode/
+.idea/

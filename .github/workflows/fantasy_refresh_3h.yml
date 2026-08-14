@@ -1,0 +1,38 @@
+name: 3-Hour FantasyPros MCP Refresh Pipeline
+on:
+  schedule:
+    # Runs automatically every 3 hours (UTC 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00)
+    - cron: '0 */3 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+
+jobs:
+  refresh-draft-intelligence:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Ingestion Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install duckdb httpx pandas
+
+      - name: Execute 3-Hour Ingestion & DuckDB Transformation
+        run: |
+          python pipeline.py
+
+      - name: Commit & Push Updated Snapshots
+        run: |
+          git config --global user.name 'Draft-Bot'
+          git config --global user.email 'draft-bot@users.noreply.github.com'
+          git add draft_vault.duckdb draft_data.json
+          git commit -m "Auto-refresh draft data [3-Hour Cycle: $(date -u +'%Y-%m-%d %H:%M:%S UTC')] [skip ci]" || echo "No data changes to commit."
+          git push

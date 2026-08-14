@@ -1,0 +1,74 @@
+name: Deploy Mobile Web App to GitHub Pages (3-Hour Refresh)
+
+on:
+  schedule:
+    # Runs every 3 hours automatically
+    - cron: '0 */3 * * *'
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages and repo writes
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build-and-refresh:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Ingestion Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install duckdb httpx pandas
+
+      - name: Execute Live 3-Hour Ingestion Pipeline
+        env:
+          FP_SESSION_TOKEN: ${{ secrets.FP_SESSION_TOKEN }}
+        run: |
+          python pipeline.py
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare Pages Deployment Directory
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp draft_data.json _site/draft_data.json
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Commit & Push Updated Snapshots to Repository
+        run: |
+          git config --global user.name 'DraftBot'
+          git config --global user.email 'draftbot@users.noreply.github.com'
+          git add draft_vault.duckdb draft_data.json
+          git commit -m "Auto-refresh draft intelligence [3-Hour Cycle] [skip ci]" || echo "No data changes to commit."
+          git push || echo "Push skipped"
