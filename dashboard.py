@@ -15,13 +15,13 @@ from datetime import datetime
 
 # Page Configuration
 st.set_page_config(
-    page_title="24H-48H NFL Injury & Draft Radar | FantasyPros",
+    page_title="48H NFL Injury & Draft Radar | FantasyPros",
     page_icon="🚨",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom Spiffy CSS Styling for High-End UI
+# Custom Sleek Dark-Mode CSS Styling
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
@@ -32,11 +32,11 @@ st.markdown("""
 
     /* KPI Cards */
     .kpi-container {
-        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        border: 1px solid #334155;
-        border-radius: 12px;
+        background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+        border: 1px solid #1e293b;
+        border-radius: 14px;
         padding: 16px 20px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
         transition: transform 0.2s ease, border-color 0.2s ease;
     }
     .kpi-container:hover {
@@ -44,8 +44,8 @@ st.markdown("""
         border-color: #3b82f6;
     }
     .kpi-title {
-        font-size: 0.8rem;
-        font-weight: 600;
+        font-size: 0.78rem;
+        font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         color: #94a3b8;
@@ -63,35 +63,34 @@ st.markdown("""
         margin-top: 2px;
     }
 
-    /* Breaking News Cards */
+    /* Breaking News Cards (Dark Theme) */
     .news-card {
-        background: #ffffff;
-        border-radius: 12px;
+        border-radius: 14px;
         padding: 18px 22px;
         margin-bottom: 14px;
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        border: 1px solid #1e293b;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
         transition: all 0.2s ease-in-out;
     }
     .news-card:hover {
-        box-shadow: 0 8px 16px -4px rgba(0,0,0,0.08);
         transform: translateY(-1px);
+        border-color: #334155;
     }
     .news-critical {
+        background: linear-gradient(135deg, #2b0b0e 0%, #0f172a 100%);
         border-left: 6px solid #ef4444;
-        background: linear-gradient(to right, #fff5f5 0%, #ffffff 15%);
     }
     .news-warning {
+        background: linear-gradient(135deg, #2c1a07 0%, #0f172a 100%);
         border-left: 6px solid #f59e0b;
-        background: linear-gradient(to right, #fffbeb 0%, #ffffff 15%);
     }
     .news-positive {
+        background: linear-gradient(135deg, #062e22 0%, #0f172a 100%);
         border-left: 6px solid #10b981;
-        background: linear-gradient(to right, #f0fdf4 0%, #ffffff 15%);
     }
     .news-info {
+        background: linear-gradient(135deg, #0b223d 0%, #0f172a 100%);
         border-left: 6px solid #3b82f6;
-        background: linear-gradient(to right, #f0f9ff 0%, #ffffff 15%);
     }
 
     /* Badges */
@@ -99,32 +98,32 @@ st.markdown("""
         display: inline-block;
         padding: 3px 10px;
         font-size: 0.72rem;
-        font-weight: 700;
+        font-weight: 800;
         border-radius: 9999px;
         letter-spacing: 0.03em;
         text-transform: uppercase;
     }
-    .badge-critical { background-color: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
-    .badge-warning { background-color: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
-    .badge-positive { background-color: #dcfce7; color: #166534; border: 1px solid #86efac; }
-    .badge-info { background-color: #e0f2fe; color: #075985; border: 1px solid #7dd3fc; }
+    .badge-critical { background-color: #450a0a; color: #fca5a5; border: 1px solid #7f1d1d; }
+    .badge-warning { background-color: #451a03; color: #fcd34d; border: 1px solid #78350f; }
+    .badge-positive { background-color: #022c22; color: #86efac; border: 1px solid #065f46; }
+    .badge-info { background-color: #082f49; color: #7dd3fc; border: 1px solid #075985; }
 
     /* Action Strategy Box */
     .strategy-box {
-        background-color: #f8fafc;
-        border: 1px dashed #cbd5e1;
-        border-radius: 8px;
+        background-color: rgba(2, 6, 23, 0.75);
+        border: 1px solid #1e293b;
+        border-radius: 10px;
         padding: 10px 14px;
         margin-top: 10px;
         margin-bottom: 8px;
         font-size: 0.88rem;
-        color: #0f172a;
+        color: #f8fafc;
         line-height: 1.45;
     }
     .source-link {
-        color: #2563eb;
+        color: #60a5fa;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 700;
     }
     .source-link:hover {
         text-decoration: underline;
@@ -520,13 +519,13 @@ df_available["dynamic_vorp"] = df_available.apply(
     axis=1
 )
 
-# ----------------- TOP SPIFFY HEADER -----------------
-st.title("🚨 24H-48H NFL Injury & Draft Intelligence Platform")
+# ----------------- TOP SPIFFY HEADER WITH EXACT TIMESTAMP -----------------
+st.title("🚨 48H NFL Beat & Draft Intelligence Platform")
 last_updated = df_raw.iloc[0].get("last_updated", "Recent")
 st.markdown(f"""
-<div style="background: linear-gradient(90deg, #1e3a8a 0%, #0f172a 100%); border: 1px solid #3b82f6; padding: 10px 18px; border-radius: 8px; margin-bottom: 18px; font-size: 0.9rem; color: #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
-    <div>🕒 <b>Live Data Freshness:</b> Synchronized with FantasyPros • <b>Last 3-Hour Cycle:</b> <code>{last_updated}</code></div>
-    <div><span style="background-color: #10b981; color: #064e3b; padding: 2px 8px; border-radius: 9999px; font-weight: 700; font-size: 0.75rem;">🟢 48H VERIFIED BEAT WIRE ACTIVE</span></div>
+<div style="background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%); border: 1px solid #334155; padding: 10px 18px; border-radius: 10px; margin-bottom: 18px; font-size: 0.9rem; color: #e2e8f0; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);">
+    <div>🕒 <b>Last Data Refresh:</b> <code>{last_updated}</code> • <b>Cadence:</b> Automated 3-Hour Cycle</div>
+    <div><span style="background-color: #064e3b; color: #34d399; border: 1px solid #059669; padding: 3px 10px; border-radius: 9999px; font-weight: 800; font-size: 0.75rem;">🟢 LIVE WIRE ACTIVE</span></div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -541,7 +540,7 @@ with k1:
     <div class="kpi-container">
         <div class="kpi-title">👑 Top Available Pick (VORP)</div>
         <div class="kpi-value">{top_avail_vorp['player_name'] if top_avail_vorp is not None else 'N/A'}</div>
-        <div class="kpi-sub">+{top_avail_vorp['dynamic_vorp'] if top_avail_vorp is not None else 0} pts over replacement ({top_avail_vorp['positional_rank'] if top_avail_vorp is not None else ''})</div>
+        <div class="kpi-sub">+{top_avail_vorp['dynamic_vorp'] if top_avail_vorp is not None else 0} VORP ({top_avail_vorp['positional_rank'] if top_avail_vorp is not None else ''})</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -631,21 +630,21 @@ with tab_news:
         <div class="{card_class}">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
                 <div>
-                    <span style="font-size: 1.15rem; font-weight: 800; color: #0f172a;">#{item['id']} {item['player']}</span>
-                    <span style="font-size: 0.9rem; color: #64748b; margin-left: 6px; font-weight: 700;">({item['pos']} - {item['team']})</span>
+                    <span style="font-size: 1.15rem; font-weight: 800; color: #f8fafc;">#{item['id']} {item['player']}</span>
+                    <span style="font-size: 0.9rem; color: #94a3b8; margin-left: 6px; font-weight: 700;">({item['pos']} - {item['team']})</span>
                 </div>
                 <span class="{badge_class}">{item['badge']}</span>
             </div>
-            <div style="font-size: 1.02rem; font-weight: 700; color: #1e293b; margin-bottom: 6px;">
+            <div style="font-size: 1.02rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">
                 {item['headline']}
             </div>
-            <div style="font-size: 0.92rem; color: #334155; line-height: 1.5; margin-bottom: 8px;">
+            <div style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 8px;">
                 {item['details']}
             </div>
             <div class="strategy-box">
                 <b>{item['draft_impact']}</b>
             </div>
-            <div style="font-size: 0.8rem; color: #64748b; text-align: right; margin-top: 6px;">
+            <div style="font-size: 0.8rem; color: #94a3b8; text-align: right; margin-top: 6px;">
                 📡 Source: <a href="{item['source_url']}" target="_blank" class="source-link">🔗 {item['source_name']}</a>
             </div>
         </div>
@@ -756,7 +755,8 @@ with tab_market:
     fig.update_layout(
         yaxis=dict(autorange="reversed", title="Expert Rank (Lower is Better)"),
         xaxis=dict(autorange="reversed", title="Market ADP (Lower is Better)"),
-        margin=dict(l=20, r=20, t=30, b=20)
+        margin=dict(l=20, r=20, t=30, b=20),
+        template="plotly_dark"
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -776,7 +776,8 @@ with tab_vorp:
             points="all",
             hover_name="player_name",
             labels={"dynamic_vorp": "Value Over Replacement (VORP)", "position": "Position"},
-            height=480
+            height=480,
+            template="plotly_dark"
         )
         st.plotly_chart(fig_box, use_container_width=True)
     
