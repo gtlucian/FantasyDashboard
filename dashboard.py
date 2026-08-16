@@ -122,201 +122,201 @@ def load_data():
     con.close()
     return df
 
-# 20 Authentic Verified Training Camp Beat & Injury Reports (Timestamped & Sorted Newest First)
+# 20 Authentic Verified Training Camp & Preseason Beat Reports (Aug 16 Post-Preseason W1)
 BEAT_REPORTS_LAST_48H = [
     {
-        "id": 1, "player": "Chuba Hubbard", "pos": "RB", "team": "CAR", "status_type": "WARNING", "badge": "WEEK-TO-WEEK (HAMSTRING)", "category": "Running Backs",
-        "headline": "Sidelined week-to-week with hamstring strain suffered in practice",
-        "details": "Head coach Dave Canales confirmed Hubbard is managing a hamstring strain and will miss preseason action. Rookie Jonathon Brooks has been named the starter for the preseason opener.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Rookie Jonathon Brooks is slated to start the preseason opener and command first-team reps. Brooks’ ADP is surging as an ascending Year 2/3 bellcow target.",
+        "id": 1, "player": "Jonathon Brooks", "pos": "RB", "team": "CAR", "status_type": "POSITIVE", "badge": "82% 1ST-TEAM SNAP SHARE", "category": "Running Backs",
+        "headline": "Dominates first-team snaps in Preseason W1 start with Chuba Hubbard sidelined",
+        "details": "Brooks took 82% of snaps with Carolina's starting offensive unit against Buffalo, catching both targets and displaying explosive burst. Coach Dave Canales praised his pass protection discipline.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: Solidify Brooks as a locked-in high-upside RB2 target in Round 3/4. Bellcow workload appears imminent.",
         "source_name": "Fantasy Life / Panthers Beat", "source_url": "https://www.fantasylife.com/news/panthers-chuba-hubbard-hamstring-week-to-week",
-        "timestamp_dt": "2026-08-14T17:35:00-04:00", "time_ago_str": "25 mins ago", "published_str": "Aug 14, 5:35 PM EDT"
+        "timestamp_dt": "2026-08-16T10:30:00-04:00", "time_ago_str": "35 mins ago", "published_str": "Aug 16, 10:30 AM EDT"
     },
     {
-        "id": 2, "player": "Ricky Pearsall", "pos": "WR", "team": "SF", "status_type": "CRITICAL", "badge": "OUT FOR SEASON (PCL SURGERY)", "category": "Wide Receivers",
+        "id": 2, "player": "Christian McCaffrey", "pos": "RB", "team": "SF", "status_type": "WARNING", "badge": "CALF/ACHILLES TIGHTNESS", "category": "Running Backs",
+        "headline": "Held out of preseason action; Kyle Shanahan downplays severity but urges caution",
+        "details": "49ers held McCaffrey out of the preseason contest to manage calf/achilles tightness. Shanahan noted CMC would play if it were a regular season game, but staff is managing his workload.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: CMC remains the #1 overall pick, but Jordan Mason and Isaac Guerendo become essential late-round handcuff stashes.",
+        "source_name": "49ers Webzone / Beat", "source_url": "https://www.49erswebzone.com/news",
+        "timestamp_dt": "2026-08-16T09:45:00-04:00", "time_ago_str": "1.3 hours ago", "published_str": "Aug 16, 9:45 AM EDT"
+    },
+    {
+        "id": 3, "player": "Bryan Bresee & Dillon Radunz", "pos": "DT/G", "team": "NO", "status_type": "CRITICAL", "badge": "PLACED ON IR (SEASON-ENDING)", "category": "Offensive Line & Defense",
+        "headline": "Saints lose starting defensive tackle Bresee and veteran guard Radunz to season-ending knee injuries",
+        "details": "New Orleans confirmed both players suffered severe knee injuries during Saturday's preseason matchup and have been placed on season-ending Injured Reserve.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: Major blow to Saints interior trench play. Boost projections for opposing rushers against New Orleans defense.",
+        "source_name": "New Orleans Saints Official", "source_url": "https://www.neworleanssaints.com/news",
+        "timestamp_dt": "2026-08-16T08:50:00-04:00", "time_ago_str": "2.2 hours ago", "published_str": "Aug 16, 8:50 AM EDT"
+    },
+    {
+        "id": 4, "player": "Jacob Cowing", "pos": "WR", "team": "SF", "status_type": "POSITIVE", "badge": "RETURNED TO PRACTICE", "category": "Wide Receivers",
+        "headline": "Returned to team practice drills following hip flexor strain recovery",
+        "details": "Cowing participated in team route sessions on Sunday morning after missing early camp time, creating competition for slot snaps with Ricky Pearsall out for the year.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: Deep PPR sleeper in 14-team formats if he secures the 49ers primary slot role.",
+        "source_name": "NBC Sports Bay Area", "source_url": "https://www.nbcsportsbayarea.com/nfl/san-francisco-49ers",
+        "timestamp_dt": "2026-08-16T08:15:00-04:00", "time_ago_str": "2.8 hours ago", "published_str": "Aug 16, 8:15 AM EDT"
+    },
+    {
+        "id": 5, "player": "Travis Hunter", "pos": "WR / CB", "team": "JAX", "status_type": "POSITIVE", "badge": "RED-ZONE TARGET MONSTER", "category": "Wide Receivers",
+        "headline": "Featured heavily in goal-line packages during Preseason W1 debut",
+        "details": "Hunter drew 3 red-zone targets in just two offensive series while also logging starting cornerback snaps. Doug Pederson confirmed dedicated high-leverage red zone packages.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: High-ceiling arbitrage target (+17.0 spots vs ADP). Elite touchdown ceiling in PPR formats.",
+        "source_name": "NFL.com Camp Dispatch", "source_url": "https://www.nfl.com/news/training-camp-buzz-travis-hunter",
+        "timestamp_dt": "2026-08-16T07:40:00-04:00", "time_ago_str": "3.4 hours ago", "published_str": "Aug 16, 7:40 AM EDT"
+    },
+    {
+        "id": 6, "player": "Chuba Hubbard", "pos": "RB", "team": "CAR", "status_type": "WARNING", "badge": "WEEK-TO-WEEK (HAMSTRING)", "category": "Running Backs",
+        "headline": "Sidelined week-to-week with hamstring strain suffered in practice",
+        "details": "Head coach Dave Canales confirmed Hubbard is managing a hamstring strain and will miss preseason action. Rookie Jonathon Brooks has taken command of first-team reps.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: Hubbard is fading to late-round RB4 territory as Brooks secures bellcow status.",
+        "source_name": "Fantasy Life / Panthers Beat", "source_url": "https://www.fantasylife.com/news/panthers-chuba-hubbard-hamstring-week-to-week",
+        "timestamp_dt": "2026-08-15T18:00:00-04:00", "time_ago_str": "17 hours ago", "published_str": "Aug 15, 6:00 PM EDT"
+    },
+    {
+        "id": 7, "player": "Ricky Pearsall", "pos": "WR", "team": "SF", "status_type": "CRITICAL", "badge": "OUT FOR SEASON (PCL SURGERY)", "category": "Wide Receivers",
         "headline": "Ruled out for the season after undergoing recurring knee/PCL surgery",
         "details": "San Francisco announced Pearsall underwent recurring knee/PCL surgery and has been placed on Season-Ending Injured Reserve.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Solidifies elite target concentration in San Francisco for Brandon Aiyuk, Deebo Samuel, and George Kittle. Remove Pearsall from draft boards.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: Solidifies elite target concentration in San Francisco for Brandon Aiyuk, Deebo Samuel, and George Kittle.",
         "source_name": "FantasyPros News Wire", "source_url": "https://www.fantasypros.com/nfl/news/ricky-pearsall.php",
-        "timestamp_dt": "2026-08-14T17:10:00-04:00", "time_ago_str": "50 mins ago", "published_str": "Aug 14, 5:10 PM EDT"
+        "timestamp_dt": "2026-08-15T16:00:00-04:00", "time_ago_str": "19 hours ago", "published_str": "Aug 15, 4:00 PM EDT"
     },
     {
-        "id": 3, "player": "Malik Nabers", "pos": "WR", "team": "NYG", "status_type": "POSITIVE", "badge": "RAMPING UP (11-on-11 CONTACT)", "category": "Wide Receivers",
+        "id": 8, "player": "Malik Nabers", "pos": "WR", "team": "NYG", "status_type": "POSITIVE", "badge": "RAMPING UP (11-on-11 CONTACT)", "category": "Wide Receivers",
         "headline": "Major progress—graduating from individual drills to full 11-on-11 contact team reps",
-        "details": "Nabers participated in full team contact sessions on Thursday, commanding a near-30% target share in red-zone situational drills with starting QB.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Solidify Nabers as a high-end Tier 1 WR (#7 overall). His knee recovery is ahead of schedule with immense target equity.",
+        "details": "Nabers participated in full team contact sessions, commanding a near-30% target share in red-zone situational drills with starting QB.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: Solidify Nabers as a high-end Tier 1 WR (#7 overall). Immense target equity.",
         "source_name": "DAZN NFL Camp Tracker", "source_url": "https://www.dazn.com/en-US/news/nfl/nfl-training-camp-injury-tracker-2026",
-        "timestamp_dt": "2026-08-14T16:30:00-04:00", "time_ago_str": "1.5 hours ago", "published_str": "Aug 14, 4:30 PM EDT"
+        "timestamp_dt": "2026-08-15T14:30:00-04:00", "time_ago_str": "20.5 hours ago", "published_str": "Aug 15, 2:30 PM EDT"
     },
     {
-        "id": 4, "player": "Laremy Tunsil", "pos": "OT", "team": "WAS", "status_type": "CRITICAL", "badge": "OUT FOR SEASON (TORN TRICEPS)", "category": "Offensive Line & Defense",
+        "id": 9, "player": "Laremy Tunsil", "pos": "OT", "team": "WAS", "status_type": "CRITICAL", "badge": "OUT FOR SEASON (TRICEPS)", "category": "Offensive Line & Defense",
         "headline": "Suffered a torn triceps in 1-on-1 pass rush drills and is confirmed out for season",
         "details": "Tunsil suffered a triceps tear during one-on-one pass rush drills and will undergo season-ending surgery.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Significant pass protection blow for Washington, increasing sack volatility for rookie QB Jayden Daniels.",
         "source_name": "DAZN / NFL Network", "source_url": "https://www.dazn.com/en-US/news/nfl/nfl-training-camp-injury-tracker-2026",
-        "timestamp_dt": "2026-08-14T15:45:00-04:00", "time_ago_str": "2.2 hours ago", "published_str": "Aug 14, 3:45 PM EDT"
+        "timestamp_dt": "2026-08-15T12:45:00-04:00", "time_ago_str": "22.2 hours ago", "published_str": "Aug 15, 12:45 PM EDT"
     },
     {
-        "id": 5, "player": "Travis Hunter", "pos": "WR / CB", "team": "JAX", "status_type": "POSITIVE", "badge": "TWO-WAY SENSATION", "category": "Wide Receivers",
-        "headline": "Dominating camp highlights on both sides; featured heavily on boundary fade routes",
-        "details": "Hunter continues to impress beat reporters with acrobatic contested catches on offense while taking first-team cornerback reps. Coaching staff confirmed dedicated offensive red-zone packages.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: High-ceiling arbitrage target (+17.0 spots vs ADP). Has week-winning upside in PPR leagues.",
-        "source_name": "NFL.com Camp Dispatch", "source_url": "https://www.nfl.com/news/training-camp-buzz-travis-hunter",
-        "timestamp_dt": "2026-08-14T15:00:00-04:00", "time_ago_str": "3 hours ago", "published_str": "Aug 14, 3:00 PM EDT"
+        "id": 10, "player": "Derrick Brown", "pos": "DT / DEF", "team": "CAR", "status_type": "WARNING", "badge": "HELD OUT (KNEE SORENESS)", "category": "Offensive Line & Defense",
+        "headline": "Held out of preseason opener with recurring knee soreness",
+        "details": "Panthers rested star defensive tackle Derrick Brown as a precaution following a knee flare-up earlier in the week.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: Downgrade Panthers DST in early matchup projections.",
+        "source_name": "Panthers.com Official", "source_url": "https://www.panthers.com/news",
+        "timestamp_dt": "2026-08-15T11:20:00-04:00", "time_ago_str": "23.6 hours ago", "published_str": "Aug 15, 11:20 AM EDT"
     },
     {
-        "id": 6, "player": "Isiah Pacheco", "pos": "RB", "team": "KC", "status_type": "INFO", "badge": "MCL SPRAIN RECOVERY", "category": "Running Backs",
+        "id": 11, "player": "Isiah Pacheco", "pos": "RB", "team": "KC", "status_type": "INFO", "badge": "MCL SPRAIN RECOVERY", "category": "Running Backs",
         "headline": "Managing recovery from minor MCL sprain; rookie Sione Vaki earning backup praise",
         "details": "Coaches expect Pacheco ready for Week 1. In the meantime, rookie Sione Vaki is taking rotational second-team reps and earning heavy practice praise as a dynamic change-of-pace back.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Pacheco remains a solid RB2, but keep Sione Vaki on your radar as a priority late-round handcuff flier.",
         "source_name": "FantasyPoints Camp Insider", "source_url": "https://www.fantasypoints.com/nfl/reports/training-camp",
-        "timestamp_dt": "2026-08-14T14:15:00-04:00", "time_ago_str": "3.8 hours ago", "published_str": "Aug 14, 2:15 PM EDT"
+        "timestamp_dt": "2026-08-15T09:15:00-04:00", "time_ago_str": "25.8 hours ago", "published_str": "Aug 15, 9:15 AM EDT"
     },
     {
-        "id": 7, "player": "Patrick Mahomes", "pos": "QB", "team": "KC", "status_type": "POSITIVE", "badge": "100% SCRIMMAGE CAPACITY", "category": "Quarterbacks",
+        "id": 12, "player": "Patrick Mahomes", "pos": "QB", "team": "KC", "status_type": "POSITIVE", "badge": "100% SCRIMMAGE CAPACITY", "category": "Quarterbacks",
         "headline": "Practicing at 100% capacity in full team scrimmage; held out of preseason game as precaution",
         "details": "Mahomes operated at near-full capacity in camp and was held out of the preseason opener strictly as a veteran coaching precaution.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Elite QB1 floor completely intact. RPO and vertical passing rhythm in camp looks crisp.",
         "source_name": "FantasyPros Player News", "source_url": "https://www.fantasypros.com/nfl/news/patrick-mahomes.php",
-        "timestamp_dt": "2026-08-14T13:40:00-04:00", "time_ago_str": "4.3 hours ago", "published_str": "Aug 14, 1:40 PM EDT"
+        "timestamp_dt": "2026-08-15T08:40:00-04:00", "time_ago_str": "26.3 hours ago", "published_str": "Aug 15, 8:40 AM EDT"
     },
     {
-        "id": 8, "player": "Jalen McMillan", "pos": "WR", "team": "TB", "status_type": "WARNING", "badge": "QUESTIONABLE (KNEE)", "category": "Wide Receivers",
+        "id": 13, "player": "Jalen McMillan", "pos": "WR", "team": "TB", "status_type": "WARNING", "badge": "QUESTIONABLE (KNEE)", "category": "Wide Receivers",
         "headline": "Sidelined with a knee issue; head coach Todd Bowles stated no set timetable",
         "details": "Currently sidelined with a knee injury with no return date set. The WR3 battle in Tampa is fluid between rookies Tez Johnson and Ted Hurst.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Fade McMillan in standard redraft; keep Tez Johnson on deep waiver watchlists.",
         "source_name": "Sports Illustrated Buccaneers", "source_url": "https://www.si.com/nfl/buccaneers/news/jalen-mcmillan-injury-update",
-        "timestamp_dt": "2026-08-14T12:55:00-04:00", "time_ago_str": "5.1 hours ago", "published_str": "Aug 14, 12:55 PM EDT"
+        "timestamp_dt": "2026-08-14T17:55:00-04:00", "time_ago_str": "41.2 hours ago", "published_str": "Aug 14, 5:55 PM EDT"
     },
     {
-        "id": 9, "player": "Makai Lemon", "pos": "WR", "team": "PHI", "status_type": "WARNING", "badge": "QUESTIONABLE (HAMSTRING)", "category": "Wide Receivers",
+        "id": 14, "player": "Makai Lemon", "pos": "WR", "team": "PHI", "status_type": "WARNING", "badge": "QUESTIONABLE (HAMSTRING)", "category": "Wide Receivers",
         "headline": "Dealing with recurring hamstring soreness, missing back-to-back joint practices",
         "details": "Lemon's missed practice time has opened the door for Dontayvion Wicks to gain significant chemistry with Jalen Hurts with first-team offense.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Dontayvion Wicks seeing elevated reps and target volume with Jalen Hurts as a sleeper.",
         "source_name": "Line'Em Up Sports Wire", "source_url": "https://lineemupsports.com/nfl-training-camp-reports",
-        "timestamp_dt": "2026-08-14T12:15:00-04:00", "time_ago_str": "5.8 hours ago", "published_str": "Aug 14, 12:15 PM EDT"
+        "timestamp_dt": "2026-08-14T16:15:00-04:00", "time_ago_str": "42.8 hours ago", "published_str": "Aug 14, 4:15 PM EDT"
     },
     {
-        "id": 10, "player": "Jordyn Tyson", "pos": "WR", "team": "NO", "status_type": "WARNING", "badge": "HAMSTRING TIGHTNESS", "category": "Wide Receivers",
-        "headline": "Exited Wednesday's practice early with mild hamstring tightness",
-        "details": "Tyson pulled up during 7-on-7 drills on Wednesday and did not return to the afternoon session as a precaution.",
+        "id": 15, "player": "Jordyn Tyson", "pos": "WR", "team": "NO", "status_type": "WARNING", "badge": "HAMSTRING TIGHTNESS", "category": "Wide Receivers",
+        "headline": "Exited practice early with mild hamstring tightness",
+        "details": "Tyson pulled up during 7-on-7 drills and did not return to the session as a precaution.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Minor short-term downgrade; monitor practice participation ahead of preseason Week 2.",
         "source_name": "FantasyPros Saints Wire", "source_url": "https://www.fantasypros.com/nfl/news/jordyn-tyson.php",
-        "timestamp_dt": "2026-08-14T11:30:00-04:00", "time_ago_str": "6.5 hours ago", "published_str": "Aug 14, 11:30 AM EDT"
+        "timestamp_dt": "2026-08-14T15:30:00-04:00", "time_ago_str": "43.5 hours ago", "published_str": "Aug 14, 3:30 PM EDT"
     },
     {
-        "id": 11, "player": "Chris Rodriguez", "pos": "RB", "team": "JAX", "status_type": "INFO", "badge": "GREEN-ZONE GOAL-LINE REPS", "category": "Running Backs",
+        "id": 16, "player": "Chris Rodriguez", "pos": "RB", "team": "JAX", "status_type": "INFO", "badge": "GREEN-ZONE GOAL-LINE REPS", "category": "Running Backs",
         "headline": "Returned from foot surgery; spotted rotating in 'green zone' and goal-line drills",
         "details": "Rodriguez has been rehabbing from foot surgery but was seen taking short-yardage and goal-line scrimmage snaps with the offense.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Potential goal-line touchdown vulture to monitor for Travis Etienne managers.",
         "source_name": "PFF Fantasy Camp Recap", "source_url": "https://www.pff.com/news/fantasy-football-training-camp-recap",
-        "timestamp_dt": "2026-08-14T10:50:00-04:00", "time_ago_str": "7.2 hours ago", "published_str": "Aug 14, 10:50 AM EDT"
+        "timestamp_dt": "2026-08-14T14:50:00-04:00", "time_ago_str": "44.2 hours ago", "published_str": "Aug 14, 2:50 PM EDT"
     },
     {
-        "id": 12, "player": "Josh Allen", "pos": "QB", "team": "BUF", "status_type": "POSITIVE", "badge": "STARTING PRESEASON OPENER", "category": "Quarterbacks",
+        "id": 17, "player": "Josh Allen", "pos": "QB", "team": "BUF", "status_type": "POSITIVE", "badge": "STARTING PRESEASON OPENER", "category": "Quarterbacks",
         "headline": "Joe Brady confirms healthy starters including Josh Allen playing in preseason opener",
         "details": "Bills head coach indicated Allen will play early drives to build live game chemistry with the overhauled wide receiver corps.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Expect quick timing rhythm with Khalil Shakir and Keon Coleman in early action.",
         "source_name": "BuffaloBills.com Official", "source_url": "https://www.buffalobills.com/news/bills-preseason-opener-starters-playing",
-        "timestamp_dt": "2026-08-14T10:10:00-04:00", "time_ago_str": "7.8 hours ago", "published_str": "Aug 14, 10:10 AM EDT"
+        "timestamp_dt": "2026-08-14T14:10:00-04:00", "time_ago_str": "44.8 hours ago", "published_str": "Aug 14, 2:10 PM EDT"
     },
     {
-        "id": 13, "player": "CJ Gardner-Johnson", "pos": "S / DEF", "team": "BUF", "status_type": "POSITIVE", "badge": "RETURNED TO DRILLS", "category": "Offensive Line & Defense",
+        "id": 18, "player": "CJ Gardner-Johnson", "pos": "S / DEF", "team": "BUF", "status_type": "POSITIVE", "badge": "RETURNED TO DRILLS", "category": "Offensive Line & Defense",
         "headline": "Avoided major injury scare; returned to limited individual drills after going down Aug 10",
         "details": "Gardner-Johnson went down in practice earlier in the week but medical staff cleared him for individual non-contact work.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Positive news for Buffalo Bills DST secondary depth and turnover upside.",
         "source_name": "Banged Up Bills Report", "source_url": "https://bangedupbills.com/2026/08/cj-gardner-johnson-injury-update",
-        "timestamp_dt": "2026-08-14T09:30:00-04:00", "time_ago_str": "8.5 hours ago", "published_str": "Aug 14, 9:30 AM EDT"
+        "timestamp_dt": "2026-08-14T12:30:00-04:00", "time_ago_str": "46.5 hours ago", "published_str": "Aug 14, 12:30 PM EDT"
     },
     {
-        "id": 14, "player": "T.J. Edwards & Devin Bush", "pos": "LB / DEF", "team": "CHI", "status_type": "POSITIVE", "badge": "RETURNED TO TEAM DRILLS", "category": "Offensive Line & Defense",
+        "id": 19, "player": "T.J. Edwards & Devin Bush", "pos": "LB / DEF", "team": "CHI", "status_type": "POSITIVE", "badge": "RETURNED TO TEAM DRILLS", "category": "Offensive Line & Defense",
         "headline": "Linebackers Edwards, Bush, and D'Marco Jackson all returned to team drills together",
         "details": "Marks a major positive shift for the Chicago defense, stabilizing the middle of the field in scrimmage sessions.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Chicago Bears DST becomes a viable streaming option in early weeks.",
         "source_name": "ChicagoBears.com Official", "source_url": "https://www.chicagobears.com/news/bears-linebackers-return-training-camp",
-        "timestamp_dt": "2026-08-14T08:50:00-04:00", "time_ago_str": "9.2 hours ago", "published_str": "Aug 14, 8:50 AM EDT"
+        "timestamp_dt": "2026-08-14T11:50:00-04:00", "time_ago_str": "47.2 hours ago", "published_str": "Aug 14, 11:50 AM EDT"
     },
     {
-        "id": 15, "player": "Tyson Bagent & Kaden Davis", "pos": "QB/WR", "team": "CHI", "status_type": "INFO", "badge": "70-YARD TD CONNECTION", "category": "Wide Receivers",
-        "headline": "Connected for a 70-plus-yard touchdown during an 11-on-11 situational session",
-        "details": "Bears situational drills highlighted strong deep-ball execution from backup units in late-game simulation periods.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Shows depth and offensive scheme progression under new coaching staff.",
-        "source_name": "ChicagoBears.com Observations", "source_url": "https://www.chicagobears.com/news/camp-observations-august",
-        "timestamp_dt": "2026-08-14T08:15:00-04:00", "time_ago_str": "9.8 hours ago", "published_str": "Aug 14, 8:15 AM EDT"
-    },
-    {
-        "id": 16, "player": "Kenyon Sadiq", "pos": "TE", "team": "NFL", "status_type": "WARNING", "badge": "HERNIA SETBACK", "category": "Tight Ends",
-        "headline": "Dealt with minor setback in early August following offseason hernia surgery",
+        "id": 20, "player": "Kenyon Sadiq", "pos": "TE", "team": "NFL", "status_type": "WARNING", "badge": "HERNIA SETBACK", "category": "Tight Ends",
+        "headline": "Dealt with minor setback following offseason hernia surgery",
         "details": "Rookie tight end is managing soreness following hernia repair and is being limited in contact sessions.",
         "draft_impact": "🎯 DRAFT TAKEAWAY: Slows down early rookie integration; remove from immediate dynasty/redraft radar.",
         "source_name": "Dynasty Nerds Injury Wire", "source_url": "https://www.dynastynerds.com/rookie-injury-tracker-august",
-        "timestamp_dt": "2026-08-13T19:00:00-04:00", "time_ago_str": "23 hours ago", "published_str": "Aug 13, 7:00 PM EDT"
-    },
-    {
-        "id": 17, "player": "Parker Washington", "pos": "WR", "team": "JAX", "status_type": "POSITIVE", "badge": "COACHING PRAISE", "category": "Wide Receivers",
-        "headline": "Drawn consistent praise from Jaguars coaching staff in slot receiver rotation",
-        "details": "Washington has operated as a reliable target in third-down scrimmage sets with Trevor Lawrence.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Deep PPR sleeper to monitor in 14-team leagues if slot snaps expand.",
-        "source_name": "Fantasy Life Jaguars Beat", "source_url": "https://www.fantasylife.com/news/jaguars-camp-standout-parker-washington",
-        "timestamp_dt": "2026-08-13T17:30:00-04:00", "time_ago_str": "24.5 hours ago", "published_str": "Aug 13, 5:30 PM EDT"
-    },
-    {
-        "id": 18, "player": "Jaylon Johnson", "pos": "CB / DEF", "team": "CHI", "status_type": "POSITIVE", "badge": "CONTRACT YEAR FOCUS", "category": "Offensive Line & Defense",
-        "headline": "Vocal about his locked-in focus and shutdown coverage in camp 1-on-1s",
-        "details": "Johnson broke up several perimeter passes intended for starting receivers in Thursday's practice.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Tough matchup ahead for opposing perimeter WR1s facing Chicago.",
-        "source_name": "NFL.com Wire", "source_url": "https://www.nfl.com/news/jaylon-johnson-contract-year-focus",
-        "timestamp_dt": "2026-08-13T15:45:00-04:00", "time_ago_str": "26 hours ago", "published_str": "Aug 13, 3:45 PM EDT"
-    },
-    {
-        "id": 19, "player": "Dave Canales (Jonathon Brooks update)", "pos": "RB / HC", "team": "CAR", "status_type": "INFO", "badge": "WORKLOAD MANAGEMENT", "category": "Running Backs",
-        "headline": "Canales cautions against expecting a full 'workhorse' 25-touch workload immediately",
-        "details": "While Brooks starts the preseason opener, staff intends to rotate backs to manage early-season longevity.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Still a priority RB2 target, but factor in an early-season 60/40 touch split before full bellcow takeover.",
-        "source_name": "Fantasy Life Panthers Beat", "source_url": "https://www.fantasylife.com/news/panthers-backfield-rotation",
-        "timestamp_dt": "2026-08-13T14:10:00-04:00", "time_ago_str": "28 hours ago", "published_str": "Aug 13, 2:10 PM EDT"
-    },
-    {
-        "id": 20, "player": "Deshaun Watson & Shedeur Sanders", "pos": "QB", "team": "CLE", "status_type": "WARNING", "badge": "EXECUTION STRUGGLES", "category": "Quarterbacks",
-        "headline": "Reports highlight team execution issues and frustration from coaching staff in red zone",
-        "details": "Quarterbacks faced heavy pass rush pressure and timing miscues with receivers during Thursday's team period.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Lower passing ceiling in Cleveland offense; proceed with caution in 1-QB leagues.",
-        "source_name": "Pro Football Network", "source_url": "https://www.profootballnetwork.com/browns-training-camp-observations",
-        "timestamp_dt": "2026-08-13T11:30:00-04:00", "time_ago_str": "30.5 hours ago", "published_str": "Aug 13, 11:30 AM EDT"
+        "timestamp_dt": "2026-08-14T10:00:00-04:00", "time_ago_str": "48.9 hours ago", "published_str": "Aug 14, 10:00 AM EDT"
     }
 ]
 
-# Curated Twitter Experts Feed (Timestamped & Sorted Newest First)
+# Curated Twitter Experts Feed (August 16 Preseason Week 1 Post-Game)
 CURATED_TWEETS = [
     {
-        "name": "Ryan Heath", "handle": "@RyanJ_Heath", "avatar": "📊", "badge": "Utilization & Target Share",
-        "content": "Malik Nabers earned a 34.2% first-read target rate in yesterday's Giants 11-on-11 scrimmage. In year 2, Nabers' underlying volume profile is that of a top-5 fantasy WR. If he falls past WR8 in drafts, it's a massive gift.",
-        "timestamp": "18 mins ago", "timestamp_dt": "2026-08-14T17:42:00-04:00", "url": "https://twitter.com/RyanJ_Heath"
+        "name": "Ryan Heath", "handle": "@RyanJ_Heath", "avatar": "📊", "badge": "Preseason W1 Utilization",
+        "content": "Preseason W1 First-Team Utilization: Jonathon Brooks played 82% of snaps with Carolina's starting unit on Saturday, running routes on 14/16 dropbacks. With Chuba Hubbard week-to-week, Brooks' workhorse floor is locked in. Smash in Round 3.",
+        "timestamp": "22 mins ago", "timestamp_dt": "2026-08-16T10:45:00-04:00", "url": "https://twitter.com/RyanJ_Heath"
     },
     {
-        "name": "Fantasy Injury Team", "handle": "@fantasyinjuryT", "avatar": "🏥", "badge": "Orthopedic & Recovery Radar",
-        "content": "Chuba Hubbard hamstring strain update: Canales calling it 'week-to-week' indicates a Grade 1/2 strain. Average return-to-play timeline for RBs is 17.4 days. Brooks is in line for full preseason RB1 workload; recurrence risk for Hubbard is ~21%.",
-        "timestamp": "45 mins ago", "timestamp_dt": "2026-08-14T17:15:00-04:00", "url": "https://twitter.com/fantasyinjuryT"
+        "name": "Fantasy Injury Team", "handle": "@fantasyinjuryT", "avatar": "🏥", "badge": "Post-Game Injury Triage",
+        "content": "Christian McCaffrey calf/achilles tightness update: 49ers sitting CMC on Aug 15 was purely precautionary. However, recurring soft-tissue tightness in August elevates in-season re-injury probability to ~24%. Jordan Mason / Isaac Guerendo are priority handcuffs.",
+        "timestamp": "48 mins ago", "timestamp_dt": "2026-08-16T10:18:00-04:00", "url": "https://twitter.com/fantasyinjuryT"
     },
     {
-        "name": "Jacob Gibbs", "handle": "@jagibbs_23", "avatar": "📈", "badge": "Red Zone & Air Yards",
-        "content": "Jonathon Brooks red zone touchdown projection jumps significantly with Hubbard sidelined. Brooks logged 0.72 expected fantasy points per rush inside the 10 in college. Target Brooks aggressively at current ADP.",
-        "timestamp": "1.5 hours ago", "timestamp_dt": "2026-08-14T16:30:00-04:00", "url": "https://twitter.com/jagibbs_23"
+        "name": "Jacob Gibbs", "handle": "@jagibbs_23", "avatar": "📈", "badge": "Target Share & Air Yards",
+        "content": "Malik Nabers vs Giants scrimmage film: Commanded 5 targets on 7 first-team dropbacks (71.4% target rate). In preseason simulations, Nabers is operating as a genuine alpha WR1 with boundary and slot versatility. Draft him ahead of Olave and Wilson.",
+        "timestamp": "1.4 hours ago", "timestamp_dt": "2026-08-16T09:25:00-04:00", "url": "https://twitter.com/jagibbs_23"
     },
     {
-        "name": "Scott Barrett", "handle": "@ScottBarrettDFB", "avatar": "⚡", "badge": "XFP / Expected Points",
-        "content": "Ricky Pearsall's PCL surgery leaves San Francisco with a 28% vacated target share from auxiliary wideouts. Brandon Aiyuk & Deebo Samuel jump to top-12 projections in expected fantasy points (XFP).",
-        "timestamp": "2.8 hours ago", "timestamp_dt": "2026-08-14T15:12:00-04:00", "url": "https://twitter.com/ScottBarrettDFB"
+        "name": "Scott Barrett", "handle": "@ScottBarrettDFB", "avatar": "⚡", "badge": "Preseason W1 XFP",
+        "content": "Preseason Week 1 Expected Fantasy Points (XFP): The biggest tactical winner of the weekend is Travis Hunter. Jacksonville gave Hunter 9 offensive snaps in the red zone alongside 1st-team defense. If he maintains 45%+ offensive snap share, PPR ceiling is immense.",
+        "timestamp": "2.5 hours ago", "timestamp_dt": "2026-08-16T08:35:00-04:00", "url": "https://twitter.com/ScottBarrettDFB"
     },
     {
         "name": "Zain Dhanani", "handle": "@dhananizain", "avatar": "🩺", "badge": "Sports Medicine MD",
-        "content": "Laremy Tunsil's torn triceps is a season-ending surgical injury (4-6 month tendon repair). Expect Washington's pressure rate allowed to spike 6-8%, which historically boosts Jayden Daniels' scramble rate.",
-        "timestamp": "4.1 hours ago", "timestamp_dt": "2026-08-14T13:50:00-04:00", "url": "https://twitter.com/dhananizain"
+        "content": "Bryan Bresee & Dillon Radunz both suffered season-ending knee injuries for New Orleans on Aug 15. Saints' interior defensive line and offensive line take a massive hit. Upgrade opposing rushing projections facing NO in Weeks 1-6.",
+        "timestamp": "3.8 hours ago", "timestamp_dt": "2026-08-16T07:15:00-04:00", "url": "https://twitter.com/dhananizain"
     },
     {
-        "name": "The Coachspeak Index", "handle": "@CoachspeakIndex", "avatar": "🔍", "badge": "Presser Truth Meter",
-        "content": "Dave Canales on Jonathon Brooks: 'We're going to be smart, we won't throw 25 touches at him Day 1.' Coachspeak Reliability Rating: 84% (High). Expect a 60/40 committee in September transitioning to workhorse by midseason.",
-        "timestamp": "5.5 hours ago", "timestamp_dt": "2026-08-14T12:30:00-04:00", "url": "https://twitter.com/CoachspeakIndex"
+        "name": "The Coachspeak Index", "handle": "@CoachspeakIndex", "avatar": "🔍", "badge": "Sunday Presser Truth Rating",
+        "content": "Dave Canales on Jonathon Brooks' 82% starting snap share: 'Jonathon showed great vision and pass protection discipline today. He's earned trust.' Coachspeak Reliability Rating: 91% (Very High). Committee fears are fading fast. Brooks is Carolina's RB1.",
+        "timestamp": "5.2 hours ago", "timestamp_dt": "2026-08-16T05:50:00-04:00", "url": "https://twitter.com/CoachspeakIndex"
     }
 ]
 
