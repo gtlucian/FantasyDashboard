@@ -82,6 +82,9 @@
 
     <!-- Header Actions -->
     <div class="flex items-center space-x-2 text-xs">
+      <button id="manualRefreshBtn" class="bg-blue-950 hover:bg-blue-900 border border-blue-700 text-blue-200 px-2.5 sm:px-3 py-1.5 rounded-xl font-bold flex items-center gap-1 transition shadow-sm">
+        <span id="refreshIcon">⚡</span> <span class="hidden sm:inline">Refresh Data</span>
+      </button>
       <button id="toggleYahooSyncBtn" class="bg-purple-950 hover:bg-purple-900 border border-purple-700 text-purple-200 px-2.5 sm:px-3 py-1.5 rounded-xl font-bold flex items-center gap-1 transition shadow-sm">
         <span>🟣</span> <span class="hidden sm:inline">Yahoo Sync</span>
       </button>
@@ -776,18 +779,34 @@
     let scatterChart = null;
     let boxChart = null;
 
-    async function loadData() {
+    async function loadData(showToast = false) {
+      const btn = document.getElementById('manualRefreshBtn');
+      const icon = document.getElementById('refreshIcon');
+      if (icon) icon.classList.add('animate-spin');
+
       try {
-        const resp = await fetch('draft_data.json');
+        const resp = await fetch('draft_data.json?t=' + Date.now(), {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+          }
+        });
         const data = await resp.json();
         rawPlayers = data.players || [];
         
         // Format and render Eastern Time timestamp
-        const rawTime = data.metadata.snapshot_time || 'Aug 14, 2026, 04:53 PM EDT';
+        const rawTime = data.metadata.snapshot_time || 'Aug 16, 2026, 11:00 AM EDT';
         document.getElementById('headerTimestamp').textContent = rawTime;
         document.getElementById('cardTimestamp').textContent = rawTime;
+        
+        if (showToast) {
+          showSyncToast(`⚡ Live Data Refreshed: ${rawPlayers.length} players (${rawTime})`);
+        }
       } catch (err) {
         console.warn('Loading fallback data...', err);
+      } finally {
+        if (icon) icon.classList.remove('animate-spin');
       }
       recalcAndRender();
     }
@@ -1562,10 +1581,19 @@
       recalcAndRender();
     });
 
+    document.getElementById('manualRefreshBtn').addEventListener('click', () => {
+      loadData(true);
+    });
+
     window.addEventListener('resize', () => {
       if (scatterChart) scatterChart.resize();
       if (boxChart) boxChart.resize();
     });
+
+    // Auto-refresh data every 3 minutes
+    setInterval(() => {
+      loadData(false);
+    }, 180000);
 
     loadData();
   </script>

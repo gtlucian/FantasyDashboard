@@ -69,6 +69,7 @@ jobs:
         run: |
           git config --global user.name 'DraftBot'
           git config --global user.email 'draftbot@users.noreply.github.com'
+          git pull --rebase origin main || true
           git add draft_vault.duckdb draft_data.json
           git commit -m "Auto-refresh draft intelligence [3-Hour Cycle] [skip ci]" || echo "No data changes to commit."
           git push || echo "Push skipped"
