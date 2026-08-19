@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "snapshot_time": "Aug 19, 2026, 08:26 AM EDT",
+    "snapshot_time": "Aug 19, 2026, 08:41 AM EDT",
     "total_players": 501,
     "source": "Official FantasyPros Expert Consensus Rankings (ECR)",
     "refresh_cadence": "3-Hour Automated Cycle"
@@ -23,7 +23,7 @@
       "tier": 1,
       "expert_volatility": 1.03,
       "latest_insight": "Official FantasyPros ECR: #1 (RB1)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19788",
@@ -42,7 +42,7 @@
       "tier": 1,
       "expert_volatility": 0.88,
       "latest_insight": "Official FantasyPros ECR: #2 (WR1)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23133",
@@ -61,7 +61,7 @@
       "tier": 1,
       "expert_volatility": 1.01,
       "latest_insight": "Official FantasyPros ECR: #3 (RB2)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23180",
@@ -80,7 +80,7 @@
       "tier": 1,
       "expert_volatility": 1.75,
       "latest_insight": "Official FantasyPros ECR: #4 (WR2)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23070",
@@ -99,7 +99,7 @@
       "tier": 2,
       "expert_volatility": 1.34,
       "latest_insight": "Official FantasyPros ECR: #5 (WR3)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19799",
@@ -118,7 +118,7 @@
       "tier": 2,
       "expert_volatility": 1.71,
       "latest_insight": "Official FantasyPros ECR: #6 (WR4)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19217",
@@ -137,7 +137,7 @@
       "tier": 2,
       "expert_volatility": 3.81,
       "latest_insight": "Official FantasyPros ECR: #7 (RB3)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19202",
@@ -154,9 +154,9 @@
       "projected_fantasy_points": 270.7,
       "vorp": 103.1,
       "tier": 2,
-      "expert_volatility": 2.92,
+      "expert_volatility": 2.95,
       "latest_insight": "Official FantasyPros ECR: #8 (WR5)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22958",
@@ -175,7 +175,7 @@
       "tier": 2,
       "expert_volatility": 3.2,
       "latest_insight": "Official FantasyPros ECR: #9 (RB4)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16393",
@@ -194,7 +194,7 @@
       "tier": 2,
       "expert_volatility": 6.48,
       "latest_insight": "Official FantasyPros ECR: #10 (RB5)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19236",
@@ -213,7 +213,7 @@
       "tier": 2,
       "expert_volatility": 4.92,
       "latest_insight": "Official FantasyPros ECR: #11 (WR6)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23163",
@@ -225,14 +225,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 12,
-      "adp_rank": 15.1,
-      "arbitrage_delta": 3.1,
+      "adp_rank": 15.2,
+      "arbitrage_delta": 3.2,
       "projected_fantasy_points": 259.1,
       "vorp": 91.5,
       "tier": 3,
-      "expert_volatility": 4.77,
+      "expert_volatility": 4.79,
       "latest_insight": "Official FantasyPros ECR: #12 (WR7)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18218",
@@ -251,7 +251,7 @@
       "tier": 3,
       "expert_volatility": 5.92,
       "latest_insight": "Official FantasyPros ECR: #13 (WR8)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15514",
@@ -270,7 +270,7 @@
       "tier": 3,
       "expert_volatility": 4.25,
       "latest_insight": "Official FantasyPros ECR: #14 (RB6)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17240",
@@ -289,7 +289,7 @@
       "tier": 3,
       "expert_volatility": 5.6,
       "latest_insight": "Official FantasyPros ECR: #15 (RB7)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25989",
@@ -308,26 +308,7 @@
       "tier": 3,
       "expert_volatility": 7.18,
       "latest_insight": "Official FantasyPros ECR: #16 (RB8)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "22955",
-      "player_name": "Brock Bowers",
-      "position": "TE",
-      "positional_rank": "TE1",
-      "pos_order": 1,
-      "team": "LV",
-      "bye_week": 13,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 17,
-      "adp_rank": 17.6,
-      "arbitrage_delta": 0.6,
-      "projected_fantasy_points": 245.0,
-      "vorp": 109.4,
-      "tier": 3,
-      "expert_volatility": 5.83,
-      "latest_insight": "Official FantasyPros ECR: #17 (TE1)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20130",
@@ -338,15 +319,34 @@
       "team": "HOU",
       "bye_week": 8,
       "current_injury_status": "Healthy",
-      "ecr_rank": 18,
-      "adp_rank": 17.6,
-      "arbitrage_delta": -0.4,
+      "ecr_rank": 17,
+      "adp_rank": 17.5,
+      "arbitrage_delta": 0.5,
       "projected_fantasy_points": 249.2,
       "vorp": 81.6,
       "tier": 3,
-      "expert_volatility": 5.07,
-      "latest_insight": "Official FantasyPros ECR: #18 (WR9)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 5.11,
+      "latest_insight": "Official FantasyPros ECR: #17 (WR9)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "22955",
+      "player_name": "Brock Bowers",
+      "position": "TE",
+      "positional_rank": "TE1",
+      "pos_order": 1,
+      "team": "LV",
+      "bye_week": 13,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 18,
+      "adp_rank": 17.6,
+      "arbitrage_delta": -0.4,
+      "projected_fantasy_points": 245.0,
+      "vorp": 109.4,
+      "tier": 3,
+      "expert_volatility": 5.83,
+      "latest_insight": "Official FantasyPros ECR: #18 (TE1)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22963",
@@ -365,7 +365,7 @@
       "tier": 3,
       "expert_volatility": 6.09,
       "latest_insight": "Official FantasyPros ECR: #19 (WR10)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25324",
@@ -384,7 +384,7 @@
       "tier": 3,
       "expert_volatility": 6.95,
       "latest_insight": "Official FantasyPros ECR: #20 (RB9)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22936",
@@ -403,7 +403,7 @@
       "tier": 4,
       "expert_volatility": 8.14,
       "latest_insight": "Official FantasyPros ECR: #21 (TE2)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23021",
@@ -422,7 +422,7 @@
       "tier": 4,
       "expert_volatility": 9.21,
       "latest_insight": "Official FantasyPros ECR: #22 (RB10)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25395",
@@ -441,7 +441,7 @@
       "tier": 4,
       "expert_volatility": 8.32,
       "latest_insight": "Official FantasyPros ECR: #23 (RB11)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17298",
@@ -460,7 +460,7 @@
       "tier": 4,
       "expert_volatility": 0.5,
       "latest_insight": "Official FantasyPros ECR: #24 (QB1)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23136",
@@ -479,7 +479,7 @@
       "tier": 4,
       "expert_volatility": 9.73,
       "latest_insight": "Official FantasyPros ECR: #25 (RB12)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20111",
@@ -498,7 +498,7 @@
       "tier": 4,
       "expert_volatility": 7.85,
       "latest_insight": "Official FantasyPros ECR: #26 (WR11)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25409",
@@ -510,14 +510,14 @@
       "bye_week": 8,
       "current_injury_status": "Healthy",
       "ecr_rank": 27,
-      "adp_rank": 28.1,
-      "arbitrage_delta": 1.1,
+      "adp_rank": 28.0,
+      "arbitrage_delta": 1.0,
       "projected_fantasy_points": 236.5,
       "vorp": 68.9,
       "tier": 4,
       "expert_volatility": 9.66,
       "latest_insight": "\u26a1 RAMPING UP: Graduating to full 11-on-11 team contact drills; looking explosive in camp.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23113",
@@ -536,7 +536,7 @@
       "tier": 4,
       "expert_volatility": 9.49,
       "latest_insight": "Official FantasyPros ECR: #28 (WR13)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17233",
@@ -555,7 +555,7 @@
       "tier": 4,
       "expert_volatility": 9.09,
       "latest_insight": "Official FantasyPros ECR: #29 (QB2)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23059",
@@ -574,7 +574,7 @@
       "tier": 4,
       "expert_volatility": 6.73,
       "latest_insight": "Official FantasyPros ECR: #30 (RB13)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19211",
@@ -591,9 +591,9 @@
       "projected_fantasy_points": 228.9,
       "vorp": 61.3,
       "tier": 4,
-      "expert_volatility": 6.97,
+      "expert_volatility": 6.96,
       "latest_insight": "Official FantasyPros ECR: #31 (WR14)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22916",
@@ -610,9 +610,9 @@
       "projected_fantasy_points": 225.3,
       "vorp": 57.7,
       "tier": 4,
-      "expert_volatility": 9.01,
+      "expert_volatility": 8.98,
       "latest_insight": "Official FantasyPros ECR: #32 (WR15)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19222",
@@ -629,9 +629,9 @@
       "projected_fantasy_points": 221.9,
       "vorp": 54.3,
       "tier": 4,
-      "expert_volatility": 8.32,
+      "expert_volatility": 8.36,
       "latest_insight": "Official FantasyPros ECR: #33 (WR16)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23046",
@@ -650,7 +650,7 @@
       "tier": 4,
       "expert_volatility": 11.26,
       "latest_insight": "Official FantasyPros ECR: #34 (QB3)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22739",
@@ -669,7 +669,7 @@
       "tier": 4,
       "expert_volatility": 7.52,
       "latest_insight": "Official FantasyPros ECR: #35 (RB14)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18269",
@@ -688,7 +688,7 @@
       "tier": 5,
       "expert_volatility": 7.64,
       "latest_insight": "Official FantasyPros ECR: #36 (RB15)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23062",
@@ -707,7 +707,7 @@
       "tier": 5,
       "expert_volatility": 9.5,
       "latest_insight": "Official FantasyPros ECR: #37 (WR17)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25417",
@@ -726,7 +726,7 @@
       "tier": 5,
       "expert_volatility": 7.89,
       "latest_insight": "\u26a0\ufe0f INJURY: Sidelined with knee issue; WR3 battle open in camp.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26006",
@@ -745,7 +745,7 @@
       "tier": 5,
       "expert_volatility": 12.61,
       "latest_insight": "Official FantasyPros ECR: #39 (TE3)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19196",
@@ -764,7 +764,7 @@
       "tier": 5,
       "expert_volatility": 12.12,
       "latest_insight": "Official FantasyPros ECR: #40 (QB4)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26122",
@@ -776,14 +776,14 @@
       "bye_week": 7,
       "current_injury_status": "Healthy",
       "ecr_rank": 41,
-      "adp_rank": 42.7,
-      "arbitrage_delta": 1.7,
+      "adp_rank": 42.6,
+      "arbitrage_delta": 1.6,
       "projected_fantasy_points": 212.1,
       "vorp": 44.5,
       "tier": 5,
-      "expert_volatility": 8.6,
+      "expert_volatility": 8.56,
       "latest_insight": "Official FantasyPros ECR: #41 (WR19)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22982",
@@ -802,7 +802,7 @@
       "tier": 5,
       "expert_volatility": 4.93,
       "latest_insight": "Official FantasyPros ECR: #42 (RB16)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19790",
@@ -819,9 +819,9 @@
       "projected_fantasy_points": 209.0,
       "vorp": 41.4,
       "tier": 5,
-      "expert_volatility": 8.73,
+      "expert_volatility": 8.69,
       "latest_insight": "Official FantasyPros ECR: #43 (WR20)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25403",
@@ -840,7 +840,7 @@
       "tier": 5,
       "expert_volatility": 7.02,
       "latest_insight": "Official FantasyPros ECR: #44 (RB17)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23677",
@@ -852,14 +852,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 45,
-      "adp_rank": 46.3,
-      "arbitrage_delta": 1.3,
+      "adp_rank": 46.4,
+      "arbitrage_delta": 1.4,
       "projected_fantasy_points": 206.0,
       "vorp": 38.4,
       "tier": 5,
-      "expert_volatility": 10.06,
+      "expert_volatility": 10.09,
       "latest_insight": "Official FantasyPros ECR: #45 (WR21)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "12123",
@@ -878,7 +878,7 @@
       "tier": 5,
       "expert_volatility": 8.45,
       "latest_insight": "Official FantasyPros ECR: #46 (WR22)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18466",
@@ -895,9 +895,9 @@
       "projected_fantasy_points": 200.3,
       "vorp": 32.7,
       "tier": 5,
-      "expert_volatility": 8.1,
+      "expert_volatility": 8.11,
       "latest_insight": "Official FantasyPros ECR: #47 (WR23)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19231",
@@ -916,7 +916,7 @@
       "tier": 5,
       "expert_volatility": 7.33,
       "latest_insight": "Official FantasyPros ECR: #48 (RB18)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23886",
@@ -935,7 +935,7 @@
       "tier": 5,
       "expert_volatility": 8.96,
       "latest_insight": "Official FantasyPros ECR: #49 (WR24)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23072",
@@ -954,7 +954,7 @@
       "tier": 5,
       "expert_volatility": 9.37,
       "latest_insight": "Official FantasyPros ECR: #50 (WR25)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19210",
@@ -973,7 +973,7 @@
       "tier": 6,
       "expert_volatility": 7.25,
       "latest_insight": "Official FantasyPros ECR: #51 (RB19)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27166",
@@ -992,7 +992,7 @@
       "tier": 6,
       "expert_volatility": 7.94,
       "latest_insight": "Official FantasyPros ECR: #52 (RB20)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22902",
@@ -1011,7 +1011,7 @@
       "tier": 6,
       "expert_volatility": 16.6,
       "latest_insight": "Official FantasyPros ECR: #53 (QB5)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25411",
@@ -1030,7 +1030,7 @@
       "tier": 6,
       "expert_volatility": 10.41,
       "latest_insight": "Official FantasyPros ECR: #54 (WR26)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25391",
@@ -1049,7 +1049,7 @@
       "tier": 6,
       "expert_volatility": 9.06,
       "latest_insight": "Official FantasyPros ECR: #55 (RB21)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18239",
@@ -1068,7 +1068,7 @@
       "tier": 6,
       "expert_volatility": 7.75,
       "latest_insight": "Official FantasyPros ECR: #56 (RB22)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19275",
@@ -1087,7 +1087,7 @@
       "tier": 6,
       "expert_volatility": 11.55,
       "latest_insight": "Official FantasyPros ECR: #57 (QB6)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "12119",
@@ -1106,7 +1106,7 @@
       "tier": 6,
       "expert_volatility": 9.38,
       "latest_insight": "Official FantasyPros ECR: #58 (WR27)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25981",
@@ -1125,7 +1125,7 @@
       "tier": 6,
       "expert_volatility": 8.33,
       "latest_insight": "Official FantasyPros ECR: #59 (RB23)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27016",
@@ -1144,7 +1144,7 @@
       "tier": 6,
       "expert_volatility": 11.59,
       "latest_insight": "Official FantasyPros ECR: #60 (WR28)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25298",
@@ -1163,7 +1163,7 @@
       "tier": 6,
       "expert_volatility": 12.91,
       "latest_insight": "Official FantasyPros ECR: #61 (TE4)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17265",
@@ -1182,7 +1182,7 @@
       "tier": 6,
       "expert_volatility": 12.6,
       "latest_insight": "Official FantasyPros ECR: #62 (WR29)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26434",
@@ -1201,7 +1201,7 @@
       "tier": 6,
       "expert_volatility": 13.06,
       "latest_insight": "Official FantasyPros ECR: #63 (TE5)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27297",
@@ -1220,7 +1220,7 @@
       "tier": 6,
       "expert_volatility": 8.96,
       "latest_insight": "Official FantasyPros ECR: #64 (RB24)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23065",
@@ -1239,7 +1239,7 @@
       "tier": 6,
       "expert_volatility": 9.5,
       "latest_insight": "Official FantasyPros ECR: #65 (RB25)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27329",
@@ -1258,7 +1258,7 @@
       "tier": 6,
       "expert_volatility": 10.26,
       "latest_insight": "Official FantasyPros ECR: #66 (RB26)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23084",
@@ -1277,7 +1277,7 @@
       "tier": 6,
       "expert_volatility": 12.44,
       "latest_insight": "Official FantasyPros ECR: #67 (QB7)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18635",
@@ -1296,7 +1296,7 @@
       "tier": 6,
       "expert_volatility": 13.36,
       "latest_insight": "Official FantasyPros ECR: #68 (QB8)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23106",
@@ -1315,7 +1315,7 @@
       "tier": 6,
       "expert_volatility": 13.28,
       "latest_insight": "Official FantasyPros ECR: #69 (WR30)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23064",
@@ -1334,7 +1334,7 @@
       "tier": 7,
       "expert_volatility": 10.45,
       "latest_insight": "Official FantasyPros ECR: #70 (WR31)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23000",
@@ -1351,9 +1351,9 @@
       "projected_fantasy_points": 176.9,
       "vorp": 9.3,
       "tier": 7,
-      "expert_volatility": 10.84,
+      "expert_volatility": 10.85,
       "latest_insight": "Official FantasyPros ECR: #71 (WR32)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19780",
@@ -1365,14 +1365,14 @@
       "bye_week": 7,
       "current_injury_status": "Healthy",
       "ecr_rank": 72,
-      "adp_rank": 75.7,
-      "arbitrage_delta": 3.7,
+      "adp_rank": 75.8,
+      "arbitrage_delta": 3.8,
       "projected_fantasy_points": 320.1,
       "vorp": 22.9,
       "tier": 7,
-      "expert_volatility": 14.25,
+      "expert_volatility": 14.33,
       "latest_insight": "Official FantasyPros ECR: #72 (QB9)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24209",
@@ -1391,7 +1391,7 @@
       "tier": 7,
       "expert_volatility": 7.85,
       "latest_insight": "Official FantasyPros ECR: #73 (RB27)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26009",
@@ -1410,7 +1410,7 @@
       "tier": 7,
       "expert_volatility": 12.46,
       "latest_insight": "Official FantasyPros ECR: #74 (WR33)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22726",
@@ -1429,7 +1429,7 @@
       "tier": 7,
       "expert_volatility": 10.58,
       "latest_insight": "Official FantasyPros ECR: #75 (RB28)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22978",
@@ -1448,7 +1448,7 @@
       "tier": 7,
       "expert_volatility": 8.47,
       "latest_insight": "Official FantasyPros ECR: #76 (TE6)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18705",
@@ -1467,7 +1467,7 @@
       "tier": 7,
       "expert_volatility": 10.75,
       "latest_insight": "Official FantasyPros ECR: #77 (RB29)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15600",
@@ -1484,9 +1484,9 @@
       "projected_fantasy_points": 312.4,
       "vorp": 15.2,
       "tier": 7,
-      "expert_volatility": 12.79,
+      "expert_volatility": 12.88,
       "latest_insight": "Official FantasyPros ECR: #78 (QB10)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18219",
@@ -1505,7 +1505,7 @@
       "tier": 7,
       "expert_volatility": 8.71,
       "latest_insight": "Official FantasyPros ECR: #79 (WR34)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19647",
@@ -1524,7 +1524,7 @@
       "tier": 7,
       "expert_volatility": 10.86,
       "latest_insight": "Official FantasyPros ECR: #80 (RB30)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19245",
@@ -1543,7 +1543,7 @@
       "tier": 7,
       "expert_volatility": 13.98,
       "latest_insight": "Official FantasyPros ECR: #81 (RB31)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17253",
@@ -1562,7 +1562,7 @@
       "tier": 7,
       "expert_volatility": 10.95,
       "latest_insight": "Official FantasyPros ECR: #82 (WR35)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23791",
@@ -1574,14 +1574,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 83,
-      "adp_rank": 86.2,
-      "arbitrage_delta": 3.2,
+      "adp_rank": 86.1,
+      "arbitrage_delta": 3.1,
       "projected_fantasy_points": 167.6,
       "vorp": 0.0,
       "tier": 7,
-      "expert_volatility": 14.28,
+      "expert_volatility": 14.07,
       "latest_insight": "Official FantasyPros ECR: #83 (WR36)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23013",
@@ -1600,7 +1600,7 @@
       "tier": 7,
       "expert_volatility": 9.97,
       "latest_insight": "Official FantasyPros ECR: #84 (RB32)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27050",
@@ -1619,7 +1619,7 @@
       "tier": 7,
       "expert_volatility": 12.54,
       "latest_insight": "Official FantasyPros ECR: #85 (TE7)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20164",
@@ -1638,7 +1638,7 @@
       "tier": 7,
       "expert_volatility": 8.35,
       "latest_insight": "Official FantasyPros ECR: #86 (TE8)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23123",
@@ -1655,9 +1655,9 @@
       "projected_fantasy_points": 165.3,
       "vorp": -2.3,
       "tier": 7,
-      "expert_volatility": 12.09,
+      "expert_volatility": 12.11,
       "latest_insight": "Official FantasyPros ECR: #87 (WR37)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26148",
@@ -1676,7 +1676,7 @@
       "tier": 7,
       "expert_volatility": 28.39,
       "latest_insight": "\ud83d\udd25 CAMP STANDOUT: Named starter for preseason opener with Hubbard sidelined (huge draft momentum).",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16406",
@@ -1695,7 +1695,7 @@
       "tier": 7,
       "expert_volatility": 15.54,
       "latest_insight": "Official FantasyPros ECR: #89 (WR38)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27316",
@@ -1714,7 +1714,7 @@
       "tier": 7,
       "expert_volatility": 9.73,
       "latest_insight": "Official FantasyPros ECR: #90 (RB34)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19797",
@@ -1726,14 +1726,14 @@
       "bye_week": 8,
       "current_injury_status": "Healthy",
       "ecr_rank": 91,
-      "adp_rank": 94.5,
-      "arbitrage_delta": 3.5,
+      "adp_rank": 94.3,
+      "arbitrage_delta": 3.3,
       "projected_fantasy_points": 304.8,
       "vorp": 7.6,
       "tier": 7,
-      "expert_volatility": 10.35,
+      "expert_volatility": 10.47,
       "latest_insight": "Official FantasyPros ECR: #91 (QB11)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19792",
@@ -1752,7 +1752,7 @@
       "tier": 7,
       "expert_volatility": 15.77,
       "latest_insight": "\ud83d\udea8 BEAT REPORT: Week-to-week with hamstring strain; elevates Jonathon Brooks preseason workload.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16499",
@@ -1771,7 +1771,7 @@
       "tier": 7,
       "expert_volatility": 16.49,
       "latest_insight": "Official FantasyPros ECR: #93 (TE9)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23160",
@@ -1790,7 +1790,7 @@
       "tier": 7,
       "expert_volatility": 14.34,
       "latest_insight": "Official FantasyPros ECR: #94 (QB12)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23107",
@@ -1809,7 +1809,7 @@
       "tier": 7,
       "expert_volatility": 14.05,
       "latest_insight": "Official FantasyPros ECR: #95 (WR39)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27131",
@@ -1828,7 +1828,7 @@
       "tier": 7,
       "expert_volatility": 13.36,
       "latest_insight": "Official FantasyPros ECR: #96 (RB36)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22969",
@@ -1847,7 +1847,7 @@
       "tier": 8,
       "expert_volatility": 15.63,
       "latest_insight": "Official FantasyPros ECR: #97 (RB37)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22910",
@@ -1866,7 +1866,7 @@
       "tier": 8,
       "expert_volatility": 9.97,
       "latest_insight": "Official FantasyPros ECR: #98 (QB13)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16413",
@@ -1885,7 +1885,7 @@
       "tier": 8,
       "expert_volatility": 11.24,
       "latest_insight": "\ud83d\udfe2 FULL PRACTICE: Operating at 100% capacity; held out of preseason opener as precaution.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25333",
@@ -1904,7 +1904,7 @@
       "tier": 8,
       "expert_volatility": 16.44,
       "latest_insight": "Official FantasyPros ECR: #100 (WR40)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25247",
@@ -1923,7 +1923,7 @@
       "tier": 8,
       "expert_volatility": 15.62,
       "latest_insight": "Official FantasyPros ECR: #101 (TE10)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "9451",
@@ -1942,7 +1942,7 @@
       "tier": 8,
       "expert_volatility": 13.55,
       "latest_insight": "Official FantasyPros ECR: #102 (QB15)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15501",
@@ -1961,7 +1961,7 @@
       "tier": 8,
       "expert_volatility": 12.31,
       "latest_insight": "Official FantasyPros ECR: #103 (QB16)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23020",
@@ -1980,7 +1980,7 @@
       "tier": 8,
       "expert_volatility": 13.55,
       "latest_insight": "Official FantasyPros ECR: #104 (WR41)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25420",
@@ -1992,14 +1992,14 @@
       "bye_week": 10,
       "current_injury_status": "Questionable",
       "ecr_rank": 105,
-      "adp_rank": 107.1,
-      "arbitrage_delta": 2.1,
+      "adp_rank": 106.9,
+      "arbitrage_delta": 1.9,
       "projected_fantasy_points": 154.5,
       "vorp": -13.1,
       "tier": 8,
-      "expert_volatility": 16.96,
+      "expert_volatility": 16.97,
       "latest_insight": "\u26a0\ufe0f HAMSTRING: Recurring soft tissue strain causing missed practice reps.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27142",
@@ -2018,7 +2018,7 @@
       "tier": 8,
       "expert_volatility": 18.07,
       "latest_insight": "Official FantasyPros ECR: #106 (RB38)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "11594",
@@ -2037,7 +2037,7 @@
       "tier": 8,
       "expert_volatility": 13.14,
       "latest_insight": "Official FantasyPros ECR: #107 (TE11)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19278",
@@ -2054,9 +2054,9 @@
       "projected_fantasy_points": 152.4,
       "vorp": -15.2,
       "tier": 8,
-      "expert_volatility": 15.05,
+      "expert_volatility": 15.08,
       "latest_insight": "Official FantasyPros ECR: #108 (WR43)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23891",
@@ -2075,7 +2075,7 @@
       "tier": 8,
       "expert_volatility": 14.6,
       "latest_insight": "Official FantasyPros ECR: #109 (RB39)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18600",
@@ -2094,7 +2094,7 @@
       "tier": 8,
       "expert_volatility": 12.58,
       "latest_insight": "Official FantasyPros ECR: #110 (QB17)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23781",
@@ -2113,7 +2113,7 @@
       "tier": 8,
       "expert_volatility": 20.92,
       "latest_insight": "Official FantasyPros ECR: #111 (TE12)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17270",
@@ -2132,7 +2132,7 @@
       "tier": 8,
       "expert_volatility": 17.72,
       "latest_insight": "Official FantasyPros ECR: #112 (TE13)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17269",
@@ -2144,14 +2144,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 113,
-      "adp_rank": 114.4,
-      "arbitrage_delta": 1.4,
+      "adp_rank": 114.5,
+      "arbitrage_delta": 1.5,
       "projected_fantasy_points": 126.0,
       "vorp": -9.6,
       "tier": 8,
-      "expert_volatility": 22.61,
+      "expert_volatility": 22.72,
       "latest_insight": "Official FantasyPros ECR: #113 (TE14)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18598",
@@ -2170,7 +2170,7 @@
       "tier": 8,
       "expert_volatility": 15.98,
       "latest_insight": "Official FantasyPros ECR: #114 (WR44)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22986",
@@ -2189,7 +2189,7 @@
       "tier": 8,
       "expert_volatility": 18.79,
       "latest_insight": "Official FantasyPros ECR: #115 (RB40)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23310",
@@ -2208,7 +2208,7 @@
       "tier": 8,
       "expert_volatility": 11.13,
       "latest_insight": "Official FantasyPros ECR: #116 (RB41)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24706",
@@ -2227,7 +2227,7 @@
       "tier": 8,
       "expert_volatility": 16.12,
       "latest_insight": "Official FantasyPros ECR: #117 (WR45)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23019",
@@ -2239,14 +2239,14 @@
       "bye_week": 5,
       "current_injury_status": "Healthy",
       "ecr_rank": 118,
-      "adp_rank": 118.5,
-      "arbitrage_delta": 0.5,
+      "adp_rank": 118.6,
+      "arbitrage_delta": 0.6,
       "projected_fantasy_points": 146.3,
       "vorp": -21.3,
       "tier": 8,
-      "expert_volatility": 17.19,
+      "expert_volatility": 17.22,
       "latest_insight": "Official FantasyPros ECR: #118 (WR46)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16673",
@@ -2265,7 +2265,7 @@
       "tier": 8,
       "expert_volatility": 12.55,
       "latest_insight": "Official FantasyPros ECR: #119 (RB42)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17237",
@@ -2284,7 +2284,7 @@
       "tier": 8,
       "expert_volatility": 10.06,
       "latest_insight": "Official FantasyPros ECR: #120 (QB18)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19246",
@@ -2303,7 +2303,7 @@
       "tier": 8,
       "expert_volatility": 9.82,
       "latest_insight": "Official FantasyPros ECR: #121 (QB19)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27077",
@@ -2322,7 +2322,7 @@
       "tier": 8,
       "expert_volatility": 13.72,
       "latest_insight": "Official FantasyPros ECR: #122 (WR47)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22985",
@@ -2334,14 +2334,14 @@
       "bye_week": 9,
       "current_injury_status": "Healthy",
       "ecr_rank": 123,
-      "adp_rank": 123.8,
-      "arbitrage_delta": 0.8,
+      "adp_rank": 123.7,
+      "arbitrage_delta": 0.7,
       "projected_fantasy_points": 142.3,
       "vorp": -25.3,
       "tier": 8,
-      "expert_volatility": 18.13,
+      "expert_volatility": 18.04,
       "latest_insight": "Official FantasyPros ECR: #123 (WR48)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23096",
@@ -2360,7 +2360,7 @@
       "tier": 8,
       "expert_volatility": 12.99,
       "latest_insight": "Official FantasyPros ECR: #124 (QB20)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26024",
@@ -2377,9 +2377,9 @@
       "projected_fantasy_points": 140.3,
       "vorp": -27.3,
       "tier": 9,
-      "expert_volatility": 22.53,
+      "expert_volatility": 22.52,
       "latest_insight": "Official FantasyPros ECR: #125 (WR49)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "13981",
@@ -2398,7 +2398,7 @@
       "tier": 9,
       "expert_volatility": 34.87,
       "latest_insight": "Official FantasyPros ECR: #126 (WR50)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26035",
@@ -2415,9 +2415,9 @@
       "projected_fantasy_points": 136.5,
       "vorp": -31.1,
       "tier": 9,
-      "expert_volatility": 25.75,
+      "expert_volatility": 25.47,
       "latest_insight": "Official FantasyPros ECR: #127 (WR51)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22718",
@@ -2429,14 +2429,14 @@
       "bye_week": 14,
       "current_injury_status": "Healthy",
       "ecr_rank": 128,
-      "adp_rank": 130.4,
-      "arbitrage_delta": 2.4,
+      "adp_rank": 130.3,
+      "arbitrage_delta": 2.3,
       "projected_fantasy_points": 121.5,
       "vorp": -14.1,
       "tier": 9,
-      "expert_volatility": 16.19,
+      "expert_volatility": 16.21,
       "latest_insight": "Official FantasyPros ECR: #128 (TE15)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24172",
@@ -2455,7 +2455,7 @@
       "tier": 9,
       "expert_volatility": 13.98,
       "latest_insight": "Official FantasyPros ECR: #129 (RB43)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23794",
@@ -2472,9 +2472,9 @@
       "projected_fantasy_points": 134.6,
       "vorp": -33.0,
       "tier": 9,
-      "expert_volatility": 19.11,
+      "expert_volatility": 19.13,
       "latest_insight": "Official FantasyPros ECR: #130 (WR52)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27331",
@@ -2493,7 +2493,7 @@
       "tier": 9,
       "expert_volatility": 21.62,
       "latest_insight": "Official FantasyPros ECR: #131 (WR53)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22980",
@@ -2512,7 +2512,7 @@
       "tier": 9,
       "expert_volatility": 16.56,
       "latest_insight": "Official FantasyPros ECR: #132 (RB44)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27520",
@@ -2531,7 +2531,7 @@
       "tier": 9,
       "expert_volatility": 14.23,
       "latest_insight": "Official FantasyPros ECR: #133 (RB45)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23499",
@@ -2550,7 +2550,7 @@
       "tier": 9,
       "expert_volatility": 26.53,
       "latest_insight": "Official FantasyPros ECR: #134 (QB21)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23152",
@@ -2569,7 +2569,7 @@
       "tier": 9,
       "expert_volatility": 24.48,
       "latest_insight": "Official FantasyPros ECR: #135 (RB46)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26403",
@@ -2581,14 +2581,14 @@
       "bye_week": 5,
       "current_injury_status": "Healthy",
       "ecr_rank": 136,
-      "adp_rank": 137.3,
-      "arbitrage_delta": 1.3,
+      "adp_rank": 137.4,
+      "arbitrage_delta": 1.4,
       "projected_fantasy_points": 130.8,
       "vorp": -36.8,
       "tier": 9,
-      "expert_volatility": 15.63,
+      "expert_volatility": 15.67,
       "latest_insight": "Official FantasyPros ECR: #136 (WR54)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24687",
@@ -2605,9 +2605,9 @@
       "projected_fantasy_points": 129.0,
       "vorp": -38.6,
       "tier": 9,
-      "expert_volatility": 18.3,
+      "expert_volatility": 18.18,
       "latest_insight": "Official FantasyPros ECR: #137 (WR55)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19562",
@@ -2619,14 +2619,14 @@
       "bye_week": 8,
       "current_injury_status": "Healthy",
       "ecr_rank": 138,
-      "adp_rank": 145.7,
-      "arbitrage_delta": 7.7,
+      "adp_rank": 145.2,
+      "arbitrage_delta": 7.2,
       "projected_fantasy_points": 117.2,
       "vorp": -18.4,
       "tier": 9,
-      "expert_volatility": 21.97,
+      "expert_volatility": 22.25,
       "latest_insight": "Official FantasyPros ECR: #138 (TE16)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23748",
@@ -2643,9 +2643,9 @@
       "projected_fantasy_points": 127.2,
       "vorp": -40.4,
       "tier": 9,
-      "expert_volatility": 13.62,
+      "expert_volatility": 13.76,
       "latest_insight": "Official FantasyPros ECR: #139 (WR56)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25360",
@@ -2664,7 +2664,7 @@
       "tier": 9,
       "expert_volatility": 25.14,
       "latest_insight": "Official FantasyPros ECR: #140 (RB47)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22908",
@@ -2683,7 +2683,7 @@
       "tier": 9,
       "expert_volatility": 18.87,
       "latest_insight": "Official FantasyPros ECR: #141 (RB48)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17236",
@@ -2702,7 +2702,7 @@
       "tier": 9,
       "expert_volatility": 15.79,
       "latest_insight": "Official FantasyPros ECR: #142 (QB22)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24333",
@@ -2721,7 +2721,7 @@
       "tier": 9,
       "expert_volatility": 19.28,
       "latest_insight": "Official FantasyPros ECR: #143 (RB49)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23071",
@@ -2738,9 +2738,9 @@
       "projected_fantasy_points": 215.4,
       "vorp": -81.8,
       "tier": 9,
-      "expert_volatility": 19.34,
+      "expert_volatility": 19.36,
       "latest_insight": "Official FantasyPros ECR: #144 (QB23)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27320",
@@ -2759,7 +2759,7 @@
       "tier": 9,
       "expert_volatility": 26.63,
       "latest_insight": "Official FantasyPros ECR: #145 (RB50)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18244",
@@ -2771,14 +2771,14 @@
       "bye_week": 8,
       "current_injury_status": "Healthy",
       "ecr_rank": 146,
-      "adp_rank": 139.8,
-      "arbitrage_delta": -6.2,
+      "adp_rank": 139.9,
+      "arbitrage_delta": -6.1,
       "projected_fantasy_points": 125.3,
       "vorp": -42.3,
       "tier": 9,
-      "expert_volatility": 35.11,
+      "expert_volatility": 34.97,
       "latest_insight": "Official FantasyPros ECR: #146 (WR57)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15561",
@@ -2795,9 +2795,9 @@
       "projected_fantasy_points": 113.0,
       "vorp": -22.6,
       "tier": 9,
-      "expert_volatility": 20.55,
+      "expert_volatility": 20.56,
       "latest_insight": "\ud83d\udc8e TWO-WAY STAR: Dominating camp highlights on both sides; red-zone target in situational drills.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25345",
@@ -2809,33 +2809,14 @@
       "bye_week": 7,
       "current_injury_status": "Healthy",
       "ecr_rank": 148,
-      "adp_rank": 153.8,
-      "arbitrage_delta": 5.8,
+      "adp_rank": 154.1,
+      "arbitrage_delta": 6.1,
       "projected_fantasy_points": 108.9,
       "vorp": -26.7,
       "tier": 9,
-      "expert_volatility": 24.33,
+      "expert_volatility": 24.04,
       "latest_insight": "Official FantasyPros ECR: #148 (TE18)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "16421",
-      "player_name": "Alvin Kamara",
-      "position": "RB",
-      "positional_rank": "RB51",
-      "pos_order": 51,
-      "team": "NO",
-      "bye_week": 8,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 149,
-      "adp_rank": 154.3,
-      "arbitrage_delta": 5.3,
-      "projected_fantasy_points": 108.7,
-      "vorp": -72.8,
-      "tier": 9,
-      "expert_volatility": 17.82,
-      "latest_insight": "Official FantasyPros ECR: #149 (RB51)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28138",
@@ -2846,15 +2827,34 @@
       "team": "SF",
       "bye_week": 8,
       "current_injury_status": "Healthy",
-      "ecr_rank": 150,
-      "adp_rank": 154.3,
-      "arbitrage_delta": 4.3,
+      "ecr_rank": 149,
+      "adp_rank": 154.2,
+      "arbitrage_delta": 5.2,
       "projected_fantasy_points": 123.5,
       "vorp": -44.1,
       "tier": 9,
-      "expert_volatility": 39.93,
-      "latest_insight": "Official FantasyPros ECR: #150 (WR58)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 39.96,
+      "latest_insight": "Official FantasyPros ECR: #149 (WR58)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "16421",
+      "player_name": "Alvin Kamara",
+      "position": "RB",
+      "positional_rank": "RB51",
+      "pos_order": 51,
+      "team": "NO",
+      "bye_week": 8,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 150,
+      "adp_rank": 154.3,
+      "arbitrage_delta": 4.3,
+      "projected_fantasy_points": 108.7,
+      "vorp": -72.8,
+      "tier": 9,
+      "expert_volatility": 17.82,
+      "latest_insight": "Official FantasyPros ECR: #150 (RB51)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25323",
@@ -2873,7 +2873,7 @@
       "tier": 9,
       "expert_volatility": 20.12,
       "latest_insight": "Official FantasyPros ECR: #151 (RB52)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20094",
@@ -2890,9 +2890,9 @@
       "projected_fantasy_points": 104.2,
       "vorp": -77.3,
       "tier": 9,
-      "expert_volatility": 18.73,
+      "expert_volatility": 18.61,
       "latest_insight": "Official FantasyPros ECR: #152 (RB53)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18232",
@@ -2904,14 +2904,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 153,
-      "adp_rank": 159.9,
-      "arbitrage_delta": 6.9,
+      "adp_rank": 158.9,
+      "arbitrage_delta": 5.9,
       "projected_fantasy_points": 208.0,
       "vorp": -89.2,
       "tier": 9,
-      "expert_volatility": 35.7,
+      "expert_volatility": 34.64,
       "latest_insight": "Official FantasyPros ECR: #153 (QB24)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27339",
@@ -2923,33 +2923,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 154,
-      "adp_rank": 163.6,
-      "arbitrage_delta": 9.6,
+      "adp_rank": 163.7,
+      "arbitrage_delta": 9.7,
       "projected_fantasy_points": 121.8,
       "vorp": -45.8,
       "tier": 9,
-      "expert_volatility": 30.58,
+      "expert_volatility": 30.51,
       "latest_insight": "Official FantasyPros ECR: #154 (WR59)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "23982",
-      "player_name": "Chig Okonkwo",
-      "position": "TE",
-      "positional_rank": "TE19",
-      "pos_order": 19,
-      "team": "WAS",
-      "bye_week": 7,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 155,
-      "adp_rank": 164.0,
-      "arbitrage_delta": 9.0,
-      "projected_fantasy_points": 105.0,
-      "vorp": -30.6,
-      "tier": 9,
-      "expert_volatility": 30.42,
-      "latest_insight": "Official FantasyPros ECR: #155 (TE19)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27102",
@@ -2960,15 +2941,34 @@
       "team": "CLE",
       "bye_week": 11,
       "current_injury_status": "Healthy",
-      "ecr_rank": 156,
+      "ecr_rank": 155,
       "adp_rank": 164.0,
-      "arbitrage_delta": 8.0,
+      "arbitrage_delta": 9.0,
       "projected_fantasy_points": 102.0,
       "vorp": -79.5,
       "tier": 9,
       "expert_volatility": 21.13,
-      "latest_insight": "Official FantasyPros ECR: #156 (RB54)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "latest_insight": "Official FantasyPros ECR: #155 (RB54)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "23982",
+      "player_name": "Chig Okonkwo",
+      "position": "TE",
+      "positional_rank": "TE19",
+      "pos_order": 19,
+      "team": "WAS",
+      "bye_week": 7,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 156,
+      "adp_rank": 164.5,
+      "arbitrage_delta": 8.5,
+      "projected_fantasy_points": 105.0,
+      "vorp": -30.6,
+      "tier": 9,
+      "expert_volatility": 31.05,
+      "latest_insight": "Official FantasyPros ECR: #156 (TE19)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24755",
@@ -2980,14 +2980,14 @@
       "bye_week": 9,
       "current_injury_status": "Healthy",
       "ecr_rank": 157,
-      "adp_rank": 165.5,
-      "arbitrage_delta": 8.5,
+      "adp_rank": 165.9,
+      "arbitrage_delta": 8.9,
       "projected_fantasy_points": 200.7,
       "vorp": -96.5,
       "tier": 9,
-      "expert_volatility": 30.03,
+      "expert_volatility": 30.41,
       "latest_insight": "Official FantasyPros ECR: #157 (QB25)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8120",
@@ -3006,7 +3006,7 @@
       "tier": 10,
       "expert_volatility": 5.67,
       "latest_insight": "Official FantasyPros ECR: #158 (DST1)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24346",
@@ -3025,7 +3025,7 @@
       "tier": 10,
       "expert_volatility": 31.3,
       "latest_insight": "Official FantasyPros ECR: #159 (RB55)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25997",
@@ -3044,7 +3044,7 @@
       "tier": 10,
       "expert_volatility": 38.81,
       "latest_insight": "Official FantasyPros ECR: #160 (TE20)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19590",
@@ -3063,7 +3063,7 @@
       "tier": 10,
       "expert_volatility": 28.88,
       "latest_insight": "Official FantasyPros ECR: #161 (WR60)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24357",
@@ -3075,14 +3075,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 162,
-      "adp_rank": 175.4,
-      "arbitrage_delta": 13.4,
+      "adp_rank": 175.6,
+      "arbitrage_delta": 13.6,
       "projected_fantasy_points": 118.2,
       "vorp": -49.4,
       "tier": 10,
-      "expert_volatility": 25.38,
+      "expert_volatility": 25.36,
       "latest_insight": "Official FantasyPros ECR: #162 (WR61)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23179",
@@ -3094,14 +3094,14 @@
       "bye_week": 10,
       "current_injury_status": "Questionable",
       "ecr_rank": 163,
-      "adp_rank": 176.0,
-      "arbitrage_delta": 13.0,
+      "adp_rank": 176.5,
+      "arbitrage_delta": 13.5,
       "projected_fantasy_points": 116.5,
       "vorp": -51.1,
       "tier": 10,
-      "expert_volatility": 28.79,
+      "expert_volatility": 29.11,
       "latest_insight": "\u26a0\ufe0f INJURY: Sidelined with knee issue; WR3 battle open in camp.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19201",
@@ -3113,14 +3113,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 164,
-      "adp_rank": 178.0,
-      "arbitrage_delta": 14.0,
+      "adp_rank": 178.1,
+      "arbitrage_delta": 14.1,
       "projected_fantasy_points": 114.8,
       "vorp": -52.8,
       "tier": 10,
-      "expert_volatility": 24.35,
+      "expert_volatility": 24.33,
       "latest_insight": "Official FantasyPros ECR: #164 (WR63)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25337",
@@ -3139,7 +3139,7 @@
       "tier": 10,
       "expert_volatility": 25.91,
       "latest_insight": "Official FantasyPros ECR: #165 (WR64)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8090",
@@ -3158,7 +3158,7 @@
       "tier": 10,
       "expert_volatility": 5.21,
       "latest_insight": "Official FantasyPros ECR: #166 (DST2)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22900",
@@ -3170,14 +3170,14 @@
       "bye_week": 5,
       "current_injury_status": "Healthy",
       "ecr_rank": 167,
-      "adp_rank": 183.7,
-      "arbitrage_delta": 16.7,
+      "adp_rank": 183.9,
+      "arbitrage_delta": 16.9,
       "projected_fantasy_points": 193.4,
       "vorp": -103.8,
       "tier": 10,
-      "expert_volatility": 28.76,
+      "expert_volatility": 28.64,
       "latest_insight": "Official FantasyPros ECR: #167 (QB26)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8280",
@@ -3196,7 +3196,7 @@
       "tier": 10,
       "expert_volatility": 6.68,
       "latest_insight": "Official FantasyPros ECR: #168 (DST3)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8260",
@@ -3215,7 +3215,7 @@
       "tier": 10,
       "expert_volatility": 3.84,
       "latest_insight": "Official FantasyPros ECR: #169 (DST4)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26034",
@@ -3234,16 +3234,16 @@
       "tier": 10,
       "expert_volatility": 31.69,
       "latest_insight": "\ud83d\udc8e TWO-WAY STAR: Dominating camp highlights on both sides; red-zone target in situational drills.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
-      "player_id": "26215",
-      "player_name": "Tre' Harris",
+      "player_id": "28127",
+      "player_name": "Omar Cooper Jr.",
       "position": "WR",
       "positional_rank": "WR66",
       "pos_order": 66,
-      "team": "LAC",
-      "bye_week": 7,
+      "team": "NYJ",
+      "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 171,
       "adp_rank": 187.7,
@@ -3251,28 +3251,28 @@
       "projected_fantasy_points": 109.7,
       "vorp": -57.9,
       "tier": 10,
-      "expert_volatility": 27.75,
+      "expert_volatility": 32.01,
       "latest_insight": "Official FantasyPros ECR: #171 (WR66)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
-      "player_id": "28127",
-      "player_name": "Omar Cooper Jr.",
+      "player_id": "26215",
+      "player_name": "Tre' Harris",
       "position": "WR",
       "positional_rank": "WR67",
       "pos_order": 67,
-      "team": "NYJ",
-      "bye_week": 13,
+      "team": "LAC",
+      "bye_week": 7,
       "current_injury_status": "Healthy",
       "ecr_rank": 172,
-      "adp_rank": 187.7,
-      "arbitrage_delta": 15.7,
+      "adp_rank": 188.4,
+      "arbitrage_delta": 16.4,
       "projected_fantasy_points": 108.0,
       "vorp": -59.6,
       "tier": 10,
-      "expert_volatility": 32.01,
+      "expert_volatility": 28.05,
       "latest_insight": "Official FantasyPros ECR: #172 (WR67)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23118",
@@ -3289,28 +3289,9 @@
       "projected_fantasy_points": 97.7,
       "vorp": -83.8,
       "tier": 10,
-      "expert_volatility": 51.53,
+      "expert_volatility": 51.51,
       "latest_insight": "Official FantasyPros ECR: #173 (RB56)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "23679",
-      "player_name": "Sean Tucker",
-      "position": "RB",
-      "positional_rank": "RB57",
-      "pos_order": 57,
-      "team": "TB",
-      "bye_week": 10,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 174,
-      "adp_rank": 183.3,
-      "arbitrage_delta": 9.3,
-      "projected_fantasy_points": 95.5,
-      "vorp": -86.0,
-      "tier": 10,
-      "expert_volatility": 34.23,
-      "latest_insight": "Official FantasyPros ECR: #174 (RB57)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24177",
@@ -3321,15 +3302,34 @@
       "team": "LV",
       "bye_week": 13,
       "current_injury_status": "Healthy",
-      "ecr_rank": 175,
-      "adp_rank": 188.6,
-      "arbitrage_delta": 13.6,
+      "ecr_rank": 174,
+      "adp_rank": 188.2,
+      "arbitrage_delta": 14.2,
       "projected_fantasy_points": 106.3,
       "vorp": -61.3,
       "tier": 10,
-      "expert_volatility": 38.02,
-      "latest_insight": "Official FantasyPros ECR: #175 (WR68)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 38.06,
+      "latest_insight": "Official FantasyPros ECR: #174 (WR68)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "23679",
+      "player_name": "Sean Tucker",
+      "position": "RB",
+      "positional_rank": "RB57",
+      "pos_order": 57,
+      "team": "TB",
+      "bye_week": 10,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 175,
+      "adp_rank": 183.3,
+      "arbitrage_delta": 8.3,
+      "projected_fantasy_points": 95.5,
+      "vorp": -86.0,
+      "tier": 10,
+      "expert_volatility": 34.23,
+      "latest_insight": "Official FantasyPros ECR: #175 (RB57)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8230",
@@ -3348,7 +3348,7 @@
       "tier": 10,
       "expert_volatility": 8.55,
       "latest_insight": "Official FantasyPros ECR: #176 (DST5)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28107",
@@ -3360,14 +3360,14 @@
       "bye_week": 5,
       "current_injury_status": "Healthy",
       "ecr_rank": 177,
-      "adp_rank": 184.5,
-      "arbitrage_delta": 7.5,
+      "adp_rank": 184.4,
+      "arbitrage_delta": 7.4,
       "projected_fantasy_points": 93.4,
       "vorp": -88.1,
       "tier": 10,
-      "expert_volatility": 35.21,
+      "expert_volatility": 35.11,
       "latest_insight": "Official FantasyPros ECR: #177 (RB58)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23091",
@@ -3379,14 +3379,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 178,
-      "adp_rank": 189.2,
-      "arbitrage_delta": 11.2,
+      "adp_rank": 189.3,
+      "arbitrage_delta": 11.3,
       "projected_fantasy_points": 97.4,
       "vorp": -38.2,
       "tier": 10,
-      "expert_volatility": 36.05,
+      "expert_volatility": 36.21,
       "latest_insight": "Official FantasyPros ECR: #178 (TE21)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26191",
@@ -3403,9 +3403,9 @@
       "projected_fantasy_points": 91.3,
       "vorp": -90.2,
       "tier": 10,
-      "expert_volatility": 31.97,
+      "expert_volatility": 31.8,
       "latest_insight": "Official FantasyPros ECR: #179 (RB59)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26335",
@@ -3424,7 +3424,7 @@
       "tier": 10,
       "expert_volatility": 21.22,
       "latest_insight": "Official FantasyPros ECR: #180 (TE22)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28108",
@@ -3436,14 +3436,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 181,
-      "adp_rank": 186.9,
-      "arbitrage_delta": 5.9,
+      "adp_rank": 186.8,
+      "arbitrage_delta": 5.8,
       "projected_fantasy_points": 89.2,
       "vorp": -92.3,
       "tier": 10,
-      "expert_volatility": 35.07,
+      "expert_volatility": 34.86,
       "latest_insight": "Official FantasyPros ECR: #181 (RB60)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26355",
@@ -3462,7 +3462,7 @@
       "tier": 10,
       "expert_volatility": 32.2,
       "latest_insight": "Official FantasyPros ECR: #182 (RB61)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8180",
@@ -3481,7 +3481,7 @@
       "tier": 10,
       "expert_volatility": 7.48,
       "latest_insight": "Official FantasyPros ECR: #183 (DST6)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24343",
@@ -3500,7 +3500,7 @@
       "tier": 10,
       "expert_volatility": 37.52,
       "latest_insight": "Official FantasyPros ECR: #184 (RB62)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8170",
@@ -3519,7 +3519,7 @@
       "tier": 10,
       "expert_volatility": 10.42,
       "latest_insight": "Official FantasyPros ECR: #185 (DST7)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26068",
@@ -3538,7 +3538,7 @@
       "tier": 10,
       "expert_volatility": 2.34,
       "latest_insight": "Official FantasyPros ECR: #186 (K1)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22989",
@@ -3550,14 +3550,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 187,
-      "adp_rank": 193.8,
-      "arbitrage_delta": 6.8,
+      "adp_rank": 193.6,
+      "arbitrage_delta": 6.6,
       "projected_fantasy_points": 104.7,
       "vorp": -62.9,
       "tier": 10,
-      "expert_volatility": 27.3,
+      "expert_volatility": 27.49,
       "latest_insight": "Official FantasyPros ECR: #187 (WR69)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8240",
@@ -3576,7 +3576,7 @@
       "tier": 10,
       "expert_volatility": 6.77,
       "latest_insight": "Official FantasyPros ECR: #188 (DST8)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8140",
@@ -3595,7 +3595,7 @@
       "tier": 10,
       "expert_volatility": 12.11,
       "latest_insight": "Official FantasyPros ECR: #189 (DST9)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26398",
@@ -3607,14 +3607,14 @@
       "bye_week": 14,
       "current_injury_status": "Healthy",
       "ecr_rank": 190,
-      "adp_rank": 196.9,
-      "arbitrage_delta": 6.9,
+      "adp_rank": 197.2,
+      "arbitrage_delta": 7.2,
       "projected_fantasy_points": 103.0,
       "vorp": -64.6,
       "tier": 10,
-      "expert_volatility": 29.27,
+      "expert_volatility": 29.41,
       "latest_insight": "Official FantasyPros ECR: #190 (WR70)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24354",
@@ -3626,33 +3626,14 @@
       "bye_week": 10,
       "current_injury_status": "Healthy",
       "ecr_rank": 191,
-      "adp_rank": 202.1,
-      "arbitrage_delta": 11.1,
+      "adp_rank": 202.0,
+      "arbitrage_delta": 11.0,
       "projected_fantasy_points": 101.4,
       "vorp": -66.2,
       "tier": 10,
-      "expert_volatility": 34.0,
+      "expert_volatility": 34.08,
       "latest_insight": "Official FantasyPros ECR: #191 (WR71)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "8250",
-      "player_name": "Los Angeles Chargers",
-      "position": "DST",
-      "positional_rank": "DST10",
-      "pos_order": 10,
-      "team": "LAC",
-      "bye_week": 7,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 192,
-      "adp_rank": 190.7,
-      "arbitrage_delta": -1.3,
-      "projected_fantasy_points": 117.4,
-      "vorp": 2.8,
-      "tier": 10,
-      "expert_volatility": 12.94,
-      "latest_insight": "Official FantasyPros ECR: #192 (DST10)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26055",
@@ -3663,15 +3644,34 @@
       "team": "NYJ",
       "bye_week": 13,
       "current_injury_status": "Healthy",
-      "ecr_rank": 193,
-      "adp_rank": 204.8,
-      "arbitrage_delta": 11.8,
+      "ecr_rank": 192,
+      "adp_rank": 204.6,
+      "arbitrage_delta": 12.6,
       "projected_fantasy_points": 90.2,
       "vorp": -45.4,
       "tier": 10,
-      "expert_volatility": 32.4,
-      "latest_insight": "Official FantasyPros ECR: #193 (TE23)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 32.49,
+      "latest_insight": "Official FantasyPros ECR: #192 (TE23)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "8250",
+      "player_name": "Los Angeles Chargers",
+      "position": "DST",
+      "positional_rank": "DST10",
+      "pos_order": 10,
+      "team": "LAC",
+      "bye_week": 7,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 193,
+      "adp_rank": 190.7,
+      "arbitrage_delta": -2.3,
+      "projected_fantasy_points": 117.4,
+      "vorp": 2.8,
+      "tier": 10,
+      "expert_volatility": 12.94,
+      "latest_insight": "Official FantasyPros ECR: #193 (DST10)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17258",
@@ -3683,14 +3683,14 @@
       "bye_week": 9,
       "current_injury_status": "Healthy",
       "ecr_rank": 194,
-      "adp_rank": 202.9,
-      "arbitrage_delta": 8.9,
+      "adp_rank": 202.8,
+      "arbitrage_delta": 8.8,
       "projected_fantasy_points": 99.8,
       "vorp": -67.8,
       "tier": 10,
-      "expert_volatility": 31.43,
+      "expert_volatility": 31.48,
       "latest_insight": "Official FantasyPros ECR: #194 (WR72)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25885",
@@ -3707,28 +3707,9 @@
       "projected_fantasy_points": 83.0,
       "vorp": -98.5,
       "tier": 10,
-      "expert_volatility": 35.1,
+      "expert_volatility": 35.07,
       "latest_insight": "Official FantasyPros ECR: #195 (RB63)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "24362",
-      "player_name": "Kaytron Allen",
-      "position": "RB",
-      "positional_rank": "RB64",
-      "pos_order": 64,
-      "team": "WAS",
-      "bye_week": 7,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 196,
-      "adp_rank": 202.2,
-      "arbitrage_delta": 6.2,
-      "projected_fantasy_points": 81.0,
-      "vorp": -100.5,
-      "tier": 10,
-      "expert_volatility": 36.64,
-      "latest_insight": "Official FantasyPros ECR: #196 (RB64)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17349",
@@ -3739,15 +3720,34 @@
       "team": "HOU",
       "bye_week": 8,
       "current_injury_status": "Healthy",
-      "ecr_rank": 197,
-      "adp_rank": 206.7,
-      "arbitrage_delta": 9.7,
+      "ecr_rank": 196,
+      "adp_rank": 206.5,
+      "arbitrage_delta": 10.5,
       "projected_fantasy_points": 86.7,
       "vorp": -48.9,
       "tier": 10,
-      "expert_volatility": 26.28,
-      "latest_insight": "Official FantasyPros ECR: #197 (TE24)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 26.31,
+      "latest_insight": "Official FantasyPros ECR: #196 (TE24)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "24362",
+      "player_name": "Kaytron Allen",
+      "position": "RB",
+      "positional_rank": "RB64",
+      "pos_order": 64,
+      "team": "WAS",
+      "bye_week": 7,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 197,
+      "adp_rank": 202.2,
+      "arbitrage_delta": 5.2,
+      "projected_fantasy_points": 81.0,
+      "vorp": -100.5,
+      "tier": 10,
+      "expert_volatility": 36.64,
+      "latest_insight": "Official FantasyPros ECR: #197 (RB64)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15756",
@@ -3766,7 +3766,7 @@
       "tier": 10,
       "expert_volatility": 4.58,
       "latest_insight": "Official FantasyPros ECR: #198 (K2)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23901",
@@ -3785,7 +3785,7 @@
       "tier": 10,
       "expert_volatility": 15.37,
       "latest_insight": "Official FantasyPros ECR: #199 (K3)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15642",
@@ -3804,7 +3804,7 @@
       "tier": 10,
       "expert_volatility": 40.23,
       "latest_insight": "Official FantasyPros ECR: #200 (QB27)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26475",
@@ -3823,7 +3823,7 @@
       "tier": 10,
       "expert_volatility": 5.96,
       "latest_insight": "Official FantasyPros ECR: #201 (K4)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19794",
@@ -3842,7 +3842,7 @@
       "tier": 11,
       "expert_volatility": 29.27,
       "latest_insight": "Official FantasyPros ECR: #202 (WR73)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16447",
@@ -3861,7 +3861,7 @@
       "tier": 11,
       "expert_volatility": 36.64,
       "latest_insight": "Official FantasyPros ECR: #203 (RB65)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8020",
@@ -3880,7 +3880,7 @@
       "tier": 11,
       "expert_volatility": 24.18,
       "latest_insight": "Official FantasyPros ECR: #204 (DST11)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "14003",
@@ -3899,7 +3899,7 @@
       "tier": 11,
       "expert_volatility": 9.67,
       "latest_insight": "Official FantasyPros ECR: #205 (K5)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27446",
@@ -3911,14 +3911,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 206,
-      "adp_rank": 205.4,
-      "arbitrage_delta": -0.6,
+      "adp_rank": 205.3,
+      "arbitrage_delta": -0.7,
       "projected_fantasy_points": 96.6,
       "vorp": -71.0,
       "tier": 11,
-      "expert_volatility": 21.56,
+      "expert_volatility": 21.53,
       "latest_insight": "Official FantasyPros ECR: #206 (WR74)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27211",
@@ -3935,9 +3935,9 @@
       "projected_fantasy_points": 95.0,
       "vorp": -72.6,
       "tier": 11,
-      "expert_volatility": 36.71,
+      "expert_volatility": 36.68,
       "latest_insight": "Official FantasyPros ECR: #207 (WR75)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24344",
@@ -3956,7 +3956,7 @@
       "tier": 11,
       "expert_volatility": 45.69,
       "latest_insight": "Official FantasyPros ECR: #208 (RB66)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26314",
@@ -3968,14 +3968,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 209,
-      "adp_rank": 211.2,
-      "arbitrage_delta": 2.2,
+      "adp_rank": 210.8,
+      "arbitrage_delta": 1.8,
       "projected_fantasy_points": 93.4,
       "vorp": -74.2,
       "tier": 11,
-      "expert_volatility": 35.63,
+      "expert_volatility": 35.64,
       "latest_insight": "Official FantasyPros ECR: #209 (WR76)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18290",
@@ -3994,7 +3994,7 @@
       "tier": 11,
       "expert_volatility": 22.16,
       "latest_insight": "Official FantasyPros ECR: #210 (TE25)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8150",
@@ -4013,7 +4013,7 @@
       "tier": 11,
       "expert_volatility": 19.84,
       "latest_insight": "Official FantasyPros ECR: #211 (DST12)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8110",
@@ -4032,7 +4032,7 @@
       "tier": 11,
       "expert_volatility": 22.23,
       "latest_insight": "Official FantasyPros ECR: #212 (DST13)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23092",
@@ -4044,14 +4044,14 @@
       "bye_week": 10,
       "current_injury_status": "Healthy",
       "ecr_rank": 213,
-      "adp_rank": 214.7,
-      "arbitrage_delta": 1.7,
+      "adp_rank": 214.6,
+      "arbitrage_delta": 1.6,
       "projected_fantasy_points": 91.8,
       "vorp": -75.8,
       "tier": 11,
-      "expert_volatility": 30.97,
+      "expert_volatility": 31.0,
       "latest_insight": "Official FantasyPros ECR: #213 (WR77)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17575",
@@ -4070,7 +4070,7 @@
       "tier": 11,
       "expert_volatility": 9.58,
       "latest_insight": "Official FantasyPros ECR: #214 (K6)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27534",
@@ -4089,7 +4089,7 @@
       "tier": 11,
       "expert_volatility": 11.49,
       "latest_insight": "Official FantasyPros ECR: #215 (K7)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25361",
@@ -4101,14 +4101,14 @@
       "bye_week": 8,
       "current_injury_status": "Healthy",
       "ecr_rank": 216,
-      "adp_rank": 217.2,
-      "arbitrage_delta": 1.2,
+      "adp_rank": 217.1,
+      "arbitrage_delta": 1.1,
       "projected_fantasy_points": 90.3,
       "vorp": -77.3,
       "tier": 11,
       "expert_volatility": 32.01,
       "latest_insight": "Official FantasyPros ECR: #216 (WR78)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19810",
@@ -4125,9 +4125,9 @@
       "projected_fantasy_points": 88.7,
       "vorp": -78.9,
       "tier": 11,
-      "expert_volatility": 23.13,
+      "expert_volatility": 23.16,
       "latest_insight": "Official FantasyPros ECR: #217 (WR79)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20163",
@@ -4139,14 +4139,14 @@
       "bye_week": 9,
       "current_injury_status": "Healthy",
       "ecr_rank": 218,
-      "adp_rank": 231.1,
-      "arbitrage_delta": 13.1,
+      "adp_rank": 231.3,
+      "arbitrage_delta": 13.3,
       "projected_fantasy_points": 80.0,
       "vorp": -55.6,
       "tier": 11,
-      "expert_volatility": 33.02,
+      "expert_volatility": 32.48,
       "latest_insight": "Official FantasyPros ECR: #218 (TE26)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27122",
@@ -4165,7 +4165,7 @@
       "tier": 11,
       "expert_volatility": 34.23,
       "latest_insight": "Official FantasyPros ECR: #219 (WR80)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25987",
@@ -4177,14 +4177,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 220,
-      "adp_rank": 219.7,
-      "arbitrage_delta": -0.3,
+      "adp_rank": 219.6,
+      "arbitrage_delta": -0.4,
       "projected_fantasy_points": 75.0,
       "vorp": -106.5,
       "tier": 11,
-      "expert_volatility": 29.08,
+      "expert_volatility": 29.05,
       "latest_insight": "Official FantasyPros ECR: #220 (RB67)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27109",
@@ -4203,7 +4203,7 @@
       "tier": 11,
       "expert_volatility": 22.5,
       "latest_insight": "Official FantasyPros ECR: #221 (TE27)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25418",
@@ -4215,14 +4215,14 @@
       "bye_week": 7,
       "current_injury_status": "Healthy",
       "ecr_rank": 222,
-      "adp_rank": 225.3,
-      "arbitrage_delta": 3.3,
+      "adp_rank": 225.4,
+      "arbitrage_delta": 3.4,
       "projected_fantasy_points": 85.7,
       "vorp": -81.9,
       "tier": 11,
-      "expert_volatility": 37.54,
+      "expert_volatility": 37.56,
       "latest_insight": "Official FantasyPros ECR: #222 (WR81)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "13731",
@@ -4241,7 +4241,7 @@
       "tier": 11,
       "expert_volatility": 12.56,
       "latest_insight": "Official FantasyPros ECR: #223 (K8)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26075",
@@ -4260,7 +4260,7 @@
       "tier": 11,
       "expert_volatility": 14.48,
       "latest_insight": "Official FantasyPros ECR: #224 (K9)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23297",
@@ -4279,7 +4279,7 @@
       "tier": 11,
       "expert_volatility": 14.43,
       "latest_insight": "Official FantasyPros ECR: #225 (K10)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25419",
@@ -4296,9 +4296,9 @@
       "projected_fantasy_points": 84.2,
       "vorp": -83.4,
       "tier": 11,
-      "expert_volatility": 35.0,
+      "expert_volatility": 35.01,
       "latest_insight": "Official FantasyPros ECR: #226 (WR82)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27291",
@@ -4317,7 +4317,7 @@
       "tier": 11,
       "expert_volatility": 19.5,
       "latest_insight": "Official FantasyPros ECR: #227 (K11)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "9001",
@@ -4336,7 +4336,7 @@
       "tier": 11,
       "expert_volatility": 43.1,
       "latest_insight": "Official FantasyPros ECR: #228 (QB28)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8100",
@@ -4355,7 +4355,7 @@
       "tier": 11,
       "expert_volatility": 26.56,
       "latest_insight": "Official FantasyPros ECR: #229 (DST14)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22915",
@@ -4374,7 +4374,7 @@
       "tier": 11,
       "expert_volatility": 43.33,
       "latest_insight": "Official FantasyPros ECR: #230 (RB68)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19058",
@@ -4393,7 +4393,7 @@
       "tier": 11,
       "expert_volatility": 15.96,
       "latest_insight": "Official FantasyPros ECR: #231 (K12)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8030",
@@ -4412,7 +4412,7 @@
       "tier": 11,
       "expert_volatility": 22.79,
       "latest_insight": "Official FantasyPros ECR: #232 (DST15)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28084",
@@ -4431,7 +4431,7 @@
       "tier": 11,
       "expert_volatility": 33.81,
       "latest_insight": "Official FantasyPros ECR: #233 (RB69)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25984",
@@ -4443,14 +4443,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 234,
-      "adp_rank": 232.1,
-      "arbitrage_delta": -1.9,
+      "adp_rank": 232.0,
+      "arbitrage_delta": -2.0,
       "projected_fantasy_points": 69.2,
       "vorp": -112.3,
       "tier": 11,
-      "expert_volatility": 25.58,
+      "expert_volatility": 25.57,
       "latest_insight": "Official FantasyPros ECR: #234 (RB70)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "11687",
@@ -4462,14 +4462,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 235,
-      "adp_rank": 245.7,
-      "arbitrage_delta": 10.7,
+      "adp_rank": 246.0,
+      "arbitrage_delta": 11.0,
       "projected_fantasy_points": 171.7,
       "vorp": -125.5,
       "tier": 11,
-      "expert_volatility": 33.1,
+      "expert_volatility": 32.92,
       "latest_insight": "Official FantasyPros ECR: #235 (QB29)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16433",
@@ -4481,14 +4481,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 236,
-      "adp_rank": 237.3,
-      "arbitrage_delta": 1.3,
+      "adp_rank": 237.5,
+      "arbitrage_delta": 1.5,
       "projected_fantasy_points": 82.6,
       "vorp": -85.0,
       "tier": 11,
-      "expert_volatility": 27.86,
+      "expert_volatility": 27.94,
       "latest_insight": "Official FantasyPros ECR: #236 (WR83)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26638",
@@ -4507,7 +4507,7 @@
       "tier": 11,
       "expert_volatility": 15.69,
       "latest_insight": "Official FantasyPros ECR: #237 (K13)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23181",
@@ -4519,14 +4519,14 @@
       "bye_week": 10,
       "current_injury_status": "Healthy",
       "ecr_rank": 238,
-      "adp_rank": 245.6,
-      "arbitrage_delta": 7.6,
+      "adp_rank": 245.7,
+      "arbitrage_delta": 7.7,
       "projected_fantasy_points": 73.5,
       "vorp": -62.1,
       "tier": 11,
-      "expert_volatility": 21.71,
+      "expert_volatility": 21.73,
       "latest_insight": "Official FantasyPros ECR: #238 (TE28)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8070",
@@ -4545,7 +4545,7 @@
       "tier": 11,
       "expert_volatility": 36.48,
       "latest_insight": "Official FantasyPros ECR: #239 (DST16)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26039",
@@ -4562,9 +4562,9 @@
       "projected_fantasy_points": 81.1,
       "vorp": -86.5,
       "tier": 11,
-      "expert_volatility": 32.07,
+      "expert_volatility": 32.04,
       "latest_insight": "Official FantasyPros ECR: #240 (WR84)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23153",
@@ -4576,14 +4576,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 241,
-      "adp_rank": 206.9,
-      "arbitrage_delta": -34.1,
+      "adp_rank": 206.6,
+      "arbitrage_delta": -34.4,
       "projected_fantasy_points": 70.4,
       "vorp": -65.2,
       "tier": 11,
-      "expert_volatility": 44.66,
+      "expert_volatility": 44.6,
       "latest_insight": "Official FantasyPros ECR: #241 (TE29)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16399",
@@ -4595,14 +4595,14 @@
       "bye_week": 7,
       "current_injury_status": "Healthy",
       "ecr_rank": 242,
-      "adp_rank": 246.6,
-      "arbitrage_delta": 4.6,
+      "adp_rank": 246.4,
+      "arbitrage_delta": 4.4,
       "projected_fantasy_points": 67.3,
       "vorp": -68.3,
       "tier": 11,
-      "expert_volatility": 27.67,
+      "expert_volatility": 27.65,
       "latest_insight": "Official FantasyPros ECR: #242 (TE30)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "13029",
@@ -4621,7 +4621,7 @@
       "tier": 12,
       "expert_volatility": 16.8,
       "latest_insight": "Official FantasyPros ECR: #243 (K14)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27315",
@@ -4633,14 +4633,14 @@
       "bye_week": 9,
       "current_injury_status": "Healthy",
       "ecr_rank": 244,
-      "adp_rank": 245.3,
-      "arbitrage_delta": 1.3,
+      "adp_rank": 245.1,
+      "arbitrage_delta": 1.1,
       "projected_fantasy_points": 79.7,
       "vorp": -87.9,
       "tier": 12,
-      "expert_volatility": 36.96,
+      "expert_volatility": 36.93,
       "latest_insight": "Official FantasyPros ECR: #244 (WR85)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27059",
@@ -4652,14 +4652,14 @@
       "bye_week": 9,
       "current_injury_status": "Healthy",
       "ecr_rank": 245,
-      "adp_rank": 244.3,
-      "arbitrage_delta": -0.7,
+      "adp_rank": 244.2,
+      "arbitrage_delta": -0.8,
       "projected_fantasy_points": 78.2,
       "vorp": -89.4,
       "tier": 12,
-      "expert_volatility": 35.88,
+      "expert_volatility": 36.01,
       "latest_insight": "Official FantasyPros ECR: #245 (WR86)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26019",
@@ -4671,14 +4671,14 @@
       "bye_week": 7,
       "current_injury_status": "Healthy",
       "ecr_rank": 246,
-      "adp_rank": 244.7,
-      "arbitrage_delta": -1.3,
+      "adp_rank": 244.8,
+      "arbitrage_delta": -1.2,
       "projected_fantasy_points": 76.7,
       "vorp": -90.9,
       "tier": 12,
-      "expert_volatility": 27.8,
+      "expert_volatility": 27.86,
       "latest_insight": "Official FantasyPros ECR: #246 (WR87)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27310",
@@ -4690,14 +4690,14 @@
       "bye_week": 8,
       "current_injury_status": "Healthy",
       "ecr_rank": 247,
-      "adp_rank": 247.3,
-      "arbitrage_delta": 0.3,
+      "adp_rank": 247.2,
+      "arbitrage_delta": 0.2,
       "projected_fantasy_points": 67.3,
       "vorp": -114.2,
       "tier": 12,
-      "expert_volatility": 39.27,
+      "expert_volatility": 39.19,
       "latest_insight": "Official FantasyPros ECR: #247 (RB71)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28401",
@@ -4714,9 +4714,9 @@
       "projected_fantasy_points": 65.4,
       "vorp": -116.1,
       "tier": 12,
-      "expert_volatility": 42.96,
+      "expert_volatility": 42.99,
       "latest_insight": "Official FantasyPros ECR: #248 (RB72)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16712",
@@ -4735,7 +4735,7 @@
       "tier": 12,
       "expert_volatility": 22.15,
       "latest_insight": "Official FantasyPros ECR: #249 (K15)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19372",
@@ -4754,7 +4754,7 @@
       "tier": 12,
       "expert_volatility": 23.46,
       "latest_insight": "Official FantasyPros ECR: #250 (TE31)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28130",
@@ -4773,7 +4773,7 @@
       "tier": 12,
       "expert_volatility": 37.87,
       "latest_insight": "Official FantasyPros ECR: #251 (WR88)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "11616",
@@ -4785,14 +4785,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 252,
-      "adp_rank": 237.1,
-      "arbitrage_delta": -14.9,
+      "adp_rank": 236.1,
+      "arbitrage_delta": -15.9,
       "projected_fantasy_points": 73.8,
       "vorp": -93.8,
       "tier": 12,
-      "expert_volatility": 60.14,
+      "expert_volatility": 59.67,
       "latest_insight": "Official FantasyPros ECR: #252 (WR89)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25977",
@@ -4804,14 +4804,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 253,
-      "adp_rank": 253.0,
-      "arbitrage_delta": 0.0,
+      "adp_rank": 252.9,
+      "arbitrage_delta": -0.1,
       "projected_fantasy_points": 63.5,
       "vorp": -118.0,
       "tier": 12,
-      "expert_volatility": 32.42,
+      "expert_volatility": 32.36,
       "latest_insight": "Official FantasyPros ECR: #253 (RB73)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18256",
@@ -4828,9 +4828,9 @@
       "projected_fantasy_points": 61.6,
       "vorp": -119.9,
       "tier": 12,
-      "expert_volatility": 35.78,
+      "expert_volatility": 35.76,
       "latest_insight": "Official FantasyPros ECR: #254 (RB74)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16411",
@@ -4849,7 +4849,7 @@
       "tier": 12,
       "expert_volatility": 22.07,
       "latest_insight": "Official FantasyPros ECR: #255 (TE32)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26022",
@@ -4866,9 +4866,9 @@
       "projected_fantasy_points": 72.3,
       "vorp": -95.3,
       "tier": 12,
-      "expert_volatility": 27.16,
+      "expert_volatility": 27.24,
       "latest_insight": "Official FantasyPros ECR: #256 (WR90)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27337",
@@ -4880,14 +4880,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 257,
-      "adp_rank": 238.7,
-      "arbitrage_delta": -18.3,
+      "adp_rank": 238.8,
+      "arbitrage_delta": -18.2,
       "projected_fantasy_points": 70.9,
       "vorp": -96.7,
       "tier": 12,
       "expert_volatility": 44.31,
       "latest_insight": "Official FantasyPros ECR: #257 (WR91)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25823",
@@ -4899,14 +4899,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 258,
-      "adp_rank": 259.0,
-      "arbitrage_delta": 1.0,
+      "adp_rank": 258.9,
+      "arbitrage_delta": 0.9,
       "projected_fantasy_points": 59.7,
       "vorp": -121.8,
       "tier": 12,
-      "expert_volatility": 30.84,
+      "expert_volatility": 30.86,
       "latest_insight": "\ud83d\udd25 CAMP STANDOUT: Named starter for preseason opener with Hubbard sidelined (huge draft momentum).",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28013",
@@ -4923,9 +4923,9 @@
       "projected_fantasy_points": 164.4,
       "vorp": -132.8,
       "tier": 12,
-      "expert_volatility": 35.91,
+      "expert_volatility": 35.88,
       "latest_insight": "Official FantasyPros ECR: #259 (QB30)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27224",
@@ -4944,7 +4944,7 @@
       "tier": 12,
       "expert_volatility": 32.44,
       "latest_insight": "Official FantasyPros ECR: #260 (WR92)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27994",
@@ -4963,7 +4963,7 @@
       "tier": 12,
       "expert_volatility": 34.1,
       "latest_insight": "Official FantasyPros ECR: #261 (WR93)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22913",
@@ -4980,66 +4980,47 @@
       "projected_fantasy_points": 66.6,
       "vorp": -101.0,
       "tier": 12,
-      "expert_volatility": 37.84,
+      "expert_volatility": 37.82,
       "latest_insight": "Official FantasyPros ECR: #262 (WR94)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "16423",
-      "player_name": "Samaje Perine",
-      "position": "RB",
-      "positional_rank": "RB76",
-      "pos_order": 76,
-      "team": "CIN",
-      "bye_week": 6,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 263,
-      "adp_rank": 259.6,
-      "arbitrage_delta": -3.4,
-      "projected_fantasy_points": 57.9,
-      "vorp": -123.6,
-      "tier": 12,
-      "expert_volatility": 38.17,
-      "latest_insight": "Official FantasyPros ECR: #263 (RB76)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "26038",
-      "player_name": "Chris Bell",
-      "position": "WR",
-      "positional_rank": "WR95",
-      "pos_order": 95,
-      "team": "MIA",
-      "bye_week": 6,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 264,
-      "adp_rank": 260.1,
-      "arbitrage_delta": -3.9,
-      "projected_fantasy_points": 65.2,
-      "vorp": -102.4,
-      "tier": 12,
-      "expert_volatility": 31.85,
-      "latest_insight": "Official FantasyPros ECR: #264 (WR95)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27463",
       "player_name": "Elijah Sarratt",
       "position": "WR",
-      "positional_rank": "WR96",
-      "pos_order": 96,
+      "positional_rank": "WR95",
+      "pos_order": 95,
       "team": "BAL",
       "bye_week": 13,
       "current_injury_status": "Healthy",
-      "ecr_rank": 265,
+      "ecr_rank": 263,
       "adp_rank": 261.9,
-      "arbitrage_delta": -3.1,
+      "arbitrage_delta": -1.1,
+      "projected_fantasy_points": 65.2,
+      "vorp": -102.4,
+      "tier": 12,
+      "expert_volatility": 28.02,
+      "latest_insight": "Official FantasyPros ECR: #263 (WR95)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "26038",
+      "player_name": "Chris Bell",
+      "position": "WR",
+      "positional_rank": "WR96",
+      "pos_order": 96,
+      "team": "MIA",
+      "bye_week": 6,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 264,
+      "adp_rank": 260.2,
+      "arbitrage_delta": -3.8,
       "projected_fantasy_points": 63.8,
       "vorp": -103.8,
       "tier": 12,
-      "expert_volatility": 28.03,
-      "latest_insight": "Official FantasyPros ECR: #265 (WR96)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 31.93,
+      "latest_insight": "Official FantasyPros ECR: #264 (WR96)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23144",
@@ -5050,15 +5031,34 @@
       "team": "PHI",
       "bye_week": 10,
       "current_injury_status": "Healthy",
-      "ecr_rank": 266,
-      "adp_rank": 268.6,
-      "arbitrage_delta": 2.6,
+      "ecr_rank": 265,
+      "adp_rank": 268.5,
+      "arbitrage_delta": 3.5,
       "projected_fantasy_points": 58.3,
       "vorp": -77.3,
       "tier": 12,
-      "expert_volatility": 37.08,
-      "latest_insight": "Official FantasyPros ECR: #266 (TE33)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 37.05,
+      "latest_insight": "Official FantasyPros ECR: #265 (TE33)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "16423",
+      "player_name": "Samaje Perine",
+      "position": "RB",
+      "positional_rank": "RB76",
+      "pos_order": 76,
+      "team": "CIN",
+      "bye_week": 6,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 266,
+      "adp_rank": 260.3,
+      "arbitrage_delta": -5.7,
+      "projected_fantasy_points": 57.9,
+      "vorp": -123.6,
+      "tier": 12,
+      "expert_volatility": 37.94,
+      "latest_insight": "Official FantasyPros ECR: #266 (RB76)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24205",
@@ -5077,7 +5077,7 @@
       "tier": 12,
       "expert_volatility": 26.45,
       "latest_insight": "Official FantasyPros ECR: #267 (RB77)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18406",
@@ -5094,9 +5094,9 @@
       "projected_fantasy_points": 54.2,
       "vorp": -127.3,
       "tier": 12,
-      "expert_volatility": 31.91,
+      "expert_volatility": 31.93,
       "latest_insight": "Official FantasyPros ECR: #268 (RB78)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17268",
@@ -5113,9 +5113,9 @@
       "projected_fantasy_points": 62.4,
       "vorp": -105.2,
       "tier": 12,
-      "expert_volatility": 31.07,
+      "expert_volatility": 31.09,
       "latest_insight": "Official FantasyPros ECR: #269 (WR97)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23104",
@@ -5132,9 +5132,9 @@
       "projected_fantasy_points": 55.4,
       "vorp": -80.2,
       "tier": 12,
-      "expert_volatility": 24.64,
+      "expert_volatility": 24.75,
       "latest_insight": "Official FantasyPros ECR: #270 (TE34)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19198",
@@ -5146,14 +5146,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 271,
-      "adp_rank": 279.7,
-      "arbitrage_delta": 8.7,
+      "adp_rank": 279.6,
+      "arbitrage_delta": 8.6,
       "projected_fantasy_points": 157.2,
       "vorp": -140.0,
       "tier": 12,
-      "expert_volatility": 34.84,
+      "expert_volatility": 34.83,
       "latest_insight": "Official FantasyPros ECR: #271 (QB31)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28135",
@@ -5165,14 +5165,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 272,
-      "adp_rank": 239.8,
-      "arbitrage_delta": -32.2,
+      "adp_rank": 239.9,
+      "arbitrage_delta": -32.1,
       "projected_fantasy_points": 61.0,
       "vorp": -106.6,
       "tier": 12,
-      "expert_volatility": 61.86,
+      "expert_volatility": 61.9,
       "latest_insight": "Official FantasyPros ECR: #272 (WR98)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27097",
@@ -5191,7 +5191,7 @@
       "tier": 12,
       "expert_volatility": 25.33,
       "latest_insight": "Official FantasyPros ECR: #273 (RB79)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16026",
@@ -5208,9 +5208,9 @@
       "projected_fantasy_points": 125.5,
       "vorp": -5.2,
       "tier": 12,
-      "expert_volatility": 28.89,
+      "expert_volatility": 28.84,
       "latest_insight": "Official FantasyPros ECR: #274 (K16)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26341",
@@ -5229,7 +5229,7 @@
       "tier": 12,
       "expert_volatility": 34.52,
       "latest_insight": "Official FantasyPros ECR: #275 (K17)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26409",
@@ -5246,9 +5246,9 @@
       "projected_fantasy_points": 59.6,
       "vorp": -108.0,
       "tier": 12,
-      "expert_volatility": 31.23,
+      "expert_volatility": 31.21,
       "latest_insight": "Official FantasyPros ECR: #276 (WR99)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23682",
@@ -5267,7 +5267,7 @@
       "tier": 12,
       "expert_volatility": 30.55,
       "latest_insight": "Official FantasyPros ECR: #277 (RB80)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26005",
@@ -5284,47 +5284,47 @@
       "projected_fantasy_points": 52.6,
       "vorp": -83.0,
       "tier": 12,
-      "expert_volatility": 25.69,
+      "expert_volatility": 25.67,
       "latest_insight": "Official FantasyPros ECR: #278 (TE35)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "23080",
-      "player_name": "Marvin Mims Jr.",
-      "position": "WR",
-      "positional_rank": "WR100",
-      "pos_order": 100,
-      "team": "DEN",
-      "bye_week": 10,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 279,
-      "adp_rank": 272.8,
-      "arbitrage_delta": -6.2,
-      "projected_fantasy_points": 58.2,
-      "vorp": -109.4,
-      "tier": 12,
-      "expert_volatility": 26.35,
-      "latest_insight": "Official FantasyPros ECR: #279 (WR100)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18706",
       "player_name": "Darius Slayton",
       "position": "WR",
-      "positional_rank": "WR101",
-      "pos_order": 101,
+      "positional_rank": "WR100",
+      "pos_order": 100,
       "team": "NYG",
       "bye_week": 8,
       "current_injury_status": "Healthy",
-      "ecr_rank": 280,
+      "ecr_rank": 279,
       "adp_rank": 272.9,
-      "arbitrage_delta": -7.1,
+      "arbitrage_delta": -6.1,
+      "projected_fantasy_points": 58.2,
+      "vorp": -109.4,
+      "tier": 12,
+      "expert_volatility": 26.66,
+      "latest_insight": "Official FantasyPros ECR: #279 (WR100)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "23080",
+      "player_name": "Marvin Mims Jr.",
+      "position": "WR",
+      "positional_rank": "WR101",
+      "pos_order": 101,
+      "team": "DEN",
+      "bye_week": 10,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 280,
+      "adp_rank": 273.0,
+      "arbitrage_delta": -7.0,
       "projected_fantasy_points": 56.8,
       "vorp": -110.8,
       "tier": 12,
-      "expert_volatility": 26.67,
+      "expert_volatility": 26.2,
       "latest_insight": "Official FantasyPros ECR: #280 (WR101)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27285",
@@ -5343,7 +5343,7 @@
       "tier": 12,
       "expert_volatility": 31.31,
       "latest_insight": "Official FantasyPros ECR: #281 (RB81)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8270",
@@ -5362,7 +5362,7 @@
       "tier": 12,
       "expert_volatility": 26.04,
       "latest_insight": "Official FantasyPros ECR: #282 (DST17)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25388",
@@ -5374,14 +5374,14 @@
       "bye_week": 14,
       "current_injury_status": "Healthy",
       "ecr_rank": 283,
-      "adp_rank": 269.5,
-      "arbitrage_delta": -13.5,
+      "adp_rank": 269.4,
+      "arbitrage_delta": -13.6,
       "projected_fantasy_points": 50.0,
       "vorp": -131.5,
       "tier": 12,
-      "expert_volatility": 39.84,
+      "expert_volatility": 39.81,
       "latest_insight": "Official FantasyPros ECR: #283 (RB82)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26136",
@@ -5398,9 +5398,9 @@
       "projected_fantasy_points": 55.5,
       "vorp": -112.1,
       "tier": 12,
-      "expert_volatility": 30.16,
+      "expert_volatility": 30.12,
       "latest_insight": "Official FantasyPros ECR: #284 (WR102)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23079",
@@ -5419,7 +5419,7 @@
       "tier": 12,
       "expert_volatility": 28.2,
       "latest_insight": "Official FantasyPros ECR: #285 (RB83)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24367",
@@ -5438,7 +5438,7 @@
       "tier": 12,
       "expert_volatility": 26.16,
       "latest_insight": "Official FantasyPros ECR: #286 (RB84)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25430",
@@ -5450,14 +5450,14 @@
       "bye_week": 8,
       "current_injury_status": "Healthy",
       "ecr_rank": 287,
-      "adp_rank": 300.3,
-      "arbitrage_delta": 13.3,
+      "adp_rank": 300.2,
+      "arbitrage_delta": 13.2,
       "projected_fantasy_points": 49.8,
       "vorp": -85.8,
       "tier": 12,
-      "expert_volatility": 34.59,
+      "expert_volatility": 34.58,
       "latest_insight": "Official FantasyPros ECR: #287 (TE36)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27165",
@@ -5476,7 +5476,7 @@
       "tier": 12,
       "expert_volatility": 29.53,
       "latest_insight": "Official FantasyPros ECR: #288 (RB85)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8010",
@@ -5495,7 +5495,7 @@
       "tier": 12,
       "expert_volatility": 34.33,
       "latest_insight": "Official FantasyPros ECR: #289 (DST18)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18280",
@@ -5514,7 +5514,7 @@
       "tier": 12,
       "expert_volatility": 19.17,
       "latest_insight": "Official FantasyPros ECR: #290 (RB86)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25654",
@@ -5526,14 +5526,14 @@
       "bye_week": 5,
       "current_injury_status": "Healthy",
       "ecr_rank": 291,
-      "adp_rank": 282.9,
-      "arbitrage_delta": -8.1,
+      "adp_rank": 282.8,
+      "arbitrage_delta": -8.2,
       "projected_fantasy_points": 50.0,
       "vorp": -131.5,
       "tier": 12,
-      "expert_volatility": 26.33,
+      "expert_volatility": 26.4,
       "latest_insight": "Official FantasyPros ECR: #291 (RB87)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28424",
@@ -5552,7 +5552,7 @@
       "tier": 12,
       "expert_volatility": 57.0,
       "latest_insight": "Official FantasyPros ECR: #292 (WR103)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27487",
@@ -5569,9 +5569,9 @@
       "projected_fantasy_points": 52.8,
       "vorp": -114.8,
       "tier": 12,
-      "expert_volatility": 34.53,
+      "expert_volatility": 34.54,
       "latest_insight": "Official FantasyPros ECR: #293 (WR104)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19302",
@@ -5590,7 +5590,7 @@
       "tier": 12,
       "expert_volatility": 39.6,
       "latest_insight": "Official FantasyPros ECR: #294 (RB88)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22973",
@@ -5602,14 +5602,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 295,
-      "adp_rank": 300.7,
-      "arbitrage_delta": 5.7,
+      "adp_rank": 300.6,
+      "arbitrage_delta": 5.6,
       "projected_fantasy_points": 150.0,
       "vorp": -147.2,
       "tier": 12,
-      "expert_volatility": 23.76,
+      "expert_volatility": 23.75,
       "latest_insight": "Official FantasyPros ECR: #295 (QB32)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24360",
@@ -5628,7 +5628,7 @@
       "tier": 12,
       "expert_volatility": 31.78,
       "latest_insight": "Official FantasyPros ECR: #296 (RB89)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25968",
@@ -5645,9 +5645,9 @@
       "projected_fantasy_points": 150.0,
       "vorp": -147.2,
       "tier": 12,
-      "expert_volatility": 24.96,
+      "expert_volatility": 24.95,
       "latest_insight": "Official FantasyPros ECR: #297 (QB33)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8190",
@@ -5666,7 +5666,7 @@
       "tier": 12,
       "expert_volatility": 38.57,
       "latest_insight": "Official FantasyPros ECR: #298 (DST19)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "11177",
@@ -5685,7 +5685,7 @@
       "tier": 12,
       "expert_volatility": 25.16,
       "latest_insight": "Official FantasyPros ECR: #299 (QB34)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16398",
@@ -5704,7 +5704,7 @@
       "tier": 12,
       "expert_volatility": 22.09,
       "latest_insight": "Official FantasyPros ECR: #300 (QB35)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17272",
@@ -5723,7 +5723,7 @@
       "tier": 12,
       "expert_volatility": 25.88,
       "latest_insight": "Official FantasyPros ECR: #301 (TE37)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27259",
@@ -5735,14 +5735,14 @@
       "bye_week": 5,
       "current_injury_status": "Healthy",
       "ecr_rank": 302,
-      "adp_rank": 290.4,
-      "arbitrage_delta": -11.6,
+      "adp_rank": 290.3,
+      "arbitrage_delta": -11.7,
       "projected_fantasy_points": 50.0,
       "vorp": -131.5,
       "tier": 12,
-      "expert_volatility": 24.29,
+      "expert_volatility": 24.42,
       "latest_insight": "Official FantasyPros ECR: #302 (RB90)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19252",
@@ -5759,9 +5759,9 @@
       "projected_fantasy_points": 51.4,
       "vorp": -116.2,
       "tier": 12,
-      "expert_volatility": 46.03,
+      "expert_volatility": 46.06,
       "latest_insight": "Official FantasyPros ECR: #303 (WR105)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18226",
@@ -5778,9 +5778,9 @@
       "projected_fantasy_points": 50.1,
       "vorp": -117.5,
       "tier": 13,
-      "expert_volatility": 26.56,
+      "expert_volatility": 26.5,
       "latest_insight": "Official FantasyPros ECR: #304 (WR106)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28126",
@@ -5797,9 +5797,9 @@
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 30.22,
+      "expert_volatility": 30.17,
       "latest_insight": "Official FantasyPros ECR: #305 (WR107)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16489",
@@ -5816,9 +5816,9 @@
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 29.56,
+      "expert_volatility": 29.57,
       "latest_insight": "Official FantasyPros ECR: #306 (WR108)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24778",
@@ -5835,9 +5835,9 @@
       "projected_fantasy_points": 44.3,
       "vorp": -91.3,
       "tier": 13,
-      "expert_volatility": 33.63,
+      "expert_volatility": 33.64,
       "latest_insight": "Official FantasyPros ECR: #307 (TE38)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25393",
@@ -5856,7 +5856,7 @@
       "tier": 13,
       "expert_volatility": 20.08,
       "latest_insight": "Official FantasyPros ECR: #308 (RB91)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22921",
@@ -5875,7 +5875,7 @@
       "tier": 13,
       "expert_volatility": 26.65,
       "latest_insight": "Official FantasyPros ECR: #309 (RB92)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24371",
@@ -5892,9 +5892,9 @@
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 28.82,
+      "expert_volatility": 28.81,
       "latest_insight": "Official FantasyPros ECR: #310 (WR109)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26444",
@@ -5913,7 +5913,7 @@
       "tier": 13,
       "expert_volatility": 35.46,
       "latest_insight": "Official FantasyPros ECR: #311 (K18)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8130",
@@ -5930,9 +5930,9 @@
       "projected_fantasy_points": 103.4,
       "vorp": -11.2,
       "tier": 13,
-      "expert_volatility": 39.75,
+      "expert_volatility": 39.7,
       "latest_insight": "Official FantasyPros ECR: #312 (DST20)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25335",
@@ -5951,7 +5951,7 @@
       "tier": 13,
       "expert_volatility": 32.5,
       "latest_insight": "Official FantasyPros ECR: #313 (WR110)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26392",
@@ -5970,7 +5970,7 @@
       "tier": 13,
       "expert_volatility": 26.76,
       "latest_insight": "Official FantasyPros ECR: #314 (RB93)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15802",
@@ -5982,14 +5982,14 @@
       "bye_week": 0,
       "current_injury_status": "Healthy",
       "ecr_rank": 315,
-      "adp_rank": 276.7,
-      "arbitrage_delta": -38.3,
+      "adp_rank": 276.8,
+      "arbitrage_delta": -38.2,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 38.28,
+      "expert_volatility": 38.3,
       "latest_insight": "Official FantasyPros ECR: #315 (WR111)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24335",
@@ -6008,7 +6008,7 @@
       "tier": 13,
       "expert_volatility": 22.2,
       "latest_insight": "\ud83d\udc8e TWO-WAY STAR: Dominating camp highlights on both sides; red-zone target in situational drills.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8050",
@@ -6027,7 +6027,7 @@
       "tier": 13,
       "expert_volatility": 49.72,
       "latest_insight": "Official FantasyPros ECR: #317 (DST21)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22967",
@@ -6039,14 +6039,14 @@
       "bye_week": 9,
       "current_injury_status": "Healthy",
       "ecr_rank": 318,
-      "adp_rank": 296.5,
-      "arbitrage_delta": -21.5,
+      "adp_rank": 296.6,
+      "arbitrage_delta": -21.4,
       "projected_fantasy_points": 41.6,
       "vorp": -94.0,
       "tier": 13,
-      "expert_volatility": 28.95,
+      "expert_volatility": 28.94,
       "latest_insight": "Official FantasyPros ECR: #318 (TE39)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26212",
@@ -6065,7 +6065,7 @@
       "tier": 13,
       "expert_volatility": 21.38,
       "latest_insight": "\ud83d\udd25 CAMP STANDOUT: Named starter for preseason opener with Hubbard sidelined (huge draft momentum).",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25876",
@@ -6084,7 +6084,7 @@
       "tier": 13,
       "expert_volatility": 23.62,
       "latest_insight": "Official FantasyPros ECR: #320 (RB96)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22930",
@@ -6103,7 +6103,7 @@
       "tier": 13,
       "expert_volatility": 23.44,
       "latest_insight": "Official FantasyPros ECR: #321 (RB97)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23054",
@@ -6122,7 +6122,7 @@
       "tier": 13,
       "expert_volatility": 24.08,
       "latest_insight": "Official FantasyPros ECR: #322 (RB98)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23056",
@@ -6134,14 +6134,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 323,
-      "adp_rank": 309.4,
-      "arbitrage_delta": -13.6,
+      "adp_rank": 309.3,
+      "arbitrage_delta": -13.7,
       "projected_fantasy_points": 40.0,
       "vorp": -95.6,
       "tier": 13,
       "expert_volatility": 32.02,
       "latest_insight": "Official FantasyPros ECR: #323 (TE40)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23004",
@@ -6158,9 +6158,9 @@
       "projected_fantasy_points": 40.0,
       "vorp": -95.6,
       "tier": 13,
-      "expert_volatility": 33.68,
+      "expert_volatility": 33.7,
       "latest_insight": "Official FantasyPros ECR: #324 (TE41)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23101",
@@ -6172,14 +6172,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 325,
-      "adp_rank": 296.1,
-      "arbitrage_delta": -28.9,
+      "adp_rank": 296.0,
+      "arbitrage_delta": -29.0,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 49.26,
+      "expert_volatility": 49.24,
       "latest_insight": "Official FantasyPros ECR: #325 (WR112)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23770",
@@ -6191,14 +6191,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 326,
-      "adp_rank": 302.7,
-      "arbitrage_delta": -23.3,
+      "adp_rank": 302.6,
+      "arbitrage_delta": -23.4,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 43.26,
+      "expert_volatility": 43.25,
       "latest_insight": "Official FantasyPros ECR: #326 (WR113)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8080",
@@ -6217,7 +6217,7 @@
       "tier": 13,
       "expert_volatility": 39.63,
       "latest_insight": "Official FantasyPros ECR: #327 (DST22)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27147",
@@ -6236,7 +6236,7 @@
       "tier": 13,
       "expert_volatility": 30.86,
       "latest_insight": "Official FantasyPros ECR: #328 (WR114)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "14104",
@@ -6255,7 +6255,7 @@
       "tier": 13,
       "expert_volatility": 57.52,
       "latest_insight": "Official FantasyPros ECR: #329 (TE42)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27449",
@@ -6272,9 +6272,9 @@
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 26.67,
+      "expert_volatility": 26.64,
       "latest_insight": "Official FantasyPros ECR: #330 (WR115)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23018",
@@ -6293,7 +6293,7 @@
       "tier": 13,
       "expert_volatility": 17.68,
       "latest_insight": "Official FantasyPros ECR: #331 (QB36)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15623",
@@ -6312,7 +6312,7 @@
       "tier": 13,
       "expert_volatility": 27.8,
       "latest_insight": "Official FantasyPros ECR: #332 (TE43)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25304",
@@ -6329,9 +6329,9 @@
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 38.82,
+      "expert_volatility": 38.81,
       "latest_insight": "Official FantasyPros ECR: #333 (WR116)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25287",
@@ -6350,7 +6350,7 @@
       "tier": 13,
       "expert_volatility": 30.66,
       "latest_insight": "Official FantasyPros ECR: #334 (WR117)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16425",
@@ -6369,7 +6369,7 @@
       "tier": 13,
       "expert_volatility": 21.32,
       "latest_insight": "Official FantasyPros ECR: #335 (RB99)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27993",
@@ -6388,7 +6388,7 @@
       "tier": 13,
       "expert_volatility": 23.66,
       "latest_insight": "Official FantasyPros ECR: #336 (TE44)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22953",
@@ -6400,14 +6400,14 @@
       "bye_week": 14,
       "current_injury_status": "Healthy",
       "ecr_rank": 337,
-      "adp_rank": 327.3,
-      "arbitrage_delta": -9.7,
+      "adp_rank": 327.2,
+      "arbitrage_delta": -9.8,
       "projected_fantasy_points": 150.0,
       "vorp": -147.2,
       "tier": 13,
-      "expert_volatility": 21.16,
+      "expert_volatility": 21.17,
       "latest_insight": "Official FantasyPros ECR: #337 (QB37)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23739",
@@ -6426,7 +6426,7 @@
       "tier": 13,
       "expert_volatility": 35.48,
       "latest_insight": "Official FantasyPros ECR: #338 (WR118)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26328",
@@ -6438,14 +6438,14 @@
       "bye_week": 7,
       "current_injury_status": "Healthy",
       "ecr_rank": 339,
-      "adp_rank": 317.0,
-      "arbitrage_delta": -22.0,
+      "adp_rank": 316.9,
+      "arbitrage_delta": -22.1,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 13,
-      "expert_volatility": 33.16,
+      "expert_volatility": 33.18,
       "latest_insight": "Official FantasyPros ECR: #339 (WR119)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19229",
@@ -6462,9 +6462,9 @@
       "projected_fantasy_points": 40.0,
       "vorp": -95.6,
       "tier": 13,
-      "expert_volatility": 25.06,
+      "expert_volatility": 25.07,
       "latest_insight": "Official FantasyPros ECR: #340 (TE45)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28129",
@@ -6476,14 +6476,14 @@
       "bye_week": 8,
       "current_injury_status": "Healthy",
       "ecr_rank": 341,
-      "adp_rank": 313.4,
-      "arbitrage_delta": -27.6,
+      "adp_rank": 313.3,
+      "arbitrage_delta": -27.7,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 14,
-      "expert_volatility": 38.46,
+      "expert_volatility": 38.45,
       "latest_insight": "Official FantasyPros ECR: #341 (WR120)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28047",
@@ -6502,26 +6502,7 @@
       "tier": 14,
       "expert_volatility": 37.08,
       "latest_insight": "Official FantasyPros ECR: #342 (WR121)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "16420",
-      "player_name": "Joe Mixon",
-      "position": "RB",
-      "positional_rank": "RB100",
-      "pos_order": 100,
-      "team": "FA",
-      "bye_week": 0,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 343,
-      "adp_rank": 311.8,
-      "arbitrage_delta": -31.2,
-      "projected_fantasy_points": 50.0,
-      "vorp": -131.5,
-      "tier": 14,
-      "expert_volatility": 29.45,
-      "latest_insight": "Official FantasyPros ECR: #343 (RB100)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27076",
@@ -6532,15 +6513,15 @@
       "team": "KC",
       "bye_week": 5,
       "current_injury_status": "Healthy",
-      "ecr_rank": 344,
+      "ecr_rank": 343,
       "adp_rank": 319.9,
-      "arbitrage_delta": -24.1,
+      "arbitrage_delta": -23.1,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 14,
-      "expert_volatility": 23.08,
-      "latest_insight": "Official FantasyPros ECR: #344 (WR122)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 23.13,
+      "latest_insight": "Official FantasyPros ECR: #343 (WR122)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28133",
@@ -6551,22 +6532,41 @@
       "team": "LAC",
       "bye_week": 7,
       "current_injury_status": "Healthy",
-      "ecr_rank": 345,
+      "ecr_rank": 344,
       "adp_rank": 310.2,
-      "arbitrage_delta": -34.8,
+      "arbitrage_delta": -33.8,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 14,
       "expert_volatility": 37.49,
-      "latest_insight": "Official FantasyPros ECR: #345 (WR123)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "latest_insight": "Official FantasyPros ECR: #344 (WR123)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "18631",
+      "player_name": "Dawson Knox",
+      "position": "TE",
+      "positional_rank": "TE46",
+      "pos_order": 46,
+      "team": "BUF",
+      "bye_week": 7,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 345,
+      "adp_rank": 322.9,
+      "arbitrage_delta": -22.1,
+      "projected_fantasy_points": 40.0,
+      "vorp": -95.6,
+      "tier": 14,
+      "expert_volatility": 28.9,
+      "latest_insight": "Official FantasyPros ECR: #345 (TE46)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19539",
       "player_name": "Noah Gray",
       "position": "TE",
-      "positional_rank": "TE46",
-      "pos_order": 46,
+      "positional_rank": "TE47",
+      "pos_order": 47,
       "team": "KC",
       "bye_week": 5,
       "current_injury_status": "Healthy",
@@ -6577,27 +6577,27 @@
       "vorp": -95.6,
       "tier": 14,
       "expert_volatility": 25.04,
-      "latest_insight": "Official FantasyPros ECR: #346 (TE46)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "latest_insight": "Official FantasyPros ECR: #346 (TE47)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
-      "player_id": "18631",
-      "player_name": "Dawson Knox",
-      "position": "TE",
-      "positional_rank": "TE47",
-      "pos_order": 47,
-      "team": "BUF",
-      "bye_week": 7,
+      "player_id": "16420",
+      "player_name": "Joe Mixon",
+      "position": "RB",
+      "positional_rank": "RB100",
+      "pos_order": 100,
+      "team": "FA",
+      "bye_week": 0,
       "current_injury_status": "Healthy",
       "ecr_rank": 347,
-      "adp_rank": 322.9,
-      "arbitrage_delta": -24.1,
-      "projected_fantasy_points": 40.0,
-      "vorp": -95.6,
+      "adp_rank": 313.5,
+      "arbitrage_delta": -33.5,
+      "projected_fantasy_points": 50.0,
+      "vorp": -131.5,
       "tier": 14,
-      "expert_volatility": 28.87,
-      "latest_insight": "Official FantasyPros ECR: #347 (TE47)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 28.47,
+      "latest_insight": "Official FantasyPros ECR: #347 (RB100)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28154",
@@ -6616,7 +6616,7 @@
       "tier": 14,
       "expert_volatility": 33.37,
       "latest_insight": "Official FantasyPros ECR: #348 (TE48)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20156",
@@ -6633,9 +6633,9 @@
       "projected_fantasy_points": 150.0,
       "vorp": -147.2,
       "tier": 14,
-      "expert_volatility": 22.56,
+      "expert_volatility": 22.6,
       "latest_insight": "Official FantasyPros ECR: #349 (QB38)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28079",
@@ -6647,14 +6647,14 @@
       "bye_week": 10,
       "current_injury_status": "Healthy",
       "ecr_rank": 350,
-      "adp_rank": 326.9,
-      "arbitrage_delta": -23.1,
+      "adp_rank": 326.8,
+      "arbitrage_delta": -23.2,
       "projected_fantasy_points": 40.0,
       "vorp": -95.6,
       "tier": 14,
-      "expert_volatility": 30.96,
+      "expert_volatility": 30.97,
       "latest_insight": "Official FantasyPros ECR: #350 (TE49)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8040",
@@ -6673,7 +6673,7 @@
       "tier": 14,
       "expert_volatility": 52.78,
       "latest_insight": "Official FantasyPros ECR: #351 (DST23)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18864",
@@ -6692,7 +6692,7 @@
       "tier": 14,
       "expert_volatility": 25.42,
       "latest_insight": "Official FantasyPros ECR: #352 (WR124)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23837",
@@ -6711,7 +6711,7 @@
       "tier": 14,
       "expert_volatility": 29.93,
       "latest_insight": "Official FantasyPros ECR: #353 (TE50)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28297",
@@ -6730,7 +6730,7 @@
       "tier": 14,
       "expert_volatility": 33.75,
       "latest_insight": "Official FantasyPros ECR: #354 (RB101)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24334",
@@ -6747,9 +6747,9 @@
       "projected_fantasy_points": 40.0,
       "vorp": -95.6,
       "tier": 14,
-      "expert_volatility": 30.65,
+      "expert_volatility": 30.67,
       "latest_insight": "Official FantasyPros ECR: #355 (TE51)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24901",
@@ -6768,7 +6768,7 @@
       "tier": 14,
       "expert_volatility": 30.1,
       "latest_insight": "Official FantasyPros ECR: #356 (RB102)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22728",
@@ -6787,7 +6787,7 @@
       "tier": 14,
       "expert_volatility": 18.18,
       "latest_insight": "Official FantasyPros ECR: #357 (RB103)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19781",
@@ -6804,9 +6804,9 @@
       "projected_fantasy_points": 150.0,
       "vorp": -147.2,
       "tier": 14,
-      "expert_volatility": 23.0,
+      "expert_volatility": 23.05,
       "latest_insight": "Official FantasyPros ECR: #358 (QB39)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8200",
@@ -6825,7 +6825,7 @@
       "tier": 14,
       "expert_volatility": 51.51,
       "latest_insight": "Official FantasyPros ECR: #359 (DST24)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22845",
@@ -6844,7 +6844,7 @@
       "tier": 14,
       "expert_volatility": 37.39,
       "latest_insight": "Official FantasyPros ECR: #360 (WR125)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17066",
@@ -6863,7 +6863,7 @@
       "tier": 14,
       "expert_volatility": 43.57,
       "latest_insight": "Official FantasyPros ECR: #361 (WR126)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22756",
@@ -6882,7 +6882,7 @@
       "tier": 14,
       "expert_volatility": 37.17,
       "latest_insight": "Official FantasyPros ECR: #362 (TE52)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8290",
@@ -6901,7 +6901,7 @@
       "tier": 14,
       "expert_volatility": 50.97,
       "latest_insight": "Official FantasyPros ECR: #363 (DST25)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22905",
@@ -6920,7 +6920,7 @@
       "tier": 14,
       "expert_volatility": 32.45,
       "latest_insight": "Official FantasyPros ECR: #364 (WR127)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25368",
@@ -6939,7 +6939,7 @@
       "tier": 14,
       "expert_volatility": 25.81,
       "latest_insight": "Official FantasyPros ECR: #365 (QB40)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16540",
@@ -6958,7 +6958,7 @@
       "tier": 14,
       "expert_volatility": 34.55,
       "latest_insight": "Official FantasyPros ECR: #366 (K19)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28067",
@@ -6970,14 +6970,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 367,
-      "adp_rank": 324.4,
-      "arbitrage_delta": -42.6,
+      "adp_rank": 324.3,
+      "arbitrage_delta": -42.7,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 14,
-      "expert_volatility": 35.22,
+      "expert_volatility": 35.31,
       "latest_insight": "Official FantasyPros ECR: #367 (WR128)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19760",
@@ -6996,7 +6996,7 @@
       "tier": 14,
       "expert_volatility": 33.08,
       "latest_insight": "Official FantasyPros ECR: #368 (K20)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26329",
@@ -7015,7 +7015,7 @@
       "tier": 14,
       "expert_volatility": 34.35,
       "latest_insight": "Official FantasyPros ECR: #369 (RB104)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17246",
@@ -7034,7 +7034,7 @@
       "tier": 14,
       "expert_volatility": 29.82,
       "latest_insight": "Official FantasyPros ECR: #370 (RB105)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20126",
@@ -7046,14 +7046,14 @@
       "bye_week": 6,
       "current_injury_status": "Healthy",
       "ecr_rank": 371,
-      "adp_rank": 332.6,
-      "arbitrage_delta": -38.4,
+      "adp_rank": 332.5,
+      "arbitrage_delta": -38.5,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 14,
-      "expert_volatility": 39.02,
+      "expert_volatility": 39.09,
       "latest_insight": "Official FantasyPros ECR: #371 (WR129)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16548",
@@ -7072,7 +7072,7 @@
       "tier": 14,
       "expert_volatility": 54.39,
       "latest_insight": "Official FantasyPros ECR: #372 (K21)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28109",
@@ -7091,7 +7091,7 @@
       "tier": 14,
       "expert_volatility": 21.67,
       "latest_insight": "Official FantasyPros ECR: #373 (RB106)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18520",
@@ -7110,7 +7110,7 @@
       "tier": 14,
       "expert_volatility": 54.48,
       "latest_insight": "Official FantasyPros ECR: #374 (WR130)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27144",
@@ -7129,7 +7129,7 @@
       "tier": 14,
       "expert_volatility": 20.31,
       "latest_insight": "Official FantasyPros ECR: #375 (WR131)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24351",
@@ -7148,7 +7148,7 @@
       "tier": 14,
       "expert_volatility": 33.12,
       "latest_insight": "Official FantasyPros ECR: #376 (RB107)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27288",
@@ -7167,7 +7167,7 @@
       "tier": 14,
       "expert_volatility": 34.28,
       "latest_insight": "Official FantasyPros ECR: #377 (WR132)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22928",
@@ -7186,7 +7186,7 @@
       "tier": 14,
       "expert_volatility": 31.04,
       "latest_insight": "Official FantasyPros ECR: #378 (RB108)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27454",
@@ -7205,7 +7205,7 @@
       "tier": 14,
       "expert_volatility": 25.81,
       "latest_insight": "Official FantasyPros ECR: #379 (WR133)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25332",
@@ -7224,7 +7224,7 @@
       "tier": 14,
       "expert_volatility": 23.77,
       "latest_insight": "Official FantasyPros ECR: #380 (WR134)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22895",
@@ -7243,26 +7243,7 @@
       "tier": 14,
       "expert_volatility": 31.28,
       "latest_insight": "Official FantasyPros ECR: #381 (WR135)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
-    },
-    {
-      "player_id": "17527",
-      "player_name": "Noah Fant",
-      "position": "TE",
-      "positional_rank": "TE53",
-      "pos_order": 53,
-      "team": "NO",
-      "bye_week": 8,
-      "current_injury_status": "Healthy",
-      "ecr_rank": 382,
-      "adp_rank": 349.6,
-      "arbitrage_delta": -32.4,
-      "projected_fantasy_points": 40.0,
-      "vorp": -95.6,
-      "tier": 14,
-      "expert_volatility": 25.38,
-      "latest_insight": "Official FantasyPros ECR: #382 (TE53)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28132",
@@ -7273,15 +7254,34 @@
       "team": "CHI",
       "bye_week": 10,
       "current_injury_status": "Healthy",
-      "ecr_rank": 383,
-      "adp_rank": 325.4,
-      "arbitrage_delta": -57.6,
+      "ecr_rank": 382,
+      "adp_rank": 325.3,
+      "arbitrage_delta": -56.7,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 14,
-      "expert_volatility": 34.82,
-      "latest_insight": "Official FantasyPros ECR: #383 (WR136)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "expert_volatility": 34.96,
+      "latest_insight": "Official FantasyPros ECR: #382 (WR136)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
+    },
+    {
+      "player_id": "17527",
+      "player_name": "Noah Fant",
+      "position": "TE",
+      "positional_rank": "TE53",
+      "pos_order": 53,
+      "team": "NO",
+      "bye_week": 8,
+      "current_injury_status": "Healthy",
+      "ecr_rank": 383,
+      "adp_rank": 349.6,
+      "arbitrage_delta": -33.4,
+      "projected_fantasy_points": 40.0,
+      "vorp": -95.6,
+      "tier": 14,
+      "expert_volatility": 25.38,
+      "latest_insight": "Official FantasyPros ECR: #383 (TE53)",
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19747",
@@ -7300,7 +7300,7 @@
       "tier": 14,
       "expert_volatility": 52.87,
       "latest_insight": "Official FantasyPros ECR: #384 (WR137)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25533",
@@ -7319,7 +7319,7 @@
       "tier": 14,
       "expert_volatility": 21.52,
       "latest_insight": "Official FantasyPros ECR: #385 (K22)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16081",
@@ -7338,7 +7338,7 @@
       "tier": 14,
       "expert_volatility": 36.56,
       "latest_insight": "Official FantasyPros ECR: #386 (WR138)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26012",
@@ -7357,7 +7357,7 @@
       "tier": 14,
       "expert_volatility": 38.81,
       "latest_insight": "Official FantasyPros ECR: #387 (WR139)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28896",
@@ -7376,7 +7376,7 @@
       "tier": 14,
       "expert_volatility": 47.94,
       "latest_insight": "Official FantasyPros ECR: #388 (WR140)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8300",
@@ -7395,7 +7395,7 @@
       "tier": 14,
       "expert_volatility": 60.09,
       "latest_insight": "Official FantasyPros ECR: #389 (DST26)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24347",
@@ -7414,7 +7414,7 @@
       "tier": 14,
       "expert_volatility": 20.66,
       "latest_insight": "Official FantasyPros ECR: #390 (QB41)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "9491",
@@ -7433,7 +7433,7 @@
       "tier": 14,
       "expert_volatility": 38.36,
       "latest_insight": "Official FantasyPros ECR: #391 (K23)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8060",
@@ -7452,7 +7452,7 @@
       "tier": 14,
       "expert_volatility": 54.03,
       "latest_insight": "Official FantasyPros ECR: #392 (DST27)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27138",
@@ -7471,7 +7471,7 @@
       "tier": 14,
       "expert_volatility": 27.16,
       "latest_insight": "Official FantasyPros ECR: #393 (TE54)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28507",
@@ -7490,7 +7490,7 @@
       "tier": 14,
       "expert_volatility": 27.76,
       "latest_insight": "Official FantasyPros ECR: #394 (K24)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "9300",
@@ -7509,7 +7509,7 @@
       "tier": 14,
       "expert_volatility": 26.07,
       "latest_insight": "Official FantasyPros ECR: #395 (QB42)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27326",
@@ -7528,7 +7528,7 @@
       "tier": 14,
       "expert_volatility": 28.1,
       "latest_insight": "Official FantasyPros ECR: #396 (RB109)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25282",
@@ -7547,7 +7547,7 @@
       "tier": 14,
       "expert_volatility": 27.86,
       "latest_insight": "Official FantasyPros ECR: #397 (TE55)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22795",
@@ -7566,7 +7566,7 @@
       "tier": 14,
       "expert_volatility": 28.35,
       "latest_insight": "Official FantasyPros ECR: #398 (TE56)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16483",
@@ -7585,7 +7585,7 @@
       "tier": 14,
       "expert_volatility": 25.71,
       "latest_insight": "Official FantasyPros ECR: #399 (RB110)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26310",
@@ -7604,7 +7604,7 @@
       "tier": 14,
       "expert_volatility": 22.87,
       "latest_insight": "Official FantasyPros ECR: #400 (TE57)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17420",
@@ -7623,7 +7623,7 @@
       "tier": 14,
       "expert_volatility": 44.85,
       "latest_insight": "Official FantasyPros ECR: #401 (K25)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "13891",
@@ -7642,7 +7642,7 @@
       "tier": 14,
       "expert_volatility": 19.87,
       "latest_insight": "Official FantasyPros ECR: #402 (QB43)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26309",
@@ -7661,7 +7661,7 @@
       "tier": 14,
       "expert_volatility": 19.14,
       "latest_insight": "Official FantasyPros ECR: #403 (RB111)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28125",
@@ -7680,7 +7680,7 @@
       "tier": 14,
       "expert_volatility": 25.2,
       "latest_insight": "Official FantasyPros ECR: #404 (WR141)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25354",
@@ -7699,7 +7699,7 @@
       "tier": 14,
       "expert_volatility": 50.83,
       "latest_insight": "Official FantasyPros ECR: #405 (K26)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22947",
@@ -7718,7 +7718,7 @@
       "tier": 14,
       "expert_volatility": 22.46,
       "latest_insight": "Official FantasyPros ECR: #406 (RB112)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24238",
@@ -7737,7 +7737,7 @@
       "tier": 14,
       "expert_volatility": 22.31,
       "latest_insight": "Official FantasyPros ECR: #407 (TE58)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27798",
@@ -7756,7 +7756,7 @@
       "tier": 14,
       "expert_volatility": 39.57,
       "latest_insight": "Official FantasyPros ECR: #408 (K27)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25983",
@@ -7775,7 +7775,7 @@
       "tier": 14,
       "expert_volatility": 20.08,
       "latest_insight": "Official FantasyPros ECR: #409 (RB113)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26011",
@@ -7794,7 +7794,7 @@
       "tier": 15,
       "expert_volatility": 43.59,
       "latest_insight": "Official FantasyPros ECR: #410 (WR142)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8160",
@@ -7813,7 +7813,7 @@
       "tier": 15,
       "expert_volatility": 69.15,
       "latest_insight": "Official FantasyPros ECR: #411 (DST28)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24009",
@@ -7832,7 +7832,7 @@
       "tier": 15,
       "expert_volatility": 20.21,
       "latest_insight": "Official FantasyPros ECR: #412 (K28)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22833",
@@ -7851,7 +7851,7 @@
       "tier": 15,
       "expert_volatility": 27.88,
       "latest_insight": "Official FantasyPros ECR: #413 (TE59)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25322",
@@ -7870,7 +7870,7 @@
       "tier": 15,
       "expert_volatility": 29.6,
       "latest_insight": "Official FantasyPros ECR: #414 (RB114)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8220",
@@ -7889,7 +7889,7 @@
       "tier": 15,
       "expert_volatility": 53.78,
       "latest_insight": "Official FantasyPros ECR: #415 (DST29)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "13274",
@@ -7908,7 +7908,7 @@
       "tier": 15,
       "expert_volatility": 12.03,
       "latest_insight": "Official FantasyPros ECR: #416 (K29)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15665",
@@ -7927,7 +7927,7 @@
       "tier": 15,
       "expert_volatility": 38.78,
       "latest_insight": "Official FantasyPros ECR: #417 (WR143)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19028",
@@ -7946,7 +7946,7 @@
       "tier": 15,
       "expert_volatility": 52.54,
       "latest_insight": "Official FantasyPros ECR: #418 (K30)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16445",
@@ -7965,7 +7965,7 @@
       "tier": 15,
       "expert_volatility": 41.22,
       "latest_insight": "Official FantasyPros ECR: #419 (RB115)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "11798",
@@ -7984,7 +7984,7 @@
       "tier": 15,
       "expert_volatility": 55.92,
       "latest_insight": "Official FantasyPros ECR: #420 (RB116)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24361",
@@ -8003,7 +8003,7 @@
       "tier": 15,
       "expert_volatility": 26.34,
       "latest_insight": "Official FantasyPros ECR: #421 (QB44)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27261",
@@ -8022,7 +8022,7 @@
       "tier": 15,
       "expert_volatility": 15.63,
       "latest_insight": "Official FantasyPros ECR: #422 (K31)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25976",
@@ -8041,7 +8041,7 @@
       "tier": 15,
       "expert_volatility": 14.07,
       "latest_insight": "Official FantasyPros ECR: #423 (RB117)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26964",
@@ -8060,7 +8060,7 @@
       "tier": 15,
       "expert_volatility": 18.77,
       "latest_insight": "Official FantasyPros ECR: #424 (RB118)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23135",
@@ -8072,14 +8072,14 @@
       "bye_week": 11,
       "current_injury_status": "Healthy",
       "ecr_rank": 425,
-      "adp_rank": 347.1,
-      "arbitrage_delta": -77.9,
+      "adp_rank": 346.9,
+      "arbitrage_delta": -78.1,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 15,
-      "expert_volatility": 25.54,
+      "expert_volatility": 25.92,
       "latest_insight": "Official FantasyPros ECR: #425 (WR144)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25748",
@@ -8098,7 +8098,7 @@
       "tier": 15,
       "expert_volatility": 44.86,
       "latest_insight": "Official FantasyPros ECR: #426 (RB119)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26763",
@@ -8117,7 +8117,7 @@
       "tier": 15,
       "expert_volatility": 32.53,
       "latest_insight": "Official FantasyPros ECR: #427 (K32)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8210",
@@ -8136,7 +8136,7 @@
       "tier": 15,
       "expert_volatility": 0.0,
       "latest_insight": "Official FantasyPros ECR: #428 (DST30)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25167",
@@ -8155,7 +8155,7 @@
       "tier": 15,
       "expert_volatility": 58.57,
       "latest_insight": "Official FantasyPros ECR: #429 (TE60)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "8310",
@@ -8174,7 +8174,7 @@
       "tier": 15,
       "expert_volatility": 8.0,
       "latest_insight": "Official FantasyPros ECR: #430 (DST31)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22976",
@@ -8193,7 +8193,7 @@
       "tier": 15,
       "expert_volatility": 34.62,
       "latest_insight": "Official FantasyPros ECR: #431 (RB120)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18656",
@@ -8212,7 +8212,7 @@
       "tier": 15,
       "expert_volatility": 21.87,
       "latest_insight": "Official FantasyPros ECR: #432 (WR145)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26037",
@@ -8231,7 +8231,7 @@
       "tier": 15,
       "expert_volatility": 25.03,
       "latest_insight": "Official FantasyPros ECR: #433 (WR146)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "13890",
@@ -8250,7 +8250,7 @@
       "tier": 15,
       "expert_volatility": 24.33,
       "latest_insight": "Official FantasyPros ECR: #434 (QB45)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "12127",
@@ -8269,7 +8269,7 @@
       "tier": 15,
       "expert_volatility": 40.52,
       "latest_insight": "Official FantasyPros ECR: #435 (WR147)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27182",
@@ -8288,7 +8288,7 @@
       "tier": 15,
       "expert_volatility": 17.77,
       "latest_insight": "Official FantasyPros ECR: #436 (WR148)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16460",
@@ -8307,7 +8307,7 @@
       "tier": 15,
       "expert_volatility": 39.29,
       "latest_insight": "Official FantasyPros ECR: #437 (TE61)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28157",
@@ -8326,7 +8326,7 @@
       "tier": 15,
       "expert_volatility": 66.03,
       "latest_insight": "Official FantasyPros ECR: #438 (TE62)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19471",
@@ -8345,7 +8345,7 @@
       "tier": 15,
       "expert_volatility": 39.66,
       "latest_insight": "Official FantasyPros ECR: #439 (RB121)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28404",
@@ -8364,7 +8364,7 @@
       "tier": 15,
       "expert_volatility": 42.22,
       "latest_insight": "Official FantasyPros ECR: #440 (RB122)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20113",
@@ -8383,7 +8383,7 @@
       "tier": 15,
       "expert_volatility": 31.33,
       "latest_insight": "Official FantasyPros ECR: #441 (WR149)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26194",
@@ -8402,7 +8402,7 @@
       "tier": 15,
       "expert_volatility": 46.69,
       "latest_insight": "Official FantasyPros ECR: #442 (RB123)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25373",
@@ -8421,7 +8421,7 @@
       "tier": 15,
       "expert_volatility": 22.79,
       "latest_insight": "Official FantasyPros ECR: #443 (QB46)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27093",
@@ -8440,7 +8440,7 @@
       "tier": 15,
       "expert_volatility": 29.0,
       "latest_insight": "Official FantasyPros ECR: #444 (WR150)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25980",
@@ -8459,7 +8459,7 @@
       "tier": 15,
       "expert_volatility": 50.62,
       "latest_insight": "Official FantasyPros ECR: #445 (RB124)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17115",
@@ -8478,7 +8478,7 @@
       "tier": 15,
       "expert_volatility": 64.5,
       "latest_insight": "Official FantasyPros ECR: #446 (TE63)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "11689",
@@ -8497,7 +8497,7 @@
       "tier": 15,
       "expert_volatility": 23.89,
       "latest_insight": "Official FantasyPros ECR: #447 (TE64)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25627",
@@ -8516,7 +8516,7 @@
       "tier": 15,
       "expert_volatility": 37.0,
       "latest_insight": "Official FantasyPros ECR: #448 (WR151)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18283",
@@ -8535,7 +8535,7 @@
       "tier": 15,
       "expert_volatility": 4.5,
       "latest_insight": "Official FantasyPros ECR: #449 (RB125)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23014",
@@ -8554,7 +8554,7 @@
       "tier": 15,
       "expert_volatility": 24.06,
       "latest_insight": "Official FantasyPros ECR: #450 (RB126)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22763",
@@ -8573,7 +8573,7 @@
       "tier": 15,
       "expert_volatility": 39.47,
       "latest_insight": "Official FantasyPros ECR: #451 (RB127)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19219",
@@ -8592,7 +8592,7 @@
       "tier": 15,
       "expert_volatility": 12.5,
       "latest_insight": "Official FantasyPros ECR: #452 (WR152)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28757",
@@ -8611,7 +8611,7 @@
       "tier": 15,
       "expert_volatility": 11.5,
       "latest_insight": "Official FantasyPros ECR: #453 (RB128)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27810",
@@ -8630,7 +8630,7 @@
       "tier": 15,
       "expert_volatility": 32.87,
       "latest_insight": "Official FantasyPros ECR: #454 (WR153)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25967",
@@ -8649,7 +8649,7 @@
       "tier": 15,
       "expert_volatility": 24.22,
       "latest_insight": "Official FantasyPros ECR: #455 (QB47)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25387",
@@ -8668,7 +8668,7 @@
       "tier": 15,
       "expert_volatility": 14.0,
       "latest_insight": "Official FantasyPros ECR: #456 (RB129)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27218",
@@ -8687,7 +8687,7 @@
       "tier": 15,
       "expert_volatility": 65.5,
       "latest_insight": "Official FantasyPros ECR: #457 (WR154)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "26379",
@@ -8699,14 +8699,14 @@
       "bye_week": 13,
       "current_injury_status": "Healthy",
       "ecr_rank": 458,
-      "adp_rank": 286.5,
-      "arbitrage_delta": -171.5,
+      "adp_rank": 285.5,
+      "arbitrage_delta": -172.5,
       "projected_fantasy_points": 50.0,
       "vorp": -117.6,
       "tier": 15,
-      "expert_volatility": 0.5,
+      "expert_volatility": 1.5,
       "latest_insight": "Official FantasyPros ECR: #458 (WR155)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19624",
@@ -8725,7 +8725,7 @@
       "tier": 15,
       "expert_volatility": 23.32,
       "latest_insight": "Official FantasyPros ECR: #459 (RB130)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27066",
@@ -8744,7 +8744,7 @@
       "tier": 15,
       "expert_volatility": 24.06,
       "latest_insight": "Official FantasyPros ECR: #460 (WR156)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "15581",
@@ -8763,7 +8763,7 @@
       "tier": 15,
       "expert_volatility": 23.76,
       "latest_insight": "Official FantasyPros ECR: #461 (TE65)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18585",
@@ -8782,7 +8782,7 @@
       "tier": 15,
       "expert_volatility": 32.81,
       "latest_insight": "Official FantasyPros ECR: #462 (WR157)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27222",
@@ -8801,7 +8801,7 @@
       "tier": 15,
       "expert_volatility": 61.67,
       "latest_insight": "Official FantasyPros ECR: #463 (WR158)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25416",
@@ -8820,7 +8820,7 @@
       "tier": 15,
       "expert_volatility": 40.02,
       "latest_insight": "Official FantasyPros ECR: #464 (WR159)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25941",
@@ -8839,7 +8839,7 @@
       "tier": 15,
       "expert_volatility": 39.29,
       "latest_insight": "\ud83d\udc8e TWO-WAY STAR: Dominating camp highlights on both sides; red-zone target in situational drills.",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25394",
@@ -8858,7 +8858,7 @@
       "tier": 15,
       "expert_volatility": 50.39,
       "latest_insight": "Official FantasyPros ECR: #466 (RB132)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27045",
@@ -8877,7 +8877,7 @@
       "tier": 15,
       "expert_volatility": 43.39,
       "latest_insight": "Official FantasyPros ECR: #467 (RB133)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "11606",
@@ -8896,7 +8896,7 @@
       "tier": 15,
       "expert_volatility": 30.74,
       "latest_insight": "Official FantasyPros ECR: #468 (WR160)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28450",
@@ -8915,7 +8915,7 @@
       "tier": 15,
       "expert_volatility": 36.59,
       "latest_insight": "Official FantasyPros ECR: #469 (RB134)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19423",
@@ -8934,7 +8934,7 @@
       "tier": 15,
       "expert_volatility": 28.65,
       "latest_insight": "Official FantasyPros ECR: #470 (TE66)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27469",
@@ -8953,7 +8953,7 @@
       "tier": 15,
       "expert_volatility": 10.68,
       "latest_insight": "Official FantasyPros ECR: #471 (TE67)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "13971",
@@ -8972,7 +8972,7 @@
       "tier": 15,
       "expert_volatility": 31.93,
       "latest_insight": "Official FantasyPros ECR: #472 (WR161)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "12122",
@@ -8991,7 +8991,7 @@
       "tier": 15,
       "expert_volatility": 37.0,
       "latest_insight": "Official FantasyPros ECR: #473 (WR162)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28427",
@@ -9010,7 +9010,7 @@
       "tier": 15,
       "expert_volatility": 31.86,
       "latest_insight": "Official FantasyPros ECR: #474 (TE68)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28906",
@@ -9029,7 +9029,7 @@
       "tier": 15,
       "expert_volatility": 53.5,
       "latest_insight": "Official FantasyPros ECR: #475 (RB135)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23986",
@@ -9048,7 +9048,7 @@
       "tier": 15,
       "expert_volatility": 45.0,
       "latest_insight": "Official FantasyPros ECR: #476 (RB136)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25289",
@@ -9067,7 +9067,7 @@
       "tier": 15,
       "expert_volatility": 54.5,
       "latest_insight": "Official FantasyPros ECR: #477 (WR163)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23119",
@@ -9086,7 +9086,7 @@
       "tier": 16,
       "expert_volatility": 5.55,
       "latest_insight": "Official FantasyPros ECR: #478 (TE69)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17528",
@@ -9105,7 +9105,7 @@
       "tier": 16,
       "expert_volatility": 23.0,
       "latest_insight": "Official FantasyPros ECR: #479 (WR164)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "24370",
@@ -9124,7 +9124,7 @@
       "tier": 16,
       "expert_volatility": 46.3,
       "latest_insight": "Official FantasyPros ECR: #480 (WR165)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22684",
@@ -9143,7 +9143,7 @@
       "tier": 16,
       "expert_volatility": 33.5,
       "latest_insight": "Official FantasyPros ECR: #481 (WR166)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23680",
@@ -9162,7 +9162,7 @@
       "tier": 16,
       "expert_volatility": 28.71,
       "latest_insight": "Official FantasyPros ECR: #482 (QB48)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28115",
@@ -9181,7 +9181,7 @@
       "tier": 16,
       "expert_volatility": 53.0,
       "latest_insight": "Official FantasyPros ECR: #483 (RB137)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28141",
@@ -9200,7 +9200,7 @@
       "tier": 16,
       "expert_volatility": 44.0,
       "latest_insight": "Official FantasyPros ECR: #484 (WR167)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27499",
@@ -9219,7 +9219,7 @@
       "tier": 16,
       "expert_volatility": 13.04,
       "latest_insight": "Official FantasyPros ECR: #485 (TE70)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25329",
@@ -9238,7 +9238,7 @@
       "tier": 16,
       "expert_volatility": 4.5,
       "latest_insight": "Official FantasyPros ECR: #486 (RB138)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28168",
@@ -9257,7 +9257,7 @@
       "tier": 16,
       "expert_volatility": 17.45,
       "latest_insight": "Official FantasyPros ECR: #487 (TE71)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22813",
@@ -9276,7 +9276,7 @@
       "tier": 16,
       "expert_volatility": 45.5,
       "latest_insight": "Official FantasyPros ECR: #488 (RB139)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23893",
@@ -9295,7 +9295,7 @@
       "tier": 16,
       "expert_volatility": 45.5,
       "latest_insight": "Official FantasyPros ECR: #489 (WR168)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18487",
@@ -9314,7 +9314,7 @@
       "tier": 16,
       "expert_volatility": 11.12,
       "latest_insight": "Official FantasyPros ECR: #490 (TE72)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16556",
@@ -9333,7 +9333,7 @@
       "tier": 16,
       "expert_volatility": 34.12,
       "latest_insight": "Official FantasyPros ECR: #491 (WR169)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "17598",
@@ -9352,7 +9352,7 @@
       "tier": 16,
       "expert_volatility": 6.0,
       "latest_insight": "Official FantasyPros ECR: #492 (TE73)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "25267",
@@ -9371,7 +9371,7 @@
       "tier": 16,
       "expert_volatility": 0.5,
       "latest_insight": "Official FantasyPros ECR: #493 (TE74)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "18562",
@@ -9390,7 +9390,7 @@
       "tier": 16,
       "expert_volatility": 0.5,
       "latest_insight": "Official FantasyPros ECR: #494 (QB49)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "19483",
@@ -9409,7 +9409,7 @@
       "tier": 16,
       "expert_volatility": 1.0,
       "latest_insight": "Official FantasyPros ECR: #495 (WR170)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "28161",
@@ -9428,7 +9428,7 @@
       "tier": 16,
       "expert_volatility": 1.5,
       "latest_insight": "Official FantasyPros ECR: #496 (TE75)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "20082",
@@ -9447,7 +9447,7 @@
       "tier": 16,
       "expert_volatility": 2.0,
       "latest_insight": "Official FantasyPros ECR: #497 (QB50)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "22884",
@@ -9466,7 +9466,7 @@
       "tier": 16,
       "expert_volatility": 18.5,
       "latest_insight": "Official FantasyPros ECR: #498 (QB51)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "27294",
@@ -9485,7 +9485,7 @@
       "tier": 16,
       "expert_volatility": 2.0,
       "latest_insight": "Official FantasyPros ECR: #499 (WR171)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "23167",
@@ -9504,7 +9504,7 @@
       "tier": 16,
       "expert_volatility": 11.5,
       "latest_insight": "Official FantasyPros ECR: #500 (TE76)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     },
     {
       "player_id": "16427",
@@ -9523,7 +9523,7 @@
       "tier": 16,
       "expert_volatility": 3.5,
       "latest_insight": "Official FantasyPros ECR: #501 (WR172)",
-      "last_updated": "Aug 19, 2026, 08:26 AM EDT"
+      "last_updated": "Aug 19, 2026, 08:41 AM EDT"
     }
   ]
 }
