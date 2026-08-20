@@ -274,6 +274,9 @@
   <!-- NAVIGATION TABS (SMOOTH HORIZONTAL SCROLL ON MOBILE) -->
   <div class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-1 border-b border-slate-800">
     <div class="flex space-x-6 text-xs sm:text-sm font-bold overflow-x-auto no-scrollbar">
+      <button id="tabBtnInjuryStrat" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>🏥</span> Top 200 Injury Strategy
+      </button>
       <button id="tabBtnNews" class="tab-btn pb-3 text-rose-400 border-b-2 border-rose-500 font-extrabold flex items-center gap-1.5 whitespace-nowrap">
         <span>🚨</span> 48H Injury & Beat Wire
       </button>
@@ -529,6 +532,111 @@
     </div>
   </div>
 
+  <!-- TAB 8: TOP 200 INJURY DRAFT STRATEGY & MEDICAL RADAR -->
+  <div id="viewInjuryStrat" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1 hidden">
+    <!-- Top Summary Metrics Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4">
+      <div class="kpi-box p-3.5 sm:p-4">
+        <div class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">🎯 Top 200 Evaluated</div>
+        <div id="stratTotalEvaluated" class="text-sm sm:text-lg font-black text-white mt-1">203 Prospects</div>
+        <div class="text-[11px] text-slate-400 truncate">Calibrated to Current ADP</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-emerald-800/60 bg-emerald-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-emerald-400 uppercase tracking-wider">🟢 Value Buys / Dips</div>
+        <div id="stratTotalValueBuys" class="text-sm sm:text-lg font-black text-emerald-400 mt-1">38 Targets</div>
+        <div class="text-[11px] text-emerald-300/80 truncate">ADP over-penalizing news</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-rose-800/60 bg-rose-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-rose-400 uppercase tracking-wider">🚨 High-Risk Landmines</div>
+        <div id="stratTotalLandmines" class="text-sm sm:text-lg font-black text-rose-400 mt-1">9 Fades</div>
+        <div class="text-[11px] text-rose-300/80 truncate">Soft-tissue / surgery traps</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-indigo-800/60 bg-indigo-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-indigo-400 uppercase tracking-wider">💎 Priority Handcuffs</div>
+        <div id="stratTotalHandcuffs" class="text-sm sm:text-lg font-black text-indigo-400 mt-1">17 Stashes</div>
+        <div class="text-[11px] text-indigo-300/80 truncate">High-upside contingent RBs</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Executive Round-by-Round Tactical Playbook -->
+    <div class="bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-xl mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+          <span>📋</span> Round-by-Round Tactical Injury Draft Playbook
+        </h3>
+        <span class="text-[10px] font-bold text-purple-300 bg-purple-950 px-2 py-0.5 rounded-full border border-purple-800">Dynamic 3H Recalibration</span>
+      </div>
+      <div id="roundPlaybookContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+
+    <!-- Section 2: Top 10 High-Leverage Contingency Handcuff & Insurance Matrix -->
+    <div class="bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-xl mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+          <span>🔗</span> High-Leverage Contingency Handcuff & Insurance Matrix
+        </h3>
+        <span class="text-[10px] font-bold text-indigo-300 bg-indigo-950 px-2 py-0.5 rounded-full border border-indigo-800">Direct Starter Mappings</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 text-[11px] text-slate-400 font-bold uppercase">
+              <th class="py-2.5 px-3">Lead Starter (Risk)</th>
+              <th class="py-2.5 px-3">Injury Concern</th>
+              <th class="py-2.5 px-3">Mandatory Handcuff Target</th>
+              <th class="py-2.5 px-3">Contingency Upside Tier</th>
+              <th class="py-2.5 px-3 text-right">Target Round</th>
+            </tr>
+          </thead>
+          <tbody id="handcuffMatrixBody" class="divide-y divide-slate-800/60">
+            <!-- Injected via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 3: Top 200 Player Medical & Draft Strategy Dossiers -->
+    <div class="bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-xl">
+      <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+        <div>
+          <h3 class="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+            <span>👥</span> Top 200 Medical Dossiers & Draft Action Plans
+          </h3>
+          <p class="text-[11px] text-slate-400">Filtered by live injury risk scores, current ADP arbitrage deltas, and practice reports.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 items-center w-full sm:w-auto">
+          <input id="injurySearchInput" type="text" placeholder="🔍 Search Player, Team, Handcuff..." class="bg-slate-950 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500 w-full sm:w-56 shadow-inner">
+          <select id="injuryCatSelect" class="bg-slate-950 border border-slate-700 text-xs text-slate-200 rounded-xl px-3 py-1.5 focus:outline-none focus:border-rose-500 w-full sm:w-auto font-semibold">
+            <option value="ALL">All Categories (200)</option>
+            <option value="VALUE_BUY">🟢 Value Buys & Dips</option>
+            <option value="LANDMINE">🚨 High-Risk Landmines / Fades</option>
+            <option value="HANDCUFF">💎 Priority Handcuffs</option>
+            <option value="ANCHOR">🛡️ Clean Medical Anchors</option>
+          </select>
+          <select id="injuryPosSelect" class="bg-slate-950 border border-slate-700 text-xs text-slate-200 rounded-xl px-3 py-1.5 focus:outline-none focus:border-rose-500 w-full sm:w-auto font-semibold">
+            <option value="ALL">All Positions</option>
+            <option value="QB">QB</option>
+            <option value="RB">RB</option>
+            <option value="WR">WR</option>
+            <option value="TE">TE</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="injuryCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- REAL-TIME SYNC FLOATING TOAST (IOS PWA NOTIFICATION) -->
+  <div id="syncToast" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-900/95 border border-emerald-500/80 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 backdrop-blur-md">
+    <span class="text-base animate-bounce">⚡</span>
+    <span id="syncToastMsg">Real-Time Auto-Sync Active</span>
+  </div>
+
   <!-- FOOTER -->
   <footer class="bg-slate-950 border-t border-slate-800 text-slate-500 text-center py-4 text-xs mt-auto">
     48H NFL Injury & Draft Intelligence • Powered by DuckDB & FantasyPros MCP • 100% Free & Open-Source
@@ -779,17 +887,27 @@
     let scatterChart = null;
     let boxChart = null;
 
-    async function loadData(showToast = false) {
+    // Top 200 Injury Draft Strategy State
+    let INJURY_STRATEGY = {
+      summary: {},
+      players: [],
+      round_playbook: [],
+      handcuff_matrix: []
+    };
+    let lastKnownSnapshotTime = '';
+
+    async function loadData(showToast = false, isBackgroundSync = false) {
       const btn = document.getElementById('manualRefreshBtn');
       const icon = document.getElementById('refreshIcon');
-      if (icon) icon.classList.add('animate-spin');
+      if (icon && !isBackgroundSync) icon.classList.add('animate-spin');
 
       try {
         const resp = await fetch('draft_data.json?t=' + Date.now(), {
           cache: 'no-store',
           headers: {
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache'
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
           }
         });
         const data = await resp.json();
@@ -801,14 +919,24 @@
         if (data.analyst_tweets && data.analyst_tweets.length > 0) {
           ANALYST_TWEETS = data.analyst_tweets;
         }
+        if (data.injury_draft_strategy) {
+          INJURY_STRATEGY = data.injury_draft_strategy;
+        }
 
         // Format and render Eastern Time timestamp
-        const rawTime = data.metadata.snapshot_time || 'Aug 20, 2026, 11:45 AM EDT';
-        document.getElementById('headerTimestamp').textContent = rawTime;
-        document.getElementById('cardTimestamp').textContent = rawTime;
-        
+        const rawTime = data.metadata?.snapshot_time || 'Aug 20, 2026, 11:45 AM EDT';
+        const hTime = document.getElementById('headerTimestamp');
+        if (hTime) hTime.textContent = rawTime;
+        const cTime = document.getElementById('cardTimestamp');
+        if (cTime) cTime.textContent = rawTime;
+
+        const timeChanged = lastKnownSnapshotTime && lastKnownSnapshotTime !== rawTime;
+        lastKnownSnapshotTime = rawTime;
+
         if (showToast) {
           showSyncToast(`⚡ Live Data Refreshed: ${rawPlayers.length} players & ${BEAT_NEWS_20.length} live reports (${rawTime})`);
+        } else if (timeChanged && isBackgroundSync) {
+          showSyncToast(`🔄 Real-Time Auto-Synced: Latest Draft & Injury Strategy (${rawTime})`);
         }
       } catch (err) {
         console.warn('Loading fallback data...', err);
@@ -818,6 +946,9 @@
       renderAnalystButtons();
       renderNews();
       renderTwitter();
+      renderInjuryStrategy();
+      renderRoundPlaybook();
+      renderHandcuffMatrix();
       recalcAndRender();
     }
 
@@ -1297,6 +1428,199 @@
       }).join('');
     }
 
+    // Top 200 Injury Draft Strategy Rendering
+    function renderInjuryStrategy() {
+      const container = document.getElementById('injuryCardsContainer');
+      if (!container) return;
+
+      const players = INJURY_STRATEGY.players || [];
+      const selectedCat = document.getElementById('injuryCatSelect')?.value || 'ALL';
+      const selectedPos = document.getElementById('injuryPosSelect')?.value || 'ALL';
+      const searchVal = document.getElementById('injurySearchInput')?.value.toLowerCase() || '';
+
+      // Update Summary KPIs
+      const summary = INJURY_STRATEGY.summary || {};
+      if (document.getElementById('stratTotalEvaluated')) {
+        document.getElementById('stratTotalEvaluated').textContent = `${summary.total_top_200_evaluated || players.length} Prospects`;
+        document.getElementById('stratTotalValueBuys').textContent = `${summary.total_value_buys || 0} Targets`;
+        document.getElementById('stratTotalLandmines').textContent = `${summary.total_landmines || 0} Fades`;
+        document.getElementById('stratTotalHandcuffs').textContent = `${summary.total_handcuff_priorities || 0} Stashes`;
+      }
+
+      const filtered = players.filter(p => {
+        const matchesCat = selectedCat === 'ALL' || p.category === selectedCat;
+        const matchesPos = selectedPos === 'ALL' || p.pos === selectedPos;
+        const matchesSearch = !searchVal ||
+          (p.player_name && p.player_name.toLowerCase().includes(searchVal)) ||
+          (p.team && p.team.toLowerCase().includes(searchVal)) ||
+          (p.handcuff_name && p.handcuff_name.toLowerCase().includes(searchVal)) ||
+          (p.action_advice && p.action_advice.toLowerCase().includes(searchVal)) ||
+          (p.details && p.details.toLowerCase().includes(searchVal));
+        return matchesCat && matchesPos && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full bg-slate-950/60 border border-slate-800 p-8 rounded-2xl text-center text-slate-400 text-xs">
+            🔍 No players found matching the selected filters.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => {
+        let borderClass = "border-slate-800";
+        let cardBg = "bg-slate-950/70";
+        let badgeColor = "bg-slate-800 text-slate-300 border-slate-700";
+        let riskMeterColor = "bg-emerald-500";
+
+        if (item.category === 'LANDMINE' || item.risk_level === 'CRITICAL') {
+          borderClass = "border-rose-700/80";
+          cardBg = "card-critical";
+          badgeColor = "bg-rose-950 text-rose-300 border-rose-700";
+          riskMeterColor = "bg-rose-500";
+        } else if (item.category === 'VALUE_BUY') {
+          borderClass = "border-emerald-700/80";
+          cardBg = "card-positive";
+          badgeColor = "bg-emerald-950 text-emerald-300 border-emerald-700";
+          riskMeterColor = "bg-emerald-500";
+        } else if (item.category === 'HANDCUFF') {
+          borderClass = "border-indigo-700/80";
+          cardBg = "card-analyst";
+          badgeColor = "bg-indigo-950 text-indigo-300 border-indigo-700";
+          riskMeterColor = "bg-indigo-500";
+        } else if (item.risk_score >= 50) {
+          borderClass = "border-amber-700/80";
+          cardBg = "card-warning";
+          badgeColor = "bg-amber-950 text-amber-300 border-amber-700";
+          riskMeterColor = "bg-amber-500";
+        }
+
+        const deltaBadge = item.adp_delta >= 0
+          ? `<span class="text-emerald-400 font-bold">+${item.adp_delta} ADP Discount</span>`
+          : `<span class="text-rose-400 font-bold">${item.adp_delta} ADP Reach</span>`;
+
+        return `
+          <div class="${cardBg} border ${borderClass} p-4 sm:p-5 rounded-2xl shadow-xl flex flex-col justify-between transition hover:border-sky-500">
+            <div>
+              <!-- Header Row -->
+              <div class="flex justify-between items-start gap-2 mb-2">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-base sm:text-lg font-black text-white">#${item.ecr_rank} ${item.player_name}</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-black bg-slate-900 text-slate-200 border border-slate-700">${item.pos} • ${item.team}</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 flex items-center gap-2 mt-0.5">
+                    <span>ADP: <b>#${item.adp_rank}</b></span>
+                    <span>•</span>
+                    ${deltaBadge}
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black tracking-wider border ${badgeColor}">
+                  ${item.action_tag}
+                </span>
+              </div>
+
+              <!-- Risk Meter Bar -->
+              <div class="my-2.5 bg-slate-950 p-2.5 rounded-xl border border-slate-800/80">
+                <div class="flex justify-between text-[11px] font-bold mb-1">
+                  <span class="text-slate-300 flex items-center gap-1">
+                    <span>${item.risk_badge}</span>
+                  </span>
+                  <span class="text-slate-400 mono">${item.risk_score} / 100 Risk</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                  <div class="${riskMeterColor} h-1.5 rounded-full" style="width: ${Math.max(5, item.risk_score)}%"></div>
+                </div>
+              </div>
+
+              <!-- Tactical Advice Box -->
+              <div class="bg-slate-900/90 border border-slate-700/80 p-3 rounded-xl text-xs text-slate-200 my-2 leading-relaxed">
+                <p class="font-bold text-sky-300 mb-1 flex items-center gap-1.5">
+                  <span>🎯</span> TACTICAL DRAFT ACTION PLAN:
+                </p>
+                <p>${item.action_advice}</p>
+              </div>
+
+              <!-- Handcuff Pairing If Present -->
+              ${item.handcuff_name !== 'None / Committee Depth' ? `
+                <div class="bg-indigo-950/50 border border-indigo-800/80 p-2.5 rounded-xl text-xs text-indigo-200 my-2 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-400 block">💎 Mandatory Handcuff Insurance</span>
+                    <span class="font-extrabold text-white text-xs">${item.handcuff_name}</span>
+                  </div>
+                  <span class="text-[10px] font-extrabold bg-indigo-900/80 border border-indigo-700 px-2 py-0.5 rounded-lg text-indigo-300">${item.handcuff_round}</span>
+                </div>
+              ` : ''}
+
+              <!-- Latest Practice / Injury Note -->
+              <p class="text-[11px] text-slate-400 mt-2 leading-normal">
+                <b class="text-slate-300">Latest Intelligence:</b> ${item.details}
+              </p>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderRoundPlaybook() {
+      const container = document.getElementById('roundPlaybookContainer');
+      if (!container) return;
+
+      const playbook = INJURY_STRATEGY.round_playbook || [];
+      if (playbook.length === 0) {
+        container.innerHTML = `<span class="text-slate-500 text-xs col-span-full">Playbook recalibrating...</span>`;
+        return;
+      }
+
+      container.innerHTML = playbook.map(item => `
+        <div class="bg-slate-950/80 border border-slate-800 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="text-xs sm:text-sm font-black text-rose-400 uppercase tracking-wider">${item.rounds}</span>
+              <span class="text-[9px] bg-rose-950 text-rose-300 px-2 py-0.5 rounded border border-rose-800 font-bold">TACTICAL</span>
+            </div>
+            <div class="text-xs font-bold text-white mb-2 leading-tight">${item.theme}</div>
+            <ul class="space-y-2 text-[11px] text-slate-300 leading-relaxed">
+              ${item.tactics.map(t => `<li class="flex items-start gap-1.5"><span class="text-rose-400 mt-0.5">•</span><span>${t.replace(/\\*\\*(.*?)\\*\\*/g, '<b class="text-white">$1</b>')}</span></li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderHandcuffMatrix() {
+      const tbody = document.getElementById('handcuffMatrixBody');
+      if (!tbody) return;
+
+      const matrix = INJURY_STRATEGY.handcuff_matrix || [];
+      if (matrix.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="py-4 text-center text-slate-500 text-xs">Handcuff matrix recalibrating...</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = matrix.map(m => `
+        <tr class="hover:bg-slate-800/40 transition">
+          <td class="py-2.5 px-3">
+            <span class="font-extrabold text-white text-xs">${m.starter}</span>
+            <span class="text-[10px] text-slate-400 ml-1">(${m.pos} - ${m.team})</span>
+          </td>
+          <td class="py-2.5 px-3 text-[11px] text-amber-300/90 font-medium">
+            ⚠️ ${m.concern}
+          </td>
+          <td class="py-2.5 px-3 font-extrabold text-indigo-300 text-xs">
+            💎 ${m.handcuff}
+          </td>
+          <td class="py-2.5 px-3 text-[11px] text-slate-300">
+            ${m.upside_tier}
+          </td>
+          <td class="py-2.5 px-3 text-right">
+            <span class="px-2 py-0.5 bg-indigo-950 border border-indigo-800 text-indigo-300 text-[10px] font-black rounded-md">${m.adp_target}</span>
+          </td>
+        </tr>
+      `).join('');
+    }
+
     function renderTable() {
       const tbody = document.getElementById('playerTableBody');
       const available = rawPlayers.filter(p => {
@@ -1398,13 +1722,21 @@
       recalcAndRender();
     }
 
-    // Toast Notification helper
+    // Toast Notification helper (Smooth iOS Animation)
+    let toastTimeout = null;
     function showSyncToast(msg) {
       const toast = document.getElementById('syncToast');
       const toastMsg = document.getElementById('syncToastMsg');
+      if (!toast || !toastMsg) return;
       toastMsg.textContent = msg;
-      toast.classList.remove('hidden');
-      setTimeout(() => toast.classList.add('hidden'), 4500);
+      toast.classList.remove('opacity-0', 'translate-y-24');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-24');
+      }, 4000);
     }
 
     // Direct Yahoo Draft BroadcastChannel Listener
@@ -1555,6 +1887,7 @@
     }
 
     // Tab Switching
+    document.getElementById('tabBtnInjuryStrat').addEventListener('click', () => showView('viewInjuryStrat', 'tabBtnInjuryStrat'));
     document.getElementById('tabBtnNews').addEventListener('click', () => showView('viewNews', 'tabBtnNews'));
     document.getElementById('tabBtnTwitter').addEventListener('click', () => showView('viewTwitter', 'tabBtnTwitter'));
     document.getElementById('tabBtnRecs').addEventListener('click', () => showView('viewRecs', 'tabBtnRecs'));
@@ -1570,15 +1903,22 @@
     });
 
     function showView(viewId, btnId) {
-      ['viewNews', 'viewTwitter', 'viewRecs', 'viewMyTeam', 'viewDraft', 'viewMarket', 'viewVorp'].forEach(v => document.getElementById(v).classList.add('hidden'));
-      document.getElementById(viewId).classList.remove('hidden');
+      ['viewInjuryStrat', 'viewNews', 'viewTwitter', 'viewRecs', 'viewMyTeam', 'viewDraft', 'viewMarket', 'viewVorp'].forEach(v => {
+        const el = document.getElementById(v);
+        if (el) el.classList.add('hidden');
+      });
+      const activeEl = document.getElementById(viewId);
+      if (activeEl) activeEl.classList.remove('hidden');
 
       document.querySelectorAll('.tab-btn').forEach(b => {
         b.classList.remove('text-rose-400', 'border-b-2', 'border-rose-500', 'font-extrabold');
         b.classList.add('text-slate-400');
       });
-      document.getElementById(btnId).classList.add('text-rose-400', 'border-b-2', 'border-rose-500', 'font-extrabold');
-      document.getElementById(btnId).classList.remove('text-slate-400');
+      const activeBtn = document.getElementById(btnId);
+      if (activeBtn) {
+        activeBtn.classList.add('text-rose-400', 'border-b-2', 'border-rose-500', 'font-extrabold');
+        activeBtn.classList.remove('text-slate-400');
+      }
     }
 
     // Modals & Drawers
@@ -1605,6 +1945,14 @@
 
     document.getElementById('newsCatSelect').addEventListener('change', renderNews);
     document.getElementById('newsSearchInput').addEventListener('input', renderNews);
+
+    // Injury Strategy Filter Listeners
+    const injuryCatSelect = document.getElementById('injuryCatSelect');
+    if (injuryCatSelect) injuryCatSelect.addEventListener('change', renderInjuryStrategy);
+    const injuryPosSelect = document.getElementById('injuryPosSelect');
+    if (injuryPosSelect) injuryPosSelect.addEventListener('change', renderInjuryStrategy);
+    const injurySearchInput = document.getElementById('injurySearchInput');
+    if (injurySearchInput) injurySearchInput.addEventListener('input', renderInjuryStrategy);
 
     document.querySelectorAll('.analyst-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -1652,10 +2000,22 @@
       if (boxChart) boxChart.resize();
     });
 
-    // Auto-refresh data every 3 minutes
+    // =========================================================================
+    // Real-Time iOS & Mobile Background Synchronization Engine
+    // (Syncs automatically on unlock, tab focus, or 45s heartbeat without closing app)
+    // =========================================================================
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        loadData(false, true);
+      }
+    });
+    window.addEventListener('focus', () => loadData(false, true));
+    window.addEventListener('pageshow', () => loadData(false, true));
+
+    // Active heartbeat poller (every 45 seconds)
     setInterval(() => {
-      loadData(false);
-    }, 180000);
+      loadData(false, true);
+    }, 45000);
 
     loadData();
   </script>

@@ -164,9 +164,10 @@ def load_data():
     
     df_live_beat = con.execute("SELECT * FROM fct_live_beat_wire").df() if "fct_live_beat_wire" in tables else pd.DataFrame()
     df_live_tweets = con.execute("SELECT * FROM fct_analyst_tweets").df() if "fct_analyst_tweets" in tables else pd.DataFrame()
+    df_injury_strat = con.execute("SELECT * FROM fct_injury_draft_strategy").df() if "fct_injury_draft_strategy" in tables else pd.DataFrame()
 
     con.close()
-    return df_draft, df_managers, df_waivers, df_drop_add, df_past_picks, df_past_tendencies, df_past_tx, df_multi_hist, df_multi_profiles, df_live_beat, df_live_tweets
+    return df_draft, df_managers, df_waivers, df_drop_add, df_past_picks, df_past_tendencies, df_past_tx, df_multi_hist, df_multi_profiles, df_live_beat, df_live_tweets, df_injury_strat
 
 # 20 Authentic Verified Training Camp & Preseason Beat Reports
 BEAT_REPORTS_LAST_48H = [
@@ -282,7 +283,7 @@ if "drafted_ids" not in st.session_state:
 if "my_team_ids" not in st.session_state:
     st.session_state.my_team_ids = set()
 
-df_raw, df_managers, df_waivers, df_drop_add, df_past_picks, df_past_tendencies, df_past_tx, df_multi_hist, df_multi_profiles, df_live_beat, df_live_tweets = load_data()
+df_raw, df_managers, df_waivers, df_drop_add, df_past_picks, df_past_tendencies, df_past_tx, df_multi_hist, df_multi_profiles, df_live_beat, df_live_tweets, df_injury_strat = load_data()
 
 if not df_live_beat.empty:
     BEAT_REPORTS_LAST_48H = df_live_beat.to_dict(orient="records")
@@ -468,7 +469,8 @@ with k4:
 st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
 
 # ----------------- MAIN TABS -----------------
-t_waiver, t_dropadd, t_scout, t_standings, t_past_season, t_news, t_draft, t_market = st.tabs([
+t_injury_strat, t_waiver, t_dropadd, t_scout, t_standings, t_past_season, t_news, t_draft, t_market = st.tabs([
+    "🏥 Top 200 Injury Draft Strategy",
     "⚡ Waiver Wire & FAAB Optimizer",
     "🔄 Drop / Add Bench Optimizer",
     "🕵️ Manager Tendencies & Rival Scouting",
@@ -478,6 +480,122 @@ t_waiver, t_dropadd, t_scout, t_standings, t_past_season, t_news, t_draft, t_mar
     "⚡ Live Draft Board & Odds",
     "📊 Market Arbitrage Matrix"
 ])
+
+# TAB 0: TOP 200 INJURY DRAFT STRATEGY
+with t_injury_strat:
+    st.subheader("🏥 Top 200 Injury Draft Strategy & Medical Triage Radar")
+    st.caption("Daily ADP calibrated risk scoring, overblown discount hunting, soft-tissue landmines to fade, and mandatory handcuff pairings.")
+
+    if not df_injury_strat.empty:
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("🎯 Top 200 Evaluated", f"{len(df_injury_strat)} Prospects", "1-200 ECR/ADP")
+        c2.metric("🟢 Value Buys & Dips", f"{(df_injury_strat['category'] == 'VALUE_BUY').sum()} Targets", "ADP Over-Penalizing")
+        c3.metric("🚨 High-Risk Landmines", f"{(df_injury_strat['category'] == 'LANDMINE').sum()} Fades", "Soft-Tissue / IR Traps")
+        c4.metric("💎 Priority Handcuffs", f"{(df_injury_strat['category'] == 'HANDCUFF').sum()} Stashes", "Contingent Workhorses")
+
+        st.markdown("---")
+
+        # Scatter Plot: Risk Score vs ADP Delta
+        fig_strat = px.scatter(
+            df_injury_strat,
+            x="adp_rank",
+            y="risk_score",
+            color="category",
+            size="proj_pts",
+            hover_name="player_name",
+            hover_data=["pos", "team", "ecr_rank", "adp_rank", "adp_delta", "risk_badge"],
+            color_discrete_map={
+                "VALUE_BUY": "#10b981",
+                "LANDMINE": "#ef4444",
+                "HANDCUFF": "#818cf8",
+                "ANCHOR": "#38bdf8"
+            },
+            title="Medical Risk Score (0-100) vs. Current Market ADP",
+            labels={"adp_rank": "Market ADP Rank", "risk_score": "Injury Risk Score (0-100)", "category": "Draft Category"},
+            height=400
+        )
+        fig_strat.update_layout(template="plotly_dark")
+        st.plotly_chart(fig_strat, use_container_width=True)
+
+        # Filter row
+        f_col1, f_col2, f_col3 = st.columns([2, 2, 3])
+        with f_col1:
+            cat_filter = st.selectbox("Filter Strategy Category", ["All Categories", "🟢 Value Buys (Dips)", "🚨 Landmines (Fades)", "💎 Handcuffs", "🛡️ Clean Anchors"])
+        with f_col2:
+            pos_filter_strat = st.selectbox("Position Filter", ["All Positions", "RB", "WR", "QB", "TE"], key="strat_pos_filter")
+        with f_col3:
+            search_strat = st.text_input("🔍 Search Player, Handcuff, or Team", "", key="strat_search")
+
+        df_show_strat = df_injury_strat.copy()
+        if cat_filter == "🟢 Value Buys (Dips)":
+            df_show_strat = df_show_strat[df_show_strat["category"] == "VALUE_BUY"]
+        elif cat_filter == "🚨 Landmines (Fades)":
+            df_show_strat = df_show_strat[df_show_strat["category"] == "LANDMINE"]
+        elif cat_filter == "💎 Handcuffs":
+            df_show_strat = df_show_strat[df_show_strat["category"] == "HANDCUFF"]
+        elif cat_filter == "🛡️ Clean Anchors":
+            df_show_strat = df_show_strat[df_show_strat["category"] == "ANCHOR"]
+
+        if pos_filter_strat != "All Positions":
+            df_show_strat = df_show_strat[df_show_strat["pos"] == pos_filter_strat]
+
+        if search_strat:
+            df_show_strat = df_show_strat[
+                df_show_strat["player_name"].str.contains(search_strat, case=False, na=False) |
+                df_show_strat["team"].str.contains(search_strat, case=False, na=False) |
+                df_show_strat["handcuff_name"].str.contains(search_strat, case=False, na=False)
+            ]
+
+        for _, item in df_show_strat.iterrows():
+            card_class = "news-card news-info"
+            badge_class = "badge badge-info"
+            if item["category"] == "LANDMINE" or item["risk_level"] == "CRITICAL":
+                card_class = "news-card news-critical"
+                badge_class = "badge badge-critical"
+            elif item["category"] == "VALUE_BUY":
+                card_class = "news-card news-positive"
+                badge_class = "badge badge-positive"
+            elif item["category"] == "HANDCUFF":
+                card_class = "news-card news-info"
+                badge_class = "badge badge-info"
+            elif item["risk_score"] >= 50:
+                card_class = "news-card news-warning"
+                badge_class = "badge badge-warning"
+
+            delta_str = f"+{item['adp_delta']} ADP Discount" if item['adp_delta'] >= 0 else f"{item['adp_delta']} ADP Reach"
+
+            hc_html = ""
+            if item["handcuff_name"] and item["handcuff_name"] != "None / Committee Depth":
+                hc_html = f"""
+                <div style="background: rgba(49, 46, 129, 0.4); border: 1px solid #4338ca; padding: 8px 12px; border-radius: 8px; margin: 8px 0; font-size: 0.85rem; color: #c7d2fe;">
+                    <b>💎 Mandatory Handcuff Insurance:</b> {item['handcuff_name']} <span style="float: right; font-weight: 700; color: #a5b4fc;">{item['handcuff_round']}</span>
+                </div>
+                """
+
+            st.markdown(f"""
+            <div class="{card_class}">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <div>
+                        <span style="font-size: 1.15rem; font-weight: 800; color: #f8fafc;">#{item['ecr_rank']} {item['player_name']}</span>
+                        <span style="font-size: 0.9rem; color: #94a3b8; margin-left: 6px; font-weight: 700;">({item['pos']} - {item['team']})</span>
+                        <span style="font-size: 0.8rem; color: #38bdf8; margin-left: 10px;">ADP #{item['adp_rank']} ({delta_str})</span>
+                    </div>
+                    <span class="{badge_class}">{item['action_tag']}</span>
+                </div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px;">
+                    <b>Risk Assessment:</b> {item['risk_badge']} • <b>{item['risk_score']}/100 Risk Index</b>
+                </div>
+                <div class="strategy-box">
+                    <b>🎯 TACTICAL DRAFT ACTION PLAN:</b><br>{item['action_advice']}
+                </div>
+                {hc_html}
+                <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 6px;">
+                    <b>Latest Intelligence:</b> {item['details']}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+    else:
+        st.info("Top 200 Injury Draft Strategy table will populate upon running `python3 pipeline.py`.")
 
 # TAB 1: WAIVER WIRE & FAAB OPTIMIZER
 with t_waiver:

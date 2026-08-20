@@ -613,6 +613,11 @@ def build_pipeline():
     df_beat = pd.DataFrame(live_beat_cards)
     df_tweets = pd.DataFrame(live_analyst_tweets)
 
+    # Top 200 Injury Draft Strategy Analysis (Calibrated to Current ADP)
+    from injury_draft_strategy import analyze_injury_draft_strategy
+    injury_strategy = analyze_injury_draft_strategy(players_data, live_beat_cards)
+    df_injury_strat = pd.DataFrame(injury_strategy.get("players", []))
+
     # Store in DuckDB
     df_teams = pd.DataFrame(scouted_managers)
     df_waivers = pd.DataFrame(waivers)
@@ -633,6 +638,7 @@ def build_pipeline():
     con.register("df_career_in", df_career_raw)
     con.register("df_beat_in", df_beat)
     con.register("df_tweets_in", df_tweets)
+    con.register("df_injury_strat_in", df_injury_strat)
 
     con.execute("""
         CREATE TABLE dim_league_managers AS SELECT * FROM df_teams_in;
@@ -646,8 +652,9 @@ def build_pipeline():
         CREATE TABLE dim_multi_year_team_profiles AS SELECT * FROM df_career_in;
         CREATE TABLE fct_live_beat_wire AS SELECT * FROM df_beat_in;
         CREATE TABLE fct_analyst_tweets AS SELECT * FROM df_tweets_in;
+        CREATE TABLE fct_injury_draft_strategy AS SELECT * FROM df_injury_strat_in;
     """)
-    logger.info("DuckDB Yahoo Fantasy, Multi-Season, Waiver Wire & Live Beat Wire tables successfully populated.")
+    logger.info("DuckDB Yahoo Fantasy, Multi-Season, Waiver Wire & Top 200 Injury Strategy tables successfully populated.")
 
     # Export to JSON
     gold_df = con.execute("SELECT * FROM gold_draft_board ORDER BY ecr_rank ASC").df()
@@ -666,7 +673,8 @@ def build_pipeline():
         "drop_add_recommendations": drop_add_pairs,
         "user_roster": league_data["user_roster"],
         "live_beat_wire": live_beat_cards,
-        "analyst_tweets": live_analyst_tweets
+        "analyst_tweets": live_analyst_tweets,
+        "injury_draft_strategy": injury_strategy
     }
     with open(JSON_EXPORT_FILE, "w") as f:
         json.dump(export_payload, f, indent=2)
