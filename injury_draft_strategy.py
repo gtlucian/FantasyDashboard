@@ -186,6 +186,8 @@ SPECIAL_PROFILES = {
     }
 }
 
+from injury_classifier import classify_injury_text
+
 def analyze_injury_draft_strategy(
     players_data: List[Dict[str, Any]],
     beat_reports: Optional[List[Dict[str, Any]]] = None
@@ -265,57 +267,31 @@ def analyze_injury_draft_strategy(
             action_tag = spec["action_tag"]
             action_advice = spec["action_advice"]
         else:
-            # Dynamic Computation
-            risk_score = 10
-            risk_level = "LOW"
-            risk_badge = "🟢 Low Risk"
-            soft_tissue_flag = False
-
-            full_text = f"{name} {status} {news_note} {headline} {badge}".lower()
-
-            if any(k in full_text for k in ["out for season", "torn", "surgery", "ir", "broken", "fracture", "achilles"]):
-                risk_score = 95
-                risk_level = "CRITICAL"
-                risk_badge = "🔴 Critical / Season-Ending"
+            # Multi-Layer Clinical NLP Injury Classification
+            full_text = f"{name} {status} {news_note} {headline} {badge}"
+            c_res = classify_injury_text(full_text, current_status=status)
+            risk_score = c_res["risk_score"]
+            risk_level = c_res["risk_level"]
+            risk_badge = c_res["risk_badge"]
+            soft_tissue_flag = c_res["is_soft_tissue"]
+            if c_res["is_season_ending"]:
                 status = "IR"
-            elif any(k in full_text for k in ["pup", "multi-week", "indefinite", "mcl sprain", "hernia setback"]):
-                risk_score = 80
-                risk_level = "VERY HIGH"
-                risk_badge = "🟠 Severe Risk / Extended Absence"
+            elif c_res["severity_tier"] == "PUP_EXTENDED":
                 status = "PUP"
-            elif any(k in full_text for k in ["hamstring", "calf", "groin", "soft tissue"]):
-                risk_score = 68
-                risk_level = "HIGH"
-                risk_badge = "⚠️ High Soft-Tissue Risk (~24% Re-injury)"
-                soft_tissue_flag = True
-                if status == "Healthy":
-                    status = "Questionable"
-            elif any(k in full_text for k in ["knee", "ankle", "sprain", "limited", "sidelined", "miss", "doubtful", "questionable", "concussion"]):
-                risk_score = 55
-                risk_level = "MODERATE"
-                risk_badge = "🟡 Moderate Injury Concern"
-                if status == "Healthy":
-                    status = "Questionable"
-            elif any(k in full_text for k in ["held out", "precaution", "rest", "managing"]):
-                risk_score = 30
-                risk_level = "LOW-MODERATE"
-                risk_badge = "🟢 Precautionary / Veteran Load Management"
-            elif any(k in full_text for k in ["100% capacity", "full practice", "explosive", "starter", "dominant", "breakout"]):
-                risk_score = 10
-                risk_level = "MINIMAL"
-                risk_badge = "✅ 100% Healthy / High Momentum"
+            elif c_res["severity_tier"] in ["HIGH", "MODERATE"] and status == "Healthy":
+                status = "Questionable"
 
             # Categorization Logic
-            if (risk_score >= 60 and adp <= (ecr + 5)) or (risk_score >= 80 and adp <= 150):
+            if (risk_score >= 65 and adp <= (ecr + 6)) or (risk_score >= 80 and adp <= 160):
                 category = "LANDMINE"
                 category_label = "🚨 High-Risk Landmine / Avoid at Current ADP"
                 action_tag = "FADE / OVERVALUED"
-                action_advice = f"Carrying a {risk_level} injury risk profile ({risk_score}/100) without sufficient market discount (ADP {adp} vs ECR {ecr}). Prefer healthier tier alternatives."
-            elif adp_delta >= 6.0 and risk_score <= 50:
+                action_advice = f"Carrying an elevated {risk_level} injury risk profile ({risk_score}/100: {c_res['clinical_diagnosis']}) without sufficient market discount (ADP #{adp} vs ECR #{ecr}). Prefer healthier tier alternatives."
+            elif adp_delta >= 6.0 and risk_score <= 45:
                 category = "VALUE_BUY"
                 category_label = "🟢 High-Value Draft Steal / Overblown Dip"
                 action_tag = "SMASH TARGET / VALUE"
-                action_advice = f"Draft market is over-penalizing this player by +{adp_delta} spots relative to expert consensus. Clean health outlook makes them a prime draft target."
+                action_advice = f"Draft market is over-discounting this player by +{adp_delta} picks relative to expert consensus. Clean clinical health outlook makes them a prime value target."
             elif name_lower in KNOWN_HANDCUFF_MAP or any(k in name_lower for k in ["mason", "corum", "allen", "brooks", "allgeier", "wright", "charbonnet", "vaki", "irving", "davis", "vidal"]):
                 category = "HANDCUFF"
                 category_label = "💎 High-Priority Contingency Handcuff"

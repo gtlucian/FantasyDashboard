@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 import duckdb
 import httpx
 import pandas as pd
+from injury_classifier import classify_injury_text
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("DraftPipeline")
@@ -262,20 +263,11 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
                     else:
                         category = "Offensive Line & Defense"
 
-                    # Status & Badging detection
-                    full_text = f"{raw_title} {desc_clean}".lower()
-                    if any(k in full_text for k in ["out for season", "torn", "surgery", "ir", "broken", "fracture", "achilles", "pup"]):
-                        status_type = "CRITICAL"
-                        badge = "SEASON-ENDING / CRITICAL"
-                    elif any(k in full_text for k in ["hamstring", "calf", "sprain", "knee", "groin", "limited", "sidelined", "miss", "doubtful", "questionable", "concussion"]):
-                        status_type = "WARNING"
-                        badge = "INJURY CONCERN / LIMITED"
-                    elif any(k in full_text for k in ["1st-team", "first-team", "starter", "dominant", "explosive", "target monster", "shine", "breakout", "on track"]):
-                        status_type = "POSITIVE"
-                        badge = "HIGH PRACTICE MOMENTUM"
-                    else:
-                        status_type = "POSITIVE"
-                        badge = "TRAINING CAMP UPDATE"
+                    # Clinical NLP Status & Badging detection
+                    full_text = f"{raw_title} {desc_clean}"
+                    c_res = classify_injury_text(full_text)
+                    status_type = c_res["status_type"]
+                    badge = c_res["risk_badge"].upper()
 
                     # Reporter & Source Identification
                     reporter_match = re.search(r"([A-Z][a-z]+ [A-Z][a-z]+) of ([^,]+) reports", desc_clean)
@@ -297,10 +289,12 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
                         handle = "@NFLBeatWire"
 
                     # Draft Takeaway synthesis
-                    if status_type == "CRITICAL":
-                        draft_impact = f"🎯 DRAFT TAKEAWAY: Remove {player_name or 'player'} from standard redraft boards; elevate immediate depth chart backup."
+                    if status_type == "CRITICAL" and c_res["is_season_ending"]:
+                        draft_impact = f"🎯 DRAFT TAKEAWAY: Remove {player_name or 'player'} from standard redraft boards; season-ending injury."
+                    elif status_type == "CRITICAL":
+                        draft_impact = f"🎯 DRAFT TAKEAWAY: Extended absence for {player_name or 'player'}; prioritize healthy tier alternatives and key handcuffs."
                     elif status_type == "WARNING":
-                        draft_impact = f"🎯 DRAFT TAKEAWAY: Monitor {player_name or 'player'} practice status; secure key handcuffs in late rounds."
+                        draft_impact = f"🎯 DRAFT TAKEAWAY: Monitor {player_name or 'player'} practice status; secure key handcuffs in mid/late rounds."
                     else:
                         draft_impact = f"🎯 DRAFT TAKEAWAY: Solidify {player_name or 'player'} ({team}) with positive preseason and practice momentum."
 
