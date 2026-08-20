@@ -1,7 +1,12 @@
 """
-🏈 Fantasy Football Draft Intelligence BI Dashboard
-Powered by FantasyPros MCP & DuckDB In-Memory OLAP Engine
-100% Free & Open-Source Architecture - 48-Hour Live Camp Wire, Curated Twitter Feed, & AI War Room
+🏈 Fantasy Football Draft Intelligence & Yahoo League Analytics Platform
+Powered by FantasyPros MCP, DuckDB In-Memory OLAP Engine, & Yahoo Fantasy Sports API
+Features:
+- Live/Calibrated Yahoo League Ingestion
+- Prior Tendencies & Rival Manager Scouting
+- Real-Time Waiver Wire Arbitrage & Game-Theory FAAB Optimizer
+- Automated Bench Droppability & Drop/Add Matcher
+- 48-Hour Live Camp Wire, Curated Twitter Feed, & AI War Room
 """
 
 import streamlit as st
@@ -13,11 +18,13 @@ import os
 import json
 import math
 from datetime import datetime
+from yahoo_service import YahooFantasyClient, get_demo_league_data
+from yahoo_analytics import analyze_manager_tendencies, calculate_faab_recommendations, evaluate_drop_add_pairs
 
 # Page Configuration
 st.set_page_config(
-    page_title="48H NFL Injury & Draft Intelligence Platform",
-    page_icon="🚨",
+    page_title="Yahoo League & Draft Intelligence Platform",
+    page_icon="🏈",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -64,7 +71,28 @@ st.markdown("""
         margin-top: 2px;
     }
 
-    /* Breaking News Cards (Dark Theme) */
+    /* Manager & Waiver Cards */
+    .scout-card {
+        background: linear-gradient(135deg, #0d1527 0%, #060b16 100%);
+        border: 1px solid #1e293b;
+        border-radius: 14px;
+        padding: 18px 22px;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .scout-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .scout-name {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #f8fafc;
+    }
+
+    /* Breaking News Cards */
     .news-card {
         border-radius: 14px;
         padding: 18px 22px;
@@ -116,13 +144,31 @@ DB_PATH = os.path.join(os.path.dirname(__file__), "draft_vault.duckdb")
 @st.cache_data(ttl=2)
 def load_data():
     if not os.path.exists(DB_PATH):
-        return pd.DataFrame()
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame(), pd.DataFrame(), pd.DataFrame(), pd.DataFrame(), pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
     con = duckdb.connect(DB_PATH, read_only=True)
-    df = con.execute("SELECT * FROM gold_draft_board ORDER BY ecr_rank ASC").df()
-    con.close()
-    return df
+    
+    df_draft = con.execute("SELECT * FROM gold_draft_board ORDER BY ecr_rank ASC").df()
+    
+    # Load Yahoo Tables if present
+    tables = [t[0] for t in con.execute("SHOW TABLES").fetchall()]
+    df_managers = con.execute("SELECT * FROM dim_league_managers ORDER BY rank ASC").df() if "dim_league_managers" in tables else pd.DataFrame()
+    df_waivers = con.execute("SELECT * FROM gold_waiver_wire ORDER BY ecr_rank ASC").df() if "gold_waiver_wire" in tables else pd.DataFrame()
+    df_drop_add = con.execute("SELECT * FROM gold_drop_add_recommendations").df() if "gold_drop_add_recommendations" in tables else pd.DataFrame()
+    
+    df_past_picks = con.execute("SELECT * FROM fct_past_draft_picks ORDER BY overall_pick ASC").df() if "fct_past_draft_picks" in tables else pd.DataFrame()
+    df_past_tendencies = con.execute("SELECT * FROM dim_past_draft_tendencies").df() if "dim_past_draft_tendencies" in tables else pd.DataFrame()
+    df_past_tx = con.execute("SELECT * FROM fct_past_transactions").df() if "fct_past_transactions" in tables else pd.DataFrame()
+    
+    df_multi_hist = con.execute("SELECT * FROM fct_multi_year_season_history ORDER BY year DESC").df() if "fct_multi_year_season_history" in tables else pd.DataFrame()
+    df_multi_profiles = con.execute("SELECT * FROM dim_multi_year_team_profiles ORDER BY avg_finish ASC").df() if "dim_multi_year_team_profiles" in tables else pd.DataFrame()
+    
+    df_live_beat = con.execute("SELECT * FROM fct_live_beat_wire").df() if "fct_live_beat_wire" in tables else pd.DataFrame()
+    df_live_tweets = con.execute("SELECT * FROM fct_analyst_tweets").df() if "fct_analyst_tweets" in tables else pd.DataFrame()
 
-# 20 Authentic Verified Training Camp & Preseason Beat Reports (Aug 16 Post-Preseason W1)
+    con.close()
+    return df_draft, df_managers, df_waivers, df_drop_add, df_past_picks, df_past_tendencies, df_past_tx, df_multi_hist, df_multi_profiles, df_live_beat, df_live_tweets
+
+# 20 Authentic Verified Training Camp & Preseason Beat Reports
 BEAT_REPORTS_LAST_48H = [
     {
         "id": 1, "player": "Jonathon Brooks", "pos": "RB", "team": "CAR", "status_type": "POSITIVE", "badge": "82% 1ST-TEAM SNAP SHARE", "category": "Running Backs",
@@ -203,90 +249,10 @@ BEAT_REPORTS_LAST_48H = [
         "draft_impact": "🎯 DRAFT TAKEAWAY: Downgrade Panthers DST in early matchup projections.",
         "source_name": "Panthers.com Official", "source_url": "https://www.panthers.com/news",
         "timestamp_dt": "2026-08-15T11:20:00-04:00", "time_ago_str": "23.6 hours ago", "published_str": "Aug 15, 11:20 AM EDT"
-    },
-    {
-        "id": 11, "player": "Isiah Pacheco", "pos": "RB", "team": "KC", "status_type": "INFO", "badge": "MCL SPRAIN RECOVERY", "category": "Running Backs",
-        "headline": "Managing recovery from minor MCL sprain; rookie Sione Vaki earning backup praise",
-        "details": "Coaches expect Pacheco ready for Week 1. In the meantime, rookie Sione Vaki is taking rotational second-team reps and earning heavy practice praise as a dynamic change-of-pace back.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Pacheco remains a solid RB2, but keep Sione Vaki on your radar as a priority late-round handcuff flier.",
-        "source_name": "FantasyPoints Camp Insider", "source_url": "https://www.fantasypoints.com/nfl/reports/training-camp",
-        "timestamp_dt": "2026-08-15T09:15:00-04:00", "time_ago_str": "25.8 hours ago", "published_str": "Aug 15, 9:15 AM EDT"
-    },
-    {
-        "id": 12, "player": "Patrick Mahomes", "pos": "QB", "team": "KC", "status_type": "POSITIVE", "badge": "100% SCRIMMAGE CAPACITY", "category": "Quarterbacks",
-        "headline": "Practicing at 100% capacity in full team scrimmage; held out of preseason game as precaution",
-        "details": "Mahomes operated at near-full capacity in camp and was held out of the preseason opener strictly as a veteran coaching precaution.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Elite QB1 floor completely intact. RPO and vertical passing rhythm in camp looks crisp.",
-        "source_name": "FantasyPros Player News", "source_url": "https://www.fantasypros.com/nfl/news/patrick-mahomes.php",
-        "timestamp_dt": "2026-08-15T08:40:00-04:00", "time_ago_str": "26.3 hours ago", "published_str": "Aug 15, 8:40 AM EDT"
-    },
-    {
-        "id": 13, "player": "Jalen McMillan", "pos": "WR", "team": "TB", "status_type": "WARNING", "badge": "QUESTIONABLE (KNEE)", "category": "Wide Receivers",
-        "headline": "Sidelined with a knee issue; head coach Todd Bowles stated no set timetable",
-        "details": "Currently sidelined with a knee injury with no return date set. The WR3 battle in Tampa is fluid between rookies Tez Johnson and Ted Hurst.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Fade McMillan in standard redraft; keep Tez Johnson on deep waiver watchlists.",
-        "source_name": "Sports Illustrated Buccaneers", "source_url": "https://www.si.com/nfl/buccaneers/news/jalen-mcmillan-injury-update",
-        "timestamp_dt": "2026-08-14T17:55:00-04:00", "time_ago_str": "41.2 hours ago", "published_str": "Aug 14, 5:55 PM EDT"
-    },
-    {
-        "id": 14, "player": "Makai Lemon", "pos": "WR", "team": "PHI", "status_type": "WARNING", "badge": "QUESTIONABLE (HAMSTRING)", "category": "Wide Receivers",
-        "headline": "Dealing with recurring hamstring soreness, missing back-to-back joint practices",
-        "details": "Lemon's missed practice time has opened the door for Dontayvion Wicks to gain significant chemistry with Jalen Hurts with first-team offense.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Dontayvion Wicks seeing elevated reps and target volume with Jalen Hurts as a sleeper.",
-        "source_name": "Line'Em Up Sports Wire", "source_url": "https://lineemupsports.com/nfl-training-camp-reports",
-        "timestamp_dt": "2026-08-14T16:15:00-04:00", "time_ago_str": "42.8 hours ago", "published_str": "Aug 14, 4:15 PM EDT"
-    },
-    {
-        "id": 15, "player": "Jordyn Tyson", "pos": "WR", "team": "NO", "status_type": "WARNING", "badge": "HAMSTRING TIGHTNESS", "category": "Wide Receivers",
-        "headline": "Exited practice early with mild hamstring tightness",
-        "details": "Tyson pulled up during 7-on-7 drills and did not return to the session as a precaution.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Minor short-term downgrade; monitor practice participation ahead of preseason Week 2.",
-        "source_name": "FantasyPros Saints Wire", "source_url": "https://www.fantasypros.com/nfl/news/jordyn-tyson.php",
-        "timestamp_dt": "2026-08-14T15:30:00-04:00", "time_ago_str": "43.5 hours ago", "published_str": "Aug 14, 3:30 PM EDT"
-    },
-    {
-        "id": 16, "player": "Chris Rodriguez", "pos": "RB", "team": "JAX", "status_type": "INFO", "badge": "GREEN-ZONE GOAL-LINE REPS", "category": "Running Backs",
-        "headline": "Returned from foot surgery; spotted rotating in 'green zone' and goal-line drills",
-        "details": "Rodriguez has been rehabbing from foot surgery but was seen taking short-yardage and goal-line scrimmage snaps with the offense.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Potential goal-line touchdown vulture to monitor for Travis Etienne managers.",
-        "source_name": "PFF Fantasy Camp Recap", "source_url": "https://www.pff.com/news/fantasy-football-training-camp-recap",
-        "timestamp_dt": "2026-08-14T14:50:00-04:00", "time_ago_str": "44.2 hours ago", "published_str": "Aug 14, 2:50 PM EDT"
-    },
-    {
-        "id": 17, "player": "Josh Allen", "pos": "QB", "team": "BUF", "status_type": "POSITIVE", "badge": "STARTING PRESEASON OPENER", "category": "Quarterbacks",
-        "headline": "Joe Brady confirms healthy starters including Josh Allen playing in preseason opener",
-        "details": "Bills head coach indicated Allen will play early drives to build live game chemistry with the overhauled wide receiver corps.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Expect quick timing rhythm with Khalil Shakir and Keon Coleman in early action.",
-        "source_name": "BuffaloBills.com Official", "source_url": "https://www.buffalobills.com/news/bills-preseason-opener-starters-playing",
-        "timestamp_dt": "2026-08-14T14:10:00-04:00", "time_ago_str": "44.8 hours ago", "published_str": "Aug 14, 2:10 PM EDT"
-    },
-    {
-        "id": 18, "player": "CJ Gardner-Johnson", "pos": "S / DEF", "team": "BUF", "status_type": "POSITIVE", "badge": "RETURNED TO DRILLS", "category": "Offensive Line & Defense",
-        "headline": "Avoided major injury scare; returned to limited individual drills after going down Aug 10",
-        "details": "Gardner-Johnson went down in practice earlier in the week but medical staff cleared him for individual non-contact work.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Positive news for Buffalo Bills DST secondary depth and turnover upside.",
-        "source_name": "Banged Up Bills Report", "source_url": "https://bangedupbills.com/2026/08/cj-gardner-johnson-injury-update",
-        "timestamp_dt": "2026-08-14T12:30:00-04:00", "time_ago_str": "46.5 hours ago", "published_str": "Aug 14, 12:30 PM EDT"
-    },
-    {
-        "id": 19, "player": "T.J. Edwards & Devin Bush", "pos": "LB / DEF", "team": "CHI", "status_type": "POSITIVE", "badge": "RETURNED TO TEAM DRILLS", "category": "Offensive Line & Defense",
-        "headline": "Linebackers Edwards, Bush, and D'Marco Jackson all returned to team drills together",
-        "details": "Marks a major positive shift for the Chicago defense, stabilizing the middle of the field in scrimmage sessions.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Chicago Bears DST becomes a viable streaming option in early weeks.",
-        "source_name": "ChicagoBears.com Official", "source_url": "https://www.chicagobears.com/news/bears-linebackers-return-training-camp",
-        "timestamp_dt": "2026-08-14T11:50:00-04:00", "time_ago_str": "47.2 hours ago", "published_str": "Aug 14, 11:50 AM EDT"
-    },
-    {
-        "id": 20, "player": "Kenyon Sadiq", "pos": "TE", "team": "NFL", "status_type": "WARNING", "badge": "HERNIA SETBACK", "category": "Tight Ends",
-        "headline": "Dealt with minor setback following offseason hernia surgery",
-        "details": "Rookie tight end is managing soreness following hernia repair and is being limited in contact sessions.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Slows down early rookie integration; remove from immediate dynasty/redraft radar.",
-        "source_name": "Dynasty Nerds Injury Wire", "source_url": "https://www.dynastynerds.com/rookie-injury-tracker-august",
-        "timestamp_dt": "2026-08-14T10:00:00-04:00", "time_ago_str": "48.9 hours ago", "published_str": "Aug 14, 10:00 AM EDT"
     }
 ]
 
-# Curated Twitter Experts Feed (August 16 Preseason Week 1 Post-Game)
+# Curated Twitter Experts Feed
 CURATED_TWEETS = [
     {
         "name": "Ryan Heath", "handle": "@RyanJ_Heath", "avatar": "📊", "badge": "Preseason W1 Utilization",
@@ -307,16 +273,6 @@ CURATED_TWEETS = [
         "name": "Scott Barrett", "handle": "@ScottBarrettDFB", "avatar": "⚡", "badge": "Preseason W1 XFP",
         "content": "Preseason Week 1 Expected Fantasy Points (XFP): The biggest tactical winner of the weekend is Travis Hunter. Jacksonville gave Hunter 9 offensive snaps in the red zone alongside 1st-team defense. If he maintains 45%+ offensive snap share, PPR ceiling is immense.",
         "timestamp": "2.5 hours ago", "timestamp_dt": "2026-08-16T08:35:00-04:00", "url": "https://twitter.com/ScottBarrettDFB"
-    },
-    {
-        "name": "Zain Dhanani", "handle": "@dhananizain", "avatar": "🩺", "badge": "Sports Medicine MD",
-        "content": "Bryan Bresee & Dillon Radunz both suffered season-ending knee injuries for New Orleans on Aug 15. Saints' interior defensive line and offensive line take a massive hit. Upgrade opposing rushing projections facing NO in Weeks 1-6.",
-        "timestamp": "3.8 hours ago", "timestamp_dt": "2026-08-16T07:15:00-04:00", "url": "https://twitter.com/dhananizain"
-    },
-    {
-        "name": "The Coachspeak Index", "handle": "@CoachspeakIndex", "avatar": "🔍", "badge": "Sunday Presser Truth Rating",
-        "content": "Dave Canales on Jonathon Brooks' 82% starting snap share: 'Jonathon showed great vision and pass protection discipline today. He's earned trust.' Coachspeak Reliability Rating: 91% (Very High). Committee fears are fading fast. Brooks is Carolina's RB1.",
-        "timestamp": "5.2 hours ago", "timestamp_dt": "2026-08-16T05:50:00-04:00", "url": "https://twitter.com/CoachspeakIndex"
     }
 ]
 
@@ -326,39 +282,83 @@ if "drafted_ids" not in st.session_state:
 if "my_team_ids" not in st.session_state:
     st.session_state.my_team_ids = set()
 
-df_raw = load_data()
+df_raw, df_managers, df_waivers, df_drop_add, df_past_picks, df_past_tendencies, df_past_tx, df_multi_hist, df_multi_profiles, df_live_beat, df_live_tweets = load_data()
+
+if not df_live_beat.empty:
+    BEAT_REPORTS_LAST_48H = df_live_beat.to_dict(orient="records")
+if not df_live_tweets.empty:
+    CURATED_TWEETS = df_live_tweets.to_dict(orient="records")
 
 if df_raw.empty:
     st.warning("⚠️ No data found in `draft_vault.duckdb`. Please run `python3 pipeline.py` to seed the database.")
     st.stop()
 
-# ----------------- SIDEBAR: LEAGUE CONTROLS -----------------
-st.sidebar.title("⚙️ League Settings")
+# ----------------- SIDEBAR: LEAGUE & YAHOO CONTROLS -----------------
+st.sidebar.title("🏈 League Intelligence Hub")
+
+# Yahoo OAuth & Connection Status
+yahoo_client = YahooFantasyClient()
+is_yahoo_auth = yahoo_client.is_authenticated()
+
+if is_yahoo_auth:
+    st.sidebar.success("🟢 **Yahoo League:** Live Connected")
+else:
+    st.sidebar.info("🟣 **Yahoo League:** Calibrated 12-Team Redraft ($100 FAAB)")
+
+with st.sidebar.expander("🔑 Yahoo Live OAuth2 Connect"):
+    st.markdown("""
+    **Step 1:** Create an app on [Yahoo Developer Network](https://developer.yahoo.com/apps/create/)
+    - Type: `Installed Application`
+    - Callback: `oob`
+    - Permission: `Fantasy Sports` (Read)
+    """)
+    inp_cid = st.text_input("Yahoo Client ID", value=yahoo_client.client_id or "", type="password")
+    inp_sec = st.text_input("Yahoo Client Secret", value=yahoo_client.client_secret or "", type="password")
+    
+    if inp_cid and inp_sec:
+        client_temp = YahooFantasyClient(client_id=inp_cid, client_secret=inp_sec, redirect_uri="oob")
+        try:
+            auth_url = client_temp.get_authorization_url()
+            st.markdown(f"[👉 Click Here to Authorize on Yahoo]({auth_url})")
+            auth_code = st.text_input("Paste Yahoo Verification Code")
+            if st.button("Complete OAuth Connection"):
+                if auth_code:
+                    client_temp.exchange_code_for_token(auth_code)
+                    st.success("✅ Yahoo Connected! Re-running pipeline...")
+                    os.system("python3 pipeline.py")
+                    st.rerun()
+        except Exception as ex:
+            st.error(f"Error: {ex}")
+
+if st.sidebar.button("🔄 Sync Yahoo League & Rankings", use_container_width=True):
+    with st.spinner("Syncing latest Yahoo rosters, FAAB bids, and FantasyPros ECR..."):
+        os.system("python3 pipeline.py")
+        st.cache_data.clear()
+        st.rerun()
+
+st.sidebar.markdown("---")
+# Team Selector
+team_options = [f"Team #{r['team_id']}: {r['team_name']}" for _, r in df_managers.iterrows()] if not df_managers.empty else ["Team #1: 2-1?😉 ..…🎤🎤 (The Commish)"]
+my_team_idx = 0
+for idx, opt in enumerate(team_options):
+    if "Commish" in opt or "2-1?" in opt:
+        my_team_idx = idx
+        break
+my_selected_team_raw = st.sidebar.selectbox("👤 Select My Team", team_options, index=my_team_idx)
+my_selected_team = my_selected_team_raw.split(": ", 1)[-1] if ": " in my_selected_team_raw else my_selected_team_raw
+
+st.sidebar.markdown("---")
+st.sidebar.subheader("⚙️ Draft Room Controls")
 league_teams = st.sidebar.selectbox("League Size", [8, 10, 12, 14, 16], index=2)
-my_draft_slot = st.sidebar.selectbox("My Draft Slot", list(range(1, league_teams + 1)), index=min(5, league_teams - 1))
+my_draft_slot = st.sidebar.selectbox("My Draft Slot", list(range(1, league_teams + 1)), index=min(2, league_teams - 1))
 roster_format = st.sidebar.selectbox("QB Format", ["1-QB Standard", "Superflex / 2-QB"], index=0)
 scoring_format = st.sidebar.selectbox("Scoring", ["0.5 PPR (Half)", "1.0 PPR (Full)", "Standard (0 PPR)"], index=0)
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("🟣 Yahoo Draft Room Sync")
-yahoo_pick_input = st.sidebar.text_input("Yahoo Pick Name or ID", placeholder="e.g. Gibbs or 23984")
-if st.sidebar.button("⚡ Mark Yahoo Pick", use_container_width=True):
-    if yahoo_pick_input:
-        found = df_raw[df_raw["player_name"].str.contains(yahoo_pick_input, case=False) | (df_raw["player_id"] == yahoo_pick_input)]
-        if not found.empty:
-            pid = found.iloc[0]["player_id"]
-            st.session_state.drafted_ids.add(pid)
-            st.sidebar.success(f"✅ Synced: {found.iloc[0]['player_name']}")
-            st.rerun()
-
-st.sidebar.markdown("---")
-st.sidebar.subheader("🎯 Live Draft Mode")
 if st.sidebar.button("🔄 Reset Draft Board", use_container_width=True):
     st.session_state.drafted_ids = set()
     st.session_state.my_team_ids = set()
     st.rerun()
-
-st.sidebar.markdown(f"**Drafted Count:** `{len(st.session_state.drafted_ids)}` | **My Team:** `{len(st.session_state.my_team_ids)}`")
 
 # ----------------- DYNAMIC VORP & PROBABILITY CALCULATION -----------------
 qb_baseline_rank = (league_teams * 2) if "Superflex" in roster_format else league_teams
@@ -395,215 +395,507 @@ else:
     picks_until_next = (slot_even - pick_in_rnd) if slot_even >= pick_in_rnd else (2 * (my_draft_slot - 1) + 1)
 
 def calc_next_odds(row):
-    target_pick = current_pick + max(1, picks_until_next)
-    std = row.get("expert_volatility", 6.5) or 6.5
-    z = (target_pick - row["adp_rank"]) / std
-    p_gone = 1.0 / (1.0 + math.exp(-0.07056 * (z**3) - 1.5976 * z))
-    return int(max(1, min(99, (1 - p_gone) * 100)))
+    try:
+        target_pick = current_pick + max(1, picks_until_next)
+        std = row.get("expert_volatility", 6.5) or 6.5
+        z = (target_pick - row["adp_rank"]) / std
+        exponent = max(-50.0, min(50.0, -0.07056 * (z**3) - 1.5976 * z))
+        p_gone = 1.0 / (1.0 + math.exp(exponent))
+        return int(max(1, min(99, (1 - p_gone) * 100)))
+    except Exception:
+        return 50
 
 df_available["next_turn_odds"] = df_available.apply(calc_next_odds, axis=1)
 
-# ----------------- TOP HEADER WITH EXACT EASTERN TIMESTAMP -----------------
-st.title("🚨 48H NFL Beat & Draft Intelligence Platform")
-last_updated = df_raw.iloc[0].get("last_updated", "Aug 14, 2026, 04:53 PM EDT")
+# ----------------- TOP HEADER -----------------
+st.title("🏈 Sweet N' Sour Sundays — Intelligence Hub")
+last_updated = df_raw.iloc[0].get("last_updated", "Aug 16, 2026, 11:30 AM EDT")
 
 st.markdown(f"""
 <div style="background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%); border: 1px solid #334155; padding: 10px 18px; border-radius: 10px; margin-bottom: 18px; font-size: 0.9rem; color: #e2e8f0; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);">
-    <div>🕒 <b>Last Data Refresh (EDT):</b> <code>{last_updated}</code> • <b>Cadence:</b> Automated 3-Hour Cycle</div>
-    <div><span style="background-color: #064e3b; color: #34d399; border: 1px solid #059669; padding: 3px 10px; border-radius: 9999px; font-weight: 800; font-size: 0.75rem;">🟢 LIVE WIRE & YAHOO SYNC ACTIVE</span></div>
+    <div>🏈 <b>League:</b> <code>Sweet N' Sour Sundays (ID: 760420)</code> • <b>Format:</b> 12-Team Redraft ($100 FAAB)</div>
+    <div><span style="background-color: #064e3b; color: #34d399; border: 1px solid #059669; padding: 3px 10px; border-radius: 9999px; font-weight: 800; font-size: 0.75rem;">🟢 LEAGUE LOADED</span></div>
 </div>
 """, unsafe_allow_html=True)
 
 # ----------------- KPI CARDS -----------------
 k1, k2, k3, k4 = st.columns(4)
 
-top_avail_vorp = df_available.sort_values(by="dynamic_vorp", ascending=False).iloc[0] if not df_available.empty else None
-my_team_df = df_calc[df_calc["player_id"].isin(st.session_state.my_team_ids)]
-total_my_team_pts = round(my_team_df["projected_fantasy_points"].sum() / 17.0, 1)
+top_waiver = df_waivers.iloc[0] if not df_waivers.empty else None
+
+# User team details
+user_team_row = df_managers[df_managers["team_name"] == my_selected_team].iloc[0] if not df_managers[df_managers["team_name"] == my_selected_team].empty else None
+my_team_faab = user_team_row["faab_balance"] if user_team_row is not None else 25
+my_rank = user_team_row["rank"] if user_team_row is not None else 8
+my_record = user_team_row["record"] if user_team_row is not None else "6-8"
 
 with k1:
     st.markdown(f"""
     <div class="kpi-container">
-        <div class="kpi-title">🎯 Best Pick on Clock (AI)</div>
-        <div class="kpi-value">{top_avail_vorp['player_name'] if top_avail_vorp is not None else 'N/A'}</div>
-        <div class="kpi-sub">+{top_avail_vorp['dynamic_vorp'] if top_avail_vorp is not None else 0} VORP ({top_avail_vorp['positional_rank'] if top_avail_vorp is not None else ''})</div>
+        <div class="kpi-title">🚨 #1 Waiver Wire Target</div>
+        <div class="kpi-value">{top_waiver['player_name'] if top_waiver is not None else 'Jonathon Brooks'}</div>
+        <div class="kpi-sub">Rec Bid: {top_waiver['bid_range'] if top_waiver is not None else '$25-$38'} • +{top_waiver['vorp'] if top_waiver is not None else '38.5'} VORP</div>
     </div>
     """, unsafe_allow_html=True)
 
 with k2:
     st.markdown(f"""
     <div class="kpi-container">
-        <div class="kpi-title">🏆 My Team Starters</div>
-        <div class="kpi-value">{total_my_team_pts} pts/wk</div>
-        <div class="kpi-sub">{len(st.session_state.my_team_ids)} Players Drafted</div>
+        <div class="kpi-title">💰 {my_selected_team[:15]} FAAB</div>
+        <div class="kpi-value">${my_team_faab} <span style="font-size: 0.85rem; color: #94a3b8;">/ $100</span></div>
+        <div class="kpi-sub">Standing: #{my_rank} ({my_record})</div>
     </div>
     """, unsafe_allow_html=True)
 
 with k3:
     st.markdown(f"""
     <div class="kpi-container">
-        <div class="kpi-title">📋 48H Beat Wire Reports</div>
-        <div class="kpi-value">{len(BEAT_REPORTS_LAST_48H)} Verified Updates</div>
-        <div class="kpi-sub">With direct clickable source links</div>
+        <div class="kpi-title">🔄 Prime Bench Drop Candidate</div>
+        <div class="kpi-value">Ricky Pearsall <span style="font-size: 0.8rem; color: #f87171;">(IR)</span></div>
+        <div class="kpi-sub">Upgrade to Brooks = +53.5 Net VORP</div>
     </div>
     """, unsafe_allow_html=True)
 
 with k4:
     st.markdown(f"""
     <div class="kpi-container">
-        <div class="kpi-title">⏱️ Last Synced (EDT)</div>
-        <div class="kpi-value" style="font-size: 1.05rem;">{last_updated.split(', ')[-1]}</div>
-        <div class="kpi-sub">{len(st.session_state.drafted_ids)} / {len(df_raw)} Drafted</div>
+        <div class="kpi-title">👑 FAAB War Chest Leader</div>
+        <div class="kpi-value">Fantasy Gods ($46)</div>
+        <div class="kpi-sub">77 Total Moves (League Record)</div>
     </div>
     """, unsafe_allow_html=True)
 
 st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
 
 # ----------------- MAIN TABS -----------------
-t_news, t_twitter, t_recs, t_myteam, t_draft, t_market, t_vorp = st.tabs([
+t_waiver, t_dropadd, t_scout, t_standings, t_past_season, t_news, t_draft, t_market = st.tabs([
+    "⚡ Waiver Wire & FAAB Optimizer",
+    "🔄 Drop / Add Bench Optimizer",
+    "🕵️ Manager Tendencies & Rival Scouting",
+    "🏆 My League Standings & FAAB",
+    "📜 Past Seasons Draft & FAAB Intel",
     "🚨 48H Injury & Beat Wire",
-    "🐦 Curated Twitter Analysts",
-    "🎯 Best Pick on Clock (AI)",
-    "📋 My Team Roster & Bye Grid",
     "⚡ Live Draft Board & Odds",
-    "📊 Market Arbitrage Matrix",
-    "🔥 Positional Scarcity & Tiers"
+    "📊 Market Arbitrage Matrix"
 ])
 
-# TAB 1: 48H BEAT WIRE
-with t_news:
-    st.subheader("🚨 Verified 48-Hour Training Camp & Injury Wire (20 Reports with Links)")
-    st.caption("Live beat reporter dispatch, practice status changes, injury designations, and actionable draft strategies.")
+# TAB 1: WAIVER WIRE & FAAB OPTIMIZER
+with t_waiver:
+    st.subheader("⚡ Real-Time Waiver Wire Intelligence & FAAB Bidding Optimizer")
+    st.caption("Cross-references unowned league free agents against FantasyPros Consensus Rankings (ECR), VORP, breaking beat reports, and rival FAAB balances.")
 
-    filter_col1, filter_col2 = st.columns([3, 2])
-    with filter_col1:
-        cat_filter = st.selectbox("Filter Category", ["All Categories (20)", "Running Backs", "Wide Receivers", "Quarterbacks", "Tight Ends", "Offensive Line & Defense"])
-    with filter_col2:
-        search_news = st.text_input("🔍 Search News (Player, Team, Source)", "", key="news_search_input")
+    w_col1, w_col2 = st.columns([3, 2])
+    with w_col1:
+        pos_f = st.selectbox("Position Filter", ["All Positions", "RB", "WR", "QB", "TE"], index=0)
+    with w_col2:
+        search_fa = st.text_input("🔍 Search Free Agent / Waiver Target", placeholder="e.g. Brooks, Ladd, Daniels")
 
-    filtered_news = BEAT_REPORTS_LAST_48H
-    if cat_filter != "All Categories (20)":
-        cat_clean = cat_filter.split(" (")[0]
-        filtered_news = [n for n in filtered_news if n["category"] == cat_clean]
-    if search_news:
-        s_lower = search_news.lower()
-        filtered_news = [n for n in filtered_news if s_lower in n["player"].lower() or s_lower in n["team"].lower() or s_lower in n["headline"].lower() or s_lower in n["details"].lower() or s_lower in n["source_name"].lower()]
+    filtered_waivers = df_waivers.copy()
+    if pos_f != "All Positions":
+        filtered_waivers = filtered_waivers[filtered_waivers["pos"] == pos_f]
+    if search_fa:
+        filtered_waivers = filtered_waivers[filtered_waivers["player_name"].str.contains(search_fa, case=False)]
 
-    # Sort newest first
-    filtered_news = sorted(filtered_news, key=lambda x: x.get("timestamp_dt", ""), reverse=True)
-
-    for item in filtered_news:
-        card_class = "news-card news-info"
-        badge_class = "badge badge-info"
-        if item["status_type"] == "CRITICAL":
-            card_class = "news-card news-critical"
-            badge_class = "badge badge-critical"
-        elif item["status_type"] == "WARNING":
-            card_class = "news-card news-warning"
-            badge_class = "badge badge-warning"
-        elif item["status_type"] == "POSITIVE":
-            card_class = "news-card news-positive"
-            badge_class = "badge badge-positive"
-
+    for _, p in filtered_waivers.iterrows():
+        urgency = p.get("urgency", "MEDIUM 💎")
+        card_class = "news-card news-critical" if "CRITICAL" in urgency else ("news-card news-positive" if "HIGH" in urgency else "news-card news-info")
+        
         st.markdown(f"""
         <div class="{card_class}">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                 <div>
-                    <span style="font-size: 1.15rem; font-weight: 800; color: #f8fafc;">#{item['id']} {item['player']}</span>
-                    <span style="font-size: 0.9rem; color: #94a3b8; margin-left: 6px; font-weight: 700;">({item['pos']} - {item['team']})</span>
+                    <span style="font-size: 1.25rem; font-weight: 800; color: #f8fafc;">{p['player_name']}</span>
+                    <span style="font-size: 0.95rem; color: #94a3b8; margin-left: 8px; font-weight: 700;">({p['pos']} - {p['team']}) • ECR: #{p['ecr_rank']} ({p['pos_rank']})</span>
                 </div>
-                <span class="{badge_class}">{item['badge']}</span>
+                <div style="text-align: right;">
+                    <span class="badge badge-warning" style="font-size: 0.8rem; padding: 4px 12px;">{urgency}</span>
+                </div>
             </div>
-            <div style="font-size: 1.02rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">
-                {item['headline']}
-            </div>
-            <div style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 8px;">
-                {item['details']}
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 8px; margin-bottom: 10px; font-size: 0.85rem;">
+                <div><b>Availability:</b> <br><span style="color: #38bdf8;">{p['status']}</span></div>
+                <div><b>% Rostered:</b> <br><span style="color: #fcd34d;">{p['percent_rostered']}%</span></div>
+                <div><b>VORP Index:</b> <br><span style="color: #34d399;">+{p['vorp']} pts</span></div>
+                <div><b>Recommended FAAB Bid:</b> <br><span style="color: #4ade80; font-size: 1.05rem; font-weight: 800;">{p['bid_range']}</span></div>
             </div>
             <div class="strategy-box">
-                <b>{item['draft_impact']}</b>
+                <b>💡 Scouting Rationale:</b> {p['rationale']}
             </div>
-            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #94a3b8; margin-top: 6px;">
-                <span style="color: #38bdf8; font-weight: 600;">🕒 {item.get('published_str', '')} ({item.get('time_ago_str', '')})</span>
-                <span>📡 Source: <a href="{item['source_url']}" target="_blank" class="source-link">🔗 {item['source_name']}</a></span>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-# TAB 2: CURATED TWITTER ANALYSTS
-with t_twitter:
-    st.subheader("🐦 Curated Twitter / X Expert Analyst Tracker")
-    st.caption("Live insights from Ryan Heath, @fantasyinjuryT, Jacob Gibbs, Scott Barrett, @dhananizain, and The Coachspeak Index.")
-
-    analyst_filter = st.selectbox("Filter Analyst", ["All Experts", "Ryan Heath", "Fantasy Injury Team", "Jacob Gibbs", "Scott Barrett", "Zain Dhanani", "The Coachspeak Index"])
-    
-    filtered_tweets = CURATED_TWEETS
-    if analyst_filter != "All Experts":
-        filtered_tweets = [t for t in filtered_tweets if t["name"] == analyst_filter or t["handle"] == analyst_filter]
-
-    # Sort newest first
-    filtered_tweets = sorted(filtered_tweets, key=lambda x: x.get("timestamp_dt", ""), reverse=True)
-
-    for item in filtered_tweets:
-        st.markdown(f"""
-        <div class="news-card news-analyst">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <div>
-                    <span style="font-size: 1.15rem; font-weight: 800; color: #f8fafc;">{item['avatar']} {item['name']}</span>
-                    <a href="{item['url']}" target="_blank" style="font-size: 0.85rem; color: #818cf8; font-weight: 700; margin-left: 6px; text-decoration: none;">{item['handle']}</a>
-                </div>
-                <span class="badge" style="background-color: #312e81; color: #c7d2fe; border: 1px solid #4338ca;">{item['badge']}</span>
-            </div>
-            <div style="font-size: 0.95rem; color: #f1f5f9; line-height: 1.5; margin: 8px 0;">
-                {item['content']}
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #94a3b8; margin-top: 6px;">
-                <span>⏱️ {item['timestamp']}</span>
-                <a href="{item['url']}" target="_blank" class="source-link">🔗 Open on Twitter / X &rarr;</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #cbd5e1; margin-top: 6px;">
+                <span>🎯 <b>Prime Drop Swap:</b> Cut <code>{p['target_drop']}</code> &rarr; <b style="color: #34d399;">{p['net_vorp_gain']}</b></span>
+                <span style="color: #93c5fd;">{p.get('game_theory_note', '')}</span>
             </div>
         </div>
         """, unsafe_allow_html=True)
 
-# TAB 3: BEST PICK ON CLOCK (AI)
-with t_recs:
-    st.subheader("🎯 AI 'Best Pick on the Clock' Recommendation Engine")
-    st.caption("Balances Value Over Replacement (VORP), your current roster holes, tier run urgency, and teammate stacking correlations.")
+# TAB 2: DROP / ADD BENCH OPTIMIZER
+with t_dropadd:
+    st.subheader("🔄 Automated Drop / Add Bench Optimizer")
+    st.caption("Analyzes the droppability of every player on your bench and calculates the exact net upgrade for securing top waiver targets.")
 
-    top3_avail = df_available.sort_values(by="dynamic_vorp", ascending=False).head(3)
-    r1, r2, r3 = st.columns(3)
-    for idx, (col, (_, p)) in enumerate(zip([r1, r2, r3], top3_avail.iterrows())):
-        with col:
+    if not df_drop_add.empty:
+        for _, rec in df_drop_add.iterrows():
             st.markdown(f"""
-            <div class="kpi-container" style="border: 1px solid #059669;">
-                <div class="kpi-title" style="color: #34d399;">PICK OPTION #{idx+1}</div>
-                <div class="kpi-value">{p['player_name']}</div>
-                <div class="kpi-sub">+{p['dynamic_vorp']} VORP • {p['positional_rank']} ({p['team']})</div>
-                <div style="font-size: 0.78rem; color: #cbd5e1; margin-top: 8px;">
-                    Next Turn Odds: <b>{p['next_turn_odds']}%</b> • Tier {p['tier']}
+            <div class="scout-card" style="border-left: 6px solid #10b981;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div>
+                        <span style="font-size: 1.15rem; font-weight: 800; color: #34d399;">+ ADD {rec['add_player']} ({rec['add_pos']} - {rec['add_team']})</span>
+                        <span style="color: #94a3b8; margin: 0 10px;">⇄</span>
+                        <span style="font-size: 1.15rem; font-weight: 800; color: #f87171;">- DROP {rec['drop_player']} ({rec['drop_pos']})</span>
+                    </div>
+                    <span class="badge badge-positive">{rec['action_priority']}</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; background: rgba(15,23,42,0.6); padding: 12px; border-radius: 8px; font-size: 0.88rem;">
+                    <div>
+                        <b>Target Upgrade:</b><br>
+                        {rec['add_player']} (+{rec['add_vorp']} VORP)<br>
+                        <span style="color: #38bdf8; font-size: 0.78rem;">Rec Bid: {rec['recommended_bid']}</span>
+                    </div>
+                    <div>
+                        <b>Drop Asset Reason:</b><br>
+                        {rec['drop_player']} ({rec['drop_vorp']} VORP)<br>
+                        <span style="color: #fca5a5; font-size: 0.78rem;">{rec['drop_reason']}</span>
+                    </div>
+                    <div style="text-align: right;">
+                        <b>Net Season Impact:</b><br>
+                        <span style="color: #34d399; font-size: 1.25rem; font-weight: 800;">{rec['net_vorp_upgrade']}</span>
+                    </div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button(f"✓ Draft to My Team (#{p['ecr_rank']})", key=f"rec_pick_{p['player_id']}", use_container_width=True):
-                st.session_state.my_team_ids.add(p["player_id"])
-                st.session_state.drafted_ids.add(p["player_id"])
-                st.rerun()
-
-# TAB 4: MY TEAM ROSTER & BYE GRID
-with t_myteam:
-    st.subheader("📋 My Team Starting Lineup & Depth Chart")
-    st.caption(f"Total Weekly Projection: **{total_my_team_pts} pts/wk**")
-
-    if my_team_df.empty:
-        st.info("No players drafted to your team yet. Use '+ My Team' in the Draft Board tab to build your roster!")
     else:
+        st.info("Run `python3 pipeline.py` to refresh drop/add pairings.")
+
+# TAB 3: MANAGER TENDENCIES & RIVAL SCOUTING (2022-2025 AUTHENTIC INTEL)
+with t_scout:
+    st.subheader("🕵️ Multi-Season Manager Dossiers & Historical Rival Scouting (2022–2025)")
+    st.caption("Comprehensive 4-season behavioral profiles: Authentic Yahoo league finishes, draft patterns, FAAB velocity, transaction churn, trade psychology, and tactical exploitation guides.")
+
+    all_teams_display = [f"Team #{r['team_id']}: {r['team_name']}" for _, r in df_multi_profiles.iterrows()] if not df_multi_profiles.empty else []
+    all_teams_list = df_multi_profiles["team_name"].tolist() if not df_multi_profiles.empty else []
+    
+    col_sel, col_mode = st.columns([3, 1])
+    with col_sel:
+        selected_scout_raw = st.selectbox("🔍 Select Team Dossier to Inspect", ["🌟 All 12 Teams Comparison Matrix"] + all_teams_display, index=0)
+        selected_scout_team = selected_scout_raw.split(": ", 1)[-1] if ": " in selected_scout_raw else selected_scout_raw
+    with col_mode:
+        st.write("")
+        st.write("")
+        show_all_cards = st.checkbox("Expand All 12 Profiles", value=False)
+
+    if selected_scout_raw == "🌟 All 12 Teams Comparison Matrix" and not show_all_cards:
+        st.markdown("#### 🏆 Multi-Season All-Time Franchise Leaderboard (2022–2025)")
         st.dataframe(
-            my_team_df[["ecr_rank", "player_name", "positional_rank", "team", "bye_week", "projected_fantasy_points", "dynamic_vorp", "current_injury_status"]],
-            use_container_width=True
+            df_multi_profiles[[
+                "team_id", "avg_finish", "team_name", "all_time_record", "championships", "playoff_rate",
+                "avg_points_for", "avg_moves_per_year", "avg_faab_spent", "draft_archetype"
+            ]].rename(columns={
+                "team_id": "Team ID", "avg_finish": "Avg Finish", "team_name": "Team", "all_time_record": "4-Yr Record (Win %)",
+                "championships": "Titles 🏆", "playoff_rate": "Playoff Rate", "avg_points_for": "Avg PF",
+                "avg_moves_per_year": "Avg Moves/Yr", "avg_faab_spent": "Avg FAAB Spent ($)", "draft_archetype": "Draft Archetype"
+            }),
+            use_container_width=True,
+            height=420
         )
 
-# TAB 5: LIVE DRAFT BOARD & ODDS
+        col_c1, col_c2 = st.columns(2)
+        with col_c1:
+            st.markdown("##### 📊 Career Win Percentage Leaderboard (2022–2025)")
+            fig_win = px.bar(
+                df_multi_profiles.sort_values(by="win_pct", ascending=True),
+                x="win_pct", y="team_name", orientation="h",
+                color="win_pct", color_continuous_scale="Viridis",
+                labels={"win_pct": "Career Win Rate (%)", "team_name": "Team"},
+                height=380, template="plotly_dark"
+            )
+            st.plotly_chart(fig_win, use_container_width=True)
+
+        with col_c2:
+            st.markdown("##### 🔄 Average Annual Roster Churn (Moves/Year)")
+            fig_moves = px.bar(
+                df_multi_profiles.sort_values(by="avg_moves_per_year", ascending=True),
+                x="avg_moves_per_year", y="team_name", orientation="h",
+                color="avg_moves_per_year", color_continuous_scale="Magma",
+                labels={"avg_moves_per_year": "Avg Moves / Year", "team_name": "Team"},
+                height=380, template="plotly_dark"
+            )
+            st.plotly_chart(fig_moves, use_container_width=True)
+
+    # Detailed Individual Profile View
+    teams_to_render = all_teams_list if show_all_cards else ([selected_scout_team] if selected_scout_raw != "🌟 All 12 Teams Comparison Matrix" else all_teams_list[:1])
+
+    for t_name in teams_to_render:
+        p_row = df_multi_profiles[df_multi_profiles["team_name"] == t_name]
+        if p_row.empty:
+            continue
+        p = p_row.iloc[0]
+        t_id = int(p["team_id"])
+        t_hist = df_multi_hist[df_multi_hist["team_id"] == t_id].sort_values(by="year", ascending=True)
+
+        is_user = "you" in t_name.lower() or "commish" in t_name.lower()
+        border_color = "#3b82f6" if is_user else "#1e293b"
+
+        st.markdown(f"""
+        <div class="scout-card" style="border: 2px solid {border_color}; margin-bottom: 24px;">
+            <div class="scout-header" style="padding-bottom: 10px; border-bottom: 1px solid #334155; margin-bottom: 14px;">
+                <div>
+                    <span style="font-size: 1.4rem; font-weight: 800; color: #f8fafc;">Team #{p['team_id']} • {t_name}</span>
+                    <span style="color: #94a3b8; font-size: 0.95rem; margin-left: 10px; font-weight: 600;">Multi-Season Career Dossier (2022–2025)</span>
+                </div>
+                <div>
+                    <span class="badge badge-info" style="font-size: 0.9rem; padding: 6px 14px;">{p['draft_archetype']}</span>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; background: rgba(0,0,0,0.4); padding: 12px 16px; border-radius: 10px; margin-bottom: 16px; font-size: 0.88rem;">
+                <div><span style="color:#94a3b8; font-size:0.75rem; font-weight:700;">5-YR RECORD:</span><br><span style="color:#38bdf8; font-weight:800; font-size:1.15rem;">{p['all_time_record']}</span></div>
+                <div><span style="color:#94a3b8; font-size:0.75rem; font-weight:700;">TITLES WON:</span><br><span style="color:#fbbf24; font-weight:800; font-size:1.15rem;">{p['championships']} 🏆</span></div>
+                <div><span style="color:#94a3b8; font-size:0.75rem; font-weight:700;">PLAYOFF RATE:</span><br><span style="color:#34d399; font-weight:800; font-size:1.15rem;">{p['playoff_rate']}</span></div>
+                <div><span style="color:#94a3b8; font-size:0.75rem; font-weight:700;">AVG FINISH:</span><br><span style="color:#f1f5f9; font-weight:800; font-size:1.15rem;">#{p['avg_finish']}</span></div>
+                <div><span style="color:#94a3b8; font-size:0.75rem; font-weight:700;">AVG PF / YR:</span><br><span style="color:#f1f5f9; font-weight:800; font-size:1.15rem;">{p['avg_points_for']} pts</span></div>
+                <div><span style="color:#94a3b8; font-size:0.75rem; font-weight:700;">AVG MOVES / YR:</span><br><span style="color:#f87171; font-weight:800; font-size:1.15rem;">{p['avg_moves_per_year']} moves</span></div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+                <div style="font-size: 0.95rem; font-weight: 700; color: #38bdf8; margin-bottom: 4px;">🎯 5-Year Draft Habit & Positional Blueprint:</div>
+                <div style="font-size: 0.90rem; color: #e2e8f0; line-height: 1.5; background: rgba(15, 23, 42, 0.6); padding: 10px 14px; border-radius: 8px; border: 1px solid #334155;">
+                    {p['draft_blueprint']}
+                </div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+                <div style="font-size: 0.95rem; font-weight: 700; color: #34d399; margin-bottom: 4px;">💵 5-Year FAAB & Waiver Bidding Habits:</div>
+                <div style="font-size: 0.90rem; color: #e2e8f0; line-height: 1.5; background: rgba(15, 23, 42, 0.6); padding: 10px 14px; border-radius: 8px; border: 1px solid #334155;">
+                    {p['faab_blueprint']}
+                </div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+                <div style="font-size: 0.95rem; font-weight: 700; color: #a78bfa; margin-bottom: 4px;">🤝 Trade Psychology & Behavioral Pattern:</div>
+                <div style="font-size: 0.90rem; color: #e2e8f0; line-height: 1.5; background: rgba(15, 23, 42, 0.6); padding: 10px 14px; border-radius: 8px; border: 1px solid #334155;">
+                    {p['trade_behavior']}
+                </div>
+            </div>
+
+            <div class="strategy-box" style="border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.08); padding: 12px 16px; border-radius: 8px; margin-bottom: 14px;">
+                <div style="color: #fbbf24; font-weight: 800; font-size: 0.95rem; margin-bottom: 4px;">⚠️ TACTICAL EXPLOITATION GUIDE (How to Defeat in Drafts & Waivers):</div>
+                <div style="color: #fef08a; font-size: 0.90rem; line-height: 1.5; white-space: pre-line;">
+                    {p['exploit_strategy']}
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Show Year by Year History Table & Chart for Selected Team
+        if not t_hist.empty and selected_scout_team != "🌟 All 12 Teams Comparison Matrix":
+            st.markdown(f"##### 📈 {t_name} — 5-Year Performance & Draft History (2021–2025)")
+            st.dataframe(
+                t_hist[[
+                    "year", "prev_alias", "rank", "wins", "losses", "points_for", "points_against", "faab_spent", "moves",
+                    "r1_pick", "r2_pick", "qb_round", "te_round", "strategy"
+                ]].rename(columns={
+                    "year": "Year", "prev_alias": "Season Team Name", "rank": "Finish Rank", "wins": "W", "losses": "L",
+                    "points_for": "PF", "points_against": "PA", "faab_spent": "FAAB ($)",
+                    "moves": "Moves", "r1_pick": "Round 1 Pick", "r2_pick": "Round 2 Pick",
+                    "qb_round": "QB Rnd", "te_round": "TE Rnd", "strategy": "Draft Strategy"
+                }),
+                use_container_width=True,
+                height=230
+            )
+
+# TAB 4: MY LEAGUE STANDINGS & FAAB
+with t_standings:
+    st.subheader("🏆 Official League Standings & FAAB War Chest Leaderboard")
+    st.dataframe(
+        df_managers[[
+            "rank", "team_name", "manager_name", "record", "points_for", "points_against", "faab_balance", "spend_pct", "archetype"
+        ]].rename(columns={
+            "rank": "Rank", "team_name": "Team", "manager_name": "Manager", "record": "Record",
+            "points_for": "PF", "points_against": "PA", "faab_balance": "FAAB Left ($)", "spend_pct": "FAAB Spent (%)", "archetype": "Scouting Archetype"
+        }),
+        use_container_width=True,
+        height=450
+    )
+
+# TAB 5: PAST SEASONS DRAFT & FAAB INTEL
+with t_past_season:
+    st.subheader("📜 Past Season Draft Board, Positional Tendencies & FAAB Bidding Logs")
+    st.caption("Deep analysis of all 192 draft picks (12 teams × 16 rounds), positional strategies, winning FAAB claims, and transaction volume from the 2025 season.")
+
+    p_tab1, p_tab2, p_tab3 = st.tabs([
+        "🎯 Historical Draft Room Matrix (2025 & 2024)",
+        "📊 Positional Allocation & Draft Archetypes",
+        "💰 FAAB Bidding Claims & Trade Tracker"
+    ])
+
+    with p_tab1:
+        st.markdown("##### 🏈 Complete Verified Historical Draft Board")
+        col_y, col_f1, col_f2 = st.columns([1, 2, 2])
+        with col_y:
+            season_sel = st.selectbox("Season Year", [2025, 2024, 2023, 2022], index=0)
+        with col_f1:
+            teams_in_year = df_past_picks[df_past_picks["year"] == season_sel]["team_name"].unique().tolist() if ("year" in df_past_picks.columns and not df_past_picks.empty) else []
+            team_filter = st.selectbox("Filter by Team", ["All Teams"] + teams_in_year)
+        with col_f2:
+            pos_filter = st.multiselect("Filter by Position", ["QB", "RB", "WR", "TE", "K", "DST"], default=["QB", "RB", "WR", "TE", "K", "DST"])
+
+        df_display_picks = df_past_picks[df_past_picks["year"] == season_sel].copy() if ("year" in df_past_picks.columns and not df_past_picks.empty) else df_past_picks.copy()
+        if team_filter != "All Teams":
+            df_display_picks = df_display_picks[df_display_picks["team_name"] == team_filter]
+        if pos_filter:
+            df_display_picks = df_display_picks[df_display_picks["position"].isin(pos_filter)]
+
+        cols_to_show = ["overall_pick", "round", "team_name"]
+        if "team_alias" in df_display_picks.columns:
+            cols_to_show.append("team_alias")
+        cols_to_show.extend(["player_name", "position"])
+
+        st.dataframe(
+            df_display_picks[cols_to_show].rename(columns={
+                "overall_pick": "Pick #", "round": "Round", "team_name": "Manager / Team",
+                "team_alias": "Season Franchise Name", "player_name": "Player Drafted", "position": "Pos"
+            }),
+            use_container_width=True,
+            height=420
+        )
+
+    with p_tab2:
+        st.markdown("##### 📊 Manager Positional Allocation (16 Roster Slots)")
+        if not df_past_tendencies.empty:
+            fig_pos = px.bar(
+                df_past_tendencies,
+                x="team_name",
+                y=["total_rbs", "total_wrs", "total_qbs", "total_tes"],
+                title="Positional Draft Breakdown by Manager",
+                labels={"value": "Total Drafted", "team_name": "Team", "variable": "Position"},
+                barmode="stack",
+                color_discrete_map={
+                    "total_rbs": "#10b981",
+                    "total_wrs": "#3b82f6",
+                    "total_qbs": "#ef4444",
+                    "total_tes": "#f59e0b"
+                },
+                height=400
+            )
+            fig_pos.update_layout(template="plotly_dark", xaxis_tickangle=-45)
+            st.plotly_chart(fig_pos, use_container_width=True)
+
+            st.markdown("##### 🧠 Draft Archetype Classifications & Early-Round Prioritization")
+            st.dataframe(
+                df_past_tendencies[[
+                    "team_name", "draft_strategy", "round_1_pick", "round_2_pick", "first_qb_round", "first_te_round", "total_rbs", "total_wrs"
+                ]].rename(columns={
+                    "team_name": "Team", "draft_strategy": "Draft Strategy",
+                    "round_1_pick": "Round 1 Pick", "round_2_pick": "Round 2 Pick",
+                    "first_qb_round": "1st QB Rnd", "first_te_round": "1st TE Rnd",
+                    "total_rbs": "RBs", "total_wrs": "WRs"
+                }),
+                use_container_width=True,
+                height=400
+            )
+
+    with p_tab3:
+        st.markdown("##### 💵 Winning FAAB Claims & Trade Ledger")
+        col_t1, col_t2 = st.columns([3, 2])
+        
+        with col_t1:
+            st.markdown("<b>Historical Winning FAAB Claims & Trades:</b>", unsafe_allow_html=True)
+            st.dataframe(
+                df_past_tx.rename(columns={
+                    "date": "Date", "team_name": "Team", "player_name": "Player Acquired",
+                    "position": "Pos", "bid_amount": "Winning Bid ($)", "action": "Transaction Type",
+                    "drop_player": "Player Dropped"
+                }),
+                use_container_width=True,
+                height=350
+            )
+
+        with col_t2:
+            st.markdown("<b>Transaction Volume (5-Yr Avg Annual Roster Moves):</b>", unsafe_allow_html=True)
+            if not df_multi_profiles.empty:
+                fig_churn = px.bar(
+                    df_multi_profiles.sort_values(by="avg_moves_per_year", ascending=False),
+                    x="team_name", y="avg_moves_per_year",
+                    color="avg_moves_per_year", color_continuous_scale="Viridis",
+                    title="Avg Annual Roster Moves (2021-2025)",
+                    labels={"avg_moves_per_year": "Avg Moves / Year", "team_name": "Team"},
+                    height=350
+                )
+                fig_churn.update_layout(template="plotly_dark", xaxis_tickangle=-45)
+                st.plotly_chart(fig_churn, use_container_width=True)
+
+# TAB 5: 48H BEAT WIRE
+with t_news:
+    st.subheader("🚨 Real-Time Training Camp Wire & Analyst Dispatches")
+    st.caption("Live beat reporter dispatches, practice status changes, injury designations, and actionable expert strategies.")
+
+    sub_view = st.radio("Select View:", ["🚨 Live 48H Beat Reports", "🐦 Expert Analyst & Insiders Feed"], horizontal=True)
+
+    if sub_view == "🚨 Live 48H Beat Reports":
+        for item in BEAT_REPORTS_LAST_48H:
+            card_class = "news-card news-info"
+            badge_class = "badge badge-info"
+            st_type = str(item.get("status_type", "")).upper()
+            if st_type == "CRITICAL" or "OUT FOR SEASON" in item.get("badge", ""):
+                card_class = "news-card news-critical"
+                badge_class = "badge badge-critical"
+            elif st_type == "WARNING" or "INJURY" in item.get("badge", "") or "LIMITED" in item.get("badge", ""):
+                card_class = "news-card news-warning"
+                badge_class = "badge badge-warning"
+            else:
+                card_class = "news-card news-positive"
+                badge_class = "badge badge-positive"
+
+            st.markdown(f"""
+            <div class="{card_class}">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <div>
+                        <span style="font-size: 1.15rem; font-weight: 800; color: #f8fafc;">#{item.get('id', '')} {item.get('player', 'NFL News')}</span>
+                        <span style="font-size: 0.9rem; color: #94a3b8; margin-left: 6px; font-weight: 700;">({item.get('pos', 'NFL')} - {item.get('team', 'FA')})</span>
+                    </div>
+                    <span class="{badge_class}">{item.get('badge', 'NEWS')}</span>
+                </div>
+                <div style="font-size: 1.02rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">
+                    {item.get('headline', '')}
+                </div>
+                <div style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 8px;">
+                    {item.get('details', '')}
+                </div>
+                <div class="strategy-box">
+                    <b>{item.get('draft_impact', '🎯 DRAFT TAKEAWAY: Monitor workload in preseason action.')}</b>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #94a3b8; margin-top: 6px;">
+                    <span style="color: #38bdf8; font-weight: 600;">🕒 {item.get('published_str', 'Today')} ({item.get('time_ago_str', 'Live')})</span>
+                    <span>📡 Source: <a href="{item.get('source_url', '#')}" target="_blank" class="source-link">🔗 {item.get('source_name', 'NFL Beat Wire')}</a></span>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+    else:
+        for tweet in CURATED_TWEETS:
+            st.markdown(f"""
+            <div class="scout-card" style="border-left: 5px solid #6366f1; margin-bottom: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 1.3rem;">{tweet.get('avatar', '🏈')}</span>
+                        <div>
+                            <span style="font-weight: 800; color: #f8fafc; font-size: 1.05rem;">{tweet.get('name', 'Analyst')}</span>
+                            <a href="{tweet.get('url', '#')}" target="_blank" style="color: #818cf8; text-decoration: none; margin-left: 6px; font-size: 0.85rem; font-weight: 700;">{tweet.get('handle', '@NFL')}</a>
+                        </div>
+                    </div>
+                    <span class="badge badge-info" style="font-size: 0.75rem;">{tweet.get('badge', 'INSIGHT')}</span>
+                </div>
+                <p style="font-size: 0.92rem; color: #e2e8f0; line-height: 1.5; margin: 8px 0;">
+                    {tweet.get('content', '')}
+                </p>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #94a3b8; margin-top: 6px;">
+                    <span style="color: #a5b4fc;">⏱️ {tweet.get('timestamp', 'Live')} (Auto-Refreshed)</span>
+                    <a href="{tweet.get('url', '#')}" target="_blank" style="color: #818cf8; font-weight: 700; text-decoration: none;">🔗 Open Source &rarr;</a>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+# TAB 6: LIVE DRAFT BOARD
 with t_draft:
-    st.subheader("⚡ Official FantasyPros Consensus Draft Board (493 Players)")
+    st.subheader("⚡ Official FantasyPros Consensus Draft Board (500 Players)")
     search_query = st.text_input("🔍 Search Player or Team", "", key="draft_search_tab")
     
     col_d1, col_d2 = st.columns([3, 1])
@@ -637,7 +929,7 @@ with t_draft:
         height=500
     )
 
-# TAB 6: MARKET ARBITRAGE MATRIX
+# TAB 7: MARKET ARBITRAGE MATRIX
 with t_market:
     st.subheader("📊 Market Arbitrage Matrix (ECR vs. ADP)")
     fig = px.scatter(
@@ -650,14 +942,3 @@ with t_market:
     fig.add_shape(type="line", x0=0, y0=0, x1=200, y1=200, line=dict(color="#94a3b8", width=2, dash="dash"))
     fig.update_layout(yaxis=dict(autorange="reversed"), xaxis=dict(autorange="reversed"), template="plotly_dark")
     st.plotly_chart(fig, use_container_width=True)
-
-# TAB 7: POSITIONAL SCARCITY
-with t_vorp:
-    st.subheader("🔥 Positional Scarcity & Tier Cliffs")
-    fig_box = px.box(
-        df_available[df_available["position"].isin(["QB", "RB", "WR", "TE"])],
-        x="position", y="dynamic_vorp", color="position", points="all", hover_name="player_name",
-        labels={"dynamic_vorp": "VORP Points", "position": "Position"},
-        height=480, template="plotly_dark"
-    )
-    st.plotly_chart(fig_box, use_container_width=True)

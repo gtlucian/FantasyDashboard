@@ -1,6 +1,8 @@
 # Secrets & Env
 .env
 *.env
+.yahoo_oauth_token.json
+*.token.json
 __pycache__/
 *.pyc
 

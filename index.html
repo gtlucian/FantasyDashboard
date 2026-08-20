@@ -537,7 +537,7 @@
   <!-- App Script -->
   <script>
     // 20 Verified Training Camp & Preseason Beat Reports (Timestamped & Sorted Newest First)
-    const BEAT_NEWS_20 = [
+    let BEAT_NEWS_20 = [
       {
         id: 1, player: "Jonathon Brooks", pos: "RB", team: "CAR", cat: "RB", type: "positive", badge: "82% 1ST-TEAM SNAP SHARE",
         headline: "Dominates first-team snaps in Preseason W1 start with Chuba Hubbard sidelined",
@@ -701,7 +701,7 @@
     ];
 
     // Curated Twitter / X Expert Analysts Feed (August 16 Preseason Week 1 Post-Game)
-    const ANALYST_TWEETS = [
+    let ANALYST_TWEETS = [
       {
         id: "tw1",
         name: "Ryan Heath",
@@ -795,19 +795,29 @@
         const data = await resp.json();
         rawPlayers = data.players || [];
         
+        if (data.live_beat_wire && data.live_beat_wire.length > 0) {
+          BEAT_NEWS_20 = data.live_beat_wire;
+        }
+        if (data.analyst_tweets && data.analyst_tweets.length > 0) {
+          ANALYST_TWEETS = data.analyst_tweets;
+        }
+
         // Format and render Eastern Time timestamp
-        const rawTime = data.metadata.snapshot_time || 'Aug 16, 2026, 11:00 AM EDT';
+        const rawTime = data.metadata.snapshot_time || 'Aug 20, 2026, 11:45 AM EDT';
         document.getElementById('headerTimestamp').textContent = rawTime;
         document.getElementById('cardTimestamp').textContent = rawTime;
         
         if (showToast) {
-          showSyncToast(`⚡ Live Data Refreshed: ${rawPlayers.length} players (${rawTime})`);
+          showSyncToast(`⚡ Live Data Refreshed: ${rawPlayers.length} players & ${BEAT_NEWS_20.length} live reports (${rawTime})`);
         }
       } catch (err) {
         console.warn('Loading fallback data...', err);
       } finally {
         if (icon) icon.classList.remove('animate-spin');
       }
+      renderAnalystButtons();
+      renderNews();
+      renderTwitter();
       recalcAndRender();
     }
 
@@ -1141,34 +1151,68 @@
       }
     }
 
+    // Dynamic Filter Buttons for Analysts
+    function renderAnalystButtons() {
+      const container = document.getElementById('analystFilterBtns');
+      if (!container) return;
+
+      const names = ['ALL'];
+      ANALYST_TWEETS.forEach(t => {
+        if (t.name && !names.includes(t.name)) {
+          names.push(t.name);
+        }
+      });
+
+      container.innerHTML = names.map(n => {
+        const isSelected = selectedAnalyst === n;
+        const btnClass = isSelected
+          ? 'bg-indigo-600 text-white font-bold'
+          : 'bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold';
+        const label = n === 'ALL' ? 'All Experts' : n;
+        return `<button data-analyst="${n}" class="analyst-btn ${btnClass} px-2.5 py-1 rounded-lg text-xs transition whitespace-nowrap">${label}</button>`;
+      }).join('');
+
+      container.querySelectorAll('.analyst-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectedAnalyst = btn.getAttribute('data-analyst');
+          renderAnalystButtons();
+          renderTwitter();
+        });
+      });
+    }
+
     // Twitter Analyst Feed Render (Sorted Newest First)
     function renderTwitter() {
       const container = document.getElementById('twitterCardsContainer');
-      const filtered = ANALYST_TWEETS.filter(t => selectedAnalyst === 'ALL' || t.name.toLowerCase().includes(selectedAnalyst.toLowerCase()) || t.handle.toLowerCase().includes(selectedAnalyst.toLowerCase()));
+      const filtered = ANALYST_TWEETS.filter(t => {
+        if (selectedAnalyst === 'ALL') return true;
+        const s = selectedAnalyst.toLowerCase();
+        return (t.name && t.name.toLowerCase().includes(s)) || (t.handle && t.handle.toLowerCase().includes(s));
+      });
 
       // Sort newest first by default
-      filtered.sort((a, b) => new Date(b.timestamp_dt) - new Date(a.timestamp_dt));
+      filtered.sort((a, b) => new Date(b.timestamp_dt || 0) - new Date(a.timestamp_dt || 0));
 
       container.innerHTML = filtered.map(item => `
         <div class="card-analyst p-4 sm:p-5 rounded-2xl shadow-xl border border-slate-800">
           <div class="flex justify-between items-center mb-2">
             <div class="flex items-center gap-2.5">
-              <span class="text-xl">${item.avatar}</span>
+              <span class="text-xl">${item.avatar || '🏈'}</span>
               <div>
-                <span class="text-sm sm:text-base font-extrabold text-white">${item.name}</span>
-                <a href="${item.url}" target="_blank" class="text-xs text-indigo-400 font-bold ml-1 hover:underline">${item.handle}</a>
+                <span class="text-sm sm:text-base font-extrabold text-white">${item.name || 'Analyst'}</span>
+                <a href="${item.url || '#'}" target="_blank" class="text-xs text-indigo-400 font-bold ml-1 hover:underline">${item.handle || '@NFL'}</a>
               </div>
             </div>
             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold tracking-wider bg-indigo-950 text-indigo-300 border border-indigo-700">
-              ${item.badge}
+              ${item.badge || 'INSIGHT'}
             </span>
           </div>
           <p class="text-xs sm:text-sm text-slate-200 leading-relaxed my-2">
             ${item.content}
           </p>
           <div class="flex justify-between items-center text-[11px] text-slate-400 mt-2">
-            <span class="text-indigo-300 font-semibold">⏱️ ${item.timestamp} (Newest)</span>
-            <a href="${item.url}" target="_blank" class="text-indigo-400 font-bold hover:underline">🔗 Open on Twitter / X &rarr;</a>
+            <span class="text-indigo-300 font-semibold">⏱️ ${item.timestamp || 'Live'} (Auto-Refreshed)</span>
+            <a href="${item.url || '#'}" target="_blank" class="text-indigo-400 font-bold hover:underline">🔗 Open Source &rarr;</a>
           </div>
         </div>
       `).join('');
@@ -1181,41 +1225,59 @@
       const searchVal = document.getElementById('newsSearchInput').value.toLowerCase();
       
       const filtered = BEAT_NEWS_20.filter(n => {
-        const matchesCat = (selectedCat === 'ALL' || n.cat === selectedCat);
+        const pPos = n.pos || '';
+        const pCat = n.category || n.cat || '';
+        const matchesCat = (
+          selectedCat === 'ALL' ||
+          n.cat === selectedCat ||
+          pPos === selectedCat ||
+          pCat === selectedCat ||
+          (selectedCat === 'RB' && pPos === 'RB') ||
+          (selectedCat === 'WR' && pPos === 'WR') ||
+          (selectedCat === 'QB' && pPos === 'QB') ||
+          (selectedCat === 'TE' && pPos === 'TE') ||
+          (selectedCat === 'OL' && (pPos === 'DST' || pPos === 'OL' || pCat.toLowerCase().includes('defense') || pCat.toLowerCase().includes('line')))
+        );
+
         const matchesSearch = !searchVal || 
-          n.player.toLowerCase().includes(searchVal) || 
-          n.team.toLowerCase().includes(searchVal) || 
-          n.headline.toLowerCase().includes(searchVal) ||
-          n.details.toLowerCase().includes(searchVal) ||
-          n.source_name.toLowerCase().includes(searchVal);
+          (n.player && n.player.toLowerCase().includes(searchVal)) || 
+          (n.team && n.team.toLowerCase().includes(searchVal)) || 
+          (n.headline && n.headline.toLowerCase().includes(searchVal)) ||
+          (n.details && n.details.toLowerCase().includes(searchVal)) ||
+          (n.source_name && n.source_name.toLowerCase().includes(searchVal));
         return matchesCat && matchesSearch;
       });
 
       // Sort newest first by default
-      filtered.sort((a, b) => new Date(b.timestamp_dt) - new Date(a.timestamp_dt));
+      filtered.sort((a, b) => new Date(b.timestamp_dt || 0) - new Date(a.timestamp_dt || 0));
 
       container.innerHTML = filtered.map(item => {
+        const st = (item.status_type || item.type || 'info').toLowerCase();
         let cardClass = "card-info";
         let badgeClass = "bg-blue-950 text-blue-300 border border-blue-700";
-        if (item.type === 'critical') {
+        if (st.includes('critical') || st.includes('season-ending')) {
           cardClass = "card-critical";
           badgeClass = "bg-rose-950 text-rose-200 border border-rose-700";
-        } else if (item.type === 'warning') {
+        } else if (st.includes('warning') || st.includes('injury') || st.includes('limited') || st.includes('concern')) {
           cardClass = "card-warning";
           badgeClass = "bg-amber-950 text-amber-200 border border-amber-700";
-        } else if (item.type === 'positive') {
+        } else {
           cardClass = "card-positive";
           badgeClass = "bg-emerald-950 text-emerald-200 border border-emerald-700";
         }
+
+        const impactText = item.draft_impact || item.impact || '🎯 DRAFT TAKEAWAY: Monitor workload and practice notes.';
+        const pubTime = item.published_str || 'Today';
+        const timeAgo = item.time_ago_str || item.timestamp || 'Live';
 
         return `
           <div class="${cardClass} p-4 sm:p-5 rounded-2xl shadow-xl transition duration-150 hover:-translate-y-0.5 border border-slate-800">
             <div class="flex justify-between items-center mb-2">
               <div>
-                <span class="text-sm sm:text-base font-extrabold text-white">#${item.id} ${item.player}</span>
-                <span class="text-xs text-slate-400 ml-2 font-bold mono">(${item.pos} - ${item.team})</span>
+                <span class="text-sm sm:text-base font-extrabold text-white">${item.player}</span>
+                <span class="text-xs text-slate-400 ml-2 font-bold mono">(${item.pos || 'NFL'} - ${item.team || 'FA'})</span>
               </div>
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-extrabold tracking-wider ${badgeClass}">${item.badge}</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-extrabold tracking-wider ${badgeClass}">${item.badge || 'NEWS'}</span>
             </div>
             <div class="text-xs sm:text-sm font-bold text-slate-100 mb-1 leading-snug">
               ${item.headline}
@@ -1224,11 +1286,11 @@
               ${item.details}
             </p>
             <div class="bg-slate-950/80 p-2.5 sm:p-3 rounded-xl border border-slate-800 text-xs mb-2">
-              <span class="text-amber-300 font-bold">${item.impact}</span>
+              <span class="text-amber-300 font-bold">${impactText}</span>
             </div>
             <div class="flex justify-between items-center text-[11px] sm:text-xs text-slate-400 mt-2">
-              <span class="text-sky-300 font-semibold">🕒 ${item.published_str} (${item.time_ago_str})</span>
-              <span>📡 Source: <a href="${item.source_url}" target="_blank" class="text-blue-400 font-bold hover:underline">🔗 ${item.source_name}</a></span>
+              <span class="text-sky-300 font-semibold">🕒 ${pubTime} (${timeAgo})</span>
+              <span>📡 Source: <a href="${item.source_url || '#'}" target="_blank" class="text-blue-400 font-bold hover:underline">🔗 ${item.source_name || 'NFL Beat Wire'}</a></span>
             </div>
           </div>
         `;
