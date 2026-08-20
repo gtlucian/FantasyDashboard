@@ -31,7 +31,100 @@ KNOWN_HANDCUFF_MAP = {
     "de'von achane": {"handcuff": "Jaylen Wright / Raheem Mostert", "team": "MIA", "pos": "RB", "target_round": "R8-10", "trigger": "High-efficiency speed back durability"},
     "ricky pearsall": {"handcuff": "Brandon Aiyuk / Deebo Samuel", "team": "SF", "pos": "WR", "target_round": "R2-3", "trigger": "PCL surgery; targets funnel to alpha WRs"},
     "jalen mcmillan": {"handcuff": "Tez Johnson / Ted Hurst", "team": "TB", "pos": "WR", "target_round": "Waiver / R15+", "trigger": "Unspecified knee issue"},
-    "makai lemon": {"handcuff": "Dontayvion Wicks", "team": "PHI", "pos": "WR", "target_round": "R12-14", "trigger": "Recurring soft tissue hamstring strain"}
+    "makai lemon": {"handcuff": "Dontayvion Wicks", "team": "PHI", "pos": "WR", "target_round": "R12-14", "trigger": "Recurring soft tissue hamstring strain"},
+    "jordan mason": {"handcuff": "Christian McCaffrey", "team": "SF", "pos": "RB", "target_round": "R11-13", "trigger": "Direct beneficiary of CMC workload management"},
+    "blake corum": {"handcuff": "Kyren Williams", "team": "LAR", "pos": "RB", "target_round": "R8-10", "trigger": "Direct beneficiary of Kyren Williams touch rate"},
+    "braelon allen": {"handcuff": "Breece Hall", "team": "NYJ", "pos": "RB", "target_round": "R10-12", "trigger": "Goal-line power rusher role"},
+    "jaylen wright": {"handcuff": "De'Von Achane", "team": "MIA", "pos": "RB", "target_round": "R9-11", "trigger": "Speed back replacement in Miami offense"},
+    "zach charbonnet": {"handcuff": "Kenneth Walker III", "team": "SEA", "pos": "RB", "target_round": "R9-10", "trigger": "3-down workhorse if Walker misses time"}
+}
+
+# Granular Player Intelligence Profiles
+SPECIAL_PROFILES = {
+    "christian mccaffrey": {
+        "risk_score": 68, "risk_level": "HIGH", "risk_badge": "⚠️ High Soft-Tissue Risk (~26% Re-Injury)",
+        "soft_tissue": True, "category": "LANDMINE", "category_label": "🚨 High-Risk Landmine / Must Handcuff",
+        "action_tag": "MUST DRAFT HANDCUFF",
+        "action_advice": "Consensus 1.01 overall ceiling, but recurring soft-tissue tightness in August elevates in-season re-injury probability to ~26%. You can draft CMC, but you MUST secure Jordan Mason in Round 11-13 as non-negotiable insurance."
+    },
+    "ricky pearsall": {
+        "risk_score": 98, "risk_level": "CRITICAL", "risk_badge": "🔴 Out for Season (PCL Surgery / IR)",
+        "soft_tissue": False, "category": "LANDMINE", "category_label": "🚨 Season-Ending IR / Do Not Draft",
+        "action_tag": "DO NOT DRAFT",
+        "action_advice": "Underwent recurring PCL surgery and placed on Season-Ending IR. Completely remove from standard redraft boards. Solidifies alpha target volume for Brandon Aiyuk and Deebo Samuel."
+    },
+    "chuba hubbard": {
+        "risk_score": 72, "risk_level": "HIGH", "risk_badge": "⚠️ Hamstring Strain (Week-to-Week)",
+        "soft_tissue": True, "category": "LANDMINE", "category_label": "🚨 High-Risk Landmine / Losing Workload",
+        "action_tag": "FADE / OVERVALUED",
+        "action_advice": "Sidelined week-to-week with a hamstring strain and has ceded 82% of first-team reps to rookie Jonathon Brooks. Fade Hubbard past Round 10; target Brooks early."
+    },
+    "jonathon brooks": {
+        "risk_score": 15, "risk_level": "LOW", "risk_badge": "✅ 82% First-Team Preseason Workload",
+        "soft_tissue": False, "category": "VALUE_BUY", "category_label": "🟢 High-Value Breakout / Bellcow",
+        "action_tag": "SMASH TARGET / VALUE",
+        "action_advice": "Commanded 82% of first-team snaps in Preseason W1 with Hubbard sidelined. Clear bellcow path in Dave Canales' offense. Smash target in Round 3/4."
+    },
+    "malik nabers": {
+        "risk_score": 12, "risk_level": "LOW", "risk_badge": "✅ Cleared Full 11-on-11 Contact",
+        "soft_tissue": False, "category": "VALUE_BUY", "category_label": "🟢 High-Value Draft Steal / Alpha WR1",
+        "action_tag": "ELITE WR1 TARGET",
+        "action_advice": "Graduated to full 11-on-11 contact with zero limitations. Commanded a 30% camp target share and 71% route participation. High-end WR1 target ahead of older alternatives."
+    },
+    "travis hunter": {
+        "risk_score": 10, "risk_level": "MINIMAL", "risk_badge": "✅ Red-Zone Package Confirmation",
+        "soft_tissue": False, "category": "VALUE_BUY", "category_label": "🟢 High-Value Arbitrage Steal (+17.0 ADP)",
+        "action_tag": "HIGH CEILING TARGET",
+        "action_advice": "Featured heavily in goal-line packages and red-zone passing sets alongside starting defense. Elite two-way athletic ceiling. High arbitrage upside."
+    },
+    "c.j. stroud": {
+        "risk_score": 8, "risk_level": "MINIMAL", "risk_badge": "✅ 100% Healthy / Veteran Rest",
+        "soft_tissue": False, "category": "VALUE_BUY", "category_label": "🟢 Overblown Preseason Dip",
+        "action_tag": "PRIME QB1 VALUE",
+        "action_advice": "Preseason workload concerns are totally overblown. Starting offensive continuity is elite with Nico Collins & Tank Dell. High-confidence QB1 target."
+    },
+    "patrick mahomes": {
+        "risk_score": 8, "risk_level": "MINIMAL", "risk_badge": "✅ 100% Full Practice Participation",
+        "soft_tissue": False, "category": "VALUE_BUY", "category_label": "🟢 Overblown Preseason Dip",
+        "action_tag": "ELITE QB1 ANCHOR",
+        "action_advice": "Practicing at 100% full scrimmage capacity. Sitting preseason games is strictly veteran preservation. Draft with total confidence at current ADP."
+    },
+    "jalen mcmillan": {
+        "risk_score": 62, "risk_level": "MODERATE-HIGH", "risk_badge": "🟡 Knee Soreness / Limited Drills",
+        "soft_tissue": False, "category": "LANDMINE", "category_label": "🚨 Knee Soreness Uncertainty",
+        "action_tag": "FADE / UNCERTAIN",
+        "action_advice": "Knee soreness limits practice continuity. Creates opportunity for rookie sleeper Tez Johnson and Ted Hurst as free late-round fliers."
+    },
+    "jordan mason": {
+        "risk_score": 15, "risk_level": "LOW", "risk_badge": "💎 Direct CMC Handcuff & Goal-Line Role",
+        "soft_tissue": False, "category": "HANDCUFF", "category_label": "💎 Priority League-Winner Handcuff",
+        "action_tag": "MANDATORY CMC HANDCUFF",
+        "action_advice": "Locked in as the primary backup and short-yardage hammer in San Francisco. If McCaffrey misses time, instantly steps into top-10 weekly RB1 production. Target in Round 11-13."
+    },
+    "blake corum": {
+        "risk_score": 15, "risk_level": "LOW", "risk_badge": "💎 McVay Touch Monster Handcuff",
+        "soft_tissue": False, "category": "HANDCUFF", "category_label": "💎 High-Upside Standalone Handcuff",
+        "action_tag": "PRIORITY STASH (R8-10)",
+        "action_advice": "Drafted to relieve Kyren Williams in high-leverage situations. Standalone flex value + instant RB1 bellcow status if Kyren misses time."
+    },
+    "braelon allen": {
+        "risk_score": 12, "risk_level": "LOW", "risk_badge": "💎 Power Rusher & Goal-Line Handcuff",
+        "soft_tissue": False, "category": "HANDCUFF", "category_label": "💎 High-Leverage Contingency RB",
+        "action_tag": "PRIORITY STASH (R10-12)",
+        "action_advice": "240-lb power back securing direct backup duties behind Breece Hall with standalone goal-line touchdown vulture upside."
+    },
+    "jaylen wright": {
+        "risk_score": 14, "risk_level": "LOW", "risk_badge": "💎 4.38 Speed in McDaniel Scheme",
+        "soft_tissue": False, "category": "HANDCUFF", "category_label": "💎 High-Ceiling Speed Handcuff",
+        "action_tag": "PRIORITY STASH (R9-11)",
+        "action_advice": "Elite home-run speed runner. If Achane or Mostert miss games, Wright has the explosive burst to deliver 20+ fantasy point ceiling weeks."
+    },
+    "zach charbonnet": {
+        "risk_score": 15, "risk_level": "LOW", "risk_badge": "💎 3-Down Workhorse Floor",
+        "soft_tissue": False, "category": "HANDCUFF", "category_label": "💎 Standalone Flex & Bellcow Handcuff",
+        "action_tag": "PRIORITY STASH (R9-10)",
+        "action_advice": "Proven 3-down skillset with pass-catching prowess. Provides standalone flex viability and immediate top-15 volume if Kenneth Walker sits."
+    }
 }
 
 def analyze_injury_draft_strategy(
@@ -99,102 +192,94 @@ def analyze_injury_draft_strategy(
             headline = ""
             badge = ""
 
-        # Compute Injury Risk Score (0 - 100)
-        risk_score = 10
-        risk_level = "LOW"
-        risk_badge = "🟢 Low Risk"
-        soft_tissue_flag = False
-
-        full_text = f"{name} {status} {news_note} {headline} {badge}".lower()
-
-        if any(k in full_text for k in ["out for season", "torn", "surgery", "ir", "broken", "fracture", "achilles"]):
-            risk_score = 95
-            risk_level = "CRITICAL"
-            risk_badge = "🔴 Critical / Season-Ending"
-            status = "IR"
-        elif any(k in full_text for k in ["pup", "multi-week", "indefinite", "hernia setback"]):
-            risk_score = 80
-            risk_level = "VERY HIGH"
-            risk_badge = "🟠 Severe Risk / Extended Absence"
-            status = "PUP"
-        elif any(k in full_text for k in ["hamstring", "calf", "groin", "soft tissue"]):
-            risk_score = 68
-            risk_level = "HIGH"
-            risk_badge = "⚠️ High Soft-Tissue Risk (~24% Re-injury)"
-            soft_tissue_flag = True
-            if status == "Healthy":
-                status = "Questionable"
-        elif any(k in full_text for k in ["knee", "ankle", "sprain", "limited", "sidelined", "miss", "doubtful", "questionable", "concussion"]):
-            risk_score = 55
-            risk_level = "MODERATE"
-            risk_badge = "🟡 Moderate Injury Concern"
-            if status == "Healthy":
-                status = "Questionable"
-        elif any(k in full_text for k in ["held out", "precaution", "rest", "managing"]):
-            risk_score = 30
-            risk_level = "LOW-MODERATE"
-            risk_badge = "🟢 Precautionary / Veteran Load Management"
-        elif any(k in full_text for k in ["100% capacity", "full practice", "explosive", "starter", "dominant", "breakout"]):
-            risk_score = 10
-            risk_level = "MINIMAL"
-            risk_badge = "✅ 100% Healthy / High Momentum"
-
         # Arbitrage delta: ADP - ECR (Positive = Market drafting later than expert rank)
         adp_delta = round(adp - ecr, 1)
 
-        # Categorization Logic
-        # 1. High Risk Landmine / Avoid at ADP
-        if (risk_score >= 60 and adp <= (ecr + 5)) or (risk_score >= 80 and adp <= 150):
-            category = "LANDMINE"
-            category_label = "🚨 High-Risk Landmine / Avoid at Current ADP"
-            action_tag = "FADE / OVERVALUED"
-            if "mccaffrey" in name_lower:
-                action_advice = "CMC remains the consensus 1.01 overall ceiling, but recurring soft-tissue tightness in camp elevates in-season re-injury probability. MUST draft handcuff Jordan Mason in Round 11-13 as contingency insurance."
-            elif "pearsall" in name_lower:
-                action_advice = "Season-ending PCL surgery. Remove completely from standard redraft boards. Re-allocate target projections to Brandon Aiyuk & Deebo Samuel."
-            elif "hubbard" in name_lower:
-                action_advice = "Sidelined week-to-week with hamstring strain. Conceding first-team reps to rookie Jonathon Brooks. Fade Hubbard past Round 10; target Brooks early."
-            else:
-                action_advice = f"Carrying a {risk_level} injury risk profile ({risk_score}/100) without sufficient market discount (ADP {adp} vs ECR {ecr}). Prefer healthier tier alternatives."
-            landmines.append(name)
-
-        # 2. Value Buy / Overblown Dip
-        elif adp_delta >= 6.0 and risk_score <= 50:
-            category = "VALUE_BUY"
-            category_label = "🟢 High-Value Draft Steal / Overblown Dip"
-            action_tag = "SMASH TARGET / VALUE"
-            if "stroud" in name_lower:
-                action_advice = "Preseason workload concerns are totally overblown. Starting offensive continuity is elite with Nico Collins & Tank Dell. High-confidence QB1 target."
-            elif "mahomes" in name_lower:
-                action_advice = "Practicing at 100% full scrimmage capacity. Sitting preseason games is strictly veteran preservation. Draft with total confidence at current ADP."
-            elif "brooks" in name_lower:
-                action_advice = "Commanding 82% of first-team snaps with Hubbard sidelined. Bellcow trajectory is accelerating rapidly. Draft as a high-upside RB2 target in Round 3/4."
-            elif "nabers" in name_lower:
-                action_advice = "Full 11-on-11 contact participation confirmed. Near 30% red-zone target share in camp. Massive target equity makes him an elite WR1 target."
-            elif "hunter" in name_lower:
-                action_advice = "Featured heavily in goal-line packages and red-zone passing sets. Elite two-way athletic ceiling. High arbitrage upside."
-            else:
-                action_advice = f"Draft market is over-penalizing this player by +{adp_delta} spots relative to expert consensus. Clean health outlook makes them a prime draft target."
-            value_buys.append(name)
-
-        # 3. Handcuff Priority
-        elif name_lower in KNOWN_HANDCUFF_MAP or any(k in name_lower for k in ["mason", "corum", "allen", "brooks", "allgeier", "wright", "charbonnet", "vaki", "wicks", "johnson"]):
-            category = "HANDCUFF"
-            category_label = "💎 High-Priority Contingency Handcuff"
-            action_tag = "CONTINGENCY TARGET"
-            hc_info = KNOWN_HANDCUFF_MAP.get(name_lower, {})
-            if hc_info:
-                action_advice = f"Starter carry vulnerability ({hc_info['trigger']}). Handcuff asset `{hc_info['handcuff']}` carries standalone RB2 upside if starter misses time. Target in {hc_info['target_round']}."
-            else:
-                action_advice = "Elite contingency stash. If lead starter suffers injury attrition, immediately vaults to a top-20 positional weekly floor."
-            handcuff_priorities.append(name)
-
-        # 4. Clean Anchor
+        # Check Special Profile Override
+        spec = SPECIAL_PROFILES.get(name_lower, {})
+        if spec:
+            risk_score = spec["risk_score"]
+            risk_level = spec["risk_level"]
+            risk_badge = spec["risk_badge"]
+            soft_tissue_flag = spec["soft_tissue"]
+            category = spec["category"]
+            category_label = spec["category_label"]
+            action_tag = spec["action_tag"]
+            action_advice = spec["action_advice"]
         else:
-            category = "ANCHOR"
-            category_label = "🛡️ High-Floor Clean Medical Anchor"
-            action_tag = "STABLE ANCHOR"
-            action_advice = f"Clean medical baseline with standard practice participation. Solid building block at ADP #{adp}."
+            # Dynamic Computation
+            risk_score = 10
+            risk_level = "LOW"
+            risk_badge = "🟢 Low Risk"
+            soft_tissue_flag = False
+
+            full_text = f"{name} {status} {news_note} {headline} {badge}".lower()
+
+            if any(k in full_text for k in ["out for season", "torn", "surgery", "ir", "broken", "fracture", "achilles"]):
+                risk_score = 95
+                risk_level = "CRITICAL"
+                risk_badge = "🔴 Critical / Season-Ending"
+                status = "IR"
+            elif any(k in full_text for k in ["pup", "multi-week", "indefinite", "hernia setback"]):
+                risk_score = 80
+                risk_level = "VERY HIGH"
+                risk_badge = "🟠 Severe Risk / Extended Absence"
+                status = "PUP"
+            elif any(k in full_text for k in ["hamstring", "calf", "groin", "soft tissue"]):
+                risk_score = 68
+                risk_level = "HIGH"
+                risk_badge = "⚠️ High Soft-Tissue Risk (~24% Re-injury)"
+                soft_tissue_flag = True
+                if status == "Healthy":
+                    status = "Questionable"
+            elif any(k in full_text for k in ["knee", "ankle", "sprain", "limited", "sidelined", "miss", "doubtful", "questionable", "concussion"]):
+                risk_score = 55
+                risk_level = "MODERATE"
+                risk_badge = "🟡 Moderate Injury Concern"
+                if status == "Healthy":
+                    status = "Questionable"
+            elif any(k in full_text for k in ["held out", "precaution", "rest", "managing"]):
+                risk_score = 30
+                risk_level = "LOW-MODERATE"
+                risk_badge = "🟢 Precautionary / Veteran Load Management"
+            elif any(k in full_text for k in ["100% capacity", "full practice", "explosive", "starter", "dominant", "breakout"]):
+                risk_score = 10
+                risk_level = "MINIMAL"
+                risk_badge = "✅ 100% Healthy / High Momentum"
+
+            # Categorization Logic
+            if (risk_score >= 60 and adp <= (ecr + 5)) or (risk_score >= 80 and adp <= 150):
+                category = "LANDMINE"
+                category_label = "🚨 High-Risk Landmine / Avoid at Current ADP"
+                action_tag = "FADE / OVERVALUED"
+                action_advice = f"Carrying a {risk_level} injury risk profile ({risk_score}/100) without sufficient market discount (ADP {adp} vs ECR {ecr}). Prefer healthier tier alternatives."
+            elif adp_delta >= 6.0 and risk_score <= 50:
+                category = "VALUE_BUY"
+                category_label = "🟢 High-Value Draft Steal / Overblown Dip"
+                action_tag = "SMASH TARGET / VALUE"
+                action_advice = f"Draft market is over-penalizing this player by +{adp_delta} spots relative to expert consensus. Clean health outlook makes them a prime draft target."
+            elif name_lower in KNOWN_HANDCUFF_MAP or any(k in name_lower for k in ["mason", "corum", "allen", "brooks", "allgeier", "wright", "charbonnet", "vaki", "wicks", "johnson"]):
+                category = "HANDCUFF"
+                category_label = "💎 High-Priority Contingency Handcuff"
+                action_tag = "CONTINGENCY TARGET"
+                hc_info = KNOWN_HANDCUFF_MAP.get(name_lower, {})
+                if hc_info:
+                    action_advice = f"Starter carry vulnerability ({hc_info['trigger']}). Handcuff asset `{hc_info['handcuff']}` carries standalone RB2 upside if starter misses time. Target in {hc_info['target_round']}."
+                else:
+                    action_advice = "Elite contingency stash. If lead starter suffers injury attrition, immediately vaults to a top-20 positional weekly floor."
+            else:
+                category = "ANCHOR"
+                category_label = "🛡️ High-Floor Clean Medical Anchor"
+                action_tag = "STABLE ANCHOR"
+                action_advice = f"Clean medical baseline with standard practice participation. Solid building block at ADP #{adp}."
+
+        if category == "LANDMINE":
+            landmines.append(name)
+        elif category == "VALUE_BUY":
+            value_buys.append(name)
+        elif category == "HANDCUFF":
+            handcuff_priorities.append(name)
+        else:
             clean_anchors.append(name)
 
         # Lookup Handcuff Mapping
