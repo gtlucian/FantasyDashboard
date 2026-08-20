@@ -1,11 +1,13 @@
 #!/bin/bash
-# One-click foolproof sync and publish script
 set -e
 
-echo "🔄 Fetching and syncing latest remote GitHub Actions changes..."
-git pull --no-edit -X ours origin main
+# Ensure repository uses merge strategy for pull
+git config pull.rebase false
+
+echo "🔄 Fetching and syncing latest remote changes..."
+git pull --no-rebase --no-edit -X ours origin main
 
 echo "🚀 Pushing to GitHub Pages..."
 git push origin main
 
-echo "🎉 Done! Successfully published latest changes to GitHub."
+echo "🎉 Done! Successfully published latest changes to GitHub Pages."
