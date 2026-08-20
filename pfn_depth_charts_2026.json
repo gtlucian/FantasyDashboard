@@ -1,0 +1,1016 @@
+{
+  "ARI": {
+    "team_name": "Arizona Cardinals",
+    "abbr": "ARI",
+    "positions": {
+      "QUARTERBACK": [
+        "Jacoby Brissett",
+        "Gardner Minshew II",
+        "Carson Beck",
+        "Kedon Slovis"
+      ],
+      "RUNNING BACK": [
+        "Jeremiyah Love",
+        "Tyler Allgeier",
+        "James Conner",
+        "Trey Benson"
+      ],
+      "TIGHT END": [
+        "Trey McBride",
+        "Elijah Higgins",
+        "Tip Reiman",
+        "Teagan Quitoriano"
+      ],
+      "WIDE RECEIVERS": [
+        "Marvin Harrison Jr.",
+        "Michael Wilson",
+        "Kendrick Bourne",
+        "Simi Fehoko",
+        "Reggie Virgil",
+        "Devin Duvernay"
+      ]
+    }
+  },
+  "ATL": {
+    "team_name": "Atlanta Falcons",
+    "abbr": "ATL",
+    "positions": {
+      "QUARTERBACK": [
+        "Michael Penix Jr.",
+        "Tua Tagovailoa",
+        "Jack Strand",
+        "Cooper Rush"
+      ],
+      "RUNNING BACK": [
+        "Bijan Robinson",
+        "Brian Robinson Jr.",
+        "Tyler Goodson",
+        "Trey Sermon"
+      ],
+      "TIGHT END": [
+        "Kyle Pitts Sr.",
+        "Austin Hooper",
+        "Charlie Woerner",
+        "Joshua Simon"
+      ],
+      "WIDE RECEIVERS": [
+        "Drake London",
+        "Jahan Dotson",
+        "Olamide Zaccheaus",
+        "Zachariah Branch",
+        "Dylan Drummond",
+        "Chris Blair"
+      ]
+    }
+  },
+  "BAL": {
+    "team_name": "Baltimore Ravens",
+    "abbr": "BAL",
+    "positions": {
+      "QUARTERBACK": [
+        "Lamar Jackson",
+        "Tyler Huntley",
+        "Austin Reed",
+        "Joe Fagnano"
+      ],
+      "RUNNING BACK": [
+        "Derrick Henry",
+        "Justice Hill",
+        "Rasheen Ali",
+        "Adam Randall"
+      ],
+      "TIGHT END": [
+        "Mark Andrews",
+        "Durham Smythe",
+        "Matt Hibner",
+        "Josh Cuevas"
+      ],
+      "WIDE RECEIVERS": [
+        "Zay Flowers",
+        "Rashod Bateman",
+        "Devontez Walker",
+        "Ja'Kobi Lane",
+        "LaJohntay Wester",
+        "Dayton Wade"
+      ]
+    }
+  },
+  "BUF": {
+    "team_name": "Buffalo Bills",
+    "abbr": "BUF",
+    "positions": {
+      "QUARTERBACK": [
+        "Josh Allen",
+        "Shane Buechele",
+        "Kyle Allen"
+      ],
+      "RUNNING BACK": [
+        "James Cook III",
+        "Ty Johnson",
+        "Ray Davis",
+        "Frank Gore Jr."
+      ],
+      "TIGHT END": [
+        "Dalton Kincaid",
+        "Dawson Knox",
+        "Shane Zylstra",
+        "Keleki Latu"
+      ],
+      "WIDE RECEIVERS": [
+        "Keon Coleman",
+        "DJ Moore",
+        "Khalil Shakir",
+        "Joshua Palmer",
+        "Skyler Bell",
+        "Mecole Hardman Jr."
+      ]
+    }
+  },
+  "CAR": {
+    "team_name": "Carolina Panthers",
+    "abbr": "CAR",
+    "positions": {
+      "QUARTERBACK": [
+        "Bryce Young",
+        "Kenny Pickett",
+        "Haynes King",
+        "Kyle Trask"
+      ],
+      "RUNNING BACK": [
+        "Chuba Hubbard",
+        "Jonathon Brooks",
+        "Trevor Etienne",
+        "AJ Dillon"
+      ],
+      "TIGHT END": [
+        "Tommy Tremble",
+        "Ja'Tavion Sanders",
+        "Mitchell Evans",
+        "Feleipe Franks"
+      ],
+      "WIDE RECEIVERS": [
+        "Tetairoa McMillan",
+        "Xavier Legette",
+        "Jalen Coker",
+        "David Moore",
+        "John Metchie III",
+        "Jimmy Horn Jr."
+      ]
+    }
+  },
+  "CHI": {
+    "team_name": "Chicago Bears",
+    "abbr": "CHI",
+    "positions": {
+      "QUARTERBACK": [
+        "Caleb Williams",
+        "Tyson Bagent",
+        "Case Keenum",
+        "Miller Moss"
+      ],
+      "RUNNING BACK": [
+        "D'Andre Swift",
+        "Kyle Monangai",
+        "Roschon Johnson",
+        "Salvon Ahmed"
+      ],
+      "TIGHT END": [
+        "Colston Loveland",
+        "Cole Kmet",
+        "Sam Roush",
+        "Stephen Carlson"
+      ],
+      "WIDE RECEIVERS": [
+        "Rome Odunze",
+        "Luther Burden III",
+        "Kalif Raymond",
+        "Jahdae Walker",
+        "Zavion Thomas",
+        "Scotty Miller"
+      ]
+    }
+  },
+  "CIN": {
+    "team_name": "Cincinnati Bengals",
+    "abbr": "CIN",
+    "positions": {
+      "QUARTERBACK": [
+        "Joe Burrow",
+        "Joe Flacco",
+        "Josh Johnson",
+        "Sean Clifford"
+      ],
+      "RUNNING BACK": [
+        "Chase Brown",
+        "Samaje Perine",
+        "Tahj Brooks",
+        "Gary Brightwell"
+      ],
+      "TIGHT END": [
+        "Drew Sample",
+        "Mike Gesicki",
+        "Tanner Hudson",
+        "Erick All Jr."
+      ],
+      "WIDE RECEIVERS": [
+        "Ja'Marr Chase",
+        "Tee Higgins",
+        "Andrei Iosivas",
+        "Mitch Tinsley",
+        "Colbie Young",
+        "Charlie Jones"
+      ]
+    }
+  },
+  "CLE": {
+    "team_name": "Cleveland Browns",
+    "abbr": "CLE",
+    "positions": {
+      "QUARTERBACK": [
+        "Shedeur Sanders",
+        "Deshaun Watson",
+        "Dillon Gabriel",
+        "Taylen Green"
+      ],
+      "RUNNING BACK": [
+        "Quinshon Judkins",
+        "Dylan Sampson",
+        "Raheim Sanders",
+        "Ahmani Marshall"
+      ],
+      "TIGHT END": [
+        "Harold Fannin Jr.",
+        "Blake Whiteheart",
+        "Joe Royer",
+        "Carsen Ryan"
+      ],
+      "WIDE RECEIVERS": [
+        "Denzel Boston",
+        "Jerry Jeudy",
+        "KC Concepcion",
+        "Cedric Tillman",
+        "Tylan Wallace",
+        "Isaiah Bond"
+      ]
+    }
+  },
+  "DAL": {
+    "team_name": "Dallas Cowboys",
+    "abbr": "DAL",
+    "positions": {
+      "QUARTERBACK": [
+        "Dak Prescott",
+        "Joe Milton III",
+        "Sam Howell"
+      ],
+      "RUNNING BACK": [
+        "Javonte Williams",
+        "Jaydon Blue",
+        "Phil Mafah",
+        "Malik Davis"
+      ],
+      "TIGHT END": [
+        "Jake Ferguson",
+        "Brevyn Spann-Ford",
+        "Luke Schoonmaker",
+        "Michael Trigg"
+      ],
+      "WIDE RECEIVERS": [
+        "CeeDee Lamb",
+        "George Pickens",
+        "Ryan Flournoy",
+        "Jonathan Mingo",
+        "Tyler Johnson",
+        "Marquez Valdes-Scantling"
+      ]
+    }
+  },
+  "DEN": {
+    "team_name": "Denver Broncos",
+    "abbr": "DEN",
+    "positions": {
+      "QUARTERBACK": [
+        "Bo Nix",
+        "Jarrett Stidham",
+        "Sam Ehlinger"
+      ],
+      "RUNNING BACK": [
+        "J.K. Dobbins",
+        "RJ Harvey",
+        "Jonah Coleman",
+        "Jaleel McLaughlin"
+      ],
+      "TIGHT END": [
+        "Adam Trautman",
+        "Evan Engram",
+        "Justin Joly",
+        "Nate Adkins"
+      ],
+      "WIDE RECEIVERS": [
+        "Courtland Sutton",
+        "Jaylen Waddle",
+        "Lil'Jordan Humphrey",
+        "Marvin Mims Jr.",
+        "Troy Franklin",
+        "Pat Bryant"
+      ]
+    }
+  },
+  "DET": {
+    "team_name": "Detroit Lions",
+    "abbr": "DET",
+    "positions": {
+      "QUARTERBACK": [
+        "Jared Goff",
+        "Joshua Dobbs",
+        "Luke Altmyer"
+      ],
+      "RUNNING BACK": [
+        "Jahmyr Gibbs",
+        "Sione Vaki",
+        "Jabari Small",
+        "Raheem Blackshear"
+      ],
+      "TIGHT END": [
+        "Sam LaPorta",
+        "Brock Wright",
+        "Tyler Conklin",
+        "Zach Horton"
+      ],
+      "WIDE RECEIVERS": [
+        "Amon-Ra St. Brown",
+        "Jameson Williams",
+        "Isaac TeSlaa",
+        "Cedrick Wilson Jr.",
+        "Greg Dortch",
+        "Dominic Lovett"
+      ]
+    }
+  },
+  "GB": {
+    "team_name": "Green Bay Packers",
+    "abbr": "GB",
+    "positions": {
+      "QUARTERBACK": [
+        "Jordan Love",
+        "Tyrod Taylor",
+        "Kyle McCord"
+      ],
+      "RUNNING BACK": [
+        "Josh Jacobs",
+        "MarShawn Lloyd",
+        "Chris Brooks",
+        "Pierre Strong Jr."
+      ],
+      "TIGHT END": [
+        "Tucker Kraft",
+        "Luke Musgrave",
+        "Josh Whyle",
+        "Drake Dabney"
+      ],
+      "WIDE RECEIVERS": [
+        "Christian Watson",
+        "Matthew Golden",
+        "Jayden Reed",
+        "Skyy Moore",
+        "Bo Melton",
+        "Savion Williams"
+      ]
+    }
+  },
+  "HOU": {
+    "team_name": "Houston Texans",
+    "abbr": "HOU",
+    "positions": {
+      "QUARTERBACK": [
+        "C.J. Stroud",
+        "Davis Mills",
+        "Brett Rypien"
+      ],
+      "RUNNING BACK": [
+        "David Montgomery",
+        "Woody Marks",
+        "British Brooks",
+        "Jawhar Jordan"
+      ],
+      "TIGHT END": [
+        "Dalton Schultz",
+        "Marlin Klein",
+        "Cade Stover",
+        "Brevin Jordan"
+      ],
+      "WIDE RECEIVERS": [
+        "Nico Collins",
+        "Jayden Higgins",
+        "Tank Dell",
+        "Xavier Hutchinson",
+        "Jaylin Noel",
+        "Justin Watson"
+      ]
+    }
+  },
+  "IND": {
+    "team_name": "Indianapolis Colts",
+    "abbr": "IND",
+    "positions": {
+      "QUARTERBACK": [
+        "Daniel Jones",
+        "Anthony Richardson Sr.",
+        "Riley Leonard",
+        "Easton Stick"
+      ],
+      "RUNNING BACK": [
+        "Jonathan Taylor",
+        "DJ Giddens",
+        "Seth McGowan",
+        "Ulysses Bentley IV"
+      ],
+      "TIGHT END": [
+        "Tyler Warren",
+        "Drew Ogletree",
+        "Will Mallory",
+        "Mo Alie-Cox"
+      ],
+      "WIDE RECEIVERS": [
+        "Alec Pierce",
+        "Josh Downs",
+        "Keenan Allen",
+        "Nick Westbrook-Ikhine",
+        "Anthony Gould",
+        "Ashton Dulin"
+      ]
+    }
+  },
+  "JAX": {
+    "team_name": "Jacksonville Jaguars",
+    "abbr": "JAX",
+    "positions": {
+      "QUARTERBACK": [
+        "Trevor Lawrence",
+        "Nick Mullens",
+        "Carter Bradley",
+        "Joey Aguilar"
+      ],
+      "RUNNING BACK": [
+        "Bhayshul Tuten",
+        "LeQuint Allen Jr.",
+        "Chris Rodriguez Jr.",
+        "Ameer Abdullah"
+      ],
+      "TIGHT END": [
+        "Brenton Strange",
+        "Nate Boerkircher",
+        "Quintin Morris",
+        "Tanner Koziol"
+      ],
+      "WIDE RECEIVERS": [
+        "Brian Thomas Jr.",
+        "Jakobi Meyers",
+        "Parker Washington",
+        "Austin Trammell",
+        "Travis Hunter",
+        "Tim Jones"
+      ]
+    }
+  },
+  "KC": {
+    "team_name": "Kansas City Chiefs",
+    "abbr": "KC",
+    "positions": {
+      "QUARTERBACK": [
+        "Patrick Mahomes",
+        "Justin Fields",
+        "Chris Oladokun",
+        "Garrett Nussmeier"
+      ],
+      "RUNNING BACK": [
+        "Kenneth Walker III",
+        "Emari Demercado",
+        "Brashard Smith",
+        "Emmett Johnson"
+      ],
+      "TIGHT END": [
+        "Travis Kelce",
+        "Noah Gray",
+        "Jared Wiley",
+        "Jake Briningstool"
+      ],
+      "WIDE RECEIVERS": [
+        "Tyquan Thornton",
+        "Xavier Worthy",
+        "Rashee Rice",
+        "Jalen Royals",
+        "Jason Brownlee",
+        "Nikko Remigio"
+      ]
+    }
+  },
+  "LV": {
+    "team_name": "Las Vegas Raiders",
+    "abbr": "LV",
+    "positions": {
+      "QUARTERBACK": [
+        "Kirk Cousins",
+        "Fernando Mendoza",
+        "Aidan O'Connell",
+        "Jacob Clark"
+      ],
+      "RUNNING BACK": [
+        "Ashton Jeanty",
+        "Dylan Laube",
+        "Mike Washington Jr.",
+        "Roman Hemby"
+      ],
+      "TIGHT END": [
+        "Brock Bowers",
+        "Michael Mayer",
+        "Albert Okwuegbunam Jr.",
+        "Carter Runyon"
+      ],
+      "WIDE RECEIVERS": [
+        "Jack Bech",
+        "Tre Tucker",
+        "Jalen Nailor",
+        "Dont'e Thornton Jr.",
+        "Shedrick Jackson",
+        "Dareke Young"
+      ]
+    }
+  },
+  "LAR": {
+    "team_name": "Los Angeles Rams",
+    "abbr": "LAR",
+    "positions": {
+      "QUARTERBACK": [
+        "Matthew Stafford",
+        "Ty Simpson",
+        "Stetson Bennett IV",
+        "Matthew Caldwell"
+      ],
+      "RUNNING BACK": [
+        "Kyren Williams",
+        "Blake Corum",
+        "Jarquez Hunter",
+        "Ronnie Rivers"
+      ],
+      "TIGHT END": [
+        "Colby Parkinson",
+        "Terrance Ferguson",
+        "Tyler Higbee",
+        "Max Klare"
+      ],
+      "WIDE RECEIVERS": [
+        "Davante Adams",
+        "Puka Nacua",
+        "Jordan Whittington",
+        "Tyler Scott",
+        "Xavier Smith",
+        "Alex Bachman"
+      ]
+    }
+  },
+  "LAC": {
+    "team_name": "Los Angeles Chargers",
+    "abbr": "LAC",
+    "positions": {
+      "QUARTERBACK": [
+        "Justin Herbert",
+        "DJ Uiagalelei",
+        "Trey Lance"
+      ],
+      "RUNNING BACK": [
+        "Omarion Hampton",
+        "Keaton Mitchell",
+        "Kimani Vidal",
+        "Amar Johnson"
+      ],
+      "TIGHT END": [
+        "Oronde Gadsden II",
+        "Charlie Kolar",
+        "David Njoku"
+      ],
+      "WIDE RECEIVERS": [
+        "Quentin Johnston",
+        "Ladd McConkey",
+        "Tre' Harris",
+        "KeAndre Lambert-Smith",
+        "JaQuae Jackson",
+        "Derius Davis"
+      ]
+    }
+  },
+  "MIA": {
+    "team_name": "Miami Dolphins",
+    "abbr": "MIA",
+    "positions": {
+      "QUARTERBACK": [
+        "Malik Willis",
+        "Quinn Ewers",
+        "Cam Miller",
+        "Mark Gronowski"
+      ],
+      "RUNNING BACK": [
+        "De'Von Achane",
+        "Jaylen Wright",
+        "Ollie Gordon II",
+        "Donovan Edwards"
+      ],
+      "TIGHT END": [
+        "Greg Dulcich",
+        "Ben Sims",
+        "Will Kacmarek",
+        "Seydou Traore"
+      ],
+      "WIDE RECEIVERS": [
+        "Terrace Marshall Jr.",
+        "Malik Washington",
+        "Jalen Tolbert",
+        "Tutu Atwell",
+        "Caleb Douglas",
+        "Tahj Washington"
+      ]
+    }
+  },
+  "MIN": {
+    "team_name": "Minnesota Vikings",
+    "abbr": "MIN",
+    "positions": {
+      "QUARTERBACK": [
+        "Kyler Murray",
+        "J.J. McCarthy",
+        "Carson Wentz",
+        "Max Brosmer"
+      ],
+      "RUNNING BACK": [
+        "Aaron Jones Sr.",
+        "Jordan Mason",
+        "Zavier Scott",
+        "Demond Claiborne"
+      ],
+      "TIGHT END": [
+        "T.J. Hockenson",
+        "Josh Oliver",
+        "Ben Yurosek",
+        "Bryson Nesbit"
+      ],
+      "WIDE RECEIVERS": [
+        "Justin Jefferson",
+        "Jordan Addison",
+        "Jauan Jennings",
+        "Myles Price",
+        "Tai Felton",
+        "Dillon Bell"
+      ]
+    }
+  },
+  "NE": {
+    "team_name": "New England Patriots",
+    "abbr": "NE",
+    "positions": {
+      "QUARTERBACK": [
+        "Drake Maye",
+        "Tommy DeVito",
+        "Behren Morton"
+      ],
+      "RUNNING BACK": [
+        "Rhamondre Stevenson",
+        "TreVeyon Henderson",
+        "Jam Miller",
+        "Hassan Haskins"
+      ],
+      "TIGHT END": [
+        "Hunter Henry",
+        "CJ Dippre",
+        "Eli Raridon",
+        "Tanner Arkin"
+      ],
+      "WIDE RECEIVERS": [
+        "A.J. Brown",
+        "Romeo Doubs",
+        "Kayshon Boutte",
+        "Mack Hollins",
+        "DeMario Douglas",
+        "Kyle Williams"
+      ]
+    }
+  },
+  "NO": {
+    "team_name": "New Orleans Saints",
+    "abbr": "NO",
+    "positions": {
+      "QUARTERBACK": [
+        "Tyler Shough",
+        "Spencer Rattler",
+        "Zach Wilson",
+        "Hunter Dekkers"
+      ],
+      "RUNNING BACK": [
+        "Travis Etienne Jr.",
+        "Alvin Kamara",
+        "Kendre Miller",
+        "Devin Neal"
+      ],
+      "TIGHT END": [
+        "Juwan Johnson",
+        "Noah Fant",
+        "Oscar Delp",
+        "Zaire Mitchell-Paden"
+      ],
+      "WIDE RECEIVERS": [
+        "Chris Olave",
+        "Mason Tipton",
+        "Jordyn Tyson",
+        "Devaughn Vele",
+        "Bub Means",
+        "Bryce Lance"
+      ]
+    }
+  },
+  "NYG": {
+    "team_name": "New York Giants",
+    "abbr": "NYG",
+    "positions": {
+      "QUARTERBACK": [
+        "Jaxson Dart",
+        "Jameis Winston",
+        "Brandon Allen",
+        "Jake Haener"
+      ],
+      "RUNNING BACK": [
+        "Cam Skattebo",
+        "Tyrone Tracy Jr.",
+        "Devin Singletary",
+        "Eric Gray"
+      ],
+      "TIGHT END": [
+        "Isaiah Likely",
+        "Theo Johnson",
+        "Tanner Conner",
+        "Chris Manhertz"
+      ],
+      "WIDE RECEIVERS": [
+        "Malik Nabers",
+        "Darius Slayton",
+        "Darnell Mooney",
+        "Jalin Hyatt",
+        "Odell Beckham Jr.",
+        "Isaiah Hodgins"
+      ]
+    }
+  },
+  "NYJ": {
+    "team_name": "New York Jets",
+    "abbr": "NYJ",
+    "positions": {
+      "QUARTERBACK": [
+        "Geno Smith",
+        "Brady Cook",
+        "Bailey Zappe",
+        "Cade Klubnik"
+      ],
+      "RUNNING BACK": [
+        "Breece Hall",
+        "Braelon Allen",
+        "Isaiah Davis",
+        "Kene Nwangwu"
+      ],
+      "TIGHT END": [
+        "Mason Taylor",
+        "Kenyon Sadiq",
+        "Jeremy Ruckert",
+        "Jelani Woods"
+      ],
+      "WIDE RECEIVERS": [
+        "Garrett Wilson",
+        "Adonai Mitchell",
+        "Omar Cooper Jr.",
+        "Isaiah Williams",
+        "Tim Patrick",
+        "Caullin Lacy"
+      ]
+    }
+  },
+  "PHI": {
+    "team_name": "Philadelphia Eagles",
+    "abbr": "PHI",
+    "positions": {
+      "QUARTERBACK": [
+        "Jalen Hurts",
+        "Andy Dalton",
+        "Tanner McKee",
+        "Cole Payton"
+      ],
+      "RUNNING BACK": [
+        "Saquon Barkley",
+        "Tank Bigsby",
+        "Will Shipley",
+        "Dameon Pierce"
+      ],
+      "TIGHT END": [
+        "Dallas Goedert",
+        "Eli Stowers",
+        "Grant Calcaterra",
+        "Cameron Latu"
+      ],
+      "WIDE RECEIVERS": [
+        "DeVonta Smith",
+        "Makai Lemon",
+        "Dontayvion Wicks",
+        "Darius Cooper",
+        "Hollywood Brown",
+        "Johnny Wilson"
+      ]
+    }
+  },
+  "PIT": {
+    "team_name": "Pittsburgh Steelers",
+    "abbr": "PIT",
+    "positions": {
+      "QUARTERBACK": [
+        "Aaron Rodgers",
+        "Mason Rudolph",
+        "Drew Allar",
+        "Will Howard"
+      ],
+      "RUNNING BACK": [
+        "Rico Dowdle",
+        "Jaylen Warren",
+        "Kaleb Johnson",
+        "Lew Nichols"
+      ],
+      "TIGHT END": [
+        "Darnell Washington",
+        "Pat Freiermuth",
+        "Robert Tonyan",
+        "Lake McRee"
+      ],
+      "WIDE RECEIVERS": [
+        "DK Metcalf",
+        "Michael Pittman Jr.",
+        "Roman Wilson",
+        "Ben Skowronek",
+        "Kaden Wetjen",
+        "Max Hurleman"
+      ]
+    }
+  },
+  "SF": {
+    "team_name": "San Francisco 49ers",
+    "abbr": "SF",
+    "positions": {
+      "QUARTERBACK": [
+        "Brock Purdy",
+        "Mac Jones",
+        "Adrian Martinez",
+        "Kurtis Rourke"
+      ],
+      "RUNNING BACK": [
+        "Christian McCaffrey",
+        "Jordan James",
+        "Isaac Guerendo",
+        "Kaelon Black"
+      ],
+      "TIGHT END": [
+        "George Kittle",
+        "Jake Tonges",
+        "Luke Farrell",
+        "Brayden Willis"
+      ],
+      "WIDE RECEIVERS": [
+        "Mike Evans",
+        "Deebo Samuel Sr.",
+        "Christian Kirk",
+        "Demarcus Robinson",
+        "Jacob Cowing",
+        "De'Zhaun Stribling"
+      ]
+    }
+  },
+  "SEA": {
+    "team_name": "Seattle Seahawks",
+    "abbr": "SEA",
+    "positions": {
+      "QUARTERBACK": [
+        "Sam Darnold",
+        "Drew Lock",
+        "Jalen Milroe"
+      ],
+      "RUNNING BACK": [
+        "Zach Charbonnet",
+        "Jadarian Price",
+        "George Holani",
+        "Emanuel Wilson"
+      ],
+      "TIGHT END": [
+        "AJ Barner",
+        "Eric Saubert",
+        "Nick Kallerup",
+        "Elijah Arroyo"
+      ],
+      "WIDE RECEIVERS": [
+        "Jaxon Smith-Njigba",
+        "Rashid Shaheed",
+        "Cooper Kupp",
+        "Jake Bobo",
+        "Ricky White III",
+        "Tory Horton"
+      ]
+    }
+  },
+  "TB": {
+    "team_name": "Tampa Bay Buccaneers",
+    "abbr": "TB",
+    "positions": {
+      "QUARTERBACK": [
+        "Baker Mayfield",
+        "Connor Bazelak",
+        "Jake Browning",
+        "Jalon Daniels"
+      ],
+      "RUNNING BACK": [
+        "Bucky Irving",
+        "Kenny Gainwell",
+        "Sean Tucker",
+        "Barika Kpeenu"
+      ],
+      "TIGHT END": [
+        "Cade Otton",
+        "Payne Durham",
+        "Devin Culp",
+        "Ko Kieft"
+      ],
+      "WIDE RECEIVERS": [
+        "Chris Godwin Jr.",
+        "Emeka Egbuka",
+        "Jalen McMillan",
+        "Tez Johnson",
+        "Ted Hurst III",
+        "Kameron Johnson"
+      ]
+    }
+  },
+  "TEN": {
+    "team_name": "Tennessee Titans",
+    "abbr": "TEN",
+    "positions": {
+      "QUARTERBACK": [
+        "Cam Ward",
+        "Will Levis",
+        "Mitchell Trubisky",
+        "Hendon Hooker"
+      ],
+      "RUNNING BACK": [
+        "Tony Pollard",
+        "Tyjae Spears",
+        "Kalel Mullings",
+        "Nick Singleton"
+      ],
+      "TIGHT END": [
+        "David Martin-Robinson",
+        "Gunnar Helm",
+        "Joel Wilson",
+        "Kylen Granson"
+      ],
+      "WIDE RECEIVERS": [
+        "Calvin Ridley",
+        "Wan'Dale Robinson",
+        "Carnell Tate",
+        "Elic Ayomanor",
+        "Mason Kinsey",
+        "Chimere Dike"
+      ]
+    }
+  },
+  "WAS": {
+    "team_name": "Washington Commanders",
+    "abbr": "WAS",
+    "positions": {
+      "QUARTERBACK": [
+        "Jayden Daniels",
+        "Marcus Mariota",
+        "Sam Hartman",
+        "Athan Kaliakmanis"
+      ],
+      "RUNNING BACK": [
+        "Rachaad White",
+        "Jacory Croskey-Merritt",
+        "Robert Henry Jr.",
+        "Kaytron Allen"
+      ],
+      "TIGHT END": [
+        "Chig Okonkwo",
+        "John Bates",
+        "Ben Sinnott",
+        "Colson Yankoff"
+      ],
+      "WIDE RECEIVERS": [
+        "Terry McLaurin",
+        "Stefon Diggs",
+        "Luke McCaffrey",
+        "Jaylin Lane",
+        "Antonio Williams",
+        "Treylon Burks"
+      ]
+    }
+  }
+}
