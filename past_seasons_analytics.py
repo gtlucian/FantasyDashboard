@@ -12,7 +12,10 @@ import re
 import json
 import logging
 from typing import Dict, List, Any
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
 import pandas as pd
 import duckdb
 
