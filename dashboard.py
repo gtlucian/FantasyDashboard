@@ -174,8 +174,8 @@ BEAT_REPORTS_LAST_48H = [
     {
         "id": 1, "player": "Alvin Kamara", "pos": "RB", "team": "NO", "status_type": "CRITICAL", "badge": "MCL SPRAIN (SIDELINED 1+ MONTH)", "category": "Running Backs",
         "headline": "Saints star Alvin Kamara expected to miss at least a month after suffering MCL sprain in joint practice",
-        "details": "Kamara went down during Thursday's joint practice with the Dallas Cowboys. MRI revealed an MCL sprain that will sideline him 4-6 weeks into the regular season. Travis Etienne and Kendre Miller will command the New Orleans backfield.",
-        "draft_impact": "🎯 DRAFT TAKEAWAY: Fade Kamara at current ADP; draft Travis Etienne (Round 7-8) and Kendre Miller as primary backfield beneficiaries.",
+        "details": "Kamara went down during Thursday's joint practice with the Dallas Cowboys. MRI revealed an MCL sprain that will sideline him 4-6 weeks into the regular season. Kendre Miller and Jamaal Williams will command the New Orleans backfield.",
+        "draft_impact": "🎯 DRAFT TAKEAWAY: Fade Kamara at current ADP; draft Kendre Miller (Round 9-10) and Jamaal Williams as primary backfield beneficiaries.",
         "source_name": "NFL.com / Ian Rapoport", "source_url": "https://www.nfl.com/news",
         "timestamp_dt": "2026-08-20T11:30:00-04:00", "time_ago_str": "35 mins ago", "published_str": "Aug 20, 11:30 AM EDT"
     },
@@ -257,7 +257,7 @@ BEAT_REPORTS_LAST_48H = [
 CURATED_TWEETS = [
     {
         "name": "Ian Rapoport", "handle": "@RapSheet", "avatar": "🏈", "badge": "NFL Insider Breaking News",
-        "content": "Saints RB Alvin Kamara is expected to miss at least a month with an MCL sprain suffered during joint practices with Dallas. Look for Travis Etienne and Kendre Miller to see elevated starting work in New Orleans.",
+        "content": "Saints RB Alvin Kamara is expected to miss at least a month with an MCL sprain suffered during joint practices with Dallas. Look for Kendre Miller and Jamaal Williams to see elevated starting work in New Orleans.",
         "timestamp": "22 mins ago", "timestamp_dt": "2026-08-20T11:45:00-04:00", "url": "https://twitter.com/RapSheet"
     },
     {
