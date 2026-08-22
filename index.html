@@ -697,6 +697,7 @@
       <div id="injuryCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
         <!-- Injected via JS -->
       </div>
+    </div>
   </div>
 
   <!-- TAB 9: LEAGUE OPPONENT SCOUTING & MANAGER DOSSIERS -->
@@ -939,9 +940,29 @@
     let scatterChart = null;
     let boxChart = null;
 
-    // League Intelligence & Waivers State
-    let LEAGUE_MANAGERS = [];
-    let WAIVER_WIRE_LIST = [];
+    // League Intelligence & Waivers State (12 Calibrated Managers for Sweet N' Sour Sundays)
+    let LEAGUE_MANAGERS = [
+      { team_id: 10, team_name: "Slop Ass Final", manager_name: "Slop Ass Final", rank: 1, record: "12-2", points_for: 1842.08, points_against: 1362.5, faab_balance: 5, faab_spent: 95, spend_pct: 95.0, archetype: "🏆 Reigning Champion & Efficiency Anchor", faab_score: 75, draft_tendency: "Elite high-floor drafting; prioritizes workhorse bellcow RBs and anchor WRs.", reach_tendency: "Strict value drafter; never reaches early.", faab_style: "Precision Finisher ($5 remaining; spent $95 on high-impact championship starters).", trade_frequency: "Low (Prefers riding established juggernaut lineup).", vulnerabilities: "Down to $5 FAAB; will lose any contested waiver bid over $6." },
+      { team_id: 2, team_name: "1. 2. 3. Cancun", manager_name: "1. 2. 3. Cancun", rank: 2, record: "11-3", points_for: 1701.58, points_against: 1609.98, faab_balance: 0, faab_spent: 100, spend_pct: 100.0, archetype: "⚡ Aggressive Contender / Heavy Churner", faab_score: 92, draft_tendency: "Heavy upside drafter; attacks high-volume passing offenses.", reach_tendency: "Willing to reach 1-2 rounds early on breakout skill players.", faab_style: "All-In Depleted ($0 remaining after 42 roster transactions).", trade_frequency: "Very Active (Initiates frequent 2-for-1 upgrade offers).", vulnerabilities: "Completely out of FAAB ($0); cannot place non-$0 bids." },
+      { team_id: 3, team_name: "IM STILL THAT NJIGBA", manager_name: "IM STILL THAT NJIGBA", rank: 3, record: "7-7", points_for: 1763.94, points_against: 1631.96, faab_balance: 0, faab_spent: 100, spend_pct: 100.0, archetype: "📈 High-Ceiling Unlucky Juggernaut", faab_score: 88, draft_tendency: "Drafts target monster WRs and high-octane flex weapons (#2 in league scoring with 1763.94 PF).", reach_tendency: "Follows consensus tiers closely with WR bias.", faab_style: "Max Aggression Churner (44 moves, $0 FAAB left).", trade_frequency: "Moderate.", vulnerabilities: "$0 FAAB war chest; target his dropped bench depth on Wednesday mornings." },
+      { team_id: 11, team_name: "Packs Best Team", manager_name: "Packs Best Team", rank: 4, record: "9-5", points_for: 1519.3, points_against: 1477.94, faab_balance: 0, faab_spent: 100, spend_pct: 100.0, archetype: "🧀 Green Bay Homer & Consistent Grinder", faab_score: 80, draft_tendency: "Heavy Packer bias; prioritizes NFC North starters and consistent weekly floor.", reach_tendency: "Reaches on Green Bay targets 1-2 rounds early.", faab_style: "Fully Spent ($0 remaining, 38 moves).", trade_frequency: "Moderate if offering Packers players.", vulnerabilities: "$0 FAAB remaining; highly susceptible to trade packages featuring Green Bay assets." },
+      { team_id: 5, team_name: "Gang Green LV", manager_name: "Gang Green LV", rank: 5, record: "9-5", points_for: 1596.62, points_against: 1457.88, faab_balance: 15, faab_spent: 85, spend_pct: 85.0, archetype: "🎯 Selective Sniper / Roster Preserver", faab_score: 40, draft_tendency: "Drafts high-floor defense and veteran skill players; makes only 20 total moves (9-5 record).", reach_tendency: "Disciplined value drafter.", faab_style: "Conservative Reserve ($15 remaining).", trade_frequency: "Low.", vulnerabilities: "Reluctant to drop drafted veterans; slow to pivot when handcuffs take over." },
+      { team_id: 9, team_name: "Ty loves man", manager_name: "Ty loves man", rank: 6, record: "8-6", points_for: 1444.96, points_against: 1375.2, faab_balance: 15, faab_spent: 85, spend_pct: 85.0, archetype: "🛡️ High-Floor Grinder", faab_score: 50, draft_tendency: "Drafts safe floor scorers with solid weekly projections (8-6 record).", reach_tendency: "Strict ADP follower.", faab_style: "Conservative ($15 FAAB remaining, 38 moves).", trade_frequency: "Moderate.", vulnerabilities: "Lacks high-ceiling explosive players; vulnerable in high-scoring shootout weeks." },
+      { team_id: 7, team_name: "Fantasy Gods were Displeased", manager_name: "Fantasy Gods were Displeased", rank: 7, record: "6-8", points_for: 1634.5, points_against: 1664.98, faab_balance: 46, faab_spent: 54, spend_pct: 54.0, archetype: "👑 Hyperactive Churn King (77 Moves & $46 FAAB Leader)", faab_score: 85, draft_tendency: "Rebuilds entire roster continuously on the wire; sets league record with 77 transaction moves.", reach_tendency: "Gambles on high-volatility prospects.", faab_style: "Deep War Chest ($46 remaining — HIGHEST PURCHASING POWER IN LEAGUE).", trade_frequency: "High (Sends exploratory offers weekly).", vulnerabilities: "Holds the #1 FAAB balance ($46); bids $15-$25 on top breakouts. Must bid $47 to lock him out." },
+      { team_id: 1, team_name: "2-1?😉 ..…🎤🎤 (The Commish)", manager_name: "The Commish", rank: 8, record: "6-8", points_for: 1557.84, points_against: 1694.64, faab_balance: 25, faab_spent: 75, spend_pct: 75.0, archetype: "⚖️ The Commissioner / Calculated Disciplinarian", faab_score: 55, draft_tendency: "Balanced hero-RB roster building with high-floor veterans (17 moves).", reach_tendency: "ADP value exploiter; capitalizes on tier drop-off cliffs.", faab_style: "Calculated Precision ($25 war chest intact; Waiver Priority #4).", trade_frequency: "Active & Fair-Value Seeking.", vulnerabilities: "Bench depth has 1-2 droppable assets ready for high-yield waiver upgrades." },
+      { team_id: 8, team_name: "Probably on 2k", manager_name: "Probably on 2k", rank: 9, record: "6-8", points_for: 1578.14, points_against: 1651.02, faab_balance: 15, faab_spent: 85, spend_pct: 85.0, archetype: "🎮 Casual Gamer & Waiver Priority #1 Lurker", faab_score: 35, draft_tendency: "Drafts standard default rankings; conservative in-season manager (21 moves).", reach_tendency: "Follows default Yahoo draft room ranking order.", faab_style: "Moderate ($15 remaining, holds #1 Rolling Waiver Priority).", trade_frequency: "Low.", vulnerabilities: "Slow to react on breaking camp news; can be beaten by fast Sunday/Tuesday night bids." },
+      { team_id: 12, team_name: "On that doo doo", manager_name: "On that doo doo", rank: 10, record: "3-11", points_for: 1327.48, points_against: 1631.22, faab_balance: 18, faab_spent: 82, spend_pct: 82.0, archetype: "🔥 Splash Spender / Waiver Addict", faab_score: 90, draft_tendency: "Follows standard draft ADP with occasional positional runs.", reach_tendency: "Average draft variance.", faab_style: "Aggressive Churner ($82 spent already). Constantly attacks waiver wire.", trade_frequency: "Moderate", vulnerabilities: "Extremely low remaining FAAB ($18). Cannot contest medium-to-large bids." },
+      { team_id: 6, team_name: "In the fields", manager_name: "In the fields", rank: 11, record: "5-9", points_for: 1514.58, points_against: 1574.0, faab_balance: 0, faab_spent: 100, spend_pct: 100.0, archetype: "🔥 Splash Spender / Waiver Addict", faab_score: 90, draft_tendency: "Follows standard draft ADP with occasional positional runs.", reach_tendency: "Average draft variance.", faab_style: "Aggressive Churner ($100 spent already). Constantly attacks waiver wire.", trade_frequency: "Moderate", vulnerabilities: "Extremely low remaining FAAB ($0). Cannot contest medium-to-large bids." },
+      { team_id: 4, team_name: "2-1 vs Cobitchioner", manager_name: "2-1 vs Cobitchioner", rank: 12, record: "2-12", points_for: 1309.82, points_against: 1659.52, faab_balance: 0, faab_spent: 100, spend_pct: 100.0, archetype: "🎯 Rivalry Specialist (2-12)", faab_score: 60, draft_tendency: "Builds lineup specifically tailored to defeat The Commish.", reach_tendency: "Volatile draft board.", faab_style: "Fully Spent ($0 remaining).", trade_frequency: "Selective.", vulnerabilities: "Last place standing (2-12), $0 FAAB; easy to outbid on all targets." }
+    ];
+    let WAIVER_WIRE_LIST = [
+      { player_id: "fp_brooks", player_name: "Jonathon Brooks", pos: "RB", team: "CAR", status: "Waivers (Wed 3 AM)", percent_rostered: 48.5, ecr_rank: 82, pos_rank: "RB28", proj_pts: 215.0, vorp: 38.5, urgency: "CRITICAL 🚨", category: "🚨 High-Priority Bellcow Breakout", target_bid: 32, bid_range: "$25 - $38", rationale: "Named starter for preseason/camp after Hubbard hamstring injury. Instant RB2 volume in modern offense.", target_drop: "Ricky Pearsall", net_vorp_gain: "+53.5 VORP" },
+      { player_id: "fp_allgeier", player_name: "Tyler Allgeier", pos: "RB", team: "ARI", status: "Free Agent", percent_rostered: 35.0, ecr_rank: 112, pos_rank: "RB38", proj_pts: 165.0, vorp: 18.5, urgency: "HIGH 🔥", category: "🔥 High-Value Injury Beneficiary", target_bid: 18, bid_range: "$14 - $24", rationale: "Jeremiyah Love sidelined 3-5 weeks with a high-ankle sprain. Allgeier steps into primary early-down goal-line role.", target_drop: "Curtis Samuel", net_vorp_gain: "+22.5 VORP" },
+      { player_id: "fp_dell", player_name: "Tank Dell", pos: "WR", team: "HOU", status: "Waivers (Wed 3 AM)", percent_rostered: 62.0, ecr_rank: 64, pos_rank: "WR32", proj_pts: 195.0, vorp: 28.0, urgency: "HIGH 🔥", category: "🟢 Target Vacuum Beneficiary", target_bid: 24, bid_range: "$18 - $30", rationale: "Jayden Higgins season-ending ACL injury concentrates target volume heavily onto Nico Collins and Tank Dell.", target_drop: "Jordyn Tyson", net_vorp_gain: "+28.0 VORP" },
+      { player_id: "fp_miller", player_name: "Kendre Miller", pos: "RB", team: "NO", status: "Free Agent", percent_rostered: 28.0, ecr_rank: 125, pos_rank: "RB42", proj_pts: 155.0, vorp: 15.0, urgency: "HIGH 🔥", category: "💎 Contingency Handcuff Hammer", target_bid: 16, bid_range: "$12 - $22", rationale: "Alvin Kamara MCL sprain keeps him out 4+ weeks. Miller takes over starting touches in New Orleans.", target_drop: "Blake Grupe", net_vorp_gain: "+15.0 VORP" },
+      { player_id: "fp_hunter", player_name: "Travis Hunter", pos: "WR", team: "JAC", status: "Free Agent", percent_rostered: 18.0, ecr_rank: 172, pos_rank: "WR68", proj_pts: 145.0, vorp: 14.5, urgency: "MEDIUM ⚡", category: "⚡ High-Ceiling Rookie Stash", target_bid: 8, bid_range: "$5 - $12", rationale: "Two-way superstar rookie flashing elite route-running in Jacksonville camp. Priority upside bench stash.", target_drop: "Trevor Lawrence (backup QB)", net_vorp_gain: "+14.5 VORP" },
+      { player_id: "fp_warren", player_name: "Tyler Warren", pos: "TE", team: "IND", status: "Free Agent", percent_rostered: 42.0, ecr_rank: 63, pos_rank: "TE6", proj_pts: 175.0, vorp: 25.0, urgency: "MEDIUM ⚡", category: "💎 Mid-Round TE Value", target_bid: 12, bid_range: "$8 - $18", rationale: "Minor groin strain fully cleared for Week 1; locked in as primary middle-of-field target in Indianapolis.", target_drop: "Juwan Johnson", net_vorp_gain: "+25.0 VORP" }
+    ];
 
     // Top 200 Injury Draft Strategy State
     let INJURY_STRATEGY = {
@@ -1078,6 +1099,9 @@
       renderKPIs();
       renderNews();
       renderTwitter();
+      renderBlueprint();
+      renderManagers();
+      renderWaivers();
       renderRecommendations();
       renderMyTeamRoster();
       renderTable();
@@ -1777,6 +1801,12 @@
 
       const searchVal = document.getElementById('managerSearchInput')?.value.toLowerCase() || '';
       const list = LEAGUE_MANAGERS || [];
+
+      if (document.getElementById('managersTotalFaab') && list.length > 0) {
+        const totalRemaining = list.reduce((acc, cur) => acc + (cur.faab_balance || 0), 0);
+        const totalBudget = list.length * 100;
+        document.getElementById('managersTotalFaab').textContent = `$${totalRemaining} / $${totalBudget}`;
+      }
 
       const filtered = list.filter(m => {
         if (!searchVal) return true;
