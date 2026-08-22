@@ -335,16 +335,16 @@
         <span>📋</span> My Team Roster & Bye Grid
       </button>
       <button id="tabBtnManagers" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-        <span>🕵️</span> Manager Scouting (12)
+        <span>🕵️</span> Manager Scouting (<span id="managersTabCount">12</span>)
       </button>
       <button id="tabBtnWaivers" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-        <span>💰</span> Waiver Wire & FAAB
+        <span>💰</span> Waivers & FAAB (<span id="waiversTabCount">6</span>)
       </button>
       <button id="tabBtnNews" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-        <span>🚨</span> 48H Injury & Beat Wire
+        <span>🚨</span> 48H Beat Wire (<span id="newsTabCount">70</span>)
       </button>
       <button id="tabBtnTwitter" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-        <span>🐦</span> Curated Twitter / X Analysts
+        <span>🐦</span> Twitter / X Analysts (<span id="twitterTabCount">74</span>)
       </button>
       <button id="tabBtnMarket" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
         <span>📊</span> Market Arbitrage Matrix
@@ -1065,6 +1065,11 @@
         if (data.waiver_wire && data.waiver_wire.length > 0) {
           WAIVER_WIRE_LIST = data.waiver_wire;
         }
+
+        if (document.getElementById('newsTabCount')) document.getElementById('newsTabCount').textContent = BEAT_NEWS_20.length;
+        if (document.getElementById('twitterTabCount')) document.getElementById('twitterTabCount').textContent = ANALYST_TWEETS.length;
+        if (document.getElementById('managersTabCount')) document.getElementById('managersTabCount').textContent = LEAGUE_MANAGERS.length;
+        if (document.getElementById('waiversTabCount')) document.getElementById('waiversTabCount').textContent = WAIVER_WIRE_LIST.length;
 
         // Format and render Eastern Time timestamp
         const rawTime = data.metadata?.snapshot_time || 'Aug 20, 2026, 11:45 AM EDT';
