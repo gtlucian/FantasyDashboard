@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Fantasy War Room - Yahoo Draft Auto-Sync",
+  "version": "1.0.0",
+  "description": "Zero-click real-time automatic synchronization between Yahoo Fantasy Draft Rooms and your War Room Dashboard.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://football.fantasysports.yahoo.com/*",
+    "*://*.fantasysports.yahoo.com/*",
+    "*://draftclient.fantasysports.yahoo.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Yahoo Draft Auto-Sync Status"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://football.fantasysports.yahoo.com/*",
+        "*://*.fantasysports.yahoo.com/*",
+        "*://draftclient.fantasysports.yahoo.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}

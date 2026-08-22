@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 280px;
+      margin: 0;
+      padding: 16px;
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 10px;
+    }
+    .title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #c084fc;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+    }
+    .desc {
+      font-size: 11px;
+      color: #94a3b8;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      background: #9333ea;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #a855f7;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span style="font-size: 18px;">🏈</span>
+    <div class="title">Yahoo Draft Auto-Sync</div>
+  </div>
+  <div class="status-badge">
+    <div class="dot"></div>
+    <span>Auto-Sync Active</span>
+  </div>
+  <p class="desc">
+    This extension automatically captures picks from any open Yahoo Fantasy Draft Room and pushes them to your War Room in real time.
+  </p>
+  <button id="openDashboardBtn" class="btn">🚀 Open War Room Dashboard</button>
+  <script src="popup.js"></script>
+</body>
+</html>
