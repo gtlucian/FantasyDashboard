@@ -197,6 +197,8 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
     """
     logger.info("Fetching real-time NFL beat wire & analyst reports...")
     
+    import html as html_lib
+
     # Create player lookup index
     players_map = {}
     if players_data:
@@ -207,8 +209,26 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
 
     feeds = [
         ("Rotowire", "https://www.rotowire.com/rss/news.php?sport=NFL"),
+        ("NFLTradeRumors", "https://nfltraderumors.co/feed/"),
         ("ProFootballRumors", "https://www.profootballrumors.com/feed"),
-        ("ESPN", "https://www.espn.com/espn/rss/nfl/news")
+        ("CBSSports", "https://www.cbssports.com/rss/headlines/nfl/"),
+        ("YahooSports", "https://sports.yahoo.com/nfl/rss.xml")
+    ]
+
+    KNOWN_INSIDERS = [
+        ("Ian Rapoport", "@RapSheet", "🏈", "NFL Network National Insider"),
+        ("Adam Schefter", "@AdamSchefter", "🏈", "ESPN Senior NFL Insider"),
+        ("Tom Pelissero", "@TomPelissero", "🏈", "NFL Network National Reporter"),
+        ("Field Yates", "@FieldYates", "📊", "ESPN Fantasy Analyst"),
+        ("Mike Garafolo", "@MikeGarafolo", "🏈", "NFL Network Insider"),
+        ("Dianna Russini", "@DMRussini", "🏈", "The Athletic Senior Insider"),
+        ("Jordan Schultz", "@Schultz_Report", "⚡", "NFL Insider / Analyst"),
+        ("Aaron Wilson", "@AaronWilson_NFL", "🎯", "KPRC 2 NFL Beat Insider"),
+        ("David Chao", "@ProFootballDoc", "🏥", "Sports Injury Central MD"),
+        ("Jeff McLane", "@Jeff_McLane", "🦅", "Philadelphia Inquirer Beat"),
+        ("Pete Sweeney", "@pgsween", "🏹", "Chiefs Beat Writer"),
+        ("Jourdan Rodrigue", "@JourdanRodrigue", "🐏", "The Athletic Rams Beat"),
+        ("Jeremy Fowler", "@JFowlerESPN", "🏈", "ESPN Senior NFL Reporter")
     ]
 
     beat_items = []
@@ -234,6 +254,8 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
 
                     desc_clean = re.sub(r"<[^>]+>", "", raw_desc)
                     desc_clean = re.sub(r"Visit RotoWire\.com.*", "", desc_clean, flags=re.DOTALL).strip()
+                    desc_clean = html_lib.unescape(desc_clean)
+                    raw_title = html_lib.unescape(raw_title)
 
                     if not raw_title or len(desc_clean) < 10:
                         continue
@@ -282,24 +304,59 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
                     status_type = c_res["status_type"]
                     badge = c_res["risk_badge"].upper()
 
-                    # Reporter & Source Identification
-                    reporter_match = re.search(r"([A-Z][a-z]+ [A-Z][a-z]+) of ([^,]+) reports", desc_clean)
-                    if reporter_match:
-                        source_name = f"{reporter_match.group(1)} ({reporter_match.group(2)})"
-                        reporter_name = reporter_match.group(1)
-                        handle = f"@{reporter_name.replace(' ', '')}"
-                    elif source_type == "ESPN":
-                        source_name = "ESPN NFL Insiders"
-                        reporter_name = "Adam Schefter / Jeremy Fowler"
-                        handle = "@AdamSchefter"
-                    elif source_type == "ProFootballRumors":
-                        source_name = "Pro Football Rumors"
-                        reporter_name = "NFL Beat Insider"
-                        handle = "@PFRumors"
-                    else:
-                        source_name = "NFL Beat Wire"
-                        reporter_name = "NFL Beat Wire"
-                        handle = "@NFLBeatWire"
+                    # Reporter & Insider Resolution
+                    reporter_name = None
+                    handle = None
+                    avatar = "🏈"
+                    reporter_badge = badge
+
+                    # 1. Match known high-profile NFL insiders
+                    for ins_name, ins_handle, ins_avatar, ins_badge in KNOWN_INSIDERS:
+                        if ins_name.lower() in full_text.lower() or ins_handle.lower() in full_text.lower():
+                            reporter_name = ins_name
+                            handle = ins_handle
+                            avatar = ins_avatar
+                            reporter_badge = f"{ins_badge} • {badge}"
+                            break
+
+                    # 2. Regex reporter match from syndicated text
+                    if not reporter_name:
+                        reporter_match = re.search(r"([A-Z][a-z]+ [A-Z][a-z]+) of ([^,]+) reports", desc_clean)
+                        if reporter_match:
+                            reporter_name = reporter_match.group(1)
+                            handle = f"@{reporter_name.replace(' ', '')}"
+                            source_name = f"{reporter_name} ({reporter_match.group(2)})"
+                            reporter_badge = f"{reporter_match.group(2)} • {badge}"
+
+                    # 3. Channel fallback
+                    if not reporter_name:
+                        if source_type == "NFLTradeRumors":
+                            reporter_name = "NFL Trade Rumors"
+                            handle = "@nfltrade_rumors"
+                            source_name = "NFL Trade Rumors"
+                            avatar = "⚡"
+                        elif source_type == "CBSSports":
+                            reporter_name = "CBS Sports Fantasy"
+                            handle = "@CBSSportsNFL"
+                            source_name = "CBS Sports"
+                            avatar = "📊"
+                        elif source_type == "YahooSports":
+                            reporter_name = "Yahoo Sports NFL"
+                            handle = "@YahooSportsNFL"
+                            source_name = "Yahoo Sports"
+                            avatar = "🟣"
+                        elif source_type == "ProFootballRumors":
+                            reporter_name = "Pro Football Rumors"
+                            handle = "@PFRumors"
+                            source_name = "Pro Football Rumors"
+                            avatar = "🎯"
+                        else:
+                            reporter_name = "RotoWire NFL"
+                            handle = "@RotoWireNFL"
+                            source_name = "RotoWire Beat Wire"
+                            avatar = "🏈"
+
+                    source_name = reporter_name
 
                     # Draft Takeaway synthesis
                     if status_type == "CRITICAL" and c_res["is_season_ending"]:
@@ -333,8 +390,8 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
                         "id": f"tw_{len(analyst_items)+1}",
                         "name": reporter_name,
                         "handle": handle,
-                        "avatar": "🏈" if pos == "FLEX" else ("⚡" if pos == "WR" else ("🔥" if pos == "RB" else "🎯")),
-                        "badge": badge,
+                        "avatar": avatar,
+                        "badge": reporter_badge,
                         "content": f"**{player_name or 'NFL News'}**: {headline}. {desc_clean}",
                         "timestamp": time_ago,
                         "timestamp_dt": iso_dt,
@@ -350,7 +407,7 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
             "name": "Ryan Heath",
             "handle": "@RyanJ_Heath",
             "avatar": "📊",
-            "badge": "Utilization & Route Share",
+            "badge": "Fantasy Points • Utilization & Route Share",
             "content": "First-Team Utilization Note: Rookies commanding 75%+ first-team snap share and 80%+ route participation in August historically see top-24 positional outcomes in Year 1. Target volume precedes fantasy scoring.",
             "timestamp": "Live",
             "timestamp_dt": datetime.now(timezone.utc).isoformat(),
@@ -372,7 +429,7 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
             "name": "Jacob Gibbs",
             "handle": "@jagibbs_23",
             "avatar": "📈",
-            "badge": "Target Share & Air Yards",
+            "badge": "CBS Sports • Target Share & Air Yards",
             "content": "Target Per Route Run (TPRR) in scrimmage drills is the single most predictive early metric for Year 1/2 WR breakouts. High-volume boundary receivers in single-coverage packages remain draft steals.",
             "timestamp": "Live",
             "timestamp_dt": datetime.now(timezone.utc).isoformat(),
@@ -383,7 +440,7 @@ def fetch_live_beat_reports(players_data: List[Dict[str, Any]] = None):
             "name": "Scott Barrett",
             "handle": "@ScottBarrettDFB",
             "avatar": "⚡",
-            "badge": "Expected Fantasy Points (XFP)",
+            "badge": "Fantasy Points • Expected Fantasy Points (XFP)",
             "content": "Red-Zone High-Leverage Work: Touchdown equity is 3.4x more valuable inside the 10-yard line than between the 20s. Target bellcows who command goal-line packages regardless of split backfields.",
             "timestamp": "Live",
             "timestamp_dt": datetime.now(timezone.utc).isoformat(),

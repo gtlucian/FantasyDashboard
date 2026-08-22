@@ -386,25 +386,46 @@
 
   <!-- TAB 2: CURATED TWITTER / X ANALYST FEED -->
   <div id="viewTwitter" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1 hidden">
+    <!-- Top Summary Metrics Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4">
+      <div class="kpi-box p-3.5 sm:p-4 border-indigo-800/60 bg-indigo-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-indigo-400 uppercase tracking-wider">🐦 Live Analyst Dispatches</div>
+        <div id="twitterTotalCount" class="text-sm sm:text-lg font-black text-white mt-1">74 Live Reports</div>
+        <div class="text-[11px] text-indigo-300/80 truncate">Real-time syndicated feed</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-emerald-800/60 bg-emerald-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-emerald-400 uppercase tracking-wider">⚡ National Insiders</div>
+        <div class="text-sm sm:text-base font-black text-emerald-300 mt-1 truncate">Rapoport • Schefter • Fowler</div>
+        <div class="text-[11px] text-emerald-300/80 truncate">Verified breaking scoops</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-sky-800/60 bg-sky-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-sky-400 uppercase tracking-wider">📊 Utilization Strategists</div>
+        <div class="text-sm sm:text-base font-black text-sky-300 mt-1 truncate">Ryan Heath • Jacob Gibbs</div>
+        <div class="text-[11px] text-sky-300/80 truncate">Route shares & target volume</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-rose-800/60 bg-rose-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-rose-400 uppercase tracking-wider">🏥 Medical Triage</div>
+        <div class="text-sm sm:text-base font-black text-rose-300 mt-1 truncate">@fantasyinjuryT • Dr. Chao</div>
+        <div class="text-[11px] text-rose-300/80 truncate">Soft-tissue load timelines</div>
+      </div>
+    </div>
+
+    <!-- Filter & Search Bar -->
     <div class="mb-4">
-      <div class="flex flex-wrap justify-between items-center gap-3 bg-slate-900/60 p-3.5 rounded-2xl border border-slate-800">
+      <div class="flex flex-wrap justify-between items-center gap-3 bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-xl">
         <div>
-          <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-            <span>🐦</span> Favorite Analyst Tracker & Beat Dispatch
+          <h2 class="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+            <span>🐦</span> Live Twitter / X Analyst & Beat Syndicate
           </h2>
-          <p class="text-xs text-slate-400">Tracking Ryan Heath, @fantasyinjuryT, Jacob Gibbs, Scott Barrett, @dhananizain, and The Coachspeak Index.</p>
+          <p class="text-[11px] text-slate-400">Live syndicated reports from RapSheet, Schefter, NFL Trade Rumors, CBS Sports, and top analytics analysts.</p>
         </div>
         
-        <!-- Filter Analyst Buttons -->
-        <div class="flex flex-wrap gap-1.5" id="analystFilterBtns">
-          <button data-analyst="ALL" class="analyst-btn bg-indigo-600 text-white px-2.5 py-1 rounded-lg text-xs font-bold">All Experts</button>
-          <button data-analyst="Ryan Heath" class="analyst-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg text-xs font-semibold">Ryan Heath</button>
-          <button data-analyst="Fantasy Injury Team" class="analyst-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg text-xs font-semibold">@fantasyinjuryT</button>
-          <button data-analyst="Jacob Gibbs" class="analyst-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg text-xs font-semibold">Jacob Gibbs</button>
-          <button data-analyst="Scott Barrett" class="analyst-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg text-xs font-semibold">Scott Barrett</button>
-          <button data-analyst="Zain Dhanani" class="analyst-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg text-xs font-semibold">@dhananizain</button>
-          <button data-analyst="The Coachspeak Index" class="analyst-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg text-xs font-semibold">Coachspeak</button>
-        </div>
+        <input id="twitterSearchInput" type="text" placeholder="🔍 Search tweets, players, or analysts..." class="bg-slate-950 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500 w-full sm:w-64 shadow-inner">
+      </div>
+
+      <!-- Filter Analyst Buttons Container -->
+      <div class="flex flex-wrap gap-1.5 mt-3" id="analystFilterBtns">
+        <!-- Injected via JS -->
       </div>
     </div>
 
@@ -1443,17 +1464,42 @@
     // Twitter Analyst Feed Render (Sorted Newest First)
     function renderTwitter() {
       const container = document.getElementById('twitterCardsContainer');
+      if (!container) return;
+
+      const searchVal = document.getElementById('twitterSearchInput')?.value.toLowerCase().trim() || '';
+
       const filtered = ANALYST_TWEETS.filter(t => {
-        if (selectedAnalyst === 'ALL') return true;
-        const s = selectedAnalyst.toLowerCase();
-        return (t.name && t.name.toLowerCase().includes(s)) || (t.handle && t.handle.toLowerCase().includes(s));
+        const matchesAnalyst = (selectedAnalyst === 'ALL') ||
+          (t.name && t.name.toLowerCase().includes(selectedAnalyst.toLowerCase())) ||
+          (t.handle && t.handle.toLowerCase().includes(selectedAnalyst.toLowerCase()));
+        
+        const matchesSearch = !searchVal ||
+          (t.content && t.content.toLowerCase().includes(searchVal)) ||
+          (t.name && t.name.toLowerCase().includes(searchVal)) ||
+          (t.handle && t.handle.toLowerCase().includes(searchVal)) ||
+          (t.badge && t.badge.toLowerCase().includes(searchVal));
+
+        return matchesAnalyst && matchesSearch;
       });
+
+      if (document.getElementById('twitterTotalCount')) {
+        document.getElementById('twitterTotalCount').textContent = `${ANALYST_TWEETS.length} Live Reports`;
+      }
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-slate-950/60 border border-slate-800 p-8 rounded-2xl text-center text-slate-400 text-xs">
+            🔍 No analyst reports matching "${searchVal || selectedAnalyst}".
+          </div>
+        `;
+        return;
+      }
 
       // Sort newest first by default
       filtered.sort((a, b) => new Date(b.timestamp_dt || 0) - new Date(a.timestamp_dt || 0));
 
       container.innerHTML = filtered.map(item => `
-        <div class="card-analyst p-4 sm:p-5 rounded-2xl shadow-xl border border-slate-800">
+        <div class="card-analyst p-4 sm:p-5 rounded-2xl shadow-xl border border-slate-800 hover:border-indigo-600 transition">
           <div class="flex justify-between items-center mb-2">
             <div class="flex items-center gap-2.5">
               <span class="text-xl">${item.avatar || '🏈'}</span>
@@ -2419,6 +2465,9 @@
 
     document.getElementById('newsCatSelect').addEventListener('change', renderNews);
     document.getElementById('newsSearchInput').addEventListener('input', renderNews);
+
+    const twitterSearchInput = document.getElementById('twitterSearchInput');
+    if (twitterSearchInput) twitterSearchInput.addEventListener('input', renderTwitter);
 
     // Injury Strategy Filter Listeners
     const injuryCatSelect = document.getElementById('injuryCatSelect');
