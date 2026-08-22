@@ -98,8 +98,9 @@ PFN_DEPTH_CHARTS_2026 = {
         "team_name": "Houston Texans",
         "QB": ["C.J. Stroud", "Davis Mills"],
         "RB": ["David Montgomery", "Woody Marks", "British Brooks"],
-        "WR": ["Nico Collins", "Jayden Higgins", "Tank Dell"],
-        "TE": ["Dalton Schultz", "Marlin Klein"]
+        "WR": ["Nico Collins", "Tank Dell", "De'Von Highsmith"],
+        "TE": ["Dalton Schultz", "Marlin Klein"],
+        "IR": ["Jayden Higgins (WR - Torn ACL / Season-Ending)"]
     },
     "IND": {
         "team_name": "Indianapolis Colts",
@@ -108,11 +109,11 @@ PFN_DEPTH_CHARTS_2026 = {
         "WR": ["Alec Pierce", "Josh Downs", "Keenan Allen"],
         "TE": ["Tyler Warren", "Drew Ogletree"]
     },
-    "JAX": {
+    "JAC": {
         "team_name": "Jacksonville Jaguars",
         "QB": ["Trevor Lawrence", "Nick Mullens"],
         "RB": ["Bhayshul Tuten", "LeQuint Allen Jr.", "Chris Rodriguez Jr."],
-        "WR": ["Brian Thomas Jr.", "Jakobi Meyers", "Parker Washington"],
+        "WR": ["Brian Thomas Jr.", "Jakobi Meyers", "Parker Washington", "Travis Hunter"],
         "TE": ["Brenton Strange", "Nate Boerkircher"]
     },
     "KC": {

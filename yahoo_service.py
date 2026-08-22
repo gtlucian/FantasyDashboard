@@ -512,7 +512,7 @@ def get_demo_league_data() -> Dict[str, Any]:
     user_roster = [
         {"player_name": "Josh Allen", "pos": "QB", "team": "BUF", "slot": "QB", "status": "Healthy", "proj_pts": 382.5, "vorp": 98.4, "droppable": False, "role": "Elite Anchor"},
         {"player_name": "Breece Hall", "pos": "RB", "team": "NYJ", "slot": "RB1", "status": "Healthy", "proj_pts": 312.0, "vorp": 82.5, "droppable": False, "role": "Bellcow RB1"},
-        {"player_name": "Kenneth Walker III", "pos": "RB", "team": "SEA", "slot": "RB2", "status": "Healthy", "proj_pts": 245.0, "vorp": 45.2, "droppable": False, "role": "Solid RB2"},
+        {"player_name": "Kenneth Walker III", "pos": "RB", "team": "KC", "slot": "RB2", "status": "Healthy", "proj_pts": 239.0, "vorp": 42.8, "droppable": False, "role": "💼 2026 Trade Acquisition — Chiefs Lead Rusher"},
         {"player_name": "Amon-Ra St. Brown", "pos": "WR", "team": "DET", "slot": "WR1", "status": "Healthy", "proj_pts": 298.0, "vorp": 76.0, "droppable": False, "role": "Target Monster WR1"},
         {"player_name": "Garrett Wilson", "pos": "WR", "team": "NYJ", "slot": "WR2", "status": "Healthy", "proj_pts": 268.0, "vorp": 54.0, "droppable": False, "role": "Alpha WR2"},
         {"player_name": "Trey McBride", "pos": "TE", "team": "ARI", "slot": "TE", "status": "Healthy", "proj_pts": 195.0, "vorp": 42.0, "droppable": False, "role": "Top-4 TE"},
@@ -521,10 +521,10 @@ def get_demo_league_data() -> Dict[str, Any]:
         {"player_name": "Brandon Aubrey", "pos": "K", "team": "DAL", "slot": "K", "status": "Healthy", "proj_pts": 142.0, "vorp": 15.0, "droppable": True, "role": "Elite Kicker"},
         # Bench Players (Droppability ranked)
         {"player_name": "Jaylen Wright", "pos": "RB", "team": "MIA", "slot": "BN", "status": "Healthy", "proj_pts": 155.0, "vorp": 12.5, "droppable": False, "role": "High-Upside Stash"},
-        {"player_name": "Brian Thomas Jr.", "pos": "WR", "team": "JAX", "slot": "BN", "status": "Healthy", "proj_pts": 178.0, "vorp": 18.2, "droppable": False, "role": "Rookie Breakout WR"},
+        {"player_name": "Brian Thomas Jr.", "pos": "WR", "team": "JAC", "slot": "BN", "status": "Healthy", "proj_pts": 178.0, "vorp": 18.2, "droppable": False, "role": "Rookie Breakout WR"},
         {"player_name": "Chuba Hubbard", "pos": "RB", "team": "CAR", "slot": "BN", "status": "Questionable", "proj_pts": 148.0, "vorp": 8.0, "droppable": True, "role": "⚠️ Droppable / Sidelined Hamstring"},
-        {"player_name": "Ricky Pearsall", "pos": "WR", "team": "SF", "slot": "BN", "status": "IR", "proj_pts": 60.0, "vorp": -15.0, "droppable": True, "role": "🚨 Prime Drop Candidate (Out with Knee Surgery)"},
-        {"player_name": "Curtis Samuel", "pos": "WR", "team": "BUF", "slot": "BN", "status": "Healthy", "proj_pts": 130.0, "vorp": 2.0, "droppable": True, "role": "⚠️ Low-Ceiling Depth (Cut for Breakouts)"}
+        {"player_name": "Ricky Pearsall", "pos": "WR", "team": "SF", "slot": "BN", "status": "IR (Season-Ending / PCL Surgery)", "proj_pts": 0.0, "vorp": -20.0, "droppable": True, "role": "🚨 DROP NOW — Season-Ending IR (PCL Surgery / Out All 2026)"},
+        {"player_name": "Travis Hunter", "pos": "WR", "team": "JAC", "slot": "BN", "status": "Healthy", "proj_pts": 145.0, "vorp": 14.5, "droppable": False, "role": "🔥 Two-Way Rookie Stash — High Target Upside in JAC Offense"}
     ]
 
     # Available Free Agents & Waiver Wire Targets

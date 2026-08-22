@@ -314,9 +314,10 @@ def analyze_injury_draft_strategy(
         },
         {
             "rounds": "Rounds 5 – 6 (xrank #49 – #72)",
-            "theme": "⛔ Season-Ending IR Fades & Tyler Warren TE Value",
+            "theme": "⛔ Season-Ending IR Fades (Off All Boards) & Tyler Warren TE Value",
             "tactics": [
-                "**Jayden Higgins (HOU - xrank #58)** & **Ricky Pearsall (SF - xrank #64)**: 🚨 **DO NOT DRAFT / IR**. Higgins (torn ACL in joint scrimmage) and Pearsall (PCL surgery) are out for the season on IR. Remove from all draft queues.",
+                "**Jayden Higgins (HOU)** & **Ricky Pearsall (SF)**: 🚨 **COMPLETELY OFF ALL DRAFT BOARDS — REMOVED FROM ALL ECR LISTS**. Higgins suffered a season-ending torn ACL in a joint scrimmage (Aug 18); Pearsall underwent PCL surgery (out all 2026). Neither player appears in live FantasyPros ECR Top 200. Do NOT draft under any circumstances.",
+                "**Nico Collins (HOU - xrank #15 / Real-Time ADP #16.5)** & **Tank Dell (HOU - xrank #62 / Real-Time ADP ~#68)**: 🟢 **HIGGINS IR BENEFICIARIES**. Collins is locked in as CJ Stroud's undisputed WR1 with Higgins gone. Tank Dell returns to full practice and inherits the WR2 target share. Both are elevated from Higgins' absence.",
                 "**Tyler Warren (IND - xrank #63 / Real-Time ADP #61.1)**: 🟢 **VALUE TIGHT END BUY**. Groin strain suffered on Aug 19 confirmed minor; 100% ready for Week 1 as primary middle-of-the-field weapon.",
                 "**Breece Hall (NYJ - xrank #40 / Real-Time ADP #42.5)**: 💎 **HERO RB / HANDCUFF RULE**. Must pair with **Braelon Allen** in Round 13/14."
             ]
@@ -363,10 +364,16 @@ def analyze_injury_draft_strategy(
     # Top 12 Contingency Handcuff Matrix (100% PFN 2026 Depth Chart & Live ADP Synchronized)
     handcuff_matrix = [
         {
+            "starter": "Alvin Kamara", "team": "NO", "pos": "RB",
+            "concern": "MCL sprain (sidelined 1+ month; Week 1 at risk)",
+            "handcuff": "Kendre Miller", "adp_target": "Round 9-10 (Miller ADP ~#110)",
+            "upside_tier": "🔥 Kendre Miller commands full starting RB1 workload in New Orleans while Kamara is out"
+        },
+        {
             "starter": "Travis Etienne Jr.", "team": "NO", "pos": "RB",
-            "concern": "Alvin Kamara MCL sprain (sidelined 1+ month)",
-            "handcuff": "Alvin Kamara / Kendre Miller", "adp_target": "Round 9-10 (Miller)",
-            "upside_tier": "🔥 Etienne starts with Miller commanding change-of-pace in New Orleans"
+            "concern": "Standalone workhorse — no injury concern; elevated by Kamara's MCL absence",
+            "handcuff": "Kendre Miller / Kamara (when healthy)", "adp_target": "No handcuff needed (Etienne is the starter)",
+            "upside_tier": "⚡ Etienne is the lead back in New Orleans — own him as a standalone RB2 asset"
         },
         {
             "starter": "Chuba Hubbard", "team": "CAR", "pos": "RB",
