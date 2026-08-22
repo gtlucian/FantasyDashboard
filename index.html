@@ -97,6 +97,15 @@
     </div>
   </header>
 
+  <!-- KEYBOARD SHORTCUTS TIP BAR -->
+  <div class="bg-slate-950/80 border-b border-slate-800/80 px-4 py-1 text-center text-[10px] text-slate-400 hidden sm:flex items-center justify-center gap-4">
+    <span>💡 <b>Speed Shortcuts:</b> Press <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-200 rounded font-mono font-bold">/</kbd> to Search</span>
+    <span>•</span>
+    <span>Press <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-200 rounded font-mono font-bold">1-8</kbd> to Jump Tabs</span>
+    <span>•</span>
+    <span>Press <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-200 rounded font-mono font-bold">Esc</kbd> to Clear Filters</span>
+  </div>
+
   <!-- YAHOO DRAFT ROOM LIVE SYNC MODAL -->
   <div id="yahooSyncModal" class="hidden bg-slate-900 border-b border-purple-800/80 px-4 sm:px-6 py-4 shadow-2xl transition-all">
     <div class="max-w-7xl mx-auto space-y-4">
@@ -277,20 +286,26 @@
       <button id="tabBtnInjuryStrat" class="tab-btn pb-3 text-rose-400 border-b-2 border-rose-500 font-extrabold flex items-center gap-1.5 whitespace-nowrap">
         <span>🏥</span> Top 200 Injury Draft Strategy
       </button>
+      <button id="tabBtnRecs" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>🎯</span> Best Pick on the Clock (AI)
+      </button>
+      <button id="tabBtnDraft" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>⚡</span> Live Draft Board & Odds
+      </button>
+      <button id="tabBtnMyTeam" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>📋</span> My Team Roster & Bye Grid
+      </button>
+      <button id="tabBtnManagers" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>🕵️</span> Manager Scouting (12)
+      </button>
+      <button id="tabBtnWaivers" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
+        <span>💰</span> Waiver Wire & FAAB
+      </button>
       <button id="tabBtnNews" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
         <span>🚨</span> 48H Injury & Beat Wire
       </button>
       <button id="tabBtnTwitter" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
         <span>🐦</span> Curated Twitter / X Analysts
-      </button>
-      <button id="tabBtnRecs" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-        <span>🎯</span> Best Pick on the Clock (AI)
-      </button>
-      <button id="tabBtnMyTeam" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-        <span>📋</span> My Team Roster & Bye Grid
-      </button>
-      <button id="tabBtnDraft" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-        <span>⚡</span> Live Draft Board & Odds
       </button>
       <button id="tabBtnMarket" class="tab-btn pb-3 text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
         <span>📊</span> Market Arbitrage Matrix
@@ -558,6 +573,47 @@
       </div>
     </div>
 
+    <!-- Section 0: Interactive Draft Slot Custom Blueprint (Personalized to your pick) -->
+    <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/40 border border-indigo-900/60 p-4 sm:p-5 rounded-2xl shadow-xl mb-5">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-base sm:text-lg">🎯</span>
+            <h3 class="text-xs sm:text-sm font-black text-white uppercase tracking-wider">
+              My Live Draft Route & Round-by-Round Blueprint
+            </h3>
+            <span id="blueprintSlotBadge" class="bg-indigo-950 text-indigo-300 border border-indigo-700 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">PICK #6 (12-TEAM)</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-0.5">
+            Optimized draft targets specifically for your pick slot, based on live availability probability, VORP cliff drops, and injury arbitrage.
+          </p>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <label class="text-[11px] font-bold text-slate-400">Draft Slot:</label>
+          <select id="blueprintSlotSelect" class="bg-slate-950 border border-indigo-700 text-indigo-200 text-xs font-bold rounded-xl px-3 py-1.5 focus:outline-none focus:border-indigo-400">
+            <option value="1">Pick #1 (Turn)</option>
+            <option value="2">Pick #2</option>
+            <option value="3">Pick #3</option>
+            <option value="4">Pick #4</option>
+            <option value="5">Pick #5</option>
+            <option value="6" selected>Pick #6 (Middle)</option>
+            <option value="7">Pick #7</option>
+            <option value="8">Pick #8</option>
+            <option value="9">Pick #9</option>
+            <option value="10">Pick #10</option>
+            <option value="11">Pick #11</option>
+            <option value="12">Pick #12 (Turn)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Blueprint Route Horizontal Cards -->
+      <div id="blueprintContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+
     <!-- Section 1: Executive Round-by-Round Tactical Playbook -->
     <div class="bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-xl mb-5">
       <div class="flex items-center justify-between mb-3">
@@ -607,7 +663,7 @@
           <p class="text-[11px] text-slate-400">Filtered by live injury risk scores, current ADP arbitrage deltas, and practice reports.</p>
         </div>
         <div class="flex flex-wrap gap-2 items-center w-full sm:w-auto">
-          <input id="injurySearchInput" type="text" placeholder="🔍 Search Player, Team, Handcuff..." class="bg-slate-950 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500 w-full sm:w-56 shadow-inner">
+          <input id="injurySearchInput" type="text" placeholder="🔍 Search (or press /)..." class="bg-slate-950 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500 w-full sm:w-52 shadow-inner">
           <select id="injuryCatSelect" class="bg-slate-950 border border-slate-700 text-xs text-slate-200 rounded-xl px-3 py-1.5 focus:outline-none focus:border-rose-500 w-full sm:w-auto font-semibold">
             <option value="ALL">All Categories (200)</option>
             <option value="VALUE_BUY">🟢 Value Buys & Dips</option>
@@ -625,7 +681,105 @@
         </div>
       </div>
 
+      <!-- Quick Filter Pills Bar -->
+      <div class="flex flex-wrap gap-1.5 mb-4 pb-3 border-b border-slate-800/80" id="quickFilterPills">
+        <button data-cat="ALL" data-pos="ALL" class="quick-pill bg-rose-600 text-white text-[11px] font-bold px-3 py-1 rounded-xl transition shadow-sm">All (200)</button>
+        <button data-cat="VALUE_BUY" data-pos="ALL" class="quick-pill bg-slate-950 hover:bg-slate-800 text-emerald-300 border border-emerald-800/60 text-[11px] font-bold px-3 py-1 rounded-xl transition">🟢 Value Buys</button>
+        <button data-cat="LANDMINE" data-pos="ALL" class="quick-pill bg-slate-950 hover:bg-slate-800 text-rose-300 border border-rose-800/60 text-[11px] font-bold px-3 py-1 rounded-xl transition">🚨 Landmines</button>
+        <button data-cat="HANDCUFF" data-pos="ALL" class="quick-pill bg-slate-950 hover:bg-slate-800 text-indigo-300 border border-indigo-800/60 text-[11px] font-bold px-3 py-1 rounded-xl transition">💎 Handcuffs</button>
+        <button data-cat="ANCHOR" data-pos="ALL" class="quick-pill bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-700 text-[11px] font-bold px-3 py-1 rounded-xl transition">🛡️ Anchors</button>
+        <button data-cat="ALL" data-pos="RB" class="quick-pill bg-slate-950 hover:bg-slate-800 text-amber-300 border border-amber-800/60 text-[11px] font-bold px-3 py-1 rounded-xl transition">🚜 Running Backs</button>
+        <button data-cat="ALL" data-pos="WR" class="quick-pill bg-slate-950 hover:bg-slate-800 text-sky-300 border border-sky-800/60 text-[11px] font-bold px-3 py-1 rounded-xl transition">🎯 Wide Receivers</button>
+        <button data-cat="ALL" data-pos="QB" class="quick-pill bg-slate-950 hover:bg-slate-800 text-purple-300 border border-purple-800/60 text-[11px] font-bold px-3 py-1 rounded-xl transition">🏈 Quarterbacks</button>
+        <button data-cat="ALL" data-pos="TE" class="quick-pill bg-slate-950 hover:bg-slate-800 text-teal-300 border border-teal-800/60 text-[11px] font-bold px-3 py-1 rounded-xl transition">🏰 Tight Ends</button>
+      </div>
+
       <div id="injuryCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+        <!-- Injected via JS -->
+      </div>
+  </div>
+
+  <!-- TAB 9: LEAGUE OPPONENT SCOUTING & MANAGER DOSSIERS -->
+  <div id="viewManagers" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1 hidden">
+    <!-- Top Metrics Summary -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4">
+      <div class="kpi-box p-3.5 sm:p-4">
+        <div class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">🏆 League Name</div>
+        <div class="text-sm sm:text-base font-black text-white mt-1 truncate">Sweet N' Sour Sundays</div>
+        <div class="text-[11px] text-slate-400 truncate">12-Team Redraft • Yahoo #760420</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-purple-800/60 bg-purple-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-purple-400 uppercase tracking-wider">👑 Reigning Champ</div>
+        <div class="text-sm sm:text-base font-black text-purple-300 mt-1 truncate">Slop Ass Final (12-2)</div>
+        <div class="text-[11px] text-purple-300/80 truncate">1842.1 PF • 28 Moves</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-emerald-800/60 bg-emerald-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-emerald-400 uppercase tracking-wider">💰 Total FAAB Left</div>
+        <div id="managersTotalFaab" class="text-sm sm:text-base font-black text-emerald-400 mt-1">$120 / $1,200</div>
+        <div class="text-[11px] text-emerald-300/80 truncate">Leader: Fantasy Gods ($46)</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-amber-800/60 bg-amber-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider">⚡ Most Active Churn</div>
+        <div class="text-sm sm:text-base font-black text-amber-300 mt-1 truncate">Fantasy Gods (77 Moves)</div>
+        <div class="text-[11px] text-amber-300/80 truncate">High-velocity waiver sniper</div>
+      </div>
+    </div>
+
+    <!-- Manager Search & Filter Bar -->
+    <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl mb-4 flex flex-wrap justify-between items-center gap-3">
+      <div>
+        <h3 class="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+          <span>🕵️</span> Opponent Tendency Scouting & Game Theory Dossiers
+        </h3>
+        <p class="text-[11px] text-slate-400">Historical reach patterns, FAAB spending discipline, and tactical vulnerabilities to exploit.</p>
+      </div>
+      <input id="managerSearchInput" type="text" placeholder="🔍 Search Manager or Team..." class="bg-slate-950 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-purple-500 w-full sm:w-56 shadow-inner">
+    </div>
+
+    <!-- Managers Card Grid -->
+    <div id="managersCardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+      <!-- Injected via JS -->
+    </div>
+  </div>
+
+  <!-- TAB 10: IN-SEASON / PRESEASON WAIVER WIRE & FAAB OPTIMIZER -->
+  <div id="viewWaivers" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1 hidden">
+    <!-- Top Summary Metrics -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4">
+      <div class="kpi-box p-3.5 sm:p-4 border-rose-800/60 bg-rose-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-rose-400 uppercase tracking-wider">🚨 Priority #1 Target</div>
+        <div class="text-sm sm:text-base font-black text-white mt-1 truncate">Jonathon Brooks (CAR)</div>
+        <div class="text-[11px] text-rose-300 truncate">Target Bid: $32 (32%) • +53.5 VORP</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-emerald-800/60 bg-emerald-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-emerald-400 uppercase tracking-wider">🟢 Prime Drop Candidate</div>
+        <div class="text-sm sm:text-base font-black text-emerald-300 mt-1 truncate">Ricky Pearsall (SF - IR)</div>
+        <div class="text-[11px] text-emerald-300/80 truncate">Season-Ending PCL • 0.0 Proj</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4">
+        <div class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">💰 My FAAB Reserve</div>
+        <div class="text-sm sm:text-base font-black text-white mt-1">$25 Remaining</div>
+        <div class="text-[11px] text-slate-400">Rank #8 in league bidding power</div>
+      </div>
+      <div class="kpi-box p-3.5 sm:p-4 border-sky-800/60 bg-sky-950/20">
+        <div class="text-[10px] sm:text-xs font-bold text-sky-400 uppercase tracking-wider">⚡ Available High-Floor Adds</div>
+        <div id="waiversCountBadge" class="text-sm sm:text-base font-black text-sky-300 mt-1">6 Active Targets</div>
+        <div class="text-[11px] text-sky-300/80">Filtered for >10% VORP upgrade</div>
+      </div>
+    </div>
+
+    <!-- Waiver Cards Container -->
+    <div class="bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-xl">
+      <div class="flex items-center justify-between mb-3 border-b border-slate-800 pb-3">
+        <div>
+          <h3 class="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+            <span>⚡</span> Priority Free Agent Adds & Optimal Bid Calibrator
+          </h3>
+          <p class="text-[11px] text-slate-400">Calculates exact bid ranges ($) and game-theory thresholds based on remaining opponent balances.</p>
+        </div>
+      </div>
+
+      <div id="waiverCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 mt-3">
         <!-- Injected via JS -->
       </div>
     </div>
@@ -785,6 +939,10 @@
     let scatterChart = null;
     let boxChart = null;
 
+    // League Intelligence & Waivers State
+    let LEAGUE_MANAGERS = [];
+    let WAIVER_WIRE_LIST = [];
+
     // Top 200 Injury Draft Strategy State
     let INJURY_STRATEGY = {
       summary: {},
@@ -820,6 +978,12 @@
         if (data.injury_draft_strategy) {
           INJURY_STRATEGY = data.injury_draft_strategy;
         }
+        if (data.managers && data.managers.length > 0) {
+          LEAGUE_MANAGERS = data.managers;
+        }
+        if (data.waiver_wire && data.waiver_wire.length > 0) {
+          WAIVER_WIRE_LIST = data.waiver_wire;
+        }
 
         // Format and render Eastern Time timestamp
         const rawTime = data.metadata?.snapshot_time || 'Aug 20, 2026, 11:45 AM EDT';
@@ -844,6 +1008,9 @@
       renderAnalystButtons();
       renderNews();
       renderTwitter();
+      renderBlueprint();
+      renderManagers();
+      renderWaivers();
       renderInjuryStrategy();
       renderRoundPlaybook();
       renderHandcuffMatrix();
@@ -1519,6 +1686,254 @@
       `).join('');
     }
 
+    function renderBlueprint() {
+      const container = document.getElementById('blueprintContainer');
+      const badge = document.getElementById('blueprintSlotBadge');
+      const slotSelect = document.getElementById('blueprintSlotSelect');
+      if (!container) return;
+
+      const leagueTeams = parseInt(document.getElementById('leagueTeamsSelect')?.value || 12);
+      const mySlot = parseInt(slotSelect?.value || document.getElementById('myDraftSlotSelect')?.value || 6);
+
+      if (badge) badge.textContent = `PICK #${mySlot} (${leagueTeams}-TEAM SNAKE)`;
+
+      const stratPlayers = INJURY_STRATEGY.players || [];
+      const roundsToShow = [1, 2, 3, 4, 5, 6, 7, 8];
+
+      const blueprintHtml = roundsToShow.map(r => {
+        const isOdd = (r % 2 === 1);
+        const pickNum = isOdd ? ((r - 1) * leagueTeams + mySlot) : (r * leagueTeams - mySlot + 1);
+
+        // Find prime targets around pickNum (within ±10 ECR)
+        const candidates = stratPlayers.filter(p => !draftedSet.has(p.player_id) && Math.abs(p.xrank - pickNum) <= 12);
+        
+        // Prime target: Value Buy or highest-floor Anchor with low risk
+        let prime = candidates.find(p => p.category === 'VALUE_BUY' && p.risk_score <= 25) ||
+                    candidates.find(p => p.category === 'ANCHOR' && p.risk_score <= 20) ||
+                    stratPlayers.find(p => !draftedSet.has(p.player_id) && Math.abs(p.xrank - pickNum) <= 5);
+
+        // High-upside alternate
+        let alternate = candidates.find(p => p !== prime && (p.category === 'HANDCUFF' || p.category === 'VALUE_BUY' || p.pos === (prime?.pos === 'RB' ? 'WR' : 'RB'))) ||
+                        candidates.find(p => p !== prime);
+
+        // Danger / Landmine near this pick
+        let landmine = stratPlayers.find(p => Math.abs(p.xrank - pickNum) <= 15 && p.category === 'LANDMINE');
+
+        const primeName = prime ? prime.player_name : 'Best Available Value';
+        const primeTeam = prime ? `${prime.pos} • ${prime.team}` : '';
+        const primeAdp = prime ? `#${prime.adp_rank}` : '';
+        const primeTag = prime ? prime.action_tag : 'TARGET';
+        const primeId = prime ? prime.player_id : '';
+
+        return `
+          <div class="bg-slate-950/80 border border-slate-800/90 p-3 rounded-xl flex flex-col justify-between hover:border-indigo-600/80 transition">
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <span class="text-[11px] font-black text-indigo-300 uppercase">ROUND ${r}</span>
+                <span class="text-[10px] font-bold text-slate-400 mono">Pick #${pickNum}</span>
+              </div>
+
+              <!-- Prime Target Box -->
+              <div class="bg-slate-900/90 p-2 rounded-lg border border-slate-800 mb-2">
+                <div class="text-[9px] font-extrabold text-emerald-400 uppercase tracking-wider mb-0.5">🎯 PRIME TARGET</div>
+                <div class="text-xs font-black text-white truncate">${primeName}</div>
+                <div class="text-[10px] text-slate-400 flex justify-between mt-0.5">
+                  <span>${primeTeam}</span>
+                  <span class="mono text-indigo-300">ADP ${primeAdp}</span>
+                </div>
+                <div class="text-[10px] text-emerald-300 font-semibold mt-1 truncate">${primeTag}</div>
+              </div>
+
+              <!-- Alternate & Landmine Hints -->
+              <div class="space-y-1 text-[10px]">
+                ${alternate ? `
+                  <div class="text-slate-300 truncate">
+                    <span class="text-sky-400 font-bold">Alt:</span> ${alternate.player_name} (${alternate.pos})
+                  </div>
+                ` : ''}
+                ${landmine ? `
+                  <div class="text-rose-300 truncate">
+                    <span class="text-rose-400 font-bold">⛔ Fade:</span> ${landmine.player_name} (Risk ${landmine.risk_score})
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+
+            ${primeId ? `
+              <button onclick="draftToMyTeam('${primeId}')" class="mt-2.5 w-full bg-indigo-900/60 hover:bg-indigo-800 text-indigo-200 text-[10px] font-bold py-1.5 rounded-lg transition border border-indigo-700/60 flex items-center justify-center gap-1">
+                <span>✓</span> Draft at Pick #${pickNum}
+              </button>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = blueprintHtml;
+    }
+
+    function renderManagers() {
+      const container = document.getElementById('managersCardsContainer');
+      if (!container) return;
+
+      const searchVal = document.getElementById('managerSearchInput')?.value.toLowerCase() || '';
+      const list = LEAGUE_MANAGERS || [];
+
+      const filtered = list.filter(m => {
+        if (!searchVal) return true;
+        return (m.manager_name && m.manager_name.toLowerCase().includes(searchVal)) ||
+               (m.team_name && m.team_name.toLowerCase().includes(searchVal)) ||
+               (m.archetype && m.archetype.toLowerCase().includes(searchVal)) ||
+               (m.draft_tendency && m.draft_tendency.toLowerCase().includes(searchVal));
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500 text-xs">No managers found matching "${searchVal}"</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(m => {
+        const faabPct = m.spend_pct || ((100 - (m.faab_balance || 0)));
+        const isLeader = m.faab_balance >= 40;
+        const isBroke = m.faab_balance <= 10;
+        
+        let faabBadgeClass = "bg-slate-800 text-slate-300";
+        if (isLeader) faabBadgeClass = "bg-emerald-950 text-emerald-300 border border-emerald-700";
+        if (isBroke) faabBadgeClass = "bg-rose-950 text-rose-300 border border-rose-800";
+
+        return `
+          <div class="bg-slate-950/80 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-xl flex flex-col justify-between hover:border-purple-600/60 transition">
+            <div>
+              <div class="flex justify-between items-start gap-2 mb-2">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm sm:text-base font-black text-white">${m.team_name}</span>
+                    <span class="text-[10px] bg-slate-900 text-slate-400 px-2 py-0.5 rounded font-bold border border-slate-800">#${m.rank} • ${m.record || '0-0'}</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5 font-medium">
+                    Manager: <b class="text-slate-200">${m.manager_name}</b> • <span class="mono">${m.points_for || 0} PF</span>
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black ${faabBadgeClass}">
+                  $${m.faab_balance} FAAB
+                </span>
+              </div>
+
+              <!-- Archetype Banner -->
+              <div class="bg-purple-950/40 border border-purple-800/60 p-2 rounded-xl my-2.5 text-xs text-purple-200 font-bold">
+                ${m.archetype || 'Tactical Redraft Manager'}
+              </div>
+
+              <!-- FAAB Meter -->
+              <div class="bg-slate-900 p-2.5 rounded-xl border border-slate-800/80 my-2">
+                <div class="flex justify-between text-[10px] font-bold text-slate-400 mb-1">
+                  <span>FAAB Reserve: <b class="text-white">$${m.faab_balance}</b></span>
+                  <span>Spent: <b class="text-rose-400">$${m.faab_spent || (100 - m.faab_balance)}</b> (${faabPct}%)</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                  <div class="bg-purple-500 h-1.5 rounded-full" style="width: ${100 - faabPct}%"></div>
+                </div>
+              </div>
+
+              <!-- Tendencies -->
+              <div class="space-y-1.5 text-xs text-slate-300 my-2.5">
+                <div>
+                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Draft Habit:</span>
+                  <p class="text-[11px] text-slate-200">${m.draft_tendency || 'Balanced drafter'}</p>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Reach Tendency:</span>
+                  <p class="text-[11px] text-amber-300/90">${m.reach_tendency || 'Normal draft pace'}</p>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Waiver / FAAB Style:</span>
+                  <p class="text-[11px] text-sky-300/90">${m.faab_style || 'Balanced weekly bidding'}</p>
+                </div>
+              </div>
+
+              <!-- Exploitation Vulnerability -->
+              <div class="bg-rose-950/30 border border-rose-900/60 p-2.5 rounded-xl text-xs text-rose-200 mt-2">
+                <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider block">🎯 Strategic Vulnerability:</span>
+                <p class="text-[11px] leading-snug">${m.vulnerabilities || 'Disciplined manager; force bids by exploiting positional runs.'}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderWaivers() {
+      const container = document.getElementById('waiverCardsContainer');
+      if (!container) return;
+
+      const list = WAIVER_WIRE_LIST || [];
+      if (list.length === 0) {
+        container.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500 text-xs">No active waiver wire targets available.</div>`;
+        return;
+      }
+
+      container.innerHTML = list.map(w => {
+        const isCritical = (w.urgency && w.urgency.includes('CRITICAL'));
+        const borderClass = isCritical ? 'border-rose-700/80' : 'border-emerald-700/80';
+        const cardBg = isCritical ? 'bg-gradient-to-br from-rose-950/30 to-slate-950' : 'bg-gradient-to-br from-emerald-950/20 to-slate-950';
+
+        return `
+          <div class="${cardBg} border ${borderClass} p-4 sm:p-5 rounded-2xl shadow-xl flex flex-col justify-between hover:border-sky-500 transition">
+            <div>
+              <div class="flex justify-between items-start gap-2 mb-2">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-base sm:text-lg font-black text-white">${w.player_name}</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-black bg-slate-900 text-slate-200 border border-slate-700">${w.pos} • ${w.team}</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 mt-0.5">
+                    ECR: <b class="text-blue-400 mono">#${w.ecr_rank || '?'}</b> (${w.pos_rank || w.pos}) • Rostered: <b class="text-slate-200">${w.percent_rostered || 50}%</b>
+                  </div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black tracking-wider ${isCritical ? 'bg-rose-950 text-rose-300 border border-rose-700' : 'bg-emerald-950 text-emerald-300 border border-emerald-700'}">
+                  ${w.urgency || 'HIGH PRIORITY'}
+                </span>
+              </div>
+
+              <!-- Recommendation Category Banner -->
+              <div class="text-xs font-bold text-amber-300 my-1.5">
+                ${w.category || 'High-Leverage Free Agent'}
+              </div>
+
+              <!-- FAAB Target Bid & Range Grid -->
+              <div class="grid grid-cols-2 gap-2 my-2.5 bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+                <div>
+                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Target Bid:</span>
+                  <span class="text-sm font-black text-emerald-400 mono">$${w.target_bid || 15} <span class="text-[10px] text-slate-400">(${w.target_bid || 15}%)</span></span>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Bid Range:</span>
+                  <span class="text-xs font-bold text-slate-200 mono">${w.bid_range || '$10 - $20'}</span>
+                </div>
+              </div>
+
+              <!-- Rationale -->
+              <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                ${w.rationale || 'High-upside volume breakout candidate.'}
+              </p>
+
+              <!-- Recommended Drop & VORP Gain -->
+              <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl flex items-center justify-between text-xs">
+                <div>
+                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Drop Recommendation:</span>
+                  <span class="font-bold text-rose-300">${w.target_drop || 'End of bench flyer'}</span>
+                </div>
+                <span class="font-black text-emerald-400 mono text-xs">${w.net_vorp_gain || '+15.0 VORP'}</span>
+              </div>
+            </div>
+
+            <button onclick="showSyncToast('Claim added to queue! Target bid: $${w.target_bid || 15}')" class="mt-3.5 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 rounded-xl text-xs transition shadow-lg flex items-center justify-center gap-1.5">
+              <span>💰</span> Submit $${w.target_bid || 15} FAAB Claim
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
     function renderTable() {
       const tbody = document.getElementById('playerTableBody');
       const available = rawPlayers.filter(p => {
@@ -1786,11 +2201,19 @@
 
     // Tab Switching
     document.getElementById('tabBtnInjuryStrat').addEventListener('click', () => showView('viewInjuryStrat', 'tabBtnInjuryStrat'));
+    document.getElementById('tabBtnRecs').addEventListener('click', () => showView('viewRecs', 'tabBtnRecs'));
+    document.getElementById('tabBtnDraft').addEventListener('click', () => showView('viewDraft', 'tabBtnDraft'));
+    document.getElementById('tabBtnMyTeam').addEventListener('click', () => showView('viewMyTeam', 'tabBtnMyTeam'));
+    document.getElementById('tabBtnManagers').addEventListener('click', () => {
+      showView('viewManagers', 'tabBtnManagers');
+      renderManagers();
+    });
+    document.getElementById('tabBtnWaivers').addEventListener('click', () => {
+      showView('viewWaivers', 'tabBtnWaivers');
+      renderWaivers();
+    });
     document.getElementById('tabBtnNews').addEventListener('click', () => showView('viewNews', 'tabBtnNews'));
     document.getElementById('tabBtnTwitter').addEventListener('click', () => showView('viewTwitter', 'tabBtnTwitter'));
-    document.getElementById('tabBtnRecs').addEventListener('click', () => showView('viewRecs', 'tabBtnRecs'));
-    document.getElementById('tabBtnMyTeam').addEventListener('click', () => showView('viewMyTeam', 'tabBtnMyTeam'));
-    document.getElementById('tabBtnDraft').addEventListener('click', () => showView('viewDraft', 'tabBtnDraft'));
     document.getElementById('tabBtnMarket').addEventListener('click', () => {
       showView('viewMarket', 'tabBtnMarket');
       setTimeout(renderScatter, 50);
@@ -1801,7 +2224,7 @@
     });
 
     function showView(viewId, btnId) {
-      ['viewInjuryStrat', 'viewNews', 'viewTwitter', 'viewRecs', 'viewMyTeam', 'viewDraft', 'viewMarket', 'viewVorp'].forEach(v => {
+      ['viewInjuryStrat', 'viewNews', 'viewTwitter', 'viewRecs', 'viewMyTeam', 'viewDraft', 'viewMarket', 'viewVorp', 'viewManagers', 'viewWaivers'].forEach(v => {
         const el = document.getElementById(v);
         if (el) el.classList.add('hidden');
       });
@@ -1835,9 +2258,52 @@
       document.getElementById('yahooSyncModal').classList.add('hidden');
     });
 
+    // Blueprint Slot Sync
+    const blueprintSlotSelect = document.getElementById('blueprintSlotSelect');
+    if (blueprintSlotSelect) {
+      blueprintSlotSelect.addEventListener('change', (e) => {
+        const mySlotSelect = document.getElementById('myDraftSlotSelect');
+        if (mySlotSelect) mySlotSelect.value = e.target.value;
+        renderBlueprint();
+        recalcAndRender();
+      });
+    }
+
+    // Quick Filter Pills Handlers
+    document.querySelectorAll('#quickFilterPills .quick-pill').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        const cat = pill.getAttribute('data-cat');
+        const pos = pill.getAttribute('data-pos');
+        
+        document.querySelectorAll('#quickFilterPills .quick-pill').forEach(p => {
+          p.classList.remove('bg-rose-600', 'text-white', 'border-transparent');
+          p.classList.add('bg-slate-950');
+        });
+        pill.classList.remove('bg-slate-950');
+        pill.classList.add('bg-rose-600', 'text-white', 'border-transparent');
+
+        if (document.getElementById('injuryCatSelect')) document.getElementById('injuryCatSelect').value = cat;
+        if (document.getElementById('injuryPosSelect')) document.getElementById('injuryPosSelect').value = pos;
+        renderInjuryStrategy();
+      });
+    });
+
+    // Manager Search Handler
+    const managerSearchInput = document.getElementById('managerSearchInput');
+    if (managerSearchInput) {
+      managerSearchInput.addEventListener('input', renderManagers);
+    }
+
     // Event Listeners
-    document.getElementById('leagueTeamsSelect').addEventListener('change', recalcAndRender);
-    document.getElementById('myDraftSlotSelect').addEventListener('change', recalcAndRender);
+    document.getElementById('leagueTeamsSelect').addEventListener('change', () => {
+      renderBlueprint();
+      recalcAndRender();
+    });
+    document.getElementById('myDraftSlotSelect').addEventListener('change', (e) => {
+      if (blueprintSlotSelect) blueprintSlotSelect.value = e.target.value;
+      renderBlueprint();
+      recalcAndRender();
+    });
     document.getElementById('rosterFormatSelect').addEventListener('change', recalcAndRender);
     document.getElementById('scoringFormatSelect').addEventListener('change', recalcAndRender);
 
@@ -1851,6 +2317,36 @@
     if (injuryPosSelect) injuryPosSelect.addEventListener('change', renderInjuryStrategy);
     const injurySearchInput = document.getElementById('injurySearchInput');
     if (injurySearchInput) injurySearchInput.addEventListener('input', renderInjuryStrategy);
+
+    // Global Keyboard Shortcuts (/ to search, Esc to clear, 1-8 to switch tabs)
+    document.addEventListener('keydown', (e) => {
+      // Ignore if actively typing in an input
+      const tag = e.target.tagName.toLowerCase();
+      if (e.key === '/' && tag !== 'input' && tag !== 'textarea') {
+        e.preventDefault();
+        const sInput = document.getElementById('injurySearchInput') || document.getElementById('searchInput');
+        if (sInput) {
+          sInput.focus();
+          sInput.select();
+        }
+      } else if (e.key === 'Escape') {
+        const sInputs = [document.getElementById('injurySearchInput'), document.getElementById('searchInput'), document.getElementById('newsSearchInput'), document.getElementById('managerSearchInput')];
+        sInputs.forEach(si => { if (si) { si.value = ''; si.blur(); } });
+        renderInjuryStrategy();
+        renderTable();
+        renderNews();
+        renderManagers();
+      } else if (tag !== 'input' && tag !== 'textarea') {
+        if (e.key === '1') showView('viewInjuryStrat', 'tabBtnInjuryStrat');
+        if (e.key === '2') showView('viewRecs', 'tabBtnRecs');
+        if (e.key === '3') showView('viewDraft', 'tabBtnDraft');
+        if (e.key === '4') showView('viewMyTeam', 'tabBtnMyTeam');
+        if (e.key === '5') { showView('viewManagers', 'tabBtnManagers'); renderManagers(); }
+        if (e.key === '6') { showView('viewWaivers', 'tabBtnWaivers'); renderWaivers(); }
+        if (e.key === '7') showView('viewNews', 'tabBtnNews');
+        if (e.key === '8') showView('viewTwitter', 'tabBtnTwitter');
+      }
+    });
 
     document.querySelectorAll('.analyst-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
