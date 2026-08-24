@@ -480,6 +480,41 @@
 
   <!-- TAB 4: MY TEAM ROSTER & BYE GRID (FEATURE 3 & 4) -->
   <div id="viewMyTeam" class="px-4 sm:px-6 max-w-7xl mx-auto w-full my-4 flex-1 hidden">
+    <!-- Quick Roster Importer & Management Bar -->
+    <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl mb-4 shadow-xl">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h3 class="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+            <span>📥</span> Sync My Drafted Team
+          </h3>
+          <p class="text-[11px] text-slate-400">Add players one-by-one or paste your full roster from Yahoo to analyze starting projections, bye clashes, and stacks.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+          <input id="quickAddTeamInput" type="text" placeholder="🔍 Add drafted player (e.g. Bijan, Lamb)..." class="bg-slate-950 border border-slate-700 px-3 py-1.5 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500 w-full sm:w-64 shadow-inner">
+          <button id="togglePasteRosterBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl transition flex items-center gap-1 shadow-sm">
+            <span>📋</span> Paste Full Roster
+          </button>
+          <button id="clearMyTeamBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold px-2.5 py-1.5 rounded-xl transition border border-slate-700">
+            Clear Team
+          </button>
+        </div>
+      </div>
+
+      <!-- Expandable Paste Roster Area -->
+      <div id="pasteRosterBox" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-2">
+        <p class="text-[11px] text-slate-300">Copy and paste your entire roster text from your Yahoo Fantasy "My Team" page or draft recap below:</p>
+        <textarea id="rosterPasteTextarea" rows="3" placeholder="Paste roster text here (e.g. Josh Allen, Breece Hall, Kenneth Walker III, Amon-Ra St. Brown...)..." class="w-full bg-slate-950 border border-slate-700 px-3 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"></textarea>
+        <div class="flex justify-end gap-2">
+          <button id="cancelPasteRosterBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold px-3 py-1.5 rounded-xl transition">
+            Cancel
+          </button>
+          <button id="submitPasteRosterBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-xl transition shadow-lg flex items-center gap-1.5">
+            <span>✓</span> Import Roster to My Team
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-5">
       <!-- Starting Lineup Grid -->
       <div class="lg:col-span-8 bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-2xl">
@@ -1070,6 +1105,29 @@
         if (document.getElementById('twitterTabCount')) document.getElementById('twitterTabCount').textContent = ANALYST_TWEETS.length;
         if (document.getElementById('managersTabCount')) document.getElementById('managersTabCount').textContent = LEAGUE_MANAGERS.length;
         if (document.getElementById('waiversTabCount')) document.getElementById('waiversTabCount').textContent = WAIVER_WIRE_LIST.length;
+
+        // Restore user roster and draft picks from LocalStorage or seed default
+        try {
+          const savedMyTeam = localStorage.getItem('ff_my_team');
+          const savedDrafted = localStorage.getItem('ff_drafted');
+          if (savedMyTeam && JSON.parse(savedMyTeam).length > 0) {
+            JSON.parse(savedMyTeam).forEach(id => {
+              myTeamSet.add(id);
+              draftedSet.add(id);
+            });
+          } else if (data.user_roster && data.user_roster.length > 0 && myTeamSet.size === 0) {
+            data.user_roster.forEach(ur => {
+              const found = rawPlayers.find(p => p.player_name.toLowerCase() === ur.player_name.toLowerCase());
+              if (found) {
+                myTeamSet.add(found.player_id);
+                draftedSet.add(found.player_id);
+              }
+            });
+          }
+          if (savedDrafted) {
+            JSON.parse(savedDrafted).forEach(id => draftedSet.add(id));
+          }
+        } catch(e) { console.warn('LocalStorage error:', e); }
 
         // Format and render Eastern Time timestamp
         const rawTime = data.metadata?.snapshot_time || 'Aug 20, 2026, 11:45 AM EDT';
@@ -2136,12 +2194,14 @@
         myTeamSet.add(id);
         draftedSet.add(id);
       }
+      saveStateToStorage();
       recalcAndRender();
     }
 
     function removeFromMyTeam(id) {
       myTeamSet.delete(id);
       draftedSet.delete(id);
+      saveStateToStorage();
       recalcAndRender();
     }
 
@@ -2152,7 +2212,89 @@
       } else {
         draftedSet.add(id);
       }
+      saveStateToStorage();
       recalcAndRender();
+    }
+
+    function saveStateToStorage() {
+      try {
+        localStorage.setItem('ff_my_team', JSON.stringify([...myTeamSet]));
+        localStorage.setItem('ff_drafted', JSON.stringify([...draftedSet]));
+      } catch(e) {}
+    }
+
+    // Quick Add Player to My Team
+    const quickAddInput = document.getElementById('quickAddTeamInput');
+    if (quickAddInput) {
+      quickAddInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const val = quickAddInput.value.trim().toLowerCase();
+          if (!val) return;
+          const found = rawPlayers.find(p => p.player_name.toLowerCase() === val || p.player_name.toLowerCase().includes(val));
+          if (found) {
+            myTeamSet.add(found.player_id);
+            draftedSet.add(found.player_id);
+            saveStateToStorage();
+            quickAddInput.value = '';
+            recalcAndRender();
+            showSyncToast(`✅ Added #${found.ecr_rank} ${found.player_name} (${found.position}) to My Team!`);
+          } else {
+            alert(`Player "${val}" not found in consensus database.`);
+          }
+        }
+      });
+    }
+
+    // Paste Full Roster Importer
+    const togglePasteBtn = document.getElementById('togglePasteRosterBtn');
+    const pasteBox = document.getElementById('pasteRosterBox');
+    if (togglePasteBtn && pasteBox) {
+      togglePasteBtn.addEventListener('click', () => pasteBox.classList.toggle('hidden'));
+    }
+    const cancelPasteBtn = document.getElementById('cancelPasteRosterBtn');
+    if (cancelPasteBtn && pasteBox) {
+      cancelPasteBtn.addEventListener('click', () => pasteBox.classList.add('hidden'));
+    }
+    const submitPasteBtn = document.getElementById('submitPasteRosterBtn');
+    if (submitPasteBtn) {
+      submitPasteBtn.addEventListener('click', () => {
+        const text = document.getElementById('rosterPasteTextarea')?.value.toLowerCase() || '';
+        if (!text.trim()) {
+          alert('Please paste some text with your player names.');
+          return;
+        }
+        let matchCount = 0;
+        rawPlayers.forEach(p => {
+          const pName = p.player_name.toLowerCase();
+          if (text.includes(pName)) {
+            myTeamSet.add(p.player_id);
+            draftedSet.add(p.player_id);
+            matchCount++;
+          }
+        });
+        if (matchCount > 0) {
+          saveStateToStorage();
+          document.getElementById('rosterPasteTextarea').value = '';
+          if (pasteBox) pasteBox.classList.add('hidden');
+          recalcAndRender();
+          showSyncToast(`🎉 Successfully imported ${matchCount} players to your team!`);
+        } else {
+          alert('No matching player names found in the pasted text.');
+        }
+      });
+    }
+
+    // Clear My Team
+    const clearTeamBtn = document.getElementById('clearMyTeamBtn');
+    if (clearTeamBtn) {
+      clearTeamBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear your drafted team roster?')) {
+          myTeamSet.clear();
+          saveStateToStorage();
+          recalcAndRender();
+          showSyncToast('Roster cleared.');
+        }
+      });
     }
 
     // Toast Notification helper (Smooth iOS Animation)
